@@ -102,12 +102,13 @@
 		950142E21E4C7F0500987828 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				950143041E4C867A00987828 /* First */,
-				950143281E4C867A00987828 /* Second */,
-				950143341E4C867A00987828 /* Third */,
-				950143101E4C867A00987828 /* Fourth */,
-				9501431C1E4C867A00987828 /* LoginAndRegister */,
+				95706F421E4D50D700536AE2 /* Base */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
+				95706F4E1E4D50D700536AE2 /* LoginAndRegister */,
+				95706F461E4D50D700536AE2 /* First */,
+				95706F521E4D50D700536AE2 /* Second */,
+				95706F561E4D50D700536AE2 /* Third */,
+				95706F4A1E4D50D700536AE2 /* Fourth */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -164,155 +165,186 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		950143041E4C867A00987828 /* First */ = {
+		95706F421E4D50D700536AE2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				950143051E4C867A00987828 /* Controller */,
-				9501430A1E4C867A00987828 /* Model */,
-				9501430B1E4C867A00987828 /* View */,
+				95706F431E4D50D700536AE2 /* Controller */,
+				95706F441E4D50D700536AE2 /* Model */,
+				95706F451E4D50D700536AE2 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		95706F431E4D50D700536AE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95706F441E4D50D700536AE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95706F451E4D50D700536AE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95706F461E4D50D700536AE2 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				95706F471E4D50D700536AE2 /* Controller */,
+				95706F481E4D50D700536AE2 /* Model */,
+				95706F491E4D50D700536AE2 /* View */,
 			);
 			path = First;
 			sourceTree = "<group>";
 		};
-		950143051E4C867A00987828 /* Controller */ = {
+		95706F471E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9501430A1E4C867A00987828 /* Model */ = {
+		95706F481E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9501430B1E4C867A00987828 /* View */ = {
+		95706F491E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		950143101E4C867A00987828 /* Fourth */ = {
+		95706F4A1E4D50D700536AE2 /* Fourth */ = {
 			isa = PBXGroup;
 			children = (
-				950143111E4C867A00987828 /* Controller */,
-				950143161E4C867A00987828 /* Model */,
-				950143171E4C867A00987828 /* View */,
+				95706F4B1E4D50D700536AE2 /* Controller */,
+				95706F4C1E4D50D700536AE2 /* Model */,
+				95706F4D1E4D50D700536AE2 /* View */,
 			);
 			path = Fourth;
 			sourceTree = "<group>";
 		};
-		950143111E4C867A00987828 /* Controller */ = {
+		95706F4B1E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		950143161E4C867A00987828 /* Model */ = {
+		95706F4C1E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		950143171E4C867A00987828 /* View */ = {
+		95706F4D1E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		9501431C1E4C867A00987828 /* LoginAndRegister */ = {
+		95706F4E1E4D50D700536AE2 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
-				9501431D1E4C867A00987828 /* Controller */,
-				950143221E4C867A00987828 /* Model */,
-				950143231E4C867A00987828 /* View */,
+				95706F4F1E4D50D700536AE2 /* Controller */,
+				95706F501E4D50D700536AE2 /* Model */,
+				95706F511E4D50D700536AE2 /* View */,
 			);
 			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
-		9501431D1E4C867A00987828 /* Controller */ = {
+		95706F4F1E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		950143221E4C867A00987828 /* Model */ = {
+		95706F501E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		950143231E4C867A00987828 /* View */ = {
+		95706F511E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		950143281E4C867A00987828 /* Second */ = {
+		95706F521E4D50D700536AE2 /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				950143291E4C867A00987828 /* Controller */,
-				9501432E1E4C867A00987828 /* Model */,
-				9501432F1E4C867A00987828 /* View */,
+				95706F531E4D50D700536AE2 /* Controller */,
+				95706F541E4D50D700536AE2 /* Model */,
+				95706F551E4D50D700536AE2 /* View */,
 			);
 			path = Second;
 			sourceTree = "<group>";
 		};
-		950143291E4C867A00987828 /* Controller */ = {
+		95706F531E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9501432E1E4C867A00987828 /* Model */ = {
+		95706F541E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9501432F1E4C867A00987828 /* View */ = {
+		95706F551E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		950143341E4C867A00987828 /* Third */ = {
+		95706F561E4D50D700536AE2 /* Third */ = {
 			isa = PBXGroup;
 			children = (
-				950143351E4C867A00987828 /* Controller */,
-				9501433A1E4C867A00987828 /* Model */,
-				9501433B1E4C867A00987828 /* View */,
+				95706F571E4D50D700536AE2 /* Controller */,
+				95706F581E4D50D700536AE2 /* Model */,
+				95706F591E4D50D700536AE2 /* View */,
 			);
 			path = Third;
 			sourceTree = "<group>";
 		};
-		950143351E4C867A00987828 /* Controller */ = {
+		95706F571E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		9501433A1E4C867A00987828 /* Model */ = {
+		95706F581E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9501433B1E4C867A00987828 /* View */ = {
+		95706F591E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -362,7 +394,7 @@
 				TargetAttributes = {
 					950142BF1E4C7D1300987828 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 4XZHT5X732;
+						DevelopmentTeam = 9R84D6G2YR;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -576,7 +608,7 @@
 			baseConfigurationReference = 4E472CEA6E41CE914BE048A8 /* Pods-Doctor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4XZHT5X732;
+				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
@@ -589,7 +621,7 @@
 			baseConfigurationReference = 8E30043272C7F3709E832F8C /* Pods-Doctor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4XZHT5X732;
+				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
