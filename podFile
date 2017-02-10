@@ -1,0 +1,10 @@
+platform:ios, '8.0'
+target 'Doctor' do 
+  pod 'AFNetworking', '~> 3.1.0'
+  pod 'MJRefresh', '~> 3.1.12'
+  pod 'YYModel', '~> 1.0.4'
+  pod 'SDWebImage', '~> 3.8.2'
+  pod 'Masonry', '~> 1.0.2'	
+  pod 'Toast', '~> 3.0'
+  pod ‘SSZipArchive’, ‘~> 1.6.1’
+end
