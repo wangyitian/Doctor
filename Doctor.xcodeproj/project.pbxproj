@@ -20,6 +20,7 @@
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_TableController.m */; };
+		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,10 @@
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TableController.h; sourceTree = "<group>"; };
 		95706F5E1E4D518600536AE2 /* MY_TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TableController.m; sourceTree = "<group>"; };
+		95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor-Prefix.pch"; sourceTree = "<group>"; };
+		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
+		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
+		95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BadgeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				950142C21E4C7D1300987828 /* Doctor */,
-				950142CF1E4C7D1400987828 /* Assets.xcassets */,
 				950142C11E4C7D1300987828 /* Products */,
 				751FB90BB0F2A265B00F92DC /* Pods */,
 				E3F23EC9C81AE0D1C5E01375 /* Frameworks */,
+				950142CF1E4C7D1400987828 /* Assets.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,8 +96,9 @@
 		950142C21E4C7D1300987828 /* Doctor */ = {
 			isa = PBXGroup;
 			children = (
-				950142E71E4C7F1100987828 /* Other */,
+				95B022741E52DB9A00B672D3 /* Common */,
 				950142E21E4C7F0500987828 /* Classes */,
+				950142E71E4C7F1100987828 /* Other */,
 				950142C31E4C7D1300987828 /* Supporting Files */,
 			);
 			path = Doctor;
@@ -154,6 +160,8 @@
 				950142F91E4C7F9100987828 /* MY_TabBar.m */,
 				950142FE1E4C7FF000987828 /* MY_TabBarButton.h */,
 				950142FF1E4C7FF000987828 /* MY_TabBarButton.m */,
+				95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */,
+				95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 				950142E91E4C7F1100987828 /* AppDelegate.m */,
 				950142EA1E4C7F1100987828 /* Info.plist */,
 				950142EB1E4C7F1100987828 /* main.m */,
+				95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -361,6 +370,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		95B022741E52DB9A00B672D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				95B022751E52DB9A00B672D3 /* Category */,
+				95B022761E52DB9A00B672D3 /* Custom */,
+				95B022771E52DB9A00B672D3 /* Define */,
+				95B022781E52DB9A00B672D3 /* Util */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		95B022751E52DB9A00B672D3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		95B022761E52DB9A00B672D3 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		95B022771E52DB9A00B672D3 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				95B0227A1E52DDD600B672D3 /* MY_Common.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		95B022781E52DB9A00B672D3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		E3F23EC9C81AE0D1C5E01375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +549,7 @@
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
+				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
 			);
@@ -621,6 +671,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
@@ -634,6 +686,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;

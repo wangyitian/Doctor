@@ -1,0 +1,12 @@
+//
+//  Doctor-Prefix.pch
+//  Doctor
+//
+//  Created by 王翼天 on 2017/2/14.
+//  Copyright © 2017年 王翼天. All rights reserved.
+//
+
+#ifndef Doctor_Prefix_pch
+#define Doctor_Prefix_pch
+#import "MY_Common.h"
+#endif /* Doctor_Prefix_pch */
