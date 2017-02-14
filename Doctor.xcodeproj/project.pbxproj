@@ -18,6 +18,8 @@
 		950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142F91E4C7F9100987828 /* MY_TabBar.m */; };
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
+		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
+		95706F5F1E4D518600536AE2 /* MY_TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_TableController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		950142FF1E4C7FF000987828 /* MY_TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TabBarButton.m; sourceTree = "<group>"; };
 		950143011E4C800F00987828 /* MY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavigationController.h; sourceTree = "<group>"; };
 		950143021E4C800F00987828 /* MY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavigationController.m; sourceTree = "<group>"; };
+		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
+		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
+		95706F5D1E4D518600536AE2 /* MY_TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TableController.h; sourceTree = "<group>"; };
+		95706F5E1E4D518600536AE2 /* MY_TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TableController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				95706F421E4D50D700536AE2 /* Base */,
-				950142E31E4C7F0500987828 /* TabAndNav */,
 				95706F4E1E4D50D700536AE2 /* LoginAndRegister */,
 				95706F461E4D50D700536AE2 /* First */,
 				95706F521E4D50D700536AE2 /* Second */,
 				95706F561E4D50D700536AE2 /* Third */,
 				95706F4A1E4D50D700536AE2 /* Fourth */,
+				950142E31E4C7F0500987828 /* TabAndNav */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -178,6 +184,10 @@
 		95706F431E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95706F5A1E4D516300536AE2 /* MY_BaseController.h */,
+				95706F5B1E4D516300536AE2 /* MY_BaseController.m */,
+				95706F5D1E4D518600536AE2 /* MY_TableController.h */,
+				95706F5E1E4D518600536AE2 /* MY_TableController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -484,6 +494,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95706F5F1E4D518600536AE2 /* MY_TableController.m in Sources */,
+				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
