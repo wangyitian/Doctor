@@ -22,7 +22,7 @@
     manager.requestSerializer.timeoutInterval = 10;
     
     [manager GET:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = (NSDictionary*)responseObject;
+//        NSDictionary *dic = (NSDictionary*)responseObject;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -36,7 +36,7 @@
     manager.requestSerializer.timeoutInterval = 10;
     
     [manager GET:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *dic = (NSDictionary*)responseObject;
+//        NSDictionary *dic = (NSDictionary*)responseObject;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

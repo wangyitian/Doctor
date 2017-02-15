@@ -62,6 +62,7 @@
 		958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RequestTool.m; sourceTree = "<group>"; };
 		958C35EA1E542461006FCCF3 /* MY_BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseModel.h; sourceTree = "<group>"; };
 		958C35EB1E542461006FCCF3 /* MY_BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseModel.m; sourceTree = "<group>"; };
+		958C35ED1E544974006FCCF3 /* MY_Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Api.h; sourceTree = "<group>"; };
 		95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor-Prefix.pch"; sourceTree = "<group>"; };
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
@@ -430,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				95B0227A1E52DDD600B672D3 /* MY_Common.h */,
+				958C35ED1E544974006FCCF3 /* MY_Api.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
