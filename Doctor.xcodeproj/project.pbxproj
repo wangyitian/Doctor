@@ -19,7 +19,12 @@
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
-		95706F5F1E4D518600536AE2 /* MY_TableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_TableController.m */; };
+		95706F5F1E4D518600536AE2 /* MY_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_TableViewController.m */; };
+		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
+		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
+		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
+		958C35E91E541BFB006FCCF3 /* MY_RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */; };
+		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +50,18 @@
 		950143021E4C800F00987828 /* MY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavigationController.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
-		95706F5D1E4D518600536AE2 /* MY_TableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TableController.h; sourceTree = "<group>"; };
-		95706F5E1E4D518600536AE2 /* MY_TableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TableController.m; sourceTree = "<group>"; };
+		95706F5D1E4D518600536AE2 /* MY_TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TableViewController.h; sourceTree = "<group>"; };
+		95706F5E1E4D518600536AE2 /* MY_TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TableViewController.m; sourceTree = "<group>"; };
+		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
+		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
+		958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MJRefresh.h"; sourceTree = "<group>"; };
+		958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MJRefresh.m"; sourceTree = "<group>"; };
+		958C35E31E5400F8006FCCF3 /* MY_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_Util.h; sourceTree = "<group>"; };
+		958C35E41E5400F8006FCCF3 /* MY_Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_Util.m; sourceTree = "<group>"; };
+		958C35E71E541BFB006FCCF3 /* MY_RequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RequestTool.h; sourceTree = "<group>"; };
+		958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RequestTool.m; sourceTree = "<group>"; };
+		958C35EA1E542461006FCCF3 /* MY_BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseModel.h; sourceTree = "<group>"; };
+		958C35EB1E542461006FCCF3 /* MY_BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseModel.m; sourceTree = "<group>"; };
 		95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor-Prefix.pch"; sourceTree = "<group>"; };
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
@@ -195,8 +210,8 @@
 			children = (
 				95706F5A1E4D516300536AE2 /* MY_BaseController.h */,
 				95706F5B1E4D516300536AE2 /* MY_BaseController.m */,
-				95706F5D1E4D518600536AE2 /* MY_TableController.h */,
-				95706F5E1E4D518600536AE2 /* MY_TableController.m */,
+				95706F5D1E4D518600536AE2 /* MY_TableViewController.h */,
+				95706F5E1E4D518600536AE2 /* MY_TableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,6 +219,8 @@
 		95706F441E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				958C35EA1E542461006FCCF3 /* MY_BaseModel.h */,
+				958C35EB1E542461006FCCF3 /* MY_BaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +228,8 @@
 		95706F451E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9572FB291E53E58D0076E80B /* MY_BaseCell.h */,
+				9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,9 +389,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		958C35E61E541BEA006FCCF3 /* HttpRequest */ = {
+			isa = PBXGroup;
+			children = (
+				958C35E71E541BFB006FCCF3 /* MY_RequestTool.h */,
+				958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */,
+			);
+			path = HttpRequest;
+			sourceTree = "<group>";
+		};
 		95B022741E52DB9A00B672D3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				958C35E61E541BEA006FCCF3 /* HttpRequest */,
 				95B022751E52DB9A00B672D3 /* Category */,
 				95B022761E52DB9A00B672D3 /* Custom */,
 				95B022771E52DB9A00B672D3 /* Define */,
@@ -384,6 +413,8 @@
 		95B022751E52DB9A00B672D3 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */,
+				958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -406,6 +437,8 @@
 		95B022781E52DB9A00B672D3 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				958C35E31E5400F8006FCCF3 /* MY_Util.h */,
+				958C35E41E5400F8006FCCF3 /* MY_Util.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -543,11 +576,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95706F5F1E4D518600536AE2 /* MY_TableController.m in Sources */,
+				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95706F5F1E4D518600536AE2 /* MY_TableViewController.m in Sources */,
+				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
+				958C35E91E541BFB006FCCF3 /* MY_RequestTool.m in Sources */,
+				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
+				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
@@ -670,6 +708,7 @@
 			baseConfigurationReference = 4E472CEA6E41CE914BE048A8 /* Pods-Doctor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
@@ -685,6 +724,7 @@
 			baseConfigurationReference = 8E30043272C7F3709E832F8C /* Pods-Doctor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";

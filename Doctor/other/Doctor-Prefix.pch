@@ -9,4 +9,5 @@
 #ifndef Doctor_Prefix_pch
 #define Doctor_Prefix_pch
 #import "MY_Common.h"
+#import "MJRefresh.h"
 #endif /* Doctor_Prefix_pch */
