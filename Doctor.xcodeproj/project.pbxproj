@@ -13,7 +13,6 @@
 		950142ED1E4C7F1100987828 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 950142EA1E4C7F1100987828 /* Info.plist */; };
 		950142EE1E4C7F1100987828 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142EB1E4C7F1100987828 /* main.m */; };
 		950142F31E4C7F3A00987828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950142EF1E4C7F3A00987828 /* LaunchScreen.storyboard */; };
-		950142F41E4C7F3A00987828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950142F11E4C7F3A00987828 /* Main.storyboard */; };
 		950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142F61E4C7F7E00987828 /* MY_TabController.m */; };
 		950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142F91E4C7F9100987828 /* MY_TabBar.m */; };
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
@@ -44,7 +43,6 @@
 		950142EA1E4C7F1100987828 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950142EB1E4C7F1100987828 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		950142F01E4C7F3A00987828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Doctor/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		950142F21E4C7F3A00987828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Doctor/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		950142F51E4C7F7E00987828 /* MY_TabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TabController.h; sourceTree = "<group>"; };
 		950142F61E4C7F7E00987828 /* MY_TabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TabController.m; sourceTree = "<group>"; };
 		950142F81E4C7F9100987828 /* MY_TabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TabBar.h; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				950142EF1E4C7F3A00987828 /* LaunchScreen.storyboard */,
-				950142F11E4C7F3A00987828 /* Main.storyboard */,
 				950142E81E4C7F1100987828 /* AppDelegate.h */,
 				950142E91E4C7F1100987828 /* AppDelegate.m */,
 				950142EA1E4C7F1100987828 /* Info.plist */,
@@ -546,7 +543,6 @@
 				950142F31E4C7F3A00987828 /* LaunchScreen.storyboard in Resources */,
 				950142ED1E4C7F1100987828 /* Info.plist in Resources */,
 				950142D01E4C7D1400987828 /* Assets.xcassets in Resources */,
-				950142F41E4C7F3A00987828 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,14 +632,6 @@
 				950142F01E4C7F3A00987828 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		950142F11E4C7F3A00987828 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				950142F21E4C7F3A00987828 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
