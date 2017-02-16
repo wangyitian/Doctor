@@ -12,7 +12,7 @@
 #define kSPACE    50
 #define YMBGCOLOR   [[UIColor blackColor] colorWithAlphaComponent:0.4]
 
-@interface MY_ScanQRCodeController () <AVCaptureMetadataOutputObjectsDelegate>
+@interface MY_ScanQRCodeController () <AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIView *boxView;
 @property (nonatomic, assign) BOOL isReading;
@@ -35,6 +35,11 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self startReading];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self stopReading];
@@ -47,8 +52,10 @@
     //2.用captureDevice创建输入流
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
     if (!input) {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"相机开启失败！" message:@"请打开手机设置>>隐私>>相机，允许小美店铺访问相机。" delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles: nil];
-        [alertView show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"相机开启失败！" message:@"请打开手机设置>>隐私>>相机，允许小美店铺访问相机。" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         return NO;
     }
     //3.创建媒体数据输出流
@@ -130,10 +137,12 @@
         _isReading = NO;
 
         dispatch_async(dispatch_get_main_queue(), ^{
-//            UIAlertView* alertView = [UIAlertView initWithTitle:@"" message:@"您确定生成该顾客的坐式美容订单？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定"];
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"" delegate:self cancelButtonTitle:@"" otherButtonTitles:@"", nil];
-            alertView.tag = 1000;
-            [alertView show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"您确定生成该顾客的坐式美容订单？" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self makeOrder];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         });
         return;
         //判断回传的数据类型
@@ -161,17 +170,56 @@
     [_videoPreviewLayer removeFromSuperlayer];
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (alertView.tag == 1000) {
-        if (buttonIndex == 1) {
+- (void)rightButtonAction {
+    // 1.判断相册是否可以打开
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) return;
+    // 2. 创建图片选择控制器
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    /**
+     typedef NS_ENUM(NSInteger, UIImagePickerControllerSourceType) {
+     UIImagePickerControllerSourceTypePhotoLibrary, // 相册
+     UIImagePickerControllerSourceTypeCamera, // 用相机拍摄获取
+     UIImagePickerControllerSourceTypeSavedPhotosAlbum // 相簿
+     }
+     */
+    // 3. 设置打开照片相册类型(显示所有相簿)
+    ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    // ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    // 照相机
+    // ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    // 4.设置代理
+    ipc.delegate = self;
+    // 5.modal出这个控制器
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+#pragma mark -- <UIImagePickerControllerDelegate>--
+// 获取图片后的操作
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    // 销毁控制器
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // 设置图片
+    CIDetector*detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{ CIDetectorAccuracy : CIDetectorAccuracyHigh }];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
+    
+    if (features.count) {
+        for (int index = 0; index < [features count]; index ++) {
+            CIQRCodeFeature *feature = [features objectAtIndex:index];
+            NSString *scannedResult = feature.messageString;
+            self.scanCodeStr = scannedResult;
             [self makeOrder];
-        } else {
-            self.scanCodeStr = nil;
-            [self.navigationController popViewControllerAnimated:YES];
         }
     } else {
-        [self.navigationController popViewControllerAnimated:YES];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"选择的图片不对" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
+    
+    
 }
 
 - (void)makeOrder {
@@ -179,14 +227,4 @@
 //    [model.paramters setObject:self.scanCodeStr forKey:@"qrcode"];
 //    [model postCommonRequestIsEncoding:YES verifySign:YES];
 }
-
-//- (void)requestSuccess:(XLBaseModel *)model resultDic:(NSDictionary *)dic {
-//    if ([model.url isEqualToString:YMB_API_FOR_SCAN_QR]) {
-//        YMBScheduleDetailController* detailVC = [[YMBScheduleDetailController alloc] init];
-//        detailVC.orderId = [dic objectForKey:@"orderid"];
-//        UINavigationController* nav = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 2];
-//        [self.navigationController popToViewController:nav animated:NO];
-//        [nav.navigationController pushViewController:detailVC animated:YES];
-//    }
-//}
 @end
