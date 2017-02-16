@@ -12,7 +12,7 @@
 #define MY_ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define MY_ScreenHeight [UIScreen mainScreen].bounds.size.height
 // 获得RGB颜色
-#define MY_Color [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define MY_Color(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 // 系统版本号
 #define MY_CURRENT_SYSTEM_VERSION       [[[UIDevice currentDevice] systemVersion] floatValue]
 

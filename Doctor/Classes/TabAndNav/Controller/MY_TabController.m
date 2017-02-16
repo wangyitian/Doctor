@@ -8,6 +8,9 @@
 
 #import "MY_TabController.h"
 #import "MY_TabBar.h"
+#import "MY_NavigationController.h"
+#import "MY_BaseController.h"
+#import "MY_LoginController.h"
 @interface MY_TabController () <MY_TabBarDelegate>
 @property (nonatomic, weak) MY_TabBar *customTabBar;
 @end
@@ -40,10 +43,10 @@
 }
 
 - (void)setupChildVCs {
-    [self setupChildViewController:[[UIViewController alloc] init] title:@"first" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[UIViewController alloc] init] title:@"second" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[UIViewController alloc] init] title:@"third" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[UIViewController alloc] init] title:@"fourth" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_LoginController alloc] init] title:@"first" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"second" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"third" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"fourth" imageName:nil selectedImageName:nil];
 }
 
 - (void)tabBar:(MY_TabBar *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to {
@@ -58,15 +61,10 @@
     childVc.tabBarItem.image = [UIImage imageNamed:imageName];
     // 设置选中的图标
     UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
-//    if (iOS7) {
-//        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    } else {
-//        childVc.tabBarItem.selectedImage = selectedImage;
-//    }
     childVc.tabBarItem.selectedImage = selectedImage;
     
     // 2.包装一个导航控制器
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
+    MY_NavigationController *nav = [[MY_NavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
     
     // 3.添加tabbar内部的按钮

@@ -10,4 +10,16 @@
 
 @implementation MY_Util
 
++ (void)saveAccount:(MY_AccountModel *)model {
+    
+}
+
++ (MY_AccountModel *)getAccountModel {
+    return nil;
+}
+
++ (BOOL)isLogin {
+    return NO;
+}
+
 @end

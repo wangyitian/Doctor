@@ -23,9 +23,12 @@
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
 		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
-		958C35E91E541BFB006FCCF3 /* MY_RequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */; };
+		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
 		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
+		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
+		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
+		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,8 +61,8 @@
 		958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MJRefresh.m"; sourceTree = "<group>"; };
 		958C35E31E5400F8006FCCF3 /* MY_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_Util.h; sourceTree = "<group>"; };
 		958C35E41E5400F8006FCCF3 /* MY_Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_Util.m; sourceTree = "<group>"; };
-		958C35E71E541BFB006FCCF3 /* MY_RequestTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RequestTool.h; sourceTree = "<group>"; };
-		958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RequestTool.m; sourceTree = "<group>"; };
+		958C35E71E541BFB006FCCF3 /* MY_RequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RequestModel.h; sourceTree = "<group>"; };
+		958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RequestModel.m; sourceTree = "<group>"; };
 		958C35EA1E542461006FCCF3 /* MY_BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseModel.h; sourceTree = "<group>"; };
 		958C35EB1E542461006FCCF3 /* MY_BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseModel.m; sourceTree = "<group>"; };
 		958C35ED1E544974006FCCF3 /* MY_Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Api.h; sourceTree = "<group>"; };
@@ -67,6 +70,13 @@
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
 		95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BadgeButton.m; sourceTree = "<group>"; };
+		95F8000C1E554E0F00C0F23B /* MY_NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavBar.h; sourceTree = "<group>"; };
+		95F8000D1E554E0F00C0F23B /* MY_NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavBar.m; sourceTree = "<group>"; };
+		95F8000F1E556BE400C0F23B /* MY_LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginController.h; sourceTree = "<group>"; };
+		95F800101E556BE400C0F23B /* MY_LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LoginController.m; sourceTree = "<group>"; };
+		95F800121E5578F400C0F23B /* MY_ENUM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_ENUM.h; sourceTree = "<group>"; };
+		95F800131E55815D00C0F23B /* MY_AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AccountModel.h; sourceTree = "<group>"; };
+		95F800141E55815D00C0F23B /* MY_AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AccountModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +188,8 @@
 				950142FF1E4C7FF000987828 /* MY_TabBarButton.m */,
 				95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */,
 				95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */,
+				95F8000C1E554E0F00C0F23B /* MY_NavBar.h */,
+				95F8000D1E554E0F00C0F23B /* MY_NavBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +322,8 @@
 		95706F4F1E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95F8000F1E556BE400C0F23B /* MY_LoginController.h */,
+				95F800101E556BE400C0F23B /* MY_LoginController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,6 +331,8 @@
 		95706F501E4D50D700536AE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95F800131E55815D00C0F23B /* MY_AccountModel.h */,
+				95F800141E55815D00C0F23B /* MY_AccountModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,8 +409,8 @@
 		958C35E61E541BEA006FCCF3 /* HttpRequest */ = {
 			isa = PBXGroup;
 			children = (
-				958C35E71E541BFB006FCCF3 /* MY_RequestTool.h */,
-				958C35E81E541BFB006FCCF3 /* MY_RequestTool.m */,
+				958C35E71E541BFB006FCCF3 /* MY_RequestModel.h */,
+				958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */,
 			);
 			path = HttpRequest;
 			sourceTree = "<group>";
@@ -432,6 +448,7 @@
 			children = (
 				95B0227A1E52DDD600B672D3 /* MY_Common.h */,
 				958C35ED1E544974006FCCF3 /* MY_Api.h */,
+				95F800121E5578F400C0F23B /* MY_ENUM.h */,
 			);
 			path = Define;
 			sourceTree = "<group>";
@@ -579,17 +596,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_TableViewController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
+				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
-				958C35E91E541BFB006FCCF3 /* MY_RequestTool.m in Sources */,
+				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
+				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
 			);

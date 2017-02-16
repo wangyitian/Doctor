@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MY_RequestModel.h"
+typedef void(^LoginSuccessedBlock)();
+@interface MY_BaseController : UIViewController <MY_RequestModelDelegate>
+@property (nonatomic, copy) LoginSuccessedBlock loginSuccessedBlock;
 
-@interface MY_BaseController : UIViewController
+- (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
 
 @end
