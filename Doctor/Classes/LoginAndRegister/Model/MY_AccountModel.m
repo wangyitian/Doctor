@@ -10,4 +10,14 @@
 
 @implementation MY_AccountModel
 
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+    }
+    
+    return self;
+}
 @end

@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MY_AccountModel : MY_BaseModel
+@interface MY_AccountModel : MY_BaseModel<NSCoding>
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MY_LoginController.h"
-
+#import "MY_ScanQRCodeController.h"
 @interface MY_LoginController ()
 
 @end
@@ -18,6 +18,11 @@
     [super viewDidLoad];
     [self setTitle:@"登陆" isBackButton:YES rightBttonName:nil rightImageName:nil];
     // Do any additional setup after loading the view.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    MY_ScanQRCodeController *vc = [[MY_ScanQRCodeController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

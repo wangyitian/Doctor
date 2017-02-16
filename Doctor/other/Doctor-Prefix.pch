@@ -13,4 +13,5 @@
 #import "MY_Api.h"
 #import "MY_ENUM.h"
 #import "MY_BaseModel.h"
+#import "UIView+Base.h"
 #endif /* Doctor_Prefix_pch */

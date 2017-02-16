@@ -11,7 +11,7 @@
 typedef void(^LoginSuccessedBlock)();
 @interface MY_BaseController : UIViewController <MY_RequestModelDelegate>
 @property (nonatomic, copy) LoginSuccessedBlock loginSuccessedBlock;
-
+@property (nonatomic, strong) UIImageView *navBar;
 - (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
 
 @end

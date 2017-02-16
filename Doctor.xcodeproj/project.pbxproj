@@ -29,6 +29,8 @@
 		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
 		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
+		95F800181E55914500C0F23B /* MY_ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */; };
+		95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8001A1E55925A00C0F23B /* UIView+Base.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,10 @@
 		95F800121E5578F400C0F23B /* MY_ENUM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_ENUM.h; sourceTree = "<group>"; };
 		95F800131E55815D00C0F23B /* MY_AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AccountModel.h; sourceTree = "<group>"; };
 		95F800141E55815D00C0F23B /* MY_AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AccountModel.m; sourceTree = "<group>"; };
+		95F800161E55914500C0F23B /* MY_ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScanQRCodeController.h; sourceTree = "<group>"; };
+		95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScanQRCodeController.m; sourceTree = "<group>"; };
+		95F800191E55925A00C0F23B /* UIView+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Base.h"; sourceTree = "<group>"; };
+		95F8001A1E55925A00C0F23B /* UIView+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Base.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,8 @@
 		95706F471E4D50D700536AE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95F800161E55914500C0F23B /* MY_ScanQRCodeController.h */,
+				95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -432,6 +440,8 @@
 			children = (
 				958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */,
 				958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */,
+				95F800191E55925A00C0F23B /* UIView+Base.h */,
+				95F8001A1E55925A00C0F23B /* UIView+Base.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -602,12 +612,14 @@
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
+				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
+				95F800181E55914500C0F23B /* MY_ScanQRCodeController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,

@@ -10,7 +10,6 @@
 #import "MY_RequestModel.h"
 #import "MY_LoginController.h"
 @interface MY_BaseController ()
-@property (nonatomic, strong) UIImageView *navBar;
 @property (nonatomic, strong) UILabel *navLabel;
 @end
 
@@ -70,8 +69,26 @@
         [self.navBar addSubview:backButton];
     }
     if (rightBttonName) {
-        
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightButton setTitle:rightBttonName forState:UIControlStateNormal];
+        [rightButton setTitleColor:[MY_Color(0, 0, 0) colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
+        rightButton.titleLabel.font = [UIFont systemFontOfSize:17];
+        [rightButton setFrame:CGRectMake(MY_ScreenWidth - 10 - 80, MY_STATUS_HEIGHT + (44 - 30)/2, 80, 30)];
+        rightButton.titleLabel.textAlignment = NSTextAlignmentRight;
+        [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.navBar addSubview:rightButton];
+    } else if (rightImageName) {
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [rightButton setImage:[UIImage imageNamed:rightImageName] forState:UIControlStateNormal];
+        [rightButton setFrame:CGRectMake(MY_ScreenWidth - 10 - 80, MY_STATUS_HEIGHT + (44 - 30)/2, 80, 30)];
+        rightButton.titleLabel.textAlignment = NSTextAlignmentRight;
+        [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.navBar addSubview:rightButton];
     }
+}
+
+- (void)rightButtonAction {
+    
 }
 
 - (void)back {
