@@ -1,20 +1,20 @@
 //
-//  MY_TableViewController.m
+//  MY_BaseTableController.m
 //  Doctor
 //
 //  Created by 王翼天 on 2017/2/10.
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
-#import "MY_TableViewController.h"
+#import "MY_BaseTableController.h"
 #import "MY_BaseCell.h"
 #import "UITableView+MJRefresh.h"
 #import <objc/runtime.h>
-@interface MY_TableViewController ()
+@interface MY_BaseTableController ()
 
 @end
 
-@implementation MY_TableViewController
+@implementation MY_BaseTableController
 
 - (instancetype)init {
     if (self = [super init]) {

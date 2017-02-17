@@ -18,17 +18,24 @@
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
-		95706F5F1E4D518600536AE2 /* MY_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_TableViewController.m */; };
+		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
 		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
 		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
+		95EC73E91E568CE80027EED8 /* MY_ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */; };
+		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
+		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
+		95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */; };
+		95EC74011E5690090027EED8 /* MY_MyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74001E5690090027EED8 /* MY_MyController.m */; };
+		95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74031E5691D90027EED8 /* MY_CollegeController.m */; };
+		95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74061E5692860027EED8 /* MY_CourseDetailController.m */; };
+		95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74091E5693000027EED8 /* MY_BaseScrollController.m */; };
 		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
 		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
-		95F800181E55914500C0F23B /* MY_ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */; };
 		95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8001A1E55925A00C0F23B /* UIView+Base.m */; };
 /* End PBXBuildFile section */
 
@@ -53,8 +60,8 @@
 		950143021E4C800F00987828 /* MY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavigationController.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
-		95706F5D1E4D518600536AE2 /* MY_TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TableViewController.h; sourceTree = "<group>"; };
-		95706F5E1E4D518600536AE2 /* MY_TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TableViewController.m; sourceTree = "<group>"; };
+		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
+		95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseTableController.m; sourceTree = "<group>"; };
 		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
 		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
 		958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MJRefresh.h"; sourceTree = "<group>"; };
@@ -70,6 +77,22 @@
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
 		95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BadgeButton.m; sourceTree = "<group>"; };
+		95EC73E51E568CE80027EED8 /* MY_ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScanQRCodeController.h; sourceTree = "<group>"; };
+		95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScanQRCodeController.m; sourceTree = "<group>"; };
+		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
+		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
+		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
+		95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDController.m; sourceTree = "<group>"; };
+		95EC73FC1E568F0E0027EED8 /* MY_MessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageListController.h; sourceTree = "<group>"; };
+		95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageListController.m; sourceTree = "<group>"; };
+		95EC73FF1E5690090027EED8 /* MY_MyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyController.h; sourceTree = "<group>"; };
+		95EC74001E5690090027EED8 /* MY_MyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyController.m; sourceTree = "<group>"; };
+		95EC74021E5691D90027EED8 /* MY_CollegeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CollegeController.h; sourceTree = "<group>"; };
+		95EC74031E5691D90027EED8 /* MY_CollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CollegeController.m; sourceTree = "<group>"; };
+		95EC74051E5692860027EED8 /* MY_CourseDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseDetailController.h; sourceTree = "<group>"; };
+		95EC74061E5692860027EED8 /* MY_CourseDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseDetailController.m; sourceTree = "<group>"; };
+		95EC74081E5693000027EED8 /* MY_BaseScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseScrollController.h; sourceTree = "<group>"; };
+		95EC74091E5693000027EED8 /* MY_BaseScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseScrollController.m; sourceTree = "<group>"; };
 		95F8000C1E554E0F00C0F23B /* MY_NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavBar.h; sourceTree = "<group>"; };
 		95F8000D1E554E0F00C0F23B /* MY_NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavBar.m; sourceTree = "<group>"; };
 		95F8000F1E556BE400C0F23B /* MY_LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginController.h; sourceTree = "<group>"; };
@@ -77,8 +100,6 @@
 		95F800121E5578F400C0F23B /* MY_ENUM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_ENUM.h; sourceTree = "<group>"; };
 		95F800131E55815D00C0F23B /* MY_AccountModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AccountModel.h; sourceTree = "<group>"; };
 		95F800141E55815D00C0F23B /* MY_AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AccountModel.m; sourceTree = "<group>"; };
-		95F800161E55914500C0F23B /* MY_ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScanQRCodeController.h; sourceTree = "<group>"; };
-		95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScanQRCodeController.m; sourceTree = "<group>"; };
 		95F800191E55925A00C0F23B /* UIView+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Base.h"; sourceTree = "<group>"; };
 		95F8001A1E55925A00C0F23B /* UIView+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Base.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,13 +165,13 @@
 		950142E21E4C7F0500987828 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95706F421E4D50D700536AE2 /* Base */,
+				95EC73E31E568CE80027EED8 /* HomePage */,
+				95EC73EA1E568DAB0027EED8 /* College */,
+				95EC73EE1E568DAC0027EED8 /* Message */,
+				95EC73F21E568DAC0027EED8 /* My */,
 				95706F4E1E4D50D700536AE2 /* LoginAndRegister */,
-				95706F461E4D50D700536AE2 /* First */,
-				95706F521E4D50D700536AE2 /* Second */,
-				95706F561E4D50D700536AE2 /* Third */,
-				95706F4A1E4D50D700536AE2 /* Fourth */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
+				95706F421E4D50D700536AE2 /* Base */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -226,8 +247,10 @@
 			children = (
 				95706F5A1E4D516300536AE2 /* MY_BaseController.h */,
 				95706F5B1E4D516300536AE2 /* MY_BaseController.m */,
-				95706F5D1E4D518600536AE2 /* MY_TableViewController.h */,
-				95706F5E1E4D518600536AE2 /* MY_TableViewController.m */,
+				95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */,
+				95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */,
+				95EC74081E5693000027EED8 /* MY_BaseScrollController.h */,
+				95EC74091E5693000027EED8 /* MY_BaseScrollController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,70 +273,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95706F461E4D50D700536AE2 /* First */ = {
-			isa = PBXGroup;
-			children = (
-				95706F471E4D50D700536AE2 /* Controller */,
-				95706F481E4D50D700536AE2 /* Model */,
-				95706F491E4D50D700536AE2 /* View */,
-			);
-			path = First;
-			sourceTree = "<group>";
-		};
-		95706F471E4D50D700536AE2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				95F800161E55914500C0F23B /* MY_ScanQRCodeController.h */,
-				95F800171E55914500C0F23B /* MY_ScanQRCodeController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95706F481E4D50D700536AE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95706F491E4D50D700536AE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		95706F4A1E4D50D700536AE2 /* Fourth */ = {
-			isa = PBXGroup;
-			children = (
-				95706F4B1E4D50D700536AE2 /* Controller */,
-				95706F4C1E4D50D700536AE2 /* Model */,
-				95706F4D1E4D50D700536AE2 /* View */,
-			);
-			path = Fourth;
-			sourceTree = "<group>";
-		};
-		95706F4B1E4D50D700536AE2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95706F4C1E4D50D700536AE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95706F4D1E4D50D700536AE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		95706F4E1E4D50D700536AE2 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +288,10 @@
 			children = (
 				95F8000F1E556BE400C0F23B /* MY_LoginController.h */,
 				95F800101E556BE400C0F23B /* MY_LoginController.m */,
+				95EC73F61E568E370027EED8 /* MY_RegisterController.h */,
+				95EC73F71E568E370027EED8 /* MY_RegisterController.m */,
+				95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */,
+				95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -343,68 +306,6 @@
 			sourceTree = "<group>";
 		};
 		95706F511E4D50D700536AE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		95706F521E4D50D700536AE2 /* Second */ = {
-			isa = PBXGroup;
-			children = (
-				95706F531E4D50D700536AE2 /* Controller */,
-				95706F541E4D50D700536AE2 /* Model */,
-				95706F551E4D50D700536AE2 /* View */,
-			);
-			path = Second;
-			sourceTree = "<group>";
-		};
-		95706F531E4D50D700536AE2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95706F541E4D50D700536AE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95706F551E4D50D700536AE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		95706F561E4D50D700536AE2 /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				95706F571E4D50D700536AE2 /* Controller */,
-				95706F581E4D50D700536AE2 /* Model */,
-				95706F591E4D50D700536AE2 /* View */,
-			);
-			path = Third;
-			sourceTree = "<group>";
-		};
-		95706F571E4D50D700536AE2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95706F581E4D50D700536AE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95706F591E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -467,6 +368,140 @@
 				958C35E41E5400F8006FCCF3 /* MY_Util.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		95EC73E31E568CE80027EED8 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73E41E568CE80027EED8 /* Controller */,
+				95EC73E71E568CE80027EED8 /* Model */,
+				95EC73E81E568CE80027EED8 /* View */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		95EC73E41E568CE80027EED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73E51E568CE80027EED8 /* MY_ScanQRCodeController.h */,
+				95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95EC73E71E568CE80027EED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95EC73E81E568CE80027EED8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95EC73EA1E568DAB0027EED8 /* College */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73EB1E568DAC0027EED8 /* Controller */,
+				95EC73EC1E568DAC0027EED8 /* Model */,
+				95EC73ED1E568DAC0027EED8 /* View */,
+			);
+			path = College;
+			sourceTree = "<group>";
+		};
+		95EC73EB1E568DAC0027EED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95EC74021E5691D90027EED8 /* MY_CollegeController.h */,
+				95EC74031E5691D90027EED8 /* MY_CollegeController.m */,
+				95EC74051E5692860027EED8 /* MY_CourseDetailController.h */,
+				95EC74061E5692860027EED8 /* MY_CourseDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95EC73EC1E568DAC0027EED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95EC73ED1E568DAC0027EED8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95EC73EE1E568DAC0027EED8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73EF1E568DAC0027EED8 /* Controller */,
+				95EC73F01E568DAC0027EED8 /* Model */,
+				95EC73F11E568DAC0027EED8 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		95EC73EF1E568DAC0027EED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73FC1E568F0E0027EED8 /* MY_MessageListController.h */,
+				95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95EC73F01E568DAC0027EED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95EC73F11E568DAC0027EED8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95EC73F21E568DAC0027EED8 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73F31E568DAC0027EED8 /* Controller */,
+				95EC73F41E568DAC0027EED8 /* Model */,
+				95EC73F51E568DAC0027EED8 /* View */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		95EC73F31E568DAC0027EED8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95EC73FF1E5690090027EED8 /* MY_MyController.h */,
+				95EC74001E5690090027EED8 /* MY_MyController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95EC73F41E568DAC0027EED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95EC73F51E568DAC0027EED8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E3F23EC9C81AE0D1C5E01375 /* Frameworks */ = {
@@ -602,11 +637,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
-				95706F5F1E4D518600536AE2 /* MY_TableViewController.m in Sources */,
+				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
+				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
+				95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
@@ -615,11 +653,15 @@
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
-				95F800181E55914500C0F23B /* MY_ScanQRCodeController.m in Sources */,
+				95EC73E91E568CE80027EED8 /* MY_ScanQRCodeController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
+				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
+				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
+				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
+				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

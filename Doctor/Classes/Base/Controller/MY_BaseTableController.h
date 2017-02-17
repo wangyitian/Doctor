@@ -1,5 +1,5 @@
 //
-//  MY_TableViewController.h
+//  MY_BaseTableController.h
 //  Doctor
 //
 //  Created by 王翼天 on 2017/2/10.
@@ -8,7 +8,7 @@
 
 #import "MY_BaseController.h"
 
-@interface MY_TableViewController : MY_BaseController <UITableViewDelegate, UITableViewDataSource>
+@interface MY_BaseTableController : MY_BaseController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
