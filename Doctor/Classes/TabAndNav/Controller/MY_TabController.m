@@ -11,6 +11,10 @@
 #import "MY_NavigationController.h"
 #import "MY_BaseController.h"
 #import "MY_LoginController.h"
+#import "MY_HomePageController.h"
+#import "MY_CollegeController.h"
+#import "MY_MessageListController.h"
+#import "MY_MyController.h"
 @interface MY_TabController () <MY_TabBarDelegate>
 @property (nonatomic, weak) MY_TabBar *customTabBar;
 @end
@@ -43,10 +47,10 @@
 }
 
 - (void)setupChildVCs {
-    [self setupChildViewController:[[MY_LoginController alloc] init] title:@"first" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"second" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"third" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_BaseController alloc] init] title:@"fourth" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_HomePageController alloc] init] title:@"首页" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_CollegeController alloc] init] title:@"学院" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_MessageListController alloc] init] title:@"消息" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_MyController alloc] init] title:@"我的" imageName:nil selectedImageName:nil];
 }
 
 - (void)tabBar:(MY_TabBar *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to {

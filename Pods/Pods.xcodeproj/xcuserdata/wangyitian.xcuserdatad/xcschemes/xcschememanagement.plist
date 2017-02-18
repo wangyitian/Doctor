@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Toast.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,22 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>12A33B0686D363DAC295DBC7E67F86D8</key>
+		<key>327A18C55EE2401F2C48F314F2D030EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>177BC33553B344CC419AC90AAE9D3832</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4F1326C9EB789FB42C151A4BFF9DC60E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>51046A15EE6AA37E8492CF7C23336F75</key>
+		<key>3344E5F21E6F25958FB31EF7DCBE950F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>58E4BBBBAFA6774809561E323C2DC2DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>70BC44266C6FFE30D2C57129458E070B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87FE488027CFD836056A0D3D8F90ADA2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +92,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE5B54952B2966E3A0C3EB3277AD6D8C</key>
+		<key>C85046080071DD475F3316BDBED9FF78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DFC5F67E6784742BFF904A4A3C978BA5</key>
+		<key>EA7D3A05254B3ADA2A23E5CBB86E92A4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDCCE3A0FA76892E4CB4E0D312ED3996</key>
 		<dict>
 			<key>primary</key>
 			<true/>

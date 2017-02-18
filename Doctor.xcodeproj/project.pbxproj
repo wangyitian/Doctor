@@ -33,6 +33,14 @@
 		95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74031E5691D90027EED8 /* MY_CollegeController.m */; };
 		95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74061E5692860027EED8 /* MY_CourseDetailController.m */; };
 		95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74091E5693000027EED8 /* MY_BaseScrollController.m */; };
+		95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC740C1E56973E0027EED8 /* MY_EnrollController.m */; };
+		95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC740F1E5697AD0027EED8 /* MY_PersonalDataController.m */; };
+		95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74121E5697BB0027EED8 /* MY_SettingController.m */; };
+		95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74151E569A4C0027EED8 /* MY_ChangePWDController.m */; };
+		95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74181E569A750027EED8 /* MY_FeedbackController.m */; };
+		95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741B1E569A970027EED8 /* MY_AboutUSController.m */; };
+		95EC741F1E56A3F70027EED8 /* MYRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741E1E56A3F70027EED8 /* MYRecommendController.m */; };
+		95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74211E56A46D0027EED8 /* MY_HomePageController.m */; };
 		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
 		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
@@ -93,6 +101,22 @@
 		95EC74061E5692860027EED8 /* MY_CourseDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseDetailController.m; sourceTree = "<group>"; };
 		95EC74081E5693000027EED8 /* MY_BaseScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseScrollController.h; sourceTree = "<group>"; };
 		95EC74091E5693000027EED8 /* MY_BaseScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseScrollController.m; sourceTree = "<group>"; };
+		95EC740B1E56973E0027EED8 /* MY_EnrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_EnrollController.h; sourceTree = "<group>"; };
+		95EC740C1E56973E0027EED8 /* MY_EnrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_EnrollController.m; sourceTree = "<group>"; };
+		95EC740E1E5697AD0027EED8 /* MY_PersonalDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalDataController.h; sourceTree = "<group>"; };
+		95EC740F1E5697AD0027EED8 /* MY_PersonalDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalDataController.m; sourceTree = "<group>"; };
+		95EC74111E5697BB0027EED8 /* MY_SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SettingController.h; sourceTree = "<group>"; };
+		95EC74121E5697BB0027EED8 /* MY_SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SettingController.m; sourceTree = "<group>"; };
+		95EC74141E569A4C0027EED8 /* MY_ChangePWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePWDController.h; sourceTree = "<group>"; };
+		95EC74151E569A4C0027EED8 /* MY_ChangePWDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePWDController.m; sourceTree = "<group>"; };
+		95EC74171E569A750027EED8 /* MY_FeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_FeedbackController.h; sourceTree = "<group>"; };
+		95EC74181E569A750027EED8 /* MY_FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_FeedbackController.m; sourceTree = "<group>"; };
+		95EC741A1E569A970027EED8 /* MY_AboutUSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AboutUSController.h; sourceTree = "<group>"; };
+		95EC741B1E569A970027EED8 /* MY_AboutUSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AboutUSController.m; sourceTree = "<group>"; };
+		95EC741D1E56A3F70027EED8 /* MYRecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYRecommendController.h; path = ../../College/Controller/MYRecommendController.h; sourceTree = "<group>"; };
+		95EC741E1E56A3F70027EED8 /* MYRecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYRecommendController.m; path = ../../College/Controller/MYRecommendController.m; sourceTree = "<group>"; };
+		95EC74201E56A46D0027EED8 /* MY_HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HomePageController.h; sourceTree = "<group>"; };
+		95EC74211E56A46D0027EED8 /* MY_HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HomePageController.m; sourceTree = "<group>"; };
 		95F8000C1E554E0F00C0F23B /* MY_NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavBar.h; sourceTree = "<group>"; };
 		95F8000D1E554E0F00C0F23B /* MY_NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavBar.m; sourceTree = "<group>"; };
 		95F8000F1E556BE400C0F23B /* MY_LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginController.h; sourceTree = "<group>"; };
@@ -383,6 +407,10 @@
 		95EC73E41E568CE80027EED8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				95EC74201E56A46D0027EED8 /* MY_HomePageController.h */,
+				95EC74211E56A46D0027EED8 /* MY_HomePageController.m */,
+				95EC741D1E56A3F70027EED8 /* MYRecommendController.h */,
+				95EC741E1E56A3F70027EED8 /* MYRecommendController.m */,
 				95EC73E51E568CE80027EED8 /* MY_ScanQRCodeController.h */,
 				95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */,
 			);
@@ -420,6 +448,8 @@
 				95EC74031E5691D90027EED8 /* MY_CollegeController.m */,
 				95EC74051E5692860027EED8 /* MY_CourseDetailController.h */,
 				95EC74061E5692860027EED8 /* MY_CourseDetailController.m */,
+				95EC740B1E56973E0027EED8 /* MY_EnrollController.h */,
+				95EC740C1E56973E0027EED8 /* MY_EnrollController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -486,6 +516,16 @@
 			children = (
 				95EC73FF1E5690090027EED8 /* MY_MyController.h */,
 				95EC74001E5690090027EED8 /* MY_MyController.m */,
+				95EC740E1E5697AD0027EED8 /* MY_PersonalDataController.h */,
+				95EC740F1E5697AD0027EED8 /* MY_PersonalDataController.m */,
+				95EC74111E5697BB0027EED8 /* MY_SettingController.h */,
+				95EC74121E5697BB0027EED8 /* MY_SettingController.m */,
+				95EC74141E569A4C0027EED8 /* MY_ChangePWDController.h */,
+				95EC74151E569A4C0027EED8 /* MY_ChangePWDController.m */,
+				95EC74171E569A750027EED8 /* MY_FeedbackController.h */,
+				95EC74181E569A750027EED8 /* MY_FeedbackController.m */,
+				95EC741A1E569A970027EED8 /* MY_AboutUSController.h */,
+				95EC741B1E569A970027EED8 /* MY_AboutUSController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -637,11 +677,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
+				95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */,
@@ -649,17 +691,23 @@
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
+				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
+				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
+				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
+				95EC741F1E56A3F70027EED8 /* MYRecommendController.m in Sources */,
 				95EC73E91E568CE80027EED8 /* MY_ScanQRCodeController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
 				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
+				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
+				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 			);

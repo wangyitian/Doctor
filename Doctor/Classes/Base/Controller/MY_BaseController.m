@@ -49,7 +49,7 @@
 
 - (void)setTitle:(NSString *)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString *)rightBttonName rightImageName:(NSString *)rightImageName {
     self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
-    self.navBar.backgroundColor = [UIColor redColor];
+    self.navBar.backgroundColor = [UIColor purpleColor];
     self.navBar.userInteractionEnabled = YES;
     [self.view addSubview:self.navBar];
     

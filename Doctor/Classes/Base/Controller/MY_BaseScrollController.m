@@ -7,15 +7,25 @@
 //
 
 #import "MY_BaseScrollController.h"
-
-@interface MY_BaseScrollController ()
-
+#import "TPKeyboardAvoidingScrollView.h"
+@interface MY_BaseScrollController () <UIScrollViewDelegate>
+@property (nonatomic, strong) TPKeyboardAvoidingScrollView* scrollView;
 @end
 
 @implementation MY_BaseScrollController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initScrollView];
+}
+
+- (void)initScrollView {
+    self.scrollView = [[TPKeyboardAvoidingScrollView alloc] initWithFrame:self.view.bounds];
+    [self.scrollView contentSizeToFit];
+    self.scrollView.delegate = self;
+    self.scrollView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning {
