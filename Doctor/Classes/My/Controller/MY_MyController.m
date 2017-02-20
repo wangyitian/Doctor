@@ -10,6 +10,7 @@
 #import "MY_MyHeaderView.h"
 #import "MY_MyCell.h"
 #import "MY_PersonalDataController.h"
+#import "MY_SettingController.h"
 @interface MY_MyController ()
 
 @end
@@ -55,6 +56,15 @@
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
     header.backgroundColor = [UIColor blueColor];
     return header;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        
+    } else if (indexPath.row == 1) {
+        MY_SettingController *settingVC = [[MY_SettingController alloc] init];
+        [self.navigationController pushViewController:settingVC animated:YES];
+    }
 }
 
 - (Class)cellClassForObject:(id)object {

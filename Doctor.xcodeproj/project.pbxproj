@@ -34,6 +34,11 @@
 		95C4529D1E5AC6CD00C9A30D /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4529C1E5AC6CD00C9A30D /* MY_MessageCell.m */; };
 		95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */; };
 		95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */; };
+		95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */; };
+		95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */; };
+		95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */; };
+		95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */; };
+		95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
 		95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */; };
@@ -111,6 +116,16 @@
 		95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseListController.m; sourceTree = "<group>"; };
 		95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCell.h; sourceTree = "<group>"; };
 		95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCell.m; sourceTree = "<group>"; };
+		95C452A41E5ACA4000C9A30D /* MY_CourseCustomedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCustomedController.h; sourceTree = "<group>"; };
+		95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCustomedController.m; sourceTree = "<group>"; };
+		95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RecommendView.h; sourceTree = "<group>"; };
+		95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendView.m; sourceTree = "<group>"; };
+		95C452AA1E5AD28A00C9A30D /* MY_ChangeNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangeNameController.h; sourceTree = "<group>"; };
+		95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangeNameController.m; sourceTree = "<group>"; };
+		95C452AD1E5ADA3F00C9A30D /* MY_FeedbackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_FeedbackView.h; sourceTree = "<group>"; };
+		95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_FeedbackView.m; sourceTree = "<group>"; };
+		95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePhoneController.h; sourceTree = "<group>"; };
+		95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePhoneController.m; sourceTree = "<group>"; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
 		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
 		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
@@ -455,6 +470,8 @@
 		95EC73E81E568CE80027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */,
+				95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +495,8 @@
 				95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */,
 				95EC74051E5692860027EED8 /* MY_CourseDetailController.h */,
 				95EC74061E5692860027EED8 /* MY_CourseDetailController.m */,
+				95C452A41E5ACA4000C9A30D /* MY_CourseCustomedController.h */,
+				95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */,
 				95EC740B1E56973E0027EED8 /* MY_EnrollController.h */,
 				95EC740C1E56973E0027EED8 /* MY_EnrollController.m */,
 			);
@@ -560,6 +579,10 @@
 				95EC74181E569A750027EED8 /* MY_FeedbackController.m */,
 				95EC741A1E569A970027EED8 /* MY_AboutUSController.h */,
 				95EC741B1E569A970027EED8 /* MY_AboutUSController.m */,
+				95C452AA1E5AD28A00C9A30D /* MY_ChangeNameController.h */,
+				95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */,
+				95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */,
+				95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -580,6 +603,8 @@
 				95C452961E5AB81500C9A30D /* MY_MyCell.m */,
 				95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */,
 				95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */,
+				95C452AD1E5ADA3F00C9A30D /* MY_FeedbackView.h */,
+				95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -721,13 +746,16 @@
 				95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */,
 				9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */,
 				95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */,
+				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
 				95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */,
+				95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
+				95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */,
 				95C4529D1E5AC6CD00C9A30D /* MY_MessageCell.m in Sources */,
@@ -754,8 +782,10 @@
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
+				95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */,
 				9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */,
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
+				95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 			);

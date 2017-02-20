@@ -8,6 +8,7 @@
 
 #import "MY_PersonalDataController.h"
 #import "MY_PersonalDataCell.h"
+#import "MY_ChangeNameController.h"
 @interface MY_PersonalDataController ()
 
 @end
@@ -29,6 +30,24 @@
 
 - (Class)cellClassForObject:(id)object {
     return [MY_PersonalDataCell class];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        
+    } else if (indexPath.row == 1) {
+        MY_ChangeNameController *vc = [[MY_ChangeNameController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 2) {
+        MY_ChangeNameController *vc = [[MY_ChangeNameController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 3) {
+        
+    } else if (indexPath.row == 4) {
+        
+    } else if (indexPath.row == 5) {
+        
+    }
 }
 
 @end

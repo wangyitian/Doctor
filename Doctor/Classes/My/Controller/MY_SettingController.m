@@ -16,7 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setTitle:@"设置" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    [self initData];
+}
+
+- (void)initData {
+    NSArray *section1 = [NSArray arrayWithObjects:@"清楚缓存", nil];
+    NSArray *section2 = [NSArray arrayWithObjects:@"客服电话",@"修改密码", nil];
+    NSArray *section3 = [NSArray arrayWithObjects:@"意见反馈",@"关于我们", nil];
+    [self.dataSource addObject:section1];
+    [self.dataSource addObject:section2];
+    [self.dataSource addObject:section3];
+    [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (1) {
+        
+    }
 }
 
 @end
