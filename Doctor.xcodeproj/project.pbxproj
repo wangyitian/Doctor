@@ -39,6 +39,14 @@
 		95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */; };
 		95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */; };
 		95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */; };
+		95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452B41E5AE2ED00C9A30D /* MY_EnrollView.m */; };
+		95C452FA1E5AF45600C9A30D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C452F91E5AF45600C9A30D /* libsqlite3.tbd */; };
+		95C452FC1E5AF46200C9A30D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C452FB1E5AF46200C9A30D /* CoreGraphics.framework */; };
+		95C452FE1E5AF47E00C9A30D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C452FD1E5AF47E00C9A30D /* SystemConfiguration.framework */; };
+		95C453001E5AF48900C9A30D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C452FF1E5AF48900C9A30D /* CoreTelephony.framework */; };
+		95C453021E5AF49400C9A30D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453011E5AF49400C9A30D /* libc++.tbd */; };
+		95C453041E5AF49D00C9A30D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453031E5AF49D00C9A30D /* libz.tbd */; };
+		95C453061E5AF4B200C9A30D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453051E5AF4B200C9A30D /* ImageIO.framework */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
 		95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */; };
@@ -126,6 +134,16 @@
 		95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_FeedbackView.m; sourceTree = "<group>"; };
 		95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePhoneController.h; sourceTree = "<group>"; };
 		95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePhoneController.m; sourceTree = "<group>"; };
+		95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_EnrollView.h; sourceTree = "<group>"; };
+		95C452B41E5AE2ED00C9A30D /* MY_EnrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_EnrollView.m; sourceTree = "<group>"; };
+		95C452F71E5AF44600C9A30D /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		95C452F91E5AF45600C9A30D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		95C452FB1E5AF46200C9A30D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		95C452FD1E5AF47E00C9A30D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		95C452FF1E5AF48900C9A30D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		95C453011E5AF49400C9A30D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		95C453031E5AF49D00C9A30D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		95C453051E5AF4B200C9A30D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
 		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
 		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
@@ -172,6 +190,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C453061E5AF4B200C9A30D /* ImageIO.framework in Frameworks */,
+				95C453041E5AF49D00C9A30D /* libz.tbd in Frameworks */,
+				95C453021E5AF49400C9A30D /* libc++.tbd in Frameworks */,
+				95C453001E5AF48900C9A30D /* CoreTelephony.framework in Frameworks */,
+				95C452FE1E5AF47E00C9A30D /* SystemConfiguration.framework in Frameworks */,
+				95C452FC1E5AF46200C9A30D /* CoreGraphics.framework in Frameworks */,
+				95C452FA1E5AF45600C9A30D /* libsqlite3.tbd in Frameworks */,
 				0DB851FAC80227C38AF366A9 /* libPods-Doctor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +418,7 @@
 		95B022741E52DB9A00B672D3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				95C452B61E5AF30600C9A30D /* Third */,
 				958C35E61E541BEA006FCCF3 /* HttpRequest */,
 				95B022751E52DB9A00B672D3 /* Category */,
 				95B022761E52DB9A00B672D3 /* Custom */,
@@ -437,6 +463,13 @@
 				958C35E41E5400F8006FCCF3 /* MY_Util.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		95C452B61E5AF30600C9A30D /* Third */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Third;
 			sourceTree = "<group>";
 		};
 		95EC73E31E568CE80027EED8 /* HomePage */ = {
@@ -515,6 +548,8 @@
 			children = (
 				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
 				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
+				95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */,
+				95C452B41E5AE2ED00C9A30D /* MY_EnrollView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -612,6 +647,14 @@
 		E3F23EC9C81AE0D1C5E01375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95C453051E5AF4B200C9A30D /* ImageIO.framework */,
+				95C453031E5AF49D00C9A30D /* libz.tbd */,
+				95C453011E5AF49400C9A30D /* libc++.tbd */,
+				95C452FF1E5AF48900C9A30D /* CoreTelephony.framework */,
+				95C452FD1E5AF47E00C9A30D /* SystemConfiguration.framework */,
+				95C452FB1E5AF46200C9A30D /* CoreGraphics.framework */,
+				95C452F91E5AF45600C9A30D /* libsqlite3.tbd */,
+				95C452F71E5AF44600C9A30D /* libsqlite3.0.tbd */,
 				6E291C3B8E58DA7299F1D0BE /* libPods-Doctor.a */,
 			);
 			name = Frameworks;
@@ -747,6 +790,7 @@
 				9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */,
 				95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */,
 				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
+				95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
@@ -900,10 +944,69 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/UMSocialUI",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/WeChat",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSZipArchive\"",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialWeChat\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-l\"Toast\"",
+					"-l\"UMengUShare\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"YYModel\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -916,10 +1019,69 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9R84D6G2YR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/UMSocialUI",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/QQ",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/Sina",
+					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.2.2_arm64_custom/UMSocial/SocialLibraries/WeChat",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"SDWebImage\"",
+					"-l\"SSZipArchive\"",
+					"-l\"SocialQQ\"",
+					"-l\"SocialSina\"",
+					"-l\"SocialWeChat\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-l\"Toast\"",
+					"-l\"UMengUShare\"",
+					"-l\"WeChatSDK\"",
+					"-l\"WeiboSDK\"",
+					"-l\"YYModel\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TencentOpenAPI\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UMSocialCore\"",
+					"-framework",
+					"\"UMSocialNetwork\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
