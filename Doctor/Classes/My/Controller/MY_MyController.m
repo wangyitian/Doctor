@@ -7,7 +7,9 @@
 //
 
 #import "MY_MyController.h"
-
+#import "MY_MyHeaderView.h"
+#import "MY_MyCell.h"
+#import "MY_PersonalDataController.h"
 @interface MY_MyController ()
 
 @end
@@ -16,22 +18,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUI];
+    [self initData];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewStyle)getTableViewStyle {
+    return UITableViewStyleGrouped;
 }
-*/
+
+- (void)setupUI {
+    MY_MyHeaderView *tableHeaderView = [[MY_MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    tableHeaderView.personalDataBlock = ^(){
+        MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
+        [self.navigationController pushViewController:personalVC animated:YES];
+    };
+    self.tableView.tableHeaderView = tableHeaderView;
+    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
+}
+
+- (void)initData {
+    NSArray *dataArray = [NSArray arrayWithObjects:@"我的学分",@"设置", nil];
+    [self.dataSource addObject:dataArray];
+    [self.tableView reloadData];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 10;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
+    header.backgroundColor = [UIColor blueColor];
+    return header;
+}
+
+- (Class)cellClassForObject:(id)object {
+    return [MY_MyCell class];
+}
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MY_RegisterController.h"
-
+#import "MY_RegisterView.h"
 @interface MY_RegisterController ()
 
 @end
@@ -16,22 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupUI {
+    MY_RegisterView *registerView = [[MY_RegisterView alloc] initWithFrame:self.view.bounds];
+    registerView.validateBlock = ^(NSString *account){
+    
+    };
+    registerView.confirmBlock = ^(NSString *account, NSString *pwd, NSString *validate){
+    
+    };
+    [self.view addSubview:registerView];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

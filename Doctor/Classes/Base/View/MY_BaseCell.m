@@ -28,7 +28,7 @@
     return self;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
++ (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     return 0.0;
 }
 

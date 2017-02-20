@@ -13,5 +13,5 @@
 @property (nonatomic, strong) id object;
 @property (nonatomic, assign) id delegate;
 
-- (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object;
++ (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object;
 @end

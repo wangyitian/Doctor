@@ -7,7 +7,7 @@
 //
 
 #import "MY_ForgetPWDController.h"
-
+#import "MY_ForgetPWDView.h"
 @interface MY_ForgetPWDController ()
 
 @end
@@ -16,10 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)setupUI {
+    MY_ForgetPWDView *forgetView = [[MY_ForgetPWDView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:forgetView];
 }
 
 @end

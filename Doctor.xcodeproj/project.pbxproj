@@ -17,6 +17,9 @@
 		950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142F91E4C7F9100987828 /* MY_TabBar.m */; };
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
+		9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46C1E58054A009FCBF3 /* MY_LoginView.m */; };
+		9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46F1E580556009FCBF3 /* MY_RegisterView.m */; };
+		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
@@ -25,7 +28,12 @@
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
 		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
-		95EC73E91E568CE80027EED8 /* MY_ScanQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */; };
+		95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */; };
+		95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_MyCell.m */; };
+		95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */; };
+		95C4529D1E5AC6CD00C9A30D /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4529C1E5AC6CD00C9A30D /* MY_MessageCell.m */; };
+		95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */; };
+		95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
 		95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FD1E568F0E0027EED8 /* MY_MessageListController.m */; };
@@ -66,6 +74,12 @@
 		950142FF1E4C7FF000987828 /* MY_TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TabBarButton.m; sourceTree = "<group>"; };
 		950143011E4C800F00987828 /* MY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavigationController.h; sourceTree = "<group>"; };
 		950143021E4C800F00987828 /* MY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavigationController.m; sourceTree = "<group>"; };
+		9510A46B1E58054A009FCBF3 /* MY_LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginView.h; sourceTree = "<group>"; };
+		9510A46C1E58054A009FCBF3 /* MY_LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LoginView.m; sourceTree = "<group>"; };
+		9510A46E1E580556009FCBF3 /* MY_RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterView.h; sourceTree = "<group>"; };
+		9510A46F1E580556009FCBF3 /* MY_RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterView.m; sourceTree = "<group>"; };
+		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
+		9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDView.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
@@ -85,8 +99,18 @@
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
 		95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BadgeButton.m; sourceTree = "<group>"; };
-		95EC73E51E568CE80027EED8 /* MY_ScanQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScanQRCodeController.h; sourceTree = "<group>"; };
-		95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScanQRCodeController.m; sourceTree = "<group>"; };
+		95C452921E5AB07000C9A30D /* MY_MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyHeaderView.h; sourceTree = "<group>"; };
+		95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyHeaderView.m; sourceTree = "<group>"; };
+		95C452951E5AB81500C9A30D /* MY_MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyCell.h; sourceTree = "<group>"; };
+		95C452961E5AB81500C9A30D /* MY_MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyCell.m; sourceTree = "<group>"; };
+		95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalDataCell.h; sourceTree = "<group>"; };
+		95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalDataCell.m; sourceTree = "<group>"; };
+		95C4529B1E5AC6CD00C9A30D /* MY_MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageCell.h; sourceTree = "<group>"; };
+		95C4529C1E5AC6CD00C9A30D /* MY_MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageCell.m; sourceTree = "<group>"; };
+		95C4529E1E5AC78200C9A30D /* MY_CourseListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseListController.h; sourceTree = "<group>"; };
+		95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseListController.m; sourceTree = "<group>"; };
+		95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCell.h; sourceTree = "<group>"; };
+		95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCell.m; sourceTree = "<group>"; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
 		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
 		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
@@ -332,6 +356,12 @@
 		95706F511E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9510A46B1E58054A009FCBF3 /* MY_LoginView.h */,
+				9510A46C1E58054A009FCBF3 /* MY_LoginView.m */,
+				9510A46E1E580556009FCBF3 /* MY_RegisterView.h */,
+				9510A46F1E580556009FCBF3 /* MY_RegisterView.m */,
+				9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */,
+				9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,8 +441,6 @@
 				95EC74211E56A46D0027EED8 /* MY_HomePageController.m */,
 				95EC741D1E56A3F70027EED8 /* MYRecommendController.h */,
 				95EC741E1E56A3F70027EED8 /* MYRecommendController.m */,
-				95EC73E51E568CE80027EED8 /* MY_ScanQRCodeController.h */,
-				95EC73E61E568CE80027EED8 /* MY_ScanQRCodeController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -446,6 +474,8 @@
 			children = (
 				95EC74021E5691D90027EED8 /* MY_CollegeController.h */,
 				95EC74031E5691D90027EED8 /* MY_CollegeController.m */,
+				95C4529E1E5AC78200C9A30D /* MY_CourseListController.h */,
+				95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */,
 				95EC74051E5692860027EED8 /* MY_CourseDetailController.h */,
 				95EC74061E5692860027EED8 /* MY_CourseDetailController.m */,
 				95EC740B1E56973E0027EED8 /* MY_EnrollController.h */,
@@ -464,6 +494,8 @@
 		95EC73ED1E568DAC0027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
+				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -497,6 +529,8 @@
 		95EC73F11E568DAC0027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95C4529B1E5AC6CD00C9A30D /* MY_MessageCell.h */,
+				95C4529C1E5AC6CD00C9A30D /* MY_MessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -540,6 +574,12 @@
 		95EC73F51E568DAC0027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95C452921E5AB07000C9A30D /* MY_MyHeaderView.h */,
+				95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */,
+				95C452951E5AB81500C9A30D /* MY_MyCell.h */,
+				95C452961E5AB81500C9A30D /* MY_MyCell.m */,
+				95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */,
+				95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,6 +717,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */,
+				95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */,
+				9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */,
 				95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
@@ -687,6 +730,7 @@
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */,
+				95C4529D1E5AC6CD00C9A30D /* MY_MessageCell.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
@@ -699,15 +743,19 @@
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MYRecommendController.m in Sources */,
-				95EC73E91E568CE80027EED8 /* MY_ScanQRCodeController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
 				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
+				95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
+				95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
+				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
+				9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */,
+				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 			);

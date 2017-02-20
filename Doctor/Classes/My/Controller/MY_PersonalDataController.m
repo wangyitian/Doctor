@@ -7,7 +7,7 @@
 //
 
 #import "MY_PersonalDataController.h"
-
+#import "MY_PersonalDataCell.h"
 @interface MY_PersonalDataController ()
 
 @end
@@ -16,22 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setTitle:@"个人资料" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    self.tableView.contentInset = UIEdgeInsetsMake(MY_NAVBAR_HEIGHT, 0, 0, 0);
+    [self initData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initData {
+    NSArray *dataArray = [NSArray arrayWithObjects:@"头像",@"昵称",@"真实姓名",@"手机号码",@"科室",@"医院", nil];
+    [self.dataSource addObject:dataArray];
+    [self.tableView reloadData];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (Class)cellClassForObject:(id)object {
+    return [MY_PersonalDataCell class];
 }
-*/
 
 @end
