@@ -1,5 +1,5 @@
 //
-//  MYRecommendController.h
+//  MY_RecommendController.h
 //  Doctor
 //
 //  Created by 王翼天 on 2017/2/17.
@@ -8,6 +8,6 @@
 
 #import "MY_BaseScrollController.h"
 
-@interface MYRecommendController : MY_BaseScrollController
+@interface MY_RecommendController : MY_BaseScrollController
 
 @end

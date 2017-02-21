@@ -60,7 +60,7 @@
 		95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74151E569A4C0027EED8 /* MY_ChangePWDController.m */; };
 		95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74181E569A750027EED8 /* MY_FeedbackController.m */; };
 		95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741B1E569A970027EED8 /* MY_AboutUSController.m */; };
-		95EC741F1E56A3F70027EED8 /* MYRecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741E1E56A3F70027EED8 /* MYRecommendController.m */; };
+		95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */; };
 		95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74211E56A46D0027EED8 /* MY_HomePageController.m */; };
 		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
@@ -170,8 +170,8 @@
 		95EC74181E569A750027EED8 /* MY_FeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_FeedbackController.m; sourceTree = "<group>"; };
 		95EC741A1E569A970027EED8 /* MY_AboutUSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AboutUSController.h; sourceTree = "<group>"; };
 		95EC741B1E569A970027EED8 /* MY_AboutUSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AboutUSController.m; sourceTree = "<group>"; };
-		95EC741D1E56A3F70027EED8 /* MYRecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYRecommendController.h; path = ../../College/Controller/MYRecommendController.h; sourceTree = "<group>"; };
-		95EC741E1E56A3F70027EED8 /* MYRecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYRecommendController.m; path = ../../College/Controller/MYRecommendController.m; sourceTree = "<group>"; };
+		95EC741D1E56A3F70027EED8 /* MY_RecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MY_RecommendController.h; path = ../../College/Controller/MY_RecommendController.h; sourceTree = "<group>"; };
+		95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MY_RecommendController.m; path = ../../College/Controller/MY_RecommendController.m; sourceTree = "<group>"; };
 		95EC74201E56A46D0027EED8 /* MY_HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HomePageController.h; sourceTree = "<group>"; };
 		95EC74211E56A46D0027EED8 /* MY_HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HomePageController.m; sourceTree = "<group>"; };
 		95F8000C1E554E0F00C0F23B /* MY_NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavBar.h; sourceTree = "<group>"; };
@@ -487,8 +487,8 @@
 			children = (
 				95EC74201E56A46D0027EED8 /* MY_HomePageController.h */,
 				95EC74211E56A46D0027EED8 /* MY_HomePageController.m */,
-				95EC741D1E56A3F70027EED8 /* MYRecommendController.h */,
-				95EC741E1E56A3F70027EED8 /* MYRecommendController.m */,
+				95EC741D1E56A3F70027EED8 /* MY_RecommendController.h */,
+				95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -814,7 +814,7 @@
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
-				95EC741F1E56A3F70027EED8 /* MYRecommendController.m in Sources */,
+				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "MY_HomePageController.h"
-#import <UShareUI/UShareUI.h>
+
 @interface MY_HomePageController () <UISearchBarDelegate>
 
 @end
@@ -17,21 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavBar];
-    
-    UIButton *bu = [UIButton buttonWithType:UIButtonTypeInfoDark];
-    bu.frame = CGRectMake(100, 100, 100, 100);
-    [bu addTarget:self action:@selector(aa) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:bu];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-}
-
-
-
-- (void)aa {
-    
 }
 
 - (void)initNavBar {
