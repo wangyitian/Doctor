@@ -49,8 +49,34 @@
     return accountModel;
 }
 
++ (void)removeAccount {
+    
+}
+
 + (BOOL)isLogin {
     return NO;
+}
+
++ (NSString*)convertDate:(NSNumber*)timestamp {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp longValue]];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-M-d"];
+    NSString *dateString = [formatter stringFromDate:date];
+    return dateString;
+}
+
++ (NSString*)convertDate:(NSNumber*)timestamp formatString:(NSString*)format {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:[timestamp longValue]];
+    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    NSString *dateString = [formatter stringFromDate:date];
+    return dateString;
 }
 
 + (UIColor*)setColorWithInt: (int)newColor {

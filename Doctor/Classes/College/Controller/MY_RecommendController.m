@@ -7,7 +7,7 @@
 //
 
 #import "MY_RecommendController.h"
-
+#import "MY_RecommendView.h"
 @interface MY_RecommendController ()
 
 @end
@@ -16,6 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    [self setupUI];
+}
+
+- (void)setupUI {
+    MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    [self.scrollView addSubview:recommendView];
+    
 }
 @end

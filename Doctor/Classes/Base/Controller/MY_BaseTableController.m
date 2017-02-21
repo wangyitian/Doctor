@@ -62,7 +62,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id object = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    Class cellClass = [self cellClassForObject:object];
+    Class cellClass = [self cellClassForObject:object indexPath:indexPath];
     const char* className = class_getName(cellClass);
     NSString* identifier = [[NSString alloc] initWithBytesNoCopy:(char*)className length:strlen(className) encoding:NSASCIIStringEncoding freeWhenDone:NO];
     
@@ -71,7 +71,7 @@
     if (nil == cell) {
         cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    ((MY_BaseCell*)cell).object = object;
+    [((MY_BaseCell*)cell) setObject:object indexPath:indexPath];
     ((MY_BaseCell*)cell).delegate = self;
     return cell;
 }
@@ -79,12 +79,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     id object = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    Class cls = [self cellClassForObject:object];
+    Class cls = [self cellClassForObject:object indexPath:indexPath];
     return [cls tableView:tableView rowHeightForObject:object];
 }
 
 //需要重写
-- (Class)cellClassForObject:(id)object {
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath*)indexPath {
     return [NSObject class];
 }
 

@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface MY_BaseCell : UITableViewCell
-
+//
 @property (nonatomic, strong) id object;
 @property (nonatomic, assign) id delegate;
 
 + (CGFloat)tableView:(UITableView*)tableView rowHeightForObject:(id)object;
+
+- (void)setObject:(id)object indexPath:(NSIndexPath*)indexpath;
 @end

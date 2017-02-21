@@ -21,6 +21,10 @@
     // Configure the view for the selected state
 }
 
+- (void)setObject:(id)object indexPath:(NSIndexPath*)indexpath {
+    _object = object;
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;

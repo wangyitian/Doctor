@@ -25,6 +25,10 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)requestFailedWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
     
 }
@@ -44,7 +48,7 @@
 
 - (void)setTitle:(NSString *)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString *)rightBttonName rightImageName:(NSString *)rightImageName {
     self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
-    self.navBar.backgroundColor = [UIColor purpleColor];
+    self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     self.navBar.userInteractionEnabled = YES;
     [self.view addSubview:self.navBar];
     
@@ -52,7 +56,7 @@
         self.navLabel = [[UILabel alloc] initWithFrame:CGRectMake((MY_ScreenWidth - 200)/2, MY_STATUS_HEIGHT, 200, MY_NAVBAR_HEIGHT)];
         self.navLabel.font = [UIFont boldSystemFontOfSize:17];
         self.navLabel.textAlignment = NSTextAlignmentCenter;
-        self.navLabel.textColor = MY_Color(70, 71, 75);
+        self.navLabel.textColor = [UIColor whiteColor];
         self.navLabel.text = title;
         [self.navBar addSubview:self.navLabel];
     }

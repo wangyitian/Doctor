@@ -36,7 +36,7 @@
     }
 }
 
-- (Class)cellClassForObject:(id)object {
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
     return [MY_MyCell class];
 }
 

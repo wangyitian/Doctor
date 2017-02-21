@@ -18,4 +18,13 @@
 #import "MY_Util.h"
 #import "MY_LoginController.h"
 #import "MY_RequestModel.h"
+
+
+
+
+#import "UIImage+Base.h"
+#import "UIView+Base.h"
+#import "NSDictionary+Base.h"
+#import "UIButton+Base.h"
+#import "NSString+Base.h"
 #endif

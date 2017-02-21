@@ -9,5 +9,6 @@
 #import "MY_BaseCell.h"
 
 @interface MY_PersonalDataCell : MY_BaseCell
-
+@property (nonatomic, strong) UILabel *titleLabel;
++ (MY_PersonalDataCell *)cellWithTablebView:(UITableView *)tableView index:(NSIndexPath *)indexPath;
 @end

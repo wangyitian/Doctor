@@ -9,6 +9,7 @@
 #import "MY_PersonalDataController.h"
 #import "MY_PersonalDataCell.h"
 #import "MY_ChangeNameController.h"
+#import "MY_PersonalAvatarCell.h"
 @interface MY_PersonalDataController ()
 
 @end
@@ -28,8 +29,22 @@
     [self.tableView reloadData];
 }
 
-- (Class)cellClassForObject:(id)object {
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return [MY_PersonalAvatarCell class];
+    }
     return [MY_PersonalDataCell class];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    } else {
+        MY_PersonalDataCell *cell = [MY_PersonalDataCell cellWithTablebView:tableView index:indexPath];
+        tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        //    [cell setModel:nil index:indexPath];
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

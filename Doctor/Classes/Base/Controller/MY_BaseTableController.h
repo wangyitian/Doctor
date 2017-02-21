@@ -20,7 +20,7 @@
  *
  *  @return 返回cell class
  */
-- (Class)cellClassForObject:(id)object;
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath*)indexPath;
 
 /**
  *  是否添加上拉、下拉

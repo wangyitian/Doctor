@@ -20,6 +20,13 @@
 		9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46C1E58054A009FCBF3 /* MY_LoginView.m */; };
 		9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46F1E580556009FCBF3 /* MY_RegisterView.m */; };
 		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
+		954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398A1E5C160000C05B9F /* HXSearchBar.m */; };
+		954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398D1E5C16E100C05B9F /* MY_SearchController.m */; };
+		954A399B1E5C22E000C05B9F /* NSDictionary+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39941E5C22E000C05B9F /* NSDictionary+Base.m */; };
+		954A399C1E5C22E000C05B9F /* NSString+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39961E5C22E000C05B9F /* NSString+Base.m */; };
+		954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39981E5C22E000C05B9F /* UIButton+Base.m */; };
+		954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A399A1E5C22E000C05B9F /* UIImage+Base.m */; };
+		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
@@ -93,6 +100,20 @@
 		9510A46F1E580556009FCBF3 /* MY_RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterView.m; sourceTree = "<group>"; };
 		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
 		9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDView.m; sourceTree = "<group>"; };
+		954A39891E5C160000C05B9F /* HXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSearchBar.h; sourceTree = "<group>"; };
+		954A398A1E5C160000C05B9F /* HXSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSearchBar.m; sourceTree = "<group>"; };
+		954A398C1E5C16E100C05B9F /* MY_SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SearchController.h; sourceTree = "<group>"; };
+		954A398D1E5C16E100C05B9F /* MY_SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SearchController.m; sourceTree = "<group>"; };
+		954A39931E5C22E000C05B9F /* NSDictionary+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Base.h"; sourceTree = "<group>"; };
+		954A39941E5C22E000C05B9F /* NSDictionary+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Base.m"; sourceTree = "<group>"; };
+		954A39951E5C22E000C05B9F /* NSString+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base.h"; sourceTree = "<group>"; };
+		954A39961E5C22E000C05B9F /* NSString+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base.m"; sourceTree = "<group>"; };
+		954A39971E5C22E000C05B9F /* UIButton+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Base.h"; sourceTree = "<group>"; };
+		954A39981E5C22E000C05B9F /* UIButton+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Base.m"; sourceTree = "<group>"; };
+		954A39991E5C22E000C05B9F /* UIImage+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Base.h"; sourceTree = "<group>"; };
+		954A399A1E5C22E000C05B9F /* UIImage+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Base.m"; sourceTree = "<group>"; };
+		954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalAvatarCell.h; sourceTree = "<group>"; };
+		954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalAvatarCell.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
@@ -256,6 +277,7 @@
 				95EC73E31E568CE80027EED8 /* HomePage */,
 				95EC73EA1E568DAB0027EED8 /* College */,
 				95EC73EE1E568DAC0027EED8 /* Message */,
+				954A398F1E5C1FBA00C05B9F /* Video */,
 				95EC73F21E568DAC0027EED8 /* My */,
 				95706F4E1E4D50D700536AE2 /* LoginAndRegister */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
@@ -318,6 +340,46 @@
 				95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		954A39881E5C160000C05B9F /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				954A39891E5C160000C05B9F /* HXSearchBar.h */,
+				954A398A1E5C160000C05B9F /* HXSearchBar.m */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		954A398F1E5C1FBA00C05B9F /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				954A39901E5C1FBA00C05B9F /* Controller */,
+				954A39911E5C1FBA00C05B9F /* Model */,
+				954A39921E5C1FBA00C05B9F /* View */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		954A39901E5C1FBA00C05B9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		954A39911E5C1FBA00C05B9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		954A39921E5C1FBA00C05B9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		95706F421E4D50D700536AE2 /* Base */ = {
@@ -431,6 +493,14 @@
 		95B022751E52DB9A00B672D3 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				954A39931E5C22E000C05B9F /* NSDictionary+Base.h */,
+				954A39941E5C22E000C05B9F /* NSDictionary+Base.m */,
+				954A39951E5C22E000C05B9F /* NSString+Base.h */,
+				954A39961E5C22E000C05B9F /* NSString+Base.m */,
+				954A39971E5C22E000C05B9F /* UIButton+Base.h */,
+				954A39981E5C22E000C05B9F /* UIButton+Base.m */,
+				954A39991E5C22E000C05B9F /* UIImage+Base.h */,
+				954A399A1E5C22E000C05B9F /* UIImage+Base.m */,
 				958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */,
 				958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */,
 				95F800191E55925A00C0F23B /* UIView+Base.h */,
@@ -468,6 +538,7 @@
 		95C452B61E5AF30600C9A30D /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				954A39881E5C160000C05B9F /* SearchBar */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -489,6 +560,8 @@
 				95EC74211E56A46D0027EED8 /* MY_HomePageController.m */,
 				95EC741D1E56A3F70027EED8 /* MY_RecommendController.h */,
 				95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */,
+				954A398C1E5C16E100C05B9F /* MY_SearchController.h */,
+				954A398D1E5C16E100C05B9F /* MY_SearchController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -638,6 +711,8 @@
 				95C452961E5AB81500C9A30D /* MY_MyCell.m */,
 				95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */,
 				95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */,
+				954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */,
+				954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */,
 				95C452AD1E5ADA3F00C9A30D /* MY_FeedbackView.h */,
 				95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */,
 			);
@@ -792,6 +867,7 @@
 				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
 				95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
+				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
@@ -800,6 +876,7 @@
 				95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */,
+				954A399C1E5C22E000C05B9F /* NSString+Base.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
 				95EC73FE1E568F0E0027EED8 /* MY_MessageListController.m in Sources */,
 				95C4529D1E5AC6CD00C9A30D /* MY_MessageCell.m in Sources */,
@@ -807,10 +884,14 @@
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
+				954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */,
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
+				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
+				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
+				954A399B1E5C22E000C05B9F /* NSDictionary+Base.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
@@ -825,6 +906,7 @@
 				95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
+				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
 				95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */,
 				9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */,
