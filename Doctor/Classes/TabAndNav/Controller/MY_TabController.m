@@ -47,10 +47,10 @@
 }
 
 - (void)setupChildVCs {
-    [self setupChildViewController:[[MY_HomePageController alloc] init] title:@"首页" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_CollegeController alloc] init] title:@"学院" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_MessageListController alloc] init] title:@"消息" imageName:nil selectedImageName:nil];
-    [self setupChildViewController:[[MY_MyController alloc] init] title:@"我的" imageName:nil selectedImageName:nil];
+    [self setupChildViewController:[[MY_HomePageController alloc] init] title:@"首页" imageName:@"tab_homePage" selectedImageName:@"tab_homePage_s"];
+    [self setupChildViewController:[[MY_CollegeController alloc] init] title:@"学院" imageName:@"tab_college" selectedImageName:@"tab_college_s"];
+    [self setupChildViewController:[[MY_MessageListController alloc] init] title:@"课程" imageName:@"tab_course" selectedImageName:@"tab_course_s"];
+    [self setupChildViewController:[[MY_MyController alloc] init] title:@"我的" imageName:@"tab_my" selectedImageName:@"tab_my_s"];
 }
 
 - (void)tabBar:(MY_TabBar *)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to {

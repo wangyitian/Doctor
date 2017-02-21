@@ -12,4 +12,6 @@
 + (void)saveAccount:(MY_AccountModel*)model;
 + (MY_AccountModel*)getAccountModel;
 + (BOOL)isLogin;
+
++ (UIColor*)setColorWithInt: (int)newColor;
 @end

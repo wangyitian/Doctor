@@ -25,7 +25,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
+        self.backgroundColor = [MY_Util setColorWithInt:0xfcfcfc];
     }
     return self;
 }

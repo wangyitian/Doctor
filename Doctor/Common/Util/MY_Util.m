@@ -53,4 +53,16 @@
     return NO;
 }
 
++ (UIColor*)setColorWithInt: (int)newColor {
+    int r = (newColor >> 16) & 0xff;
+    int g = (newColor >> 8) & 0xff;
+    int b = newColor & 0xff;
+    int a = (newColor >> 24) & 0xff;
+    if (a == 0) {
+        a = 0xff;
+    }
+    
+    return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
+}
+
 @end

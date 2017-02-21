@@ -7,7 +7,7 @@
 //
 
 #import "MY_SettingController.h"
-
+#import "MY_MyCell.h"
 @interface MY_SettingController ()
 
 @end
@@ -34,6 +34,10 @@
     if (1) {
         
     }
+}
+
+- (Class)cellClassForObject:(id)object {
+    return [MY_MyCell class];
 }
 
 @end

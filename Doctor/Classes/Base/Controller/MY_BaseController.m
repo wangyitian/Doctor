@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -28,11 +28,6 @@
 - (void)requestFailedWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
     
 }
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    MY_BaseController *a = [[MY_BaseController alloc] init];
-//    [self.navigationController pushViewController:a animated:YES];
-//}
 
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
     MY_LoginController *loginVC = [[MY_LoginController alloc] init];
@@ -53,12 +48,14 @@
     self.navBar.userInteractionEnabled = YES;
     [self.view addSubview:self.navBar];
     
-    self.navLabel = [[UILabel alloc] initWithFrame:CGRectMake((MY_ScreenWidth - 200)/2, MY_STATUS_HEIGHT, 200, MY_NAVBAR_HEIGHT)];
-    self.navLabel.font = [UIFont boldSystemFontOfSize:17];
-    self.navLabel.textAlignment = NSTextAlignmentCenter;
-    self.navLabel.textColor = MY_Color(70, 71, 75);
-    self.navLabel.text = title;
-    [self.navBar addSubview:self.navLabel];
+    if (title.length) {
+        self.navLabel = [[UILabel alloc] initWithFrame:CGRectMake((MY_ScreenWidth - 200)/2, MY_STATUS_HEIGHT, 200, MY_NAVBAR_HEIGHT)];
+        self.navLabel.font = [UIFont boldSystemFontOfSize:17];
+        self.navLabel.textAlignment = NSTextAlignmentCenter;
+        self.navLabel.textColor = MY_Color(70, 71, 75);
+        self.navLabel.text = title;
+        [self.navBar addSubview:self.navLabel];
+    }
     
     if (isBackButton) {
         UIButton* backButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -14,9 +14,9 @@
     if (self = [super initWithFrame:frame]) {
         self.imageView.contentMode = UIViewContentModeCenter;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.font = MY_Font(11);
-        [self setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor greenColor] forState:UIControlStateSelected];
+        self.titleLabel.font = MY_Font(10);
+        [self setTitleColor:[MY_Util setColorWithInt:0xbbbbbb] forState:UIControlStateNormal];
+        [self setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateSelected];
         
         MY_BadgeButton *badgeButton = [[MY_BadgeButton alloc] init];
         badgeButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
@@ -28,14 +28,14 @@
 
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     CGFloat imageW = contentRect.size.width;
-    CGFloat imageH = contentRect.size.height * Ratio;
-    return CGRectMake(0, 0, imageW, imageH);
+    CGFloat imageH = 25;
+    return CGRectMake(0, 5, imageW, imageH);
 }
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect {
-    CGFloat titleY = contentRect.size.height * Ratio;
+    CGFloat titleY = 34;
     CGFloat titleW = contentRect.size.width;
-    CGFloat titleH = contentRect.size.height * (1-Ratio);
+    CGFloat titleH = 10;
     return CGRectMake(0 , titleY, titleW, titleH);
 }
 

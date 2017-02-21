@@ -19,9 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setupUI];
+    
     [self initData];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
