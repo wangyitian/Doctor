@@ -63,9 +63,12 @@
     
     if (isBackButton) {
         UIButton* backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [backButton setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
-        [backButton setFrame:CGRectMake(0, MY_STATUS_HEIGHT, 50, MY_NAVBAR_HEIGHT)];
-        backButton.imageEdgeInsets = UIEdgeInsetsMake(7, 10, 7, 10);
+        [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        backButton.titleLabel.font = MY_Font(13);
+        [backButton setFrame:CGRectMake(0, MY_STATUS_HEIGHT, 70, MY_NAVBAR_HEIGHT)];
+        backButton.imageEdgeInsets = UIEdgeInsetsMake(18, 20, 19, 43);
+        backButton.titleEdgeInsets = UIEdgeInsetsMake(15, 35, 15, 1);
         [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         [self.navBar addSubview:backButton];
     }

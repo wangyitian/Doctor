@@ -43,6 +43,14 @@
         make.size.mas_equalTo(CGSizeMake(200, 15));
     }];
     
+    UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    [self.contentView addSubview:arrowImageView];
+    [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self).with.offset(-20);
+        make.size.mas_equalTo(CGSizeMake(7, 7));
+        make.centerY.mas_equalTo(self);
+    }];
+    
     UIView *lineView = [[UIView alloc] init];
     lineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:lineView];
