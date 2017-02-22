@@ -91,4 +91,30 @@
     return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
 }
 
++ (void)pushAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC {
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.38;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    transition.type = kCATransitionMoveIn;
+    transition.subtype = kCATransitionFromTop;
+    [fromVC.navigationController.view.layer addAnimation:transition forKey:nil];
+    
+    fromVC.navigationController.navigationBarHidden = NO;
+    
+    [fromVC.navigationController pushViewController:toVC animated:NO];
+}
+
++ (void)popAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC {
+    CATransition *transition = [CATransition animation];
+    transition.duration =0.38;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    transition.type = kCATransitionReveal;
+    transition.subtype = kCATransitionFromBottom;
+    [fromVC.navigationController.view.layer addAnimation:transition forKey:nil];
+    fromVC.navigationController.navigationBarHidden = NO;
+    
+    [fromVC.navigationController popToViewController:toVC animated:NO];
+    
+}
 @end

@@ -27,4 +27,21 @@
 + (NSString*)convertDate:(NSNumber*)timestamp formatString:(NSString*)format;
 
 + (UIColor*)setColorWithInt: (int)newColor;
+
+/**
+ *  用push的方式实现present的动画
+ *
+ *  @param fromVC 从哪个vc
+ *  @param toVC   到哪个vc
+ */
++ (void)pushAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC;
+
+/**
+ *  把页面pop出去但是是用的present的动画
+ *
+ *  @param fromVC 从哪个vc开始
+ *  @param toVC   到哪个vc结束
+ */
++ (void)popAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC;
+
 @end

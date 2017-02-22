@@ -79,6 +79,9 @@
         make.right.equalTo(self.phoneTextField.mas_right);
         make.height.equalTo(@44);
     }];
+    
+    [self layoutIfNeeded];
+    self.height = confirmButton.bottom + 30;
 }
 
 - (void)phoneButtonAction {
