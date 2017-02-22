@@ -7,7 +7,7 @@
 //
 
 #import "MY_ChangePWDController.h"
-
+#import "MY_ChangePWDView.h"
 @interface MY_ChangePWDController ()
 
 @end
@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setTitle:@"修改密码" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    
+    self.scrollView.contentInset = UIEdgeInsetsMake(MY_NAVBAR_HEIGHT, 0, 0, 0);
+    [self setupUI];
+}
+
+- (void)setupUI {
+    MY_ChangePWDView *changePwdView = [[MY_ChangePWDView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    [self.scrollView addSubview:changePwdView];
 }
 
 @end

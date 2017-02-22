@@ -23,6 +23,7 @@
     [self.scrollView contentSizeToFit];
     self.scrollView.delegate = self;
     self.scrollView.showsVerticalScrollIndicator = NO;
+    self.scrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.scrollView];
 }
 @end

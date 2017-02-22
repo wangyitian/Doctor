@@ -34,6 +34,7 @@
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
 		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
+		95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
 		95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */; };
 		95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_MyCell.m */; };
@@ -129,6 +130,8 @@
 		958C35EA1E542461006FCCF3 /* MY_BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseModel.h; sourceTree = "<group>"; };
 		958C35EB1E542461006FCCF3 /* MY_BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseModel.m; sourceTree = "<group>"; };
 		958C35ED1E544974006FCCF3 /* MY_Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Api.h; sourceTree = "<group>"; };
+		95944F731E5D1B95004B43EE /* MY_ChangePWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePWDView.h; sourceTree = "<group>"; };
+		95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePWDView.m; sourceTree = "<group>"; };
 		95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor-Prefix.pch"; sourceTree = "<group>"; };
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 				954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */,
 				95C452AD1E5ADA3F00C9A30D /* MY_FeedbackView.h */,
 				95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */,
+				95944F731E5D1B95004B43EE /* MY_ChangePWDView.h */,
+				95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -897,6 +902,7 @@
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
+				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,

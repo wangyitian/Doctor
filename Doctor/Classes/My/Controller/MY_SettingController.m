@@ -8,6 +8,7 @@
 
 #import "MY_SettingController.h"
 #import "MY_MyCell.h"
+#import "MY_ChangePWDController.h"
 @interface MY_SettingController ()
 
 @end
@@ -31,8 +32,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (1) {
+    if (indexPath.section == 0) {
         
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            
+        } else if (indexPath.row == 1) {
+            MY_ChangePWDController *vc = [[MY_ChangePWDController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            
+        } else if (indexPath.row == 1) {
+            
+        }
     }
 }
 
