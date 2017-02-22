@@ -7,7 +7,7 @@
 //
 
 #import "MY_AboutUSController.h"
-
+#import "MY_AboutUSView.h"
 @interface MY_AboutUSController ()
 
 @end
@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setTitle:@"关于我们" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    self.scrollView.contentInset = UIEdgeInsetsMake(MY_NAVBAR_HEIGHT, 0, 0, 0);
+    [self setupUI];
 }
 
+- (void)setupUI {
+    MY_AboutUSView *aboutView = [[MY_AboutUSView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    [self.scrollView addSubview:aboutView];
+    
+}
 @end

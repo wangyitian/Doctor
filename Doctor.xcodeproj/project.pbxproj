@@ -20,6 +20,7 @@
 		9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46C1E58054A009FCBF3 /* MY_LoginView.m */; };
 		9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46F1E580556009FCBF3 /* MY_RegisterView.m */; };
 		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
+		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
 		954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398A1E5C160000C05B9F /* HXSearchBar.m */; };
 		954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398D1E5C16E100C05B9F /* MY_SearchController.m */; };
 		954A399B1E5C22E000C05B9F /* NSDictionary+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39941E5C22E000C05B9F /* NSDictionary+Base.m */; };
@@ -101,6 +102,8 @@
 		9510A46F1E580556009FCBF3 /* MY_RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterView.m; sourceTree = "<group>"; };
 		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
 		9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDView.m; sourceTree = "<group>"; };
+		9549B2211E5D337000ED2D6A /* MY_AboutUSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AboutUSView.h; sourceTree = "<group>"; };
+		9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AboutUSView.m; sourceTree = "<group>"; };
 		954A39891E5C160000C05B9F /* HXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSearchBar.h; sourceTree = "<group>"; };
 		954A398A1E5C160000C05B9F /* HXSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSearchBar.m; sourceTree = "<group>"; };
 		954A398C1E5C16E100C05B9F /* MY_SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SearchController.h; sourceTree = "<group>"; };
@@ -720,6 +723,8 @@
 				95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */,
 				95944F731E5D1B95004B43EE /* MY_ChangePWDView.h */,
 				95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */,
+				9549B2211E5D337000ED2D6A /* MY_AboutUSView.h */,
+				9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -874,6 +879,7 @@
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
+				9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
