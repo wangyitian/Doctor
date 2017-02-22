@@ -7,7 +7,7 @@
 //
 
 #import "MY_FeedbackController.h"
-
+#import "MY_FeedbackView.h"
 @interface MY_FeedbackController ()
 
 @end
@@ -16,6 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.scrollView.contentInset = UIEdgeInsetsMake(MY_NAVBAR_HEIGHT, 0, 0, 0);
+    [self setTitle:@"意见反馈" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    [self setupUI];
+}
+
+- (void)setupUI {
+    MY_FeedbackView *feedbackView = [[MY_FeedbackView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    [self.scrollView addSubview:feedbackView];
 }
 @end

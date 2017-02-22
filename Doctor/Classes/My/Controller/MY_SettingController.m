@@ -9,6 +9,7 @@
 #import "MY_SettingController.h"
 #import "MY_MyCell.h"
 #import "MY_ChangePWDController.h"
+#import "MY_FeedbackController.h"
 @interface MY_SettingController ()
 
 @end
@@ -43,7 +44,8 @@
         }
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
-            
+            MY_FeedbackController *vc = [[MY_FeedbackController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.row == 1) {
             
         }
