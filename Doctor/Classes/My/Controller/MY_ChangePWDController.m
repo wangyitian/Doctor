@@ -25,6 +25,12 @@
 
 - (void)setupUI {
     MY_ChangePWDView *changePwdView = [[MY_ChangePWDView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    changePwdView.validateBlock = ^(NSString *phone) {
+        
+    };
+    changePwdView.confirmBlock = ^(NSString *phone, NSString *validate, NSString  *pwd) {
+        
+    };
     [self.scrollView addSubview:changePwdView];
 }
 

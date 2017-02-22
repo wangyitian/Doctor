@@ -57,8 +57,7 @@
         make.left.mas_equalTo(@40);
     }];
     
-    UIImageView *wechatImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    wechatImageView.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *wechatImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wechat"]];
     [self addSubview:wechatImageView];
     [wechatImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 80));
@@ -78,8 +77,7 @@
         make.centerX.mas_equalTo(wechatImageView);
     }];
     
-    UIImageView *weiboImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    weiboImageView.backgroundColor = [UIColor lightGrayColor];
+    UIImageView *weiboImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"weibo"]];
     [self addSubview:weiboImageView];
     [weiboImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(wechatImageView);

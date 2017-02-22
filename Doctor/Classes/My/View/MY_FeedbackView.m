@@ -85,7 +85,8 @@
 }
 
 - (void)phoneButtonAction {
-    
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",self.phoneButton.titleLabel.text];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 
 - (void)confirmButtonAction {

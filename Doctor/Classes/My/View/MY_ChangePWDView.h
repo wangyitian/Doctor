@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^ValidateBlock)(NSString *phone);
-typedef void(^ConfirmBlock)(NSString *phone, NSString *validate, NSString *pwd, NSString *confirmPwd);
+typedef void(^ConfirmBlock)(NSString *phone, NSString *validate, NSString *pwd);
 @interface MY_ChangePWDView : UIView
 @property (nonatomic, copy) ValidateBlock validateBlock;
 @property (nonatomic, copy) ConfirmBlock confirmBlock;

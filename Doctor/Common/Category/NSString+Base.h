@@ -32,4 +32,6 @@
 - (BOOL)isEmptyOrZero;
 
 - (NSString*)floatStr;
+
+- (BOOL)isPhoneNum;
 @end

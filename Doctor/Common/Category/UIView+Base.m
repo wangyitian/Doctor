@@ -82,4 +82,15 @@
     self.frame = frame;
 }
 
+- (UIViewController *)findController {
+    id target = self;
+    while (target) {
+        target = ((UIResponder *)target).nextResponder;
+        if ([target isKindOfClass:[UIViewController class]]) {
+            break;
+        }
+    }
+    return target;
+}
+
 @end

@@ -47,6 +47,7 @@
     }];
     
     self.phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     self.phoneTextField.placeholder = @"请输入手机号码";
     self.phoneTextField.font = MY_Font(12);
     [self addSubview:self.phoneTextField];
@@ -125,6 +126,7 @@
     
     self.pwdTextField = [[UITextField alloc] init];
     self.pwdTextField.placeholder = @"请输入密码(6-16位数字或字母)";
+    self.pwdTextField.secureTextEntry = YES;
     self.pwdTextField.font = MY_Font(12);
     [self addSubview:self.pwdTextField];
     [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,6 +157,7 @@
     
     self.confirmTextField = [[UITextField alloc] init];
     self.confirmTextField.placeholder = @"请再次输入密码(6-16位数字或字母)";
+    self.confirmTextField.secureTextEntry = YES;
     self.confirmTextField.font = MY_Font(12);
     [self addSubview:self.confirmTextField];
     [self.confirmTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,15 +196,34 @@
 }
 
 - (void)validateButtonAction {
-    if (self.validateBlock) {
-        self.validateBlock(self.validateTextField.text);
+    if ([self.phoneTextField.text isPhoneNum]) {
+        if (self.validateBlock) {
+            self.validateBlock(self.validateTextField.text);
+        }
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入正确的手机号" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [[self findController] presentViewController:alert animated:YES completion:nil];
     }
 }
 
 - (void)confirmButtonAction {
-    if (self.confirmBlock) {
-        self.confirmBlock(self.phoneTextField.text, self.validateTextField.text, self.pwdTextField.text, self.confirmTextField.text);
+    if (self.phoneTextField.text.length && self.validateTextField.text.length && self.pwdTextField.text.length && self.confirmTextField.text.length) {
+        if ([self.pwdTextField.text isEqualToString:self.confirmTextField.text]) {
+            if (self.confirmBlock) {
+                self.confirmBlock(self.phoneTextField.text, self.validateTextField.text, self.pwdTextField.text);
+            }
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"两次输入密码不一致，请重新输入" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+            [[self findController] presentViewController:alert animated:YES completion:nil];
+        }
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"您填写的信息不完整，请填写完整后再试" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [[self findController] presentViewController:alert animated:YES completion:nil];
     }
+    
 }
 
 @end
