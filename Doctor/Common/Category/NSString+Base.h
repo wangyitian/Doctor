@@ -17,13 +17,8 @@
  */
 - (BOOL)isEmptyStr;
 
-/**
- *  截取字符串
- *
- *  @param startStr(从哪个字符开始) endString(到哪个字符结束)
- *  @return YES(空字符串) NO(非空字符串)
- */
--(NSString*)getStrFromString:(NSString*)startStr toString:(NSString*)endString;
+
+- (NSString*)getStrFromString:(NSString*)startStr toString:(NSString*)endString;
 
 - (CGSize)sizeWithFont:(UIFont *)font andSize:(CGSize)size;
 

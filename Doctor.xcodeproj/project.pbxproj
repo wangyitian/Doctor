@@ -1107,7 +1107,7 @@
 					"-framework",
 					"\"UMSocialNetwork\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.InternationalStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1182,7 +1182,7 @@
 					"-framework",
 					"\"UMSocialNetwork\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.Doctor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.massmedgroup.InternationalStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
