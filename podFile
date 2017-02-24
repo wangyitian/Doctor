@@ -9,6 +9,7 @@ target 'Doctor' do
   pod 'SSZipArchive', ‘~> 1.6.1’
   pod 'TPKeyboardAvoiding', '~> 1.2.11'
   pod 'MBProgressHUD'
+  pod 'SDCycleScrollView'
   
   
   pod 'UMengUShare/UI'
