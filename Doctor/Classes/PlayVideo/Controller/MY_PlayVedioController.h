@@ -1,5 +1,5 @@
 //
-//  MY_VedioController.h
+//  MY_PlayVedioController.h
 //  Doctor
 //
 //  Created by 王翼天 on 2017/2/22.
@@ -8,6 +8,6 @@
 
 #import "MY_BaseController.h"
 
-@interface MY_VedioController : MY_BaseController
+@interface MY_PlayVedioController : MY_BaseController
 
 @end

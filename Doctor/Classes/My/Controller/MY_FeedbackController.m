@@ -24,6 +24,8 @@
 - (void)setupUI {
     MY_FeedbackView *feedbackView = [[MY_FeedbackView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     feedbackView.confirmBlock = ^(NSString *suggest, NSString*phone){
+        MY_RequestModel *model = [[MY_RequestModel alloc] init];
+        
     };
     [self.scrollView addSubview:feedbackView];
 }

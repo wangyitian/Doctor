@@ -1,5 +1,5 @@
 //
-//  MY_MessageListController.h
+//  MY_WatchVedioController.h
 //  Doctor
 //
 //  Created by 王翼天 on 2017/2/17.
@@ -8,6 +8,6 @@
 
 #import "MY_BaseTableController.h"
 
-@interface MY_MessageListController : MY_BaseTableController
+@interface MY_WatchVedioController : MY_BaseTableController
 
 @end
