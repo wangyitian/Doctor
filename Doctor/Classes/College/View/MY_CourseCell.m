@@ -21,6 +21,10 @@
     
 }
 
+- (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
+    
+}
+
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     return 200;
 }

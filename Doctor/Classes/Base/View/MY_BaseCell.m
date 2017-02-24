@@ -22,7 +22,7 @@
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath*)indexpath {
-    _object = object;
+//    self.object = object;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
