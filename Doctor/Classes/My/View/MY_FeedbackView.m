@@ -63,6 +63,8 @@
         make.right.equalTo(self.suggestTextView.mas_right);
         make.height.equalTo(@44);
     }];
+    self.phoneTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
+    self.phoneTextField.leftViewMode = UITextFieldViewModeAlways;
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];

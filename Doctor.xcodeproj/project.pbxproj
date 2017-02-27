@@ -289,14 +289,14 @@
 		950142E21E4C7F0500987828 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95EC73E31E568CE80027EED8 /* HomePage */,
-				95EC73EA1E568DAB0027EED8 /* College */,
-				95229A811E5FC69300C28FD9 /* PlayVideo */,
-				95229A871E5FC69300C28FD9 /* WatchVedio */,
-				95EC73F21E568DAC0027EED8 /* My */,
-				95706F4E1E4D50D700536AE2 /* LoginAndRegister */,
+				95EC73E31E568CE80027EED8 /* HomePage(首页) */,
+				95EC73EA1E568DAB0027EED8 /* College(学院) */,
+				95229A811E5FC69300C28FD9 /* PlayVideo(直播) */,
+				95229A871E5FC69300C28FD9 /* WatchVedio(课程) */,
+				95EC73F21E568DAC0027EED8 /* My(我的) */,
+				95706F4E1E4D50D700536AE2 /* LoginAndRegister(登陆和注册) */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
-				95706F421E4D50D700536AE2 /* Base */,
+				95706F421E4D50D700536AE2 /* Base(基类) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -357,13 +357,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		95229A811E5FC69300C28FD9 /* PlayVideo */ = {
+		95229A811E5FC69300C28FD9 /* PlayVideo(直播) */ = {
 			isa = PBXGroup;
 			children = (
 				95229A821E5FC69300C28FD9 /* Controller */,
 				95229A851E5FC69300C28FD9 /* Model */,
 				95229A861E5FC69300C28FD9 /* View */,
 			);
+			name = "PlayVideo(直播)";
 			path = PlayVideo;
 			sourceTree = "<group>";
 		};
@@ -390,13 +391,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95229A871E5FC69300C28FD9 /* WatchVedio */ = {
+		95229A871E5FC69300C28FD9 /* WatchVedio(课程) */ = {
 			isa = PBXGroup;
 			children = (
 				95229A881E5FC69300C28FD9 /* Controller */,
 				95229A8B1E5FC69300C28FD9 /* Model */,
 				95229A8C1E5FC69300C28FD9 /* View */,
 			);
+			name = "WatchVedio(课程)";
 			path = WatchVedio;
 			sourceTree = "<group>";
 		};
@@ -434,13 +436,14 @@
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
-		95706F421E4D50D700536AE2 /* Base */ = {
+		95706F421E4D50D700536AE2 /* Base(基类) */ = {
 			isa = PBXGroup;
 			children = (
 				95706F431E4D50D700536AE2 /* Controller */,
 				95706F441E4D50D700536AE2 /* Model */,
 				95706F451E4D50D700536AE2 /* View */,
 			);
+			name = "Base(基类)";
 			path = Base;
 			sourceTree = "<group>";
 		};
@@ -475,13 +478,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95706F4E1E4D50D700536AE2 /* LoginAndRegister */ = {
+		95706F4E1E4D50D700536AE2 /* LoginAndRegister(登陆和注册) */ = {
 			isa = PBXGroup;
 			children = (
 				95706F4F1E4D50D700536AE2 /* Controller */,
 				95706F501E4D50D700536AE2 /* Model */,
 				95706F511E4D50D700536AE2 /* View */,
 			);
+			name = "LoginAndRegister(登陆和注册)";
 			path = LoginAndRegister;
 			sourceTree = "<group>";
 		};
@@ -595,13 +599,14 @@
 			path = Third;
 			sourceTree = "<group>";
 		};
-		95EC73E31E568CE80027EED8 /* HomePage */ = {
+		95EC73E31E568CE80027EED8 /* HomePage(首页) */ = {
 			isa = PBXGroup;
 			children = (
 				95EC73E41E568CE80027EED8 /* Controller */,
 				95EC73E71E568CE80027EED8 /* Model */,
 				95EC73E81E568CE80027EED8 /* View */,
 			);
+			name = "HomePage(首页)";
 			path = HomePage;
 			sourceTree = "<group>";
 		};
@@ -634,13 +639,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95EC73EA1E568DAB0027EED8 /* College */ = {
+		95EC73EA1E568DAB0027EED8 /* College(学院) */ = {
 			isa = PBXGroup;
 			children = (
 				95EC73EB1E568DAC0027EED8 /* Controller */,
 				95EC73EC1E568DAC0027EED8 /* Model */,
 				95EC73ED1E568DAC0027EED8 /* View */,
 			);
+			name = "College(学院)";
 			path = College;
 			sourceTree = "<group>";
 		};
@@ -683,13 +689,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		95EC73F21E568DAC0027EED8 /* My */ = {
+		95EC73F21E568DAC0027EED8 /* My(我的) */ = {
 			isa = PBXGroup;
 			children = (
 				95EC73F31E568DAC0027EED8 /* Controller */,
 				95EC73F41E568DAC0027EED8 /* Model */,
 				95EC73F51E568DAC0027EED8 /* View */,
 			);
+			name = "My(我的)";
 			path = My;
 			sourceTree = "<group>";
 		};
