@@ -102,9 +102,25 @@
         make.top.equalTo(loginButton.mas_top);
         make.size.mas_equalTo(CGSizeMake(50, 40));
     }];
+    
+    UIButton *tiyanButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    tiyanButton.backgroundColor = [UIColor redColor];
+    [tiyanButton setTitle:@"体验" forState:UIControlStateNormal];
+    [tiyanButton addTarget:self action:@selector(tiyanButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:tiyanButton];
+    [tiyanButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(registerButton);
+        make.top.mas_equalTo(registerButton.mas_bottom).with.offset(20);
+        make.size.mas_equalTo(registerButton);
+    }];
+
     [self layoutIfNeeded];
     NSLog(@"register=%@",NSStringFromCGRect(registerButton.frame));
-    self.height = registerButton.bottom+30;
+    self.height = tiyanButton.bottom+30;
+}
+
+- (void)tiyanButtonAction {
+    
 }
 
 - (void)forgetButtonAction {

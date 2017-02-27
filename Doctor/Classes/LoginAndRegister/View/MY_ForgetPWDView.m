@@ -36,13 +36,33 @@
         make.height.equalTo(@35);
     }];
     
+    self.validateButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.validateButton.backgroundColor = [UIColor redColor];
+    [self.validateButton addTarget:self action:@selector(validateButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.validateButton];
+    [self.validateButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.accountTextField.mas_right);
+        make.top.equalTo(self.accountTextField.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(60, 35));
+    }];
+    
+    self.validateTextField = [[UITextField alloc] init];
+    self.validateTextField.backgroundColor = [UIColor redColor];
+    [self addSubview:self.validateTextField];
+    [self.validateTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.accountTextField.mas_left);
+        make.right.equalTo(self.validateButton.mas_left).with.offset(-10);
+        make.top.equalTo(self.validateButton.mas_top);
+        make.height.equalTo(self.validateButton.mas_height);
+    }];
+    
     self.freshPwdTextField = [[UITextField alloc] init];
     self.freshPwdTextField.backgroundColor = [UIColor redColor];
     [self addSubview:self.freshPwdTextField];
     [self.freshPwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.accountTextField.mas_left);
         make.right.equalTo(self.accountTextField.mas_right);
-        make.top.equalTo(self.accountTextField.mas_bottom).with.offset(10);
+        make.top.equalTo(self.validateTextField.mas_bottom).with.offset(10);
         make.height.equalTo(self.accountTextField.mas_height);
     }];
     
@@ -54,26 +74,6 @@
         make.right.equalTo(self.accountTextField.mas_right);
         make.top.equalTo(self.freshPwdTextField.mas_bottom).with.offset(10);
         make.height.equalTo(self.accountTextField.mas_height);
-    }];
-    
-    self.validateButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.validateButton.backgroundColor = [UIColor redColor];
-    [self.validateButton addTarget:self action:@selector(validateButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.validateButton];
-    [self.validateButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.confirmTextField.mas_right);
-        make.top.equalTo(self.confirmTextField.mas_bottom).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(60, 35));
-    }];
-    
-    self.validateTextField = [[UITextField alloc] init];
-    self.validateTextField.backgroundColor = [UIColor redColor];
-    [self addSubview:self.validateTextField];
-    [self.validateTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.confirmTextField.mas_left);
-        make.right.equalTo(self.validateButton.mas_left).with.offset(-10);
-        make.top.equalTo(self.validateButton.mas_top);
-        make.height.equalTo(self.validateButton.mas_height);
     }];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -26,5 +26,6 @@
     feedbackView.confirmBlock = ^(NSString *suggest, NSString*phone){
     };
     [self.scrollView addSubview:feedbackView];
+    self.scrollView.contentSize = feedbackView.frame.size;
 }
 @end

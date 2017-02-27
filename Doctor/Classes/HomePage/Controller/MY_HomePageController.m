@@ -72,8 +72,6 @@
     [sear.cancleButton setTitle:@"取消" forState:UIControlStateNormal];
     [sear.cancleButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     sear.cancleButton.titleLabel.font = [UIFont systemFontOfSize:14];
-//    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
-//    [self.navigationController pushViewController:searchVC animated:NO];
 }
 
 //编辑文字改变的回调

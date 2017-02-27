@@ -20,9 +20,6 @@
 		9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46C1E58054A009FCBF3 /* MY_LoginView.m */; };
 		9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46F1E580556009FCBF3 /* MY_RegisterView.m */; };
 		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
-		95229A8F1E5FC69300C28FD9 /* MY_PlayVedioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A841E5FC69300C28FD9 /* MY_PlayVedioController.m */; };
-		95229A901E5FC69300C28FD9 /* MY_WatchVedioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A8A1E5FC69300C28FD9 /* MY_WatchVedioController.m */; };
-		95229A911E5FC69300C28FD9 /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A8E1E5FC69300C28FD9 /* MY_MessageCell.m */; };
 		95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A961E6003B000C28FD9 /* MY_CourseModel.m */; };
 		95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */; };
 		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
@@ -36,6 +33,10 @@
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
+		957BE1A11E641FD200AB3D09 /* MY_HomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */; };
+		957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A51E64215D00AB3D09 /* MY_MessageController.m */; };
+		957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */; };
+		957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */; };
 		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
@@ -105,12 +106,6 @@
 		9510A46F1E580556009FCBF3 /* MY_RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterView.m; sourceTree = "<group>"; };
 		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
 		9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDView.m; sourceTree = "<group>"; };
-		95229A831E5FC69300C28FD9 /* MY_PlayVedioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PlayVedioController.h; sourceTree = "<group>"; };
-		95229A841E5FC69300C28FD9 /* MY_PlayVedioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PlayVedioController.m; sourceTree = "<group>"; };
-		95229A891E5FC69300C28FD9 /* MY_WatchVedioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_WatchVedioController.h; sourceTree = "<group>"; };
-		95229A8A1E5FC69300C28FD9 /* MY_WatchVedioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_WatchVedioController.m; sourceTree = "<group>"; };
-		95229A8D1E5FC69300C28FD9 /* MY_MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageCell.h; sourceTree = "<group>"; };
-		95229A8E1E5FC69300C28FD9 /* MY_MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageCell.m; sourceTree = "<group>"; };
 		95229A951E6003B000C28FD9 /* MY_CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseModel.h; sourceTree = "<group>"; };
 		95229A961E6003B000C28FD9 /* MY_CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseModel.m; sourceTree = "<group>"; };
 		95229A981E60041F00C28FD9 /* MY_CourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseDetailView.h; sourceTree = "<group>"; };
@@ -137,6 +132,14 @@
 		95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseTableController.m; sourceTree = "<group>"; };
 		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
 		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
+		957BE19F1E641FD200AB3D09 /* MY_HomePageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HomePageHeaderView.h; sourceTree = "<group>"; };
+		957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HomePageHeaderView.m; sourceTree = "<group>"; };
+		957BE1A41E64215D00AB3D09 /* MY_MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageController.h; sourceTree = "<group>"; };
+		957BE1A51E64215D00AB3D09 /* MY_MessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageController.m; sourceTree = "<group>"; };
+		957BE1A81E64215D00AB3D09 /* MY_MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageCell.h; sourceTree = "<group>"; };
+		957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageCell.m; sourceTree = "<group>"; };
+		957BE1AC1E6428D800AB3D09 /* MY_CollegeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CollegeHeaderView.h; sourceTree = "<group>"; };
+		957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CollegeHeaderView.m; sourceTree = "<group>"; };
 		958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MJRefresh.h"; sourceTree = "<group>"; };
 		958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MJRefresh.m"; sourceTree = "<group>"; };
 		958C35E31E5400F8006FCCF3 /* MY_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_Util.h; sourceTree = "<group>"; };
@@ -291,8 +294,7 @@
 			children = (
 				95EC73E31E568CE80027EED8 /* HomePage(首页) */,
 				95EC73EA1E568DAB0027EED8 /* College(学院) */,
-				95229A811E5FC69300C28FD9 /* PlayVideo(直播) */,
-				95229A871E5FC69300C28FD9 /* WatchVedio(课程) */,
+				957BE1A21E64215D00AB3D09 /* Message(消息) */,
 				95EC73F21E568DAC0027EED8 /* My(我的) */,
 				95706F4E1E4D50D700536AE2 /* LoginAndRegister(登陆和注册) */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
@@ -355,76 +357,6 @@
 				95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		95229A811E5FC69300C28FD9 /* PlayVideo(直播) */ = {
-			isa = PBXGroup;
-			children = (
-				95229A821E5FC69300C28FD9 /* Controller */,
-				95229A851E5FC69300C28FD9 /* Model */,
-				95229A861E5FC69300C28FD9 /* View */,
-			);
-			name = "PlayVideo(直播)";
-			path = PlayVideo;
-			sourceTree = "<group>";
-		};
-		95229A821E5FC69300C28FD9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				95229A831E5FC69300C28FD9 /* MY_PlayVedioController.h */,
-				95229A841E5FC69300C28FD9 /* MY_PlayVedioController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95229A851E5FC69300C28FD9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95229A861E5FC69300C28FD9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		95229A871E5FC69300C28FD9 /* WatchVedio(课程) */ = {
-			isa = PBXGroup;
-			children = (
-				95229A881E5FC69300C28FD9 /* Controller */,
-				95229A8B1E5FC69300C28FD9 /* Model */,
-				95229A8C1E5FC69300C28FD9 /* View */,
-			);
-			name = "WatchVedio(课程)";
-			path = WatchVedio;
-			sourceTree = "<group>";
-		};
-		95229A881E5FC69300C28FD9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				95229A891E5FC69300C28FD9 /* MY_WatchVedioController.h */,
-				95229A8A1E5FC69300C28FD9 /* MY_WatchVedioController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		95229A8B1E5FC69300C28FD9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		95229A8C1E5FC69300C28FD9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				95229A8D1E5FC69300C28FD9 /* MY_MessageCell.h */,
-				95229A8E1E5FC69300C28FD9 /* MY_MessageCell.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		954A39881E5C160000C05B9F /* SearchBar */ = {
@@ -520,6 +452,42 @@
 				9510A46F1E580556009FCBF3 /* MY_RegisterView.m */,
 				9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */,
 				9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		957BE1A21E64215D00AB3D09 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				957BE1A31E64215D00AB3D09 /* Controller */,
+				957BE1A61E64215D00AB3D09 /* Model */,
+				957BE1A71E64215D00AB3D09 /* View */,
+			);
+			name = "Message(消息)";
+			path = Message;
+			sourceTree = "<group>";
+		};
+		957BE1A31E64215D00AB3D09 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				957BE1A41E64215D00AB3D09 /* MY_MessageController.h */,
+				957BE1A51E64215D00AB3D09 /* MY_MessageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		957BE1A61E64215D00AB3D09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		957BE1A71E64215D00AB3D09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				957BE1A81E64215D00AB3D09 /* MY_MessageCell.h */,
+				957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -635,6 +603,8 @@
 			children = (
 				95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */,
 				95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */,
+				957BE19F1E641FD200AB3D09 /* MY_HomePageHeaderView.h */,
+				957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -679,6 +649,8 @@
 		95EC73ED1E568DAC0027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				957BE1AC1E6428D800AB3D09 /* MY_CollegeHeaderView.h */,
+				957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */,
 				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
 				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
 				95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */,
@@ -899,12 +871,12 @@
 				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
 				95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */,
 				95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */,
-				95229A911E5FC69300C28FD9 /* MY_MessageCell.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
+				957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
 				95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */,
@@ -913,7 +885,6 @@
 				95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */,
 				954A399C1E5C22E000C05B9F /* NSString+Base.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
-				95229A901E5FC69300C28FD9 /* MY_WatchVedioController.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
@@ -923,6 +894,7 @@
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
 				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
+				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
 				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
@@ -936,7 +908,6 @@
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
-				95229A8F1E5FC69300C28FD9 /* MY_PlayVedioController.m in Sources */,
 				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
 				95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
@@ -944,7 +915,9 @@
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,
+				957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */,
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
+				957BE1A11E641FD200AB3D09 /* MY_HomePageHeaderView.m in Sources */,
 				95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */,
 				9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */,
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
