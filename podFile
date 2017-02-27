@@ -10,7 +10,7 @@ target 'Doctor' do
   pod 'TPKeyboardAvoiding', '~> 1.2.11'
   pod 'MBProgressHUD'
   pod 'SDCycleScrollView'
-  
+  pod 'YYCache'
   
   pod 'UMengUShare/UI'
   # 集成新浪微博

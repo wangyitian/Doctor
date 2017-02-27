@@ -7,7 +7,6 @@
 //
 
 #import "MY_CollegeController.h"
-
 @interface MY_CollegeController ()
 
 @end
@@ -16,7 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 @end
