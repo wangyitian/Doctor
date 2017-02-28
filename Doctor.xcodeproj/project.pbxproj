@@ -30,6 +30,7 @@
 		954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39981E5C22E000C05B9F /* UIButton+Base.m */; };
 		954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A399A1E5C22E000C05B9F /* UIImage+Base.m */; };
 		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
+		9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
@@ -37,6 +38,7 @@
 		957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A51E64215D00AB3D09 /* MY_MessageController.m */; };
 		957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */; };
 		957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */; };
+		957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */; };
 		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
@@ -126,6 +128,8 @@
 		954A399A1E5C22E000C05B9F /* UIImage+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Base.m"; sourceTree = "<group>"; };
 		954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalAvatarCell.h; sourceTree = "<group>"; };
 		954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalAvatarCell.m; sourceTree = "<group>"; };
+		9565A8A81E65166C00F23227 /* MY_CourseListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseListHeaderView.h; sourceTree = "<group>"; };
+		9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseListHeaderView.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageCell.m; sourceTree = "<group>"; };
 		957BE1AC1E6428D800AB3D09 /* MY_CollegeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CollegeHeaderView.h; sourceTree = "<group>"; };
 		957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CollegeHeaderView.m; sourceTree = "<group>"; };
+		957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroCell.h; sourceTree = "<group>"; };
+		957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseIntroCell.m; sourceTree = "<group>"; };
 		958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MJRefresh.h"; sourceTree = "<group>"; };
 		958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MJRefresh.m"; sourceTree = "<group>"; };
 		958C35E31E5400F8006FCCF3 /* MY_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_Util.h; sourceTree = "<group>"; };
@@ -651,6 +657,10 @@
 			children = (
 				957BE1AC1E6428D800AB3D09 /* MY_CollegeHeaderView.h */,
 				957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */,
+				957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */,
+				957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */,
+				9565A8A81E65166C00F23227 /* MY_CourseListHeaderView.h */,
+				9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */,
 				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
 				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
 				95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */,
@@ -893,6 +903,7 @@
 				95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */,
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
 				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
+				9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
 				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,
@@ -904,6 +915,7 @@
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
+				957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
