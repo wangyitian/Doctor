@@ -25,6 +25,7 @@
 
 - (void)setupUI {
     UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.backgroundColor = [UIColor redColor];
     [self addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@10);

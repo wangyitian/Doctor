@@ -51,6 +51,7 @@
     self.introLabel.font = MY_Font(14);
     self.introLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [self.contentView addSubview:self.introLabel];
+    
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

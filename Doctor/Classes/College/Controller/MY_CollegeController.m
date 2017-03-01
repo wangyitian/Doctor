@@ -9,6 +9,7 @@
 #import "MY_CollegeController.h"
 #import "MY_CollegeHeaderView.h"
 #import "MY_CourseIntroCell.h"
+#import "MY_EnrollController.h"
 @interface MY_CollegeController ()
 
 @end
@@ -86,7 +87,8 @@
 }
 
 - (void)enrollButtonAction {
-
+    MY_EnrollController *enrollVC = [[MY_EnrollController alloc] init];
+    [self.navigationController pushViewController:enrollVC animated:YES];
 }
 
 @end

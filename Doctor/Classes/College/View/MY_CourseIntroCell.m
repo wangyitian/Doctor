@@ -7,7 +7,10 @@
 //
 
 #import "MY_CourseIntroCell.h"
-
+@interface MY_CourseIntroCell ()
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *secondLabel;
+@end
 @implementation MY_CourseIntroCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -19,7 +22,20 @@
 }
 
 - (void)setupUI {
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 0, 15)];
+    self.titleLabel.font = MY_Font(15);
+    self.titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
+    [self.contentView addSubview:self.titleLabel];
     
+    
+}
+
+- (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
+    if (indexpath.section == 0) {
+        
+    } else {
+        
+    }
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

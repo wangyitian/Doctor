@@ -31,6 +31,8 @@
 		954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A399A1E5C22E000C05B9F /* UIImage+Base.m */; };
 		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
 		9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */; };
+		9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */; };
+		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
@@ -130,6 +132,10 @@
 		954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalAvatarCell.m; sourceTree = "<group>"; };
 		9565A8A81E65166C00F23227 /* MY_CourseListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseListHeaderView.h; sourceTree = "<group>"; };
 		9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseListHeaderView.m; sourceTree = "<group>"; };
+		9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageModel.h; sourceTree = "<group>"; };
+		9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageModel.m; sourceTree = "<group>"; };
+		9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroModel.h; sourceTree = "<group>"; };
+		9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseIntroModel.m; sourceTree = "<group>"; };
 		95706F5A1E4D516300536AE2 /* MY_BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseController.h; sourceTree = "<group>"; };
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
@@ -485,6 +491,8 @@
 		957BE1A61E64215D00AB3D09 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */,
+				9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -646,6 +654,8 @@
 		95EC73EC1E568DAC0027EED8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */,
+				9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */,
 				95229A951E6003B000C28FD9 /* MY_CourseModel.h */,
 				95229A961E6003B000C28FD9 /* MY_CourseModel.m */,
 			);
@@ -881,6 +891,7 @@
 				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
 				95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */,
 				95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */,
+				9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
@@ -912,6 +923,7 @@
 				954A399B1E5C22E000C05B9F /* NSDictionary+Base.m in Sources */,
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
+				9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
