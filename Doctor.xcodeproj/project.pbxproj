@@ -65,6 +65,11 @@
 		95C453021E5AF49400C9A30D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453011E5AF49400C9A30D /* libc++.tbd */; };
 		95C453041E5AF49D00C9A30D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453031E5AF49D00C9A30D /* libz.tbd */; };
 		95C453061E5AF4B200C9A30D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453051E5AF4B200C9A30D /* ImageIO.framework */; };
+		95D166651E6665C700731570 /* MY_SegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166641E6665C700731570 /* MY_SegmentController.m */; };
+		95D1666A1E6666A100731570 /* MY_SegmentContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166671E6666A100731570 /* MY_SegmentContentView.m */; };
+		95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166691E6666A100731570 /* MY_TitleSegmentView.m */; };
+		95D1666E1E666D6300731570 /* MY_CourseSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */; };
+		95D166711E669ACC00731570 /* UILabel+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166701E669ACC00731570 /* UILabel+Base.m */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
 		95EC74011E5690090027EED8 /* MY_MyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74001E5690090027EED8 /* MY_MyController.m */; };
@@ -83,6 +88,8 @@
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
 		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
 		95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8001A1E55925A00C0F23B /* UIView+Base.m */; };
+		95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */; };
+		95F854381E66B1CC003C7013 /* MY_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854371E66B1CC003C7013 /* MY_TextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +204,16 @@
 		95C453011E5AF49400C9A30D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		95C453031E5AF49D00C9A30D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		95C453051E5AF4B200C9A30D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		95D166631E6665C700731570 /* MY_SegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SegmentController.h; sourceTree = "<group>"; };
+		95D166641E6665C700731570 /* MY_SegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SegmentController.m; sourceTree = "<group>"; };
+		95D166661E6666A100731570 /* MY_SegmentContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SegmentContentView.h; sourceTree = "<group>"; };
+		95D166671E6666A100731570 /* MY_SegmentContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SegmentContentView.m; sourceTree = "<group>"; };
+		95D166681E6666A100731570 /* MY_TitleSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TitleSegmentView.h; sourceTree = "<group>"; };
+		95D166691E6666A100731570 /* MY_TitleSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TitleSegmentView.m; sourceTree = "<group>"; };
+		95D1666C1E666D6300731570 /* MY_CourseSegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseSegmentController.h; sourceTree = "<group>"; };
+		95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseSegmentController.m; sourceTree = "<group>"; };
+		95D1666F1E669ACC00731570 /* UILabel+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Base.h"; sourceTree = "<group>"; };
+		95D166701E669ACC00731570 /* UILabel+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Base.m"; sourceTree = "<group>"; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
 		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
 		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
@@ -234,6 +251,10 @@
 		95F800141E55815D00C0F23B /* MY_AccountModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AccountModel.m; sourceTree = "<group>"; };
 		95F800191E55925A00C0F23B /* UIView+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Base.h"; sourceTree = "<group>"; };
 		95F8001A1E55925A00C0F23B /* UIView+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Base.m"; sourceTree = "<group>"; };
+		95F854331E66AFAD003C7013 /* MY_ServiceScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ServiceScheduleController.h; sourceTree = "<group>"; };
+		95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ServiceScheduleController.m; sourceTree = "<group>"; };
+		95F854361E66B1CC003C7013 /* MY_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TextView.h; sourceTree = "<group>"; };
+		95F854371E66B1CC003C7013 /* MY_TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +421,8 @@
 				95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */,
 				95EC74081E5693000027EED8 /* MY_BaseScrollController.h */,
 				95EC74091E5693000027EED8 /* MY_BaseScrollController.m */,
+				95D166631E6665C700731570 /* MY_SegmentController.h */,
+				95D166641E6665C700731570 /* MY_SegmentController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,8 +439,14 @@
 		95706F451E4D50D700536AE2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95D166661E6666A100731570 /* MY_SegmentContentView.h */,
+				95D166671E6666A100731570 /* MY_SegmentContentView.m */,
+				95D166681E6666A100731570 /* MY_TitleSegmentView.h */,
+				95D166691E6666A100731570 /* MY_TitleSegmentView.m */,
 				9572FB291E53E58D0076E80B /* MY_BaseCell.h */,
 				9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */,
+				95F854361E66B1CC003C7013 /* MY_TextView.h */,
+				95F854371E66B1CC003C7013 /* MY_TextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -543,6 +572,8 @@
 				958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */,
 				95F800191E55925A00C0F23B /* UIView+Base.h */,
 				95F8001A1E55925A00C0F23B /* UIView+Base.m */,
+				95D1666F1E669ACC00731570 /* UILabel+Base.h */,
+				95D166701E669ACC00731570 /* UILabel+Base.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -615,10 +646,10 @@
 		95EC73E81E568CE80027EED8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */,
-				95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */,
 				957BE19F1E641FD200AB3D09 /* MY_HomePageHeaderView.h */,
 				957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */,
+				95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */,
+				95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,6 +670,8 @@
 			children = (
 				95EC74021E5691D90027EED8 /* MY_CollegeController.h */,
 				95EC74031E5691D90027EED8 /* MY_CollegeController.m */,
+				95D1666C1E666D6300731570 /* MY_CourseSegmentController.h */,
+				95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */,
 				95C4529E1E5AC78200C9A30D /* MY_CourseListController.h */,
 				95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */,
 				95EC74051E5692860027EED8 /* MY_CourseDetailController.h */,
@@ -711,6 +744,8 @@
 				95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */,
 				95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */,
 				95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */,
+				95F854331E66AFAD003C7013 /* MY_ServiceScheduleController.h */,
+				95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -884,6 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
+				95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */,
 				95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */,
 				95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */,
 				9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */,
@@ -896,6 +932,7 @@
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */,
+				95D1666A1E6666A100731570 /* MY_SegmentContentView.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
@@ -911,9 +948,11 @@
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */,
 				954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */,
+				95D1666E1E666D6300731570 /* MY_CourseSegmentController.m in Sources */,
 				95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */,
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
 				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
+				95D166651E6665C700731570 /* MY_SegmentController.m in Sources */,
 				9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
@@ -924,11 +963,13 @@
 				958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */,
 				950143031E4C800F00987828 /* MY_NavigationController.m in Sources */,
 				9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */,
+				95F854381E66B1CC003C7013 /* MY_TextView.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
+				95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
@@ -936,6 +977,7 @@
 				95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
 				95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */,
+				95D166711E669ACC00731570 /* UILabel+Base.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,

@@ -47,7 +47,7 @@
     [self.contentView addSubview:self.scrollView];
     
     self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, self.scrollView.bottom + 10, MY_ScreenWidth - 15*2, 0)];
-    self.introLabel.numberOfLines = 0;
+    self.introLabel.numberOfLines = 3;
     self.introLabel.font = MY_Font(14);
     self.introLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [self.contentView addSubview:self.introLabel];

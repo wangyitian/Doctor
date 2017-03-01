@@ -10,6 +10,9 @@
 #import "MY_CollegeHeaderView.h"
 #import "MY_CourseIntroCell.h"
 #import "MY_EnrollController.h"
+#import "MY_SegmentController.h"
+#import "MY_CourseListController.h"
+#import "MY_CourseSegmentController.h"
 @interface MY_CollegeController ()
 
 @end
@@ -43,7 +46,23 @@
     statusView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     [self.view addSubview:statusView];
     
-    self.tableView.tableHeaderView = [[MY_CollegeHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 90)];
+    MY_CollegeHeaderView *tableHeaderView = [[MY_CollegeHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 90)];
+    tableHeaderView.headerButtonBlock = ^(NSString *index) {
+        
+//        MY_SegmentController *segVC = [[MY_SegmentController alloc] initWithViewControllers:[] segmentViewHeight:<#(CGFloat)#> loadStyle:<#(MY_SegmentLoadStyle)#>];
+//        [self.navigationController pushViewController:segVC animated:YES];
+        NSArray *types = [NSArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
+        NSMutableArray *vcArray = [NSMutableArray array];
+        for (NSString *type in types) {
+            MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+//            rdVC.type = type;
+            [vcArray addObject:rdVC];
+        }
+        MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
+        [self.navigationController pushViewController:vc animated:YES];
+
+    };
+    self.tableView.tableHeaderView = tableHeaderView;
     self.tableView.height -= 50;
     
     UIButton *phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];

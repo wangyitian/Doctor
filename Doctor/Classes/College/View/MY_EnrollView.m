@@ -11,8 +11,14 @@
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *emailTextField;
+@property (nonatomic, strong) UITextField *idTextField;
+@property (nonatomic, strong) NSArray *passportButtonArray;
+@property (nonatomic, strong) UITextField *passportTextField;
+@property (nonatomic, strong) UITextField *validityTextField;
+@property (nonatomic, strong) UITextField *roomTypeTextField;
+@property (nonatomic, strong) UITextField *positionTextField;
 @property (nonatomic, strong) UITextField *companyTextField;
-@property (nonatomic, strong) UITextView *needTextView;
+@property (nonatomic, strong) MY_TextView *intentionTextView;
 @end
 @implementation MY_EnrollView
 
@@ -99,9 +105,9 @@
         make.size.mas_equalTo(companyLabel);
     }];
     
-    self.needTextView = [[UITextView alloc] init];
-    [self addSubview:self.needTextView];
-    [self.needTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.intentionTextView = [[MY_TextView alloc] init];
+    [self addSubview:self.intentionTextView];
+    [self.intentionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.companyTextField);
         make.top.equalTo(self.companyTextField.mas_bottom).with.offset(10);
         make.width.equalTo(self.companyTextField.mas_width);
@@ -111,7 +117,7 @@
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self addSubview:confirmButton];
     [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.needTextView.mas_bottom).with.offset(50);
+        make.top.equalTo(self.intentionTextView.mas_bottom).with.offset(50);
         make.centerX.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(200, 30));
     }];

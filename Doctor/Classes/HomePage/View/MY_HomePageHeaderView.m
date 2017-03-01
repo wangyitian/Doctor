@@ -11,7 +11,7 @@
 
 @interface MY_HomePageHeaderView ()
 @property (nonatomic, strong) SDCycleScrollView *imageScrollView;
-
+@property (nonatomic, strong) UIView *buttonView;
 @end
 @implementation MY_HomePageHeaderView
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -22,7 +22,11 @@
 }
 
 - (void)setupUI {
+    self.imageScrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 200*MY_ScreenWidth/375)];
+    [self addSubview:self.imageScrollView];
     
+    self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, self.imageScrollView.bottom+10, MY_ScreenWidth, 200)];
+    [self addSubview:self.imageScrollView];
 }
 
 @end

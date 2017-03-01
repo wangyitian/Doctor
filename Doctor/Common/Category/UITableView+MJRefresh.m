@@ -18,20 +18,20 @@
     [header setTitle:@"松开立即刷新..." forState:MJRefreshStateWillRefresh];
     [header setTitle:@"加载中..." forState:MJRefreshStateRefreshing];
     
-    NSMutableArray *imagesArray = [NSMutableArray array];
-    for (int i = 1; i <=95; i++) {
-        if (i < 10) {
-            [imagesArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading_small000%d", i]]];
-        } else {
-            [imagesArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading_small00%d", i]]];
-        }
-    }
-    // 设置普通状态的动画图片
-    [header setImages:imagesArray forState:MJRefreshStateIdle];
-    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
-    [header setImages:imagesArray forState:MJRefreshStatePulling];
-    // 设置正在刷新状态的动画图片
-    [header setImages:imagesArray forState:MJRefreshStateRefreshing];
+//    NSMutableArray *imagesArray = [NSMutableArray array];
+//    for (int i = 1; i <=95; i++) {
+//        if (i < 10) {
+//            [imagesArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading_small000%d", i]]];
+//        } else {
+//            [imagesArray addObject:[UIImage imageNamed:[NSString stringWithFormat:@"loading_small00%d", i]]];
+//        }
+//    }
+//    // 设置普通状态的动画图片
+//    [header setImages:imagesArray forState:MJRefreshStateIdle];
+//    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+//    [header setImages:imagesArray forState:MJRefreshStatePulling];
+//    // 设置正在刷新状态的动画图片
+//    [header setImages:imagesArray forState:MJRefreshStateRefreshing];
 
     self.mj_header =  header;
 }

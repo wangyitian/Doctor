@@ -16,15 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setupUI];
+    [self addHeaderRefresh:YES footerRefresh:YES];
+    [self loadMore:NO];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)setupUI {
+- (void)loadMore:(BOOL)loadMore {
     
+}
+
+- (void)headerRereshing {
+    [self loadMore:NO];
+}
+
+- (void)footerRereshing {
+    [self loadMore:YES];
 }
 
 @end

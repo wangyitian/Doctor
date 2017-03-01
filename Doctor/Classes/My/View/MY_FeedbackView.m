@@ -9,7 +9,7 @@
 #import "MY_FeedbackView.h"
 @interface MY_FeedbackView ()
 @property (nonatomic, strong) UIButton *phoneButton;
-@property (nonatomic, strong) UITextView *suggestTextView;
+@property (nonatomic, strong) MY_TextView *suggestTextView;
 @property (nonatomic, strong) UITextField *phoneTextField;
 @end
 @implementation MY_FeedbackView
@@ -39,10 +39,11 @@
         make.height.equalTo(@43);
     }];
     
-    self.suggestTextView = [[UITextView alloc] init];
+    self.suggestTextView = [[MY_TextView alloc] init];
     self.suggestTextView.font = MY_Font(12);
     self.suggestTextView.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.suggestTextView.layer.borderWidth = 1;
+    self.suggestTextView.myPlaceholder = @" 请输入您对我们的意见和建议...(200字以内)";
     [self addSubview:self.suggestTextView];
     [self.suggestTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.phoneButton.mas_bottom).with.offset(10);

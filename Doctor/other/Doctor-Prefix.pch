@@ -19,7 +19,7 @@
 #import "MY_LoginController.h"
 #import "MY_RequestModel.h"
 
-
+#import "MY_TextView.h"
 
 
 #import "UIImage+Base.h"
@@ -27,4 +27,5 @@
 #import "NSDictionary+Base.h"
 #import "UIButton+Base.h"
 #import "NSString+Base.h"
+#import "UILabel+Base.h"
 #endif

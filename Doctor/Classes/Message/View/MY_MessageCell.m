@@ -8,7 +8,8 @@
 
 #import "MY_MessageCell.h"
 @interface MY_MessageCell ()
-
+@property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UILabel *messageLabel;
 @end
 
 @implementation MY_MessageCell
@@ -21,6 +22,14 @@
 }
 
 - (void)setupUI {
+    self.timeLabel = [[UILabel alloc] init];
+    [self.contentView addSubview:self.timeLabel];
+    
+    self.messageLabel = [[UILabel alloc] init];
+    [self.contentView addSubview:self.messageLabel];
+}
+
+- (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     
 }
 

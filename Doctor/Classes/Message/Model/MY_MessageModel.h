@@ -9,5 +9,6 @@
 #import "MY_BaseModel.h"
 
 @interface MY_MessageModel : MY_BaseModel
-
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *message;
 @end

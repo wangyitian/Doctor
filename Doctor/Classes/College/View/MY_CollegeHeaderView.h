@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MY_CollegeHeaderView : UIView
+typedef void(^HeaderButtonBlock)(NSString *index);
 
+@interface MY_CollegeHeaderView : UIView
+@property (nonatomic, copy) HeaderButtonBlock headerButtonBlock;
 @end

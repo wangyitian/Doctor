@@ -42,6 +42,7 @@
         button.layer.borderWidth = 1;
         button.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
         button.titleLabel.font = MY_Font(13);
+        button.tag = 1000 + i;
         
         CGFloat buttonW = 0;
         CGFloat space = 0;
@@ -59,7 +60,10 @@
 }
 
 - (void)buttonAction:(UIButton*)btn {
-    
+    NSString *index = [NSString stringWithFormat:@"%ld",btn.tag-1000];
+    if (self.headerButtonBlock) {
+        self.headerButtonBlock(index);
+    }
 }
 
 @end

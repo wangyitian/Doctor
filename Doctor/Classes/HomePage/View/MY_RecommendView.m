@@ -12,7 +12,7 @@
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) NSArray *patientButtons;
 @property (nonatomic, strong) UIButton *sickTypeButton;
-@property (nonatomic, strong) UITextView *sickTextView;
+@property (nonatomic, strong) MY_TextView *sickTextView;
 @property (nonatomic, strong) NSArray *agreeButtons;
 @end
 @implementation MY_RecommendView
@@ -99,7 +99,7 @@
         make.size.mas_equalTo(sickTypeLabel);
     }];
     
-    self.sickTextView = [[UITextView alloc] init];
+    self.sickTextView = [[MY_TextView alloc] init];
     [self addSubview:self.sickTextView];
     [self.sickTextView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.phoneTextField);
