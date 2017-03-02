@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSArray *sections;
+- (UITableViewStyle)getTableViewStyle;
 /**
  * 子类需要重写该方法
  *

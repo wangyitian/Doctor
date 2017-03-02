@@ -11,6 +11,8 @@
 #import "MY_MyCell.h"
 #import "MY_PersonalDataController.h"
 #import "MY_SettingController.h"
+#import "MY_FeedbackController.h"
+#import "MY_AboutUSController.h"
 @interface MY_MyController ()
 
 @end
@@ -44,7 +46,7 @@
 }
 
 - (void)initData {
-    NSArray *dataArray = [NSArray arrayWithObjects:@"我的学分",@"设置", nil];
+    NSArray *dataArray = [NSArray arrayWithObjects:@"意见反馈",@"关于我们",@"设置", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
@@ -61,8 +63,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        
+        MY_FeedbackController *feedbackVC = [[MY_FeedbackController alloc] init];
+        [self.navigationController pushViewController:feedbackVC animated:YES];
     } else if (indexPath.row == 1) {
+        MY_AboutUSController *aboutVC = [[MY_AboutUSController alloc] init];
+        [self.navigationController pushViewController:aboutVC animated:YES];
+    } else if (indexPath.row == 2) {
         MY_SettingController *settingVC = [[MY_SettingController alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
     }

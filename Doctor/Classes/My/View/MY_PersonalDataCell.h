@@ -10,5 +10,7 @@
 
 @interface MY_PersonalDataCell : MY_BaseCell
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *valueLabel;
+- (void)setupUI;
 + (MY_PersonalDataCell *)cellWithTablebView:(UITableView *)tableView index:(NSIndexPath *)indexPath;
 @end

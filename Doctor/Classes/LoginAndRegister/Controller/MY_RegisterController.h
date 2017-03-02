@@ -6,8 +6,8 @@
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
-#import "MY_BaseController.h"
+#import "MY_BaseScrollController.h"
 
-@interface MY_RegisterController : MY_BaseController
+@interface MY_RegisterController : MY_BaseScrollController
 
 @end

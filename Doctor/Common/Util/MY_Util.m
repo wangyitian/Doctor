@@ -7,7 +7,7 @@
 //
 
 #import "MY_Util.h"
-
+#import "SDImageCache.h"
 @implementation MY_Util
 
 + (void)saveAccount:(MY_AccountModel *)model {
@@ -89,6 +89,22 @@
     }
     
     return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a];
+}
+
++ (NSString *)getCacheSize {
+    NSUInteger size = [[SDImageCache sharedImageCache] getSize];
+    if (size < 1024) {// 小于1k
+        return [NSString stringWithFormat:@"%ldB",(long)size];
+    }else if (size < 1024 * 1024){// 小于1m
+        CGFloat aFloat = size/1024;
+        return [NSString stringWithFormat:@"%.0fK",aFloat];
+    }else if (size < 1024 * 1024 * 1024){// 小于1G
+        CGFloat aFloat = size/(1024 * 1024);
+        return [NSString stringWithFormat:@"%.1fM",aFloat];
+    }else{
+        CGFloat aFloat = size/(1024*1024*1024);
+        return [NSString stringWithFormat:@"%.1fG",aFloat];
+    }
 }
 
 + (void)pushAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC {

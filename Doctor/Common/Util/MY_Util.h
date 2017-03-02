@@ -28,6 +28,8 @@
 
 + (UIColor*)setColorWithInt: (int)newColor;
 
++ (NSString*)getCacheSize;
+
 /**
  *  用push的方式实现present的动画
  *

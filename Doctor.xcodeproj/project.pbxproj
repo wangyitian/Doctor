@@ -48,7 +48,7 @@
 		95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
 		95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */; };
-		95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_MyCell.m */; };
+		95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_SettingCell.m */; };
 		95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */; };
 		95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C4529F1E5AC78200C9A30D /* MY_CourseListController.m */; };
 		95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */; };
@@ -90,6 +90,7 @@
 		95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8001A1E55925A00C0F23B /* UIView+Base.m */; };
 		95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */; };
 		95F854381E66B1CC003C7013 /* MY_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854371E66B1CC003C7013 /* MY_TextView.m */; };
+		95F8543B1E67F662003C7013 /* MY_MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8543A1E67F662003C7013 /* MY_MyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,8 +177,8 @@
 		95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BadgeButton.m; sourceTree = "<group>"; };
 		95C452921E5AB07000C9A30D /* MY_MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyHeaderView.h; sourceTree = "<group>"; };
 		95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyHeaderView.m; sourceTree = "<group>"; };
-		95C452951E5AB81500C9A30D /* MY_MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyCell.h; sourceTree = "<group>"; };
-		95C452961E5AB81500C9A30D /* MY_MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyCell.m; sourceTree = "<group>"; };
+		95C452951E5AB81500C9A30D /* MY_SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SettingCell.h; sourceTree = "<group>"; };
+		95C452961E5AB81500C9A30D /* MY_SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SettingCell.m; sourceTree = "<group>"; };
 		95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalDataCell.h; sourceTree = "<group>"; };
 		95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalDataCell.m; sourceTree = "<group>"; };
 		95C4529E1E5AC78200C9A30D /* MY_CourseListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseListController.h; sourceTree = "<group>"; };
@@ -255,6 +256,8 @@
 		95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ServiceScheduleController.m; sourceTree = "<group>"; };
 		95F854361E66B1CC003C7013 /* MY_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TextView.h; sourceTree = "<group>"; };
 		95F854371E66B1CC003C7013 /* MY_TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TextView.m; sourceTree = "<group>"; };
+		95F854391E67F662003C7013 /* MY_MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyCell.h; sourceTree = "<group>"; };
+		95F8543A1E67F662003C7013 /* MY_MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -762,8 +765,10 @@
 			children = (
 				95C452921E5AB07000C9A30D /* MY_MyHeaderView.h */,
 				95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */,
-				95C452951E5AB81500C9A30D /* MY_MyCell.h */,
-				95C452961E5AB81500C9A30D /* MY_MyCell.m */,
+				95F854391E67F662003C7013 /* MY_MyCell.h */,
+				95F8543A1E67F662003C7013 /* MY_MyCell.m */,
+				95C452951E5AB81500C9A30D /* MY_SettingCell.h */,
+				95C452961E5AB81500C9A30D /* MY_SettingCell.m */,
 				95C452981E5ABD6700C9A30D /* MY_PersonalDataCell.h */,
 				95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */,
 				954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */,
@@ -974,7 +979,7 @@
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
 				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
-				95C452971E5AB81500C9A30D /* MY_MyCell.m in Sources */,
+				95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
 				95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */,
 				95D166711E669ACC00731570 /* UILabel+Base.m in Sources */,
@@ -989,6 +994,7 @@
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
 				95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
+				95F8543B1E67F662003C7013 /* MY_MyCell.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

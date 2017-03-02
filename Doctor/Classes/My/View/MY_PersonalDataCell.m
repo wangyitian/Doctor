@@ -8,7 +8,7 @@
 
 #import "MY_PersonalDataCell.h"
 @interface MY_PersonalDataCell ()
-@property (nonatomic, strong) UILabel *valueLabel;
+
 @end
 @implementation MY_PersonalDataCell
 
@@ -20,7 +20,7 @@
 }
 
 + (MY_PersonalDataCell *)cellWithTablebView:(UITableView *)tableView index:(NSIndexPath *)indexPath{
-    static NSString *indent = @"CMT_MyTableViewCell";
+    static NSString *indent = @"MY_PersonalDataCell";
     [tableView registerClass:[MY_PersonalDataCell class] forCellReuseIdentifier:indent];
     MY_PersonalDataCell  *cell = [tableView dequeueReusableCellWithIdentifier:indent];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

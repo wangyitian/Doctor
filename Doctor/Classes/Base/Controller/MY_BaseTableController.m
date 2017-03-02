@@ -33,6 +33,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
+//    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;

@@ -7,7 +7,7 @@
 //
 
 #import "MY_RegisterController.h"
-#import "MY_RegisterView.h"
+#import "MY_ChangePWDView.h"
 @interface MY_RegisterController ()
 
 @end
@@ -20,14 +20,17 @@
 }
 
 - (void)setupUI {
-    MY_RegisterView *registerView = [[MY_RegisterView alloc] initWithFrame:self.view.bounds];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self setTitle:@"注册" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
+    MY_ChangePWDView *registerView = [[MY_ChangePWDView alloc] initWithFrame:self.view.bounds];
     registerView.validateBlock = ^(NSString *account){
     
     };
     registerView.confirmBlock = ^(NSString *account, NSString *pwd, NSString *validate){
     
     };
-    [self.view addSubview:registerView];
+    [self.scrollView addSubview:registerView];
 }
 
 @end
