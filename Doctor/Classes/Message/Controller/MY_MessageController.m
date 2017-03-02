@@ -7,7 +7,7 @@
 //
 
 #import "MY_MessageController.h"
-
+#import "MY_LoginController.h"
 @interface MY_MessageController ()
 
 @end
@@ -24,7 +24,8 @@
 }
 
 - (void)loadMore:(BOOL)loadMore {
-    
+    MY_LoginController *loginVC = [[MY_LoginController alloc] init];
+    [MY_Util pushAnimationFromVC:self toVC:loginVC];
 }
 
 - (void)headerRereshing {

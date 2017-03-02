@@ -123,6 +123,4 @@
         return;
     [self setPageCount:_pageCount];
 }
-
-
 @end

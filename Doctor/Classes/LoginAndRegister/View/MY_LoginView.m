@@ -16,107 +16,133 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor purpleColor];
+        self.backgroundColor = [UIColor whiteColor];
         [self setupUI];
     }
     return self;
 }
 
 - (void)setupUI {
-    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    logoImageView.backgroundColor = [UIColor redColor];
+    UIImageView *logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon"]];
     [self addSubview:logoImageView];
     [logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).with.offset(100);
+        make.top.equalTo(self).with.offset(53);
         make.centerX.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+        make.size.mas_equalTo(CGSizeMake(115, 115));
     }];
     
-    UIImageView *accountImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    accountImageView.backgroundColor = [UIColor redColor];
-    [self addSubview:accountImageView];
-    [accountImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(30);
-        make.top.equalTo(logoImageView.mas_bottom).with.offset(100);
-        make.size.mas_equalTo(CGSizeMake(50, 50));
-    }];
-    
-    UIImageView *pwdImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-    pwdImageView.backgroundColor = [UIColor redColor];
-    [self addSubview:pwdImageView];
-    [pwdImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(30);
-        make.top.equalTo(accountImageView.mas_bottom).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(50, 50));
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
+    titleLabel.font = MY_Font(18);
+    titleLabel.text = @"专业诊疗进修平台";
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self);
+        make.top.mas_equalTo(logoImageView.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(300, 18));
     }];
     
     self.accountTextField = [[UITextField alloc] init];
-    self.accountTextField.backgroundColor = [UIColor redColor];
+    self.accountTextField.placeholder = @"请输入手机号码";
+    self.accountTextField.font = MY_Font(14);
     [self addSubview:self.accountTextField];
     [self.accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(accountImageView.mas_right).with.offset(20);
-        make.top.equalTo(accountImageView.mas_top);
-        make.height.equalTo(accountImageView.mas_height);
-        make.right.equalTo(self).with.offset(-50);
+        make.left.equalTo(@68);
+        make.top.equalTo(titleLabel.mas_bottom).with.offset(45);
+        make.height.equalTo(@35);
+        make.right.equalTo(self).with.offset(-68);
+    }];
+    
+    UIView *accountLineView = [[UIView alloc] init];
+    accountLineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
+    [self addSubview:accountLineView];
+    [accountLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(@58);
+        make.right.mas_equalTo(self).with.offset(-58);
+        make.top.mas_equalTo(self.accountTextField.mas_bottom);
+        make.height.mas_equalTo(@0.5);
     }];
     
     self.pwdTextField = [[UITextField alloc] init];
-    self.pwdTextField.backgroundColor = [UIColor redColor];
+    self.pwdTextField.placeholder = @"请输入密码";
+    self.pwdTextField.font = MY_Font(14);
     [self addSubview:self.pwdTextField];
     [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.accountTextField.mas_left);
         make.height.equalTo(self.accountTextField.mas_height);
-        make.top.equalTo(pwdImageView.mas_top);
+        make.top.equalTo(self.accountTextField.mas_bottom).with.offset(25);
         make.right.equalTo(self.accountTextField.mas_right);
     }];
     
+    UIView *pwdLineView = [[UIView alloc] init];
+    pwdLineView.backgroundColor = accountLineView.backgroundColor;
+    [self addSubview:pwdLineView];
+    [pwdLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(accountLineView);
+        make.top.mas_equalTo(self.pwdTextField.mas_bottom);
+        make.size.mas_equalTo(accountLineView);
+    }];
+    
     UIButton *forgetButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    forgetButton.backgroundColor = [UIColor redColor];
+    forgetButton.titleLabel.font = MY_Font(13);
     [forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+    [forgetButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
     [forgetButton addTarget:self action:@selector(forgetButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:forgetButton];
     [forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.pwdTextField.mas_bottom).with.offset(5);
-        make.right.equalTo(self.pwdTextField.mas_right);
-        make.size.mas_equalTo(CGSizeMake(100, 30));
+        make.right.equalTo(pwdLineView.mas_right);
+        make.size.mas_equalTo(CGSizeMake(60, 23));
     }];
     
     UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    loginButton.backgroundColor = [UIColor redColor];
+    loginButton.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
+    loginButton.layer.masksToBounds = YES;
+    loginButton.layer.cornerRadius = 2;
     [loginButton setTitle:@"登陆" forState:UIControlStateNormal];
+    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    loginButton.titleLabel.font = MY_Font(15);
     [loginButton addTarget:self action:@selector(loginButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:loginButton];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(pwdImageView.mas_left);
-        make.top.equalTo(forgetButton.mas_bottom).with.offset(30);
-        make.size.mas_equalTo(CGSizeMake(50, 40));
+        make.left.equalTo(pwdLineView);
+        make.top.equalTo(forgetButton.mas_bottom).with.offset(45);
+        make.right.mas_equalTo(pwdLineView);
+        make.height.mas_equalTo(@44);
     }];
     
     UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    registerButton.backgroundColor = [UIColor redColor];
     [registerButton setTitle:@"注册" forState:UIControlStateNormal];
+    [registerButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+    registerButton.titleLabel.font = MY_Font(14);
+    registerButton.layer.masksToBounds = YES;
+    registerButton.layer.cornerRadius = 2;
+    registerButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
+    registerButton.layer.borderWidth = 1;
     [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:registerButton];
     [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.pwdTextField.mas_right);
-        make.top.equalTo(loginButton.mas_top);
-        make.size.mas_equalTo(CGSizeMake(50, 40));
+        make.left.equalTo(accountLineView);
+        make.top.equalTo(loginButton.mas_bottom).with.offset(25);
+        make.size.mas_equalTo(CGSizeMake(((MY_ScreenWidth-58*2)-20)/2, 44));
     }];
     
     UIButton *tiyanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    tiyanButton.backgroundColor = [UIColor redColor];
     [tiyanButton setTitle:@"体验" forState:UIControlStateNormal];
+    [tiyanButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+    tiyanButton.titleLabel.font = MY_Font(14);
+    tiyanButton.layer.masksToBounds = YES;
+    tiyanButton.layer.cornerRadius = 2;
+    tiyanButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
+    tiyanButton.layer.borderWidth = 1;
     [tiyanButton addTarget:self action:@selector(tiyanButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:tiyanButton];
     [tiyanButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(registerButton);
-        make.top.mas_equalTo(registerButton.mas_bottom).with.offset(20);
+        make.left.mas_equalTo(registerButton.mas_right).with.offset(20);
+        make.top.mas_equalTo(registerButton);
         make.size.mas_equalTo(registerButton);
     }];
-
-    [self layoutIfNeeded];
-    NSLog(@"register=%@",NSStringFromCGRect(registerButton.frame));
-    self.height = tiyanButton.bottom+30;
 }
 
 - (void)tiyanButtonAction {

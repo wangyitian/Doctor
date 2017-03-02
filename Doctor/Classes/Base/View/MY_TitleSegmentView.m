@@ -101,8 +101,8 @@
 
     UILabel* titleLabel=(UILabel*)[(UIView*)[self viewWithTag:100+index] viewWithTag:300+index];
     titleLabel.textColor=[self selectColor];
-    UIImageView* horizontalLine = (UIImageView *)[self viewWithTag:500+index];
-    horizontalLine.backgroundColor = [self selectColor];
+//    UIImageView* horizontalLine = (UIImageView *)[self viewWithTag:500+index];
+//    horizontalLine.backgroundColor = [self selectColor];
     if (self.delegate&&[self.delegate respondsToSelector:@selector(didSelectWithIndex:)]) {
         MY_TitleSegmentItem* item=[self.dataArray objectAtIndex:index];
         [self.delegate didSelectWithIndex:item];
@@ -116,8 +116,8 @@
     if (page == 0) {
         UILabel* titleLabel=(UILabel*)[(UIView*)[self viewWithTag:100+index] viewWithTag:300+index];
         titleLabel.textColor=[self selectColor];
-        UIImageView* horizontalLine = (UIImageView *)[self viewWithTag:500+index];
-        horizontalLine.backgroundColor = [self selectColor];
+//        UIImageView* horizontalLine = (UIImageView *)[self viewWithTag:500+index];
+//        horizontalLine.backgroundColor = [self selectColor];
         if (self.delegate&&[self.delegate respondsToSelector:@selector(didSelectWithIndex:)]) {
             MY_TitleSegmentItem* item=[self.dataArray objectAtIndex:index];
             [self.delegate didSelectWithIndex:item];

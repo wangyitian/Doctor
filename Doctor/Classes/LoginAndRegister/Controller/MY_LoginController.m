@@ -32,7 +32,9 @@
         MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
         [self.navigationController pushViewController:registerVC animated:YES];
     };
-    [self.view addSubview:loginView];
+    
+    [self.scrollView addSubview:loginView];
+    self.scrollView.contentSize = CGSizeMake(loginView.width, loginView.height);
 }
 
 @end
