@@ -7,6 +7,7 @@
 //
 
 #import "MY_LoginView.h"
+#import "MY_TabController.h"
 @interface MY_LoginView ()
 @property (nonatomic, strong) UITextField *accountTextField;
 @property (nonatomic, strong) UITextField *pwdTextField;
@@ -146,7 +147,9 @@
 }
 
 - (void)tiyanButtonAction {
-    
+    if (self.tiyanButtonBlock) {
+        self.tiyanButtonBlock();
+    }
 }
 
 - (void)forgetButtonAction {

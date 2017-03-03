@@ -131,6 +131,17 @@
     fromVC.navigationController.navigationBarHidden = NO;
     
     [fromVC.navigationController popToViewController:toVC animated:NO];
+}
+
++ (void)popAnimationViewController:(UIViewController*)VC {
+    CATransition *transition = [CATransition animation];
+    transition.duration =0.38;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    transition.type = kCATransitionReveal;
+    transition.subtype = kCATransitionFromBottom;
+    [VC.navigationController.view.layer addAnimation:transition forKey:nil];
+    VC.navigationController.navigationBarHidden = NO;
     
+    [VC.navigationController popViewControllerAnimated:NO];
 }
 @end

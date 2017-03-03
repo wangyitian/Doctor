@@ -46,4 +46,6 @@
  */
 + (void)popAnimationFromVC:(UIViewController*)fromVC toVC:(UIViewController*)toVC;
 
++ (void)popAnimationViewController:(UIViewController*)VC;
+
 @end

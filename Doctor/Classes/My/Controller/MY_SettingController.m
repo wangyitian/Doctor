@@ -11,6 +11,7 @@
 #import "MY_ChangePWDController.h"
 #import "MY_FeedbackController.h"
 #import "MY_AboutUSController.h"
+#import "SDImageCache.h"
 @interface MY_SettingController ()
 
 @end
@@ -78,10 +79,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"确定清除缓存？" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[SDImageCache sharedImageCache] clearDisk];
+        }]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:alert animated:YES completion: nil];
+        });
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18514616528"];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
         } else if (indexPath.row == 1) {
             MY_ChangePWDController *vc = [[MY_ChangePWDController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];

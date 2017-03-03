@@ -34,7 +34,7 @@
     } else if (indexPath.row == 4) {
         cell.titleLabel.text = @"科室";
     } else if (indexPath.row == 5) {
-        cell.titleLabel.text = @"院置";
+        cell.titleLabel.text = @"医院";
     }
     
     return cell;

@@ -10,6 +10,7 @@
 #import "MY_RegisterController.h"
 #import "MY_ForgetPWDController.h"
 #import "MY_LoginView.h"
+#import "MY_TabController.h"
 @interface MY_LoginController ()
 
 @end
@@ -31,6 +32,11 @@
     loginView.registerButtonClick = ^(){
         MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
         [self.navigationController pushViewController:registerVC animated:YES];
+    };
+    loginView.tiyanButtonBlock = ^(){
+//        MY_TabController *tabVC = (MY_TabController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
+//        tabVC.selectedIndex = 0;
+        [MY_Util popAnimationViewController:self];
     };
     
     [self.scrollView addSubview:loginView];

@@ -75,9 +75,9 @@
     if (rightBttonName) {
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [rightButton setTitle:rightBttonName forState:UIControlStateNormal];
-        [rightButton setTitleColor:[MY_Color(0, 0, 0) colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
-        rightButton.titleLabel.font = [UIFont systemFontOfSize:17];
-        [rightButton setFrame:CGRectMake(MY_ScreenWidth - 10 - 80, MY_STATUS_HEIGHT + (44 - 30)/2, 80, 30)];
+        [rightButton setTitleColor:[MY_Color(255, 255, 255) colorWithAlphaComponent:1] forState:UIControlStateNormal];
+        rightButton.titleLabel.font = [UIFont systemFontOfSize:13];
+        [rightButton setFrame:CGRectMake(MY_ScreenWidth - 10 - 60, MY_STATUS_HEIGHT + (44 - 30)/2, 60, 30)];
         rightButton.titleLabel.textAlignment = NSTextAlignmentRight;
         [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.navBar addSubview:rightButton];

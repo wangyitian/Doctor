@@ -54,7 +54,7 @@
 		95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */; };
 		95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */; };
 		95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */; };
-		95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */; };
+		95C452AC1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AB1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m */; };
 		95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */; };
 		95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */; };
 		95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452B41E5AE2ED00C9A30D /* MY_EnrollView.m */; };
@@ -70,6 +70,7 @@
 		95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166691E6666A100731570 /* MY_TitleSegmentView.m */; };
 		95D1666E1E666D6300731570 /* MY_CourseSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */; };
 		95D166711E669ACC00731570 /* UILabel+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166701E669ACC00731570 /* UILabel+Base.m */; };
+		95E78E181E69436400934A75 /* MY_GuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E78E171E69436400934A75 /* MY_GuideController.m */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
 		95EC74011E5690090027EED8 /* MY_MyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74001E5690090027EED8 /* MY_MyController.m */; };
@@ -91,6 +92,7 @@
 		95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854341E66AFAD003C7013 /* MY_ServiceScheduleController.m */; };
 		95F854381E66B1CC003C7013 /* MY_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F854371E66B1CC003C7013 /* MY_TextView.m */; };
 		95F8543B1E67F662003C7013 /* MY_MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8543A1E67F662003C7013 /* MY_MyCell.m */; };
+		95F8543E1E6808CA003C7013 /* MY_ChangePhoneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8543D1E6808CA003C7013 /* MY_ChangePhoneView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,8 +191,8 @@
 		95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCustomedController.m; sourceTree = "<group>"; };
 		95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RecommendView.h; sourceTree = "<group>"; };
 		95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendView.m; sourceTree = "<group>"; };
-		95C452AA1E5AD28A00C9A30D /* MY_ChangeNameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangeNameController.h; sourceTree = "<group>"; };
-		95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangeNameController.m; sourceTree = "<group>"; };
+		95C452AA1E5AD28A00C9A30D /* MY_ChangePersonalDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePersonalDataController.h; sourceTree = "<group>"; };
+		95C452AB1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePersonalDataController.m; sourceTree = "<group>"; };
 		95C452AD1E5ADA3F00C9A30D /* MY_FeedbackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_FeedbackView.h; sourceTree = "<group>"; };
 		95C452AE1E5ADA3F00C9A30D /* MY_FeedbackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_FeedbackView.m; sourceTree = "<group>"; };
 		95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePhoneController.h; sourceTree = "<group>"; };
@@ -215,6 +217,8 @@
 		95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseSegmentController.m; sourceTree = "<group>"; };
 		95D1666F1E669ACC00731570 /* UILabel+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Base.h"; sourceTree = "<group>"; };
 		95D166701E669ACC00731570 /* UILabel+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Base.m"; sourceTree = "<group>"; };
+		95E78E161E69436400934A75 /* MY_GuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_GuideController.h; sourceTree = "<group>"; };
+		95E78E171E69436400934A75 /* MY_GuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_GuideController.m; sourceTree = "<group>"; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
 		95EC73F71E568E370027EED8 /* MY_RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RegisterController.m; sourceTree = "<group>"; };
 		95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDController.h; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 		95F854371E66B1CC003C7013 /* MY_TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TextView.m; sourceTree = "<group>"; };
 		95F854391E67F662003C7013 /* MY_MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyCell.h; sourceTree = "<group>"; };
 		95F8543A1E67F662003C7013 /* MY_MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyCell.m; sourceTree = "<group>"; };
+		95F8543C1E6808CA003C7013 /* MY_ChangePhoneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePhoneView.h; sourceTree = "<group>"; };
+		95F8543D1E6808CA003C7013 /* MY_ChangePhoneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePhoneView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +480,8 @@
 				95EC73F71E568E370027EED8 /* MY_RegisterController.m */,
 				95EC73F91E568E7D0027EED8 /* MY_ForgetPWDController.h */,
 				95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */,
+				95E78E161E69436400934A75 /* MY_GuideController.h */,
+				95E78E171E69436400934A75 /* MY_GuideController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -743,8 +751,8 @@
 				95EC74181E569A750027EED8 /* MY_FeedbackController.m */,
 				95EC741A1E569A970027EED8 /* MY_AboutUSController.h */,
 				95EC741B1E569A970027EED8 /* MY_AboutUSController.m */,
-				95C452AA1E5AD28A00C9A30D /* MY_ChangeNameController.h */,
-				95C452AB1E5AD28A00C9A30D /* MY_ChangeNameController.m */,
+				95C452AA1E5AD28A00C9A30D /* MY_ChangePersonalDataController.h */,
+				95C452AB1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m */,
 				95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */,
 				95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */,
 				95F854331E66AFAD003C7013 /* MY_ServiceScheduleController.h */,
@@ -779,6 +787,8 @@
 				95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */,
 				9549B2211E5D337000ED2D6A /* MY_AboutUSView.h */,
 				9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */,
+				95F8543C1E6808CA003C7013 /* MY_ChangePhoneView.h */,
+				95F8543D1E6808CA003C7013 /* MY_ChangePhoneView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -943,7 +953,7 @@
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
 				95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */,
-				95C452AC1E5AD28A00C9A30D /* MY_ChangeNameController.m in Sources */,
+				95C452AC1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m in Sources */,
 				95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */,
 				95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */,
 				954A399C1E5C22E000C05B9F /* NSString+Base.m in Sources */,
@@ -994,8 +1004,10 @@
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
 				95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
+				95E78E181E69436400934A75 /* MY_GuideController.m in Sources */,
 				95F8543B1E67F662003C7013 /* MY_MyCell.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
+				95F8543E1E6808CA003C7013 /* MY_ChangePhoneView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MY_TabController.h"
+#import "MY_GuideController.h"
 #import <UMSocialCore/UMSocialCore.h>
 @interface AppDelegate ()
 
@@ -28,11 +29,30 @@
 //    [self configUSharePlatforms];
 //    [self confitUShareSettings];
     
-    self.window.rootViewController = [[MY_TabController alloc] init];
-    
+//    self.window.rootViewController = [[MY_TabController alloc] init];
+    [self chooseRootViewController];
     
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)chooseRootViewController {
+    // 如何知道第一次使用这个版本？比较上次的使用情况
+    NSString *versionKey = @"CFBundleShortVersionString";
+    // 从沙盒中取出上次存储的软件版本号(取出用户上次的使用记录)
+    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
+    // 获得当前打开软件的版本号
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    if ([currentVersion isEqualToString:lastVersion]) {
+        // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
+        [UIApplication sharedApplication].statusBarHidden = NO;
+        window.rootViewController = [[MY_TabController alloc] init];
+    } else { // 当前版本号 != 上次使用的版本：显示版本新特性
+        //        [CMT_ControllerTool liveMobileIdfi];//激活应用雷达
+        window.rootViewController = [[MY_GuideController alloc] init];
+    }
 }
 
 - (void)confitUShareSettings
@@ -57,6 +77,9 @@
 //- (void)configUSharePlatforms
 //{
 //    /* 设置微信的appKey和appSecret */
+
+//        appKey  ：wx3143aac2a8cccc7b
+//        appSecret：4721f26733e24e2f13dea6ccb60fee2e
 //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
 //    /*
 //     * 移除相应平台的分享，如微信收藏
