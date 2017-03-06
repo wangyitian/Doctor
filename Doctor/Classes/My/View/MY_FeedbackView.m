@@ -55,6 +55,7 @@
     self.phoneTextField = [[UITextField alloc] init];
     self.phoneTextField.placeholder = @"请输入QQ号／手机号（必填）";
     self.phoneTextField.font = MY_Font(12);
+    self.phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     self.phoneTextField.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.phoneTextField.layer.borderWidth = 1;
     [self addSubview: self.phoneTextField];

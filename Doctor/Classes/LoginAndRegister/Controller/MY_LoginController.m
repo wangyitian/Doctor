@@ -22,6 +22,10 @@
     [self setupUI];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
 - (void)setupUI {
     MY_LoginView *loginView = [[MY_LoginView alloc] initWithFrame:self.view.bounds];
     loginView.forgetButtonClick = ^(){

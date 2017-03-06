@@ -24,15 +24,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    [[UMSocialManager defaultManager] openLog:YES];
-//    [[UMSocialManager defaultManager] setUmSocialAppkey:@"58b5099a8f4a9d6e1b000e73"];
-//    [self configUSharePlatforms];
-//    [self confitUShareSettings];
+    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
+    [self configUSharePlatforms];
+    [self confitUShareSettings];
     
-//    self.window.rootViewController = [[MY_TabController alloc] init];
     [self chooseRootViewController];
-    
-    // Override point for customization after application launch.
     return YES;
 }
 
@@ -50,13 +47,11 @@
         [UIApplication sharedApplication].statusBarHidden = NO;
         window.rootViewController = [[MY_TabController alloc] init];
     } else { // 当前版本号 != 上次使用的版本：显示版本新特性
-        //        [CMT_ControllerTool liveMobileIdfi];//激活应用雷达
         window.rootViewController = [[MY_GuideController alloc] init];
     }
 }
 
-- (void)confitUShareSettings
-{
+- (void)confitUShareSettings {
     /*
      * 打开图片水印
      */
@@ -74,30 +69,33 @@
     
 }
 
-//- (void)configUSharePlatforms
-//{
-//    /* 设置微信的appKey和appSecret */
+- (void)configUSharePlatforms {
+    /* 设置微信的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
+    /*
+     * 移除相应平台的分享，如微信收藏
+     */
+    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
+    
+    /* 设置分享到QQ互联的appID
+     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+     */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    
+    /* 设置新浪的appKey和appSecret */
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    
+}
 
-//        appKey  ：wx3143aac2a8cccc7b
-//        appSecret：4721f26733e24e2f13dea6ccb60fee2e
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
-//    /*
-//     * 移除相应平台的分享，如微信收藏
-//     */
-//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
-//    
-//    /* 设置分享到QQ互联的appID
-//     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-//     */
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1105821097"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-//    
-//    /* 设置新浪的appKey和appSecret */
-//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-//    
-//}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+    }
+    return result;
+}
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
+-
+(BOOL)application:(UIApplication*)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
     if (!result) {
     }

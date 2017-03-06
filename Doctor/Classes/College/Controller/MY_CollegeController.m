@@ -13,6 +13,7 @@
 #import "MY_SegmentController.h"
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
+#import <UShareUI/UShareUI.h>
 @interface MY_CollegeController ()
 
 @end
@@ -102,8 +103,9 @@
 }
 
 - (void)phoneButtonAction {
-
+  
 }
+
 
 - (void)enrollButtonAction {
     MY_EnrollController *enrollVC = [[MY_EnrollController alloc] init];
