@@ -15,7 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setTitle:@"医护技能" isBackButton:YES rightBttonName:nil rightImageName:nil];
     
     MY_TitleSegmentItem* item1=[[MY_TitleSegmentItem alloc] init];

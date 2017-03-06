@@ -26,7 +26,6 @@
 
 - (void)setupUI {
     [self setTitle:@"设置" isBackButton:YES rightBttonName:nil rightImageName:nil];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeCustom];

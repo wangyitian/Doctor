@@ -21,7 +21,6 @@
 
 - (void)setupUI {
     [self setTitle:@"修改手机号" isBackButton:YES rightBttonName:nil rightImageName:nil];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     MY_ChangePhoneView *view = [[MY_ChangePhoneView alloc] initWithFrame:self.view.bounds];

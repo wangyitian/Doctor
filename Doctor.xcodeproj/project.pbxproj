@@ -46,6 +46,8 @@
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
 		958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35EB1E542461006FCCF3 /* MY_BaseModel.m */; };
 		95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */; };
+		95AD58EC1E6D546800C08EA7 /* MY_ScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AD58EB1E6D546800C08EA7 /* MY_ScheduleCell.m */; };
+		95AD58EF1E6D5CA100C08EA7 /* MY_ScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AD58EE1E6D5CA100C08EA7 /* MY_ScheduleModel.m */; };
 		95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B0227C1E52E1C800B672D3 /* MY_BadgeButton.m */; };
 		95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */; };
 		95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_SettingCell.m */; };
@@ -174,6 +176,10 @@
 		958C35ED1E544974006FCCF3 /* MY_Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Api.h; sourceTree = "<group>"; };
 		95944F731E5D1B95004B43EE /* MY_ChangePWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ChangePWDView.h; sourceTree = "<group>"; };
 		95944F741E5D1B95004B43EE /* MY_ChangePWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ChangePWDView.m; sourceTree = "<group>"; };
+		95AD58EA1E6D546800C08EA7 /* MY_ScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScheduleCell.h; sourceTree = "<group>"; };
+		95AD58EB1E6D546800C08EA7 /* MY_ScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScheduleCell.m; sourceTree = "<group>"; };
+		95AD58ED1E6D5CA100C08EA7 /* MY_ScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ScheduleModel.h; sourceTree = "<group>"; };
+		95AD58EE1E6D5CA100C08EA7 /* MY_ScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ScheduleModel.m; sourceTree = "<group>"; };
 		95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Doctor-Prefix.pch"; sourceTree = "<group>"; };
 		95B0227A1E52DDD600B672D3 /* MY_Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MY_Common.h; sourceTree = "<group>"; };
 		95B0227B1E52E1C800B672D3 /* MY_BadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BadgeButton.h; sourceTree = "<group>"; };
@@ -765,6 +771,8 @@
 		95EC73F41E568DAC0027EED8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95AD58ED1E6D5CA100C08EA7 /* MY_ScheduleModel.h */,
+				95AD58EE1E6D5CA100C08EA7 /* MY_ScheduleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -790,6 +798,8 @@
 				9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */,
 				95F8543C1E6808CA003C7013 /* MY_ChangePhoneView.h */,
 				95F8543D1E6808CA003C7013 /* MY_ChangePhoneView.m */,
+				95AD58EA1E6D546800C08EA7 /* MY_ScheduleCell.h */,
+				95AD58EB1E6D546800C08EA7 /* MY_ScheduleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -935,6 +945,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95AD58EF1E6D5CA100C08EA7 /* MY_ScheduleModel.m in Sources */,
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
 				95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */,
 				95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */,
@@ -949,6 +960,7 @@
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */,
+				95AD58EC1E6D546800C08EA7 /* MY_ScheduleCell.m in Sources */,
 				95D1666A1E6666A100731570 /* MY_SegmentContentView.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */,

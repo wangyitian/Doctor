@@ -13,6 +13,7 @@
 #import "MY_SettingController.h"
 #import "MY_FeedbackController.h"
 #import "MY_AboutUSController.h"
+#import "MY_ServiceScheduleController.h"
 @interface MY_MyController ()
 
 @end
@@ -40,12 +41,15 @@
 }
 
 - (void)setupUI {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.backgroundColor = [UIColor whiteColor];
     MY_MyHeaderView *tableHeaderView = [[MY_MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     tableHeaderView.personalDataBlock = ^(){
         MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
         [self.navigationController pushViewController:personalVC animated:YES];
+    };
+    tableHeaderView.scheduleBlock = ^() {
+        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
+        [self.navigationController pushViewController:scheduleVC animated:YES];
     };
     tableHeaderView.object = @"1";
     self.tableView.tableHeaderView = tableHeaderView;

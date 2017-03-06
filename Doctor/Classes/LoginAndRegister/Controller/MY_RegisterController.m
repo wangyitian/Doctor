@@ -20,7 +20,6 @@
 }
 
 - (void)setupUI {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self setTitle:@"注册" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     MY_ChangePWDView *registerView = [[MY_ChangePWDView alloc] initWithFrame:self.view.bounds];
