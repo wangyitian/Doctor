@@ -6,8 +6,8 @@
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
-#import "MY_PersonalDataCell.h"
+#import "MY_BaseCell.h"
 
-@interface MY_MyCell : MY_PersonalDataCell
-//+ (MY_PersonalDataCell *)cellWithTablebView:(UITableView *)tableView index:(NSIndexPath *)indexPath;
+@interface MY_MyCell : MY_BaseCell
++ (MY_MyCell *)cellWithTablebView:(UITableView *)tableView index:(NSIndexPath *)indexPath;
 @end

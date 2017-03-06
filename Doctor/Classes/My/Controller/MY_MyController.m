@@ -35,14 +35,20 @@
     return UITableViewStyleGrouped;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
 - (void)setupUI {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     MY_MyHeaderView *tableHeaderView = [[MY_MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     tableHeaderView.personalDataBlock = ^(){
         MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
         [self.navigationController pushViewController:personalVC animated:YES];
     };
+    tableHeaderView.object = @"1";
     self.tableView.tableHeaderView = tableHeaderView;
-    self.tableView.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
 }
 
 - (void)initData {
@@ -52,13 +58,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10;
+    return 5;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
-    header.backgroundColor = [UIColor blueColor];
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 5)];
+    header.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     return header;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MY_MyCell *cell = [MY_MyCell cellWithTablebView:tableView index:indexPath];
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

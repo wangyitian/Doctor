@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^PersonalDataBlock)();
+typedef void(^ScheduleBlock)();
 @interface MY_MyHeaderView : UIView
+@property (nonatomic, strong) id object;
 @property (nonatomic, copy) PersonalDataBlock personalDataBlock;
+@property (nonatomic, copy) ScheduleBlock scheduleBlock;
 @end
