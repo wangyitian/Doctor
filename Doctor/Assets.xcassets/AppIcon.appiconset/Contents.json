@@ -197,8 +197,9 @@
       "subtype" : "42mm"
     },
     {
-      "idiom" : "mac",
       "size" : "16x16",
+      "idiom" : "mac",
+      "filename" : "16x16.png",
       "scale" : "1x"
     },
     {
@@ -246,34 +247,6 @@
       "size" : "512x512",
       "idiom" : "mac",
       "filename" : "iTunesArtwork@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "iphone",
-      "filename" : "icon-29.png",
-      "unassigned" : true,
-      "scale" : "1x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "icon-20@2x.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "icon-40.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "icon-29@2x.png",
-      "unassigned" : true,
       "scale" : "2x"
     }
   ],
