@@ -31,7 +31,6 @@
 		954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39981E5C22E000C05B9F /* UIButton+Base.m */; };
 		954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A399A1E5C22E000C05B9F /* UIImage+Base.m */; };
 		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
-		9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */; };
 		9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */; };
 		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
@@ -146,8 +145,6 @@
 		954A399A1E5C22E000C05B9F /* UIImage+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Base.m"; sourceTree = "<group>"; };
 		954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalAvatarCell.h; sourceTree = "<group>"; };
 		954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalAvatarCell.m; sourceTree = "<group>"; };
-		9565A8A81E65166C00F23227 /* MY_CourseListHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseListHeaderView.h; sourceTree = "<group>"; };
-		9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseListHeaderView.m; sourceTree = "<group>"; };
 		9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageModel.h; sourceTree = "<group>"; };
 		9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageModel.m; sourceTree = "<group>"; };
 		9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroModel.h; sourceTree = "<group>"; };
@@ -725,8 +722,6 @@
 				957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */,
 				957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */,
 				957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */,
-				9565A8A81E65166C00F23227 /* MY_CourseListHeaderView.h */,
-				9565A8A91E65166C00F23227 /* MY_CourseListHeaderView.m */,
 				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
 				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
 				95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */,
@@ -987,7 +982,6 @@
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
 				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
 				95D166651E6665C700731570 /* MY_SegmentController.m in Sources */,
-				9565A8AA1E65166C00F23227 /* MY_CourseListHeaderView.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
 				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,

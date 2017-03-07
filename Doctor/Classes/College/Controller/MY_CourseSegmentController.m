@@ -27,7 +27,7 @@
     for (int i = 0; i < self.types.count; i++) {
         MY_TitleSegmentItem* item = [[MY_TitleSegmentItem alloc] init];
         item.title = self.types[i];
-        item.index = i + 1;
+        item.index = i;
         [dataArray addObject:item];
         item.typeArray = [NSArray arrayWithObjects:@"dsf",@"dsf",@"dsf", nil];
     }
@@ -41,11 +41,11 @@
 
 -(void)didSelectWithIndex:(MY_TitleSegmentItem *)indexItem {
     if (self.typeIndex == 1) {
-//        if (indexItem.index != 1) {
-//            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT - 100)];
-//            view.backgroundColor = [UIColor blueColor];
-//            [self.view addSubview:view];
-//        }
+        if (indexItem.index != 0) {
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT - 100)];
+            view.backgroundColor = [UIColor blueColor];
+            [self.view addSubview:view];
+        }
     } else {
         [self setSelectedAt:indexItem.index];
     }
