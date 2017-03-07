@@ -13,8 +13,11 @@
 #import "MY_SegmentController.h"
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
-#import <UShareUI/UShareUI.h>
-@interface MY_CollegeController ()
+
+#import "UMSocialData.h"
+#import "UMSocialSnsService.h"
+#import "UMSocialSnsPlatformManager.h"
+@interface MY_CollegeController () <UMSocialUIDelegate>
 
 @end
 
@@ -113,7 +116,17 @@
 }
 
 - (void)phoneButtonAction {
-  
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"111";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.baidu.com";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.shareText = @"hehe";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.shareImage = nil;
+    
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:UMengKey
+                                      shareText:@"hehe"
+                                     shareImage:nil
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToSina,nil]
+                                       delegate:self];
 }
 
 

@@ -54,11 +54,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>UMengUShare.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>YYCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,22 +67,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03253C0BFE6ADA23DCAFE64B4573B5AD</key>
+		<key>1153C58313476625788491C558845C22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>078A9F94E1F68CD77EF60E9E32575D44</key>
+		<key>1C36DA560A6E500920909D0F54B70DD4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35845CABAF8CBA0E18914885B69C4542</key>
+		<key>40AE371000E1CCE912D2123BA5C0153E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FE82DFA6741EC6DBE590DD9E2ACBD15</key>
+		<key>51CCCBDCE3D0047DBC3FEF52DE2C3C6B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +97,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7FC2950AB9F7D1C3668809E65738C6C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A85450C7144B66943DA52D23BD75DDD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CAA491A2FA3C88F24F5E636C0FC39B9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A3EE4C7B6F99DB662163EB99F3505D5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +117,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2755C67C68E2EBB53728FB9F22CE1A1</key>
+		<key>D874B488EE003AACAE2B284123527441</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D82740330B1E984085AE6581ACB67A04</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DC406B93CA902D4FA77055380A6108F7</key>
+		<key>DD8C903909FF201AAFC316440F99669C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

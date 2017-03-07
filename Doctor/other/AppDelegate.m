@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "MY_TabController.h"
 #import "MY_GuideController.h"
-#import <UMSocialCore/UMSocialCore.h>
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+#import "UMSocialSinaSSOHandler.h"
+//#import <UMSocialCore/UMSocialCore.h>
 @interface AppDelegate ()
 
 @end
@@ -24,13 +28,31 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    [[UMSocialManager defaultManager] openLog:YES];
-    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
-    [self configUSharePlatforms];
-    [self confitUShareSettings];
+//    [[UMSocialManager defaultManager] openLog:YES];
+//    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
+//    [self configUSharePlatforms];
+//    [self confitUShareSettings];
+    
+    [self createUM];//创建UM分享
     
     [self chooseRootViewController];
     return YES;
+}
+
+- (void)createUM{
+    //设置友盟社会化组件appkey
+    [UMSocialData setAppKey:UMengKey];
+    [UMSocialWechatHandler setWXAppId:WechatAppKey appSecret:WechatAppSecret url:@""];
+    [UMSocialQQHandler setQQWithAppId:QQAppID appKey:nil url:@""];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:WeiboAppKey secret:WeiboAppSecret RedirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    [UMSocialConfig setFinishToastIsHidden:YES position:UMSocialiToastPositionBottom];
+}
+/**
+ 这里处理新浪微博SSO授权之后跳转回来，和微信分享完成之后跳转回来
+ */
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];
 }
 
 - (void)chooseRootViewController {
@@ -69,38 +91,38 @@
     
 }
 
-- (void)configUSharePlatforms {
-    /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
-    /*
-     * 移除相应平台的分享，如微信收藏
-     */
-    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
-    
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-    
-    /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-    
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
-    if (!result) {
-    }
-    return result;
-}
-
--
-(BOOL)application:(UIApplication*)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
-    if (!result) {
-    }
-    return result;
-}
+//- (void)configUSharePlatforms {
+//    /* 设置微信的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
+//    /*
+//     * 移除相应平台的分享，如微信收藏
+//     */
+//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
+//    
+//    /* 设置分享到QQ互联的appID
+//     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
+//     */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+//    
+//    /* 设置新浪的appKey和appSecret */
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+//    
+//}
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+//    if (!result) {
+//    }
+//    return result;
+//}
+//
+//-
+//(BOOL)application:(UIApplication*)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+//    if (!result) {
+//    }
+//    return result;
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
