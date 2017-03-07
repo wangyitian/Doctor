@@ -10,7 +10,7 @@
 #import "MY_RequestModel.h"
 #import "MY_LoginController.h"
 @interface MY_BaseController ()
-@property (nonatomic, strong) UILabel *navLabel;
+
 @end
 
 @implementation MY_BaseController

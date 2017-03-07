@@ -17,11 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    [self addHeaderRefresh:YES footerRefresh:YES];
     [self setupUI];
+    [self loadMore:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)loadMore:(BOOL)loadMore {
+    
+}
+
+- (void)headerRereshing {
+    [self loadMore:NO];
+}
+
+- (void)footerRereshing {
+    [self loadMore:YES];
 }
 
 - (void)setupUI {

@@ -22,6 +22,7 @@
 		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
 		95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A961E6003B000C28FD9 /* MY_CourseModel.m */; };
 		95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */; };
+		9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */; };
 		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
 		954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398A1E5C160000C05B9F /* HXSearchBar.m */; };
 		954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398D1E5C16E100C05B9F /* MY_SearchController.m */; };
@@ -127,6 +128,8 @@
 		95229A961E6003B000C28FD9 /* MY_CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseModel.m; sourceTree = "<group>"; };
 		95229A981E60041F00C28FD9 /* MY_CourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseDetailView.h; sourceTree = "<group>"; };
 		95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseDetailView.m; sourceTree = "<group>"; };
+		9522E1D51E6E7B5A000FA06A /* MY_BaseWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseWebController.h; sourceTree = "<group>"; };
+		9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseWebController.m; sourceTree = "<group>"; };
 		9549B2211E5D337000ED2D6A /* MY_AboutUSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AboutUSView.h; sourceTree = "<group>"; };
 		9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AboutUSView.m; sourceTree = "<group>"; };
 		954A39891E5C160000C05B9F /* HXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSearchBar.h; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				95EC74091E5693000027EED8 /* MY_BaseScrollController.m */,
 				95D166631E6665C700731570 /* MY_SegmentController.h */,
 				95D166641E6665C700731570 /* MY_SegmentController.m */,
+				9522E1D51E6E7B5A000FA06A /* MY_BaseWebController.h */,
+				9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1008,6 +1013,7 @@
 				95C452A31E5AC8B500C9A30D /* MY_CourseCell.m in Sources */,
 				95D166711E669ACC00731570 /* UILabel+Base.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
+				9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,
 				957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */,

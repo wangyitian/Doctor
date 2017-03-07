@@ -26,6 +26,9 @@
     [self setupUI];
     
     [self initData];
+    
+    [self addHeaderRefresh:YES footerRefresh:NO];
+    [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,6 +41,14 @@
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
+}
+
+- (void)loadData {
+    
+}
+
+- (void)headerRereshing {
+    [self loadData];
 }
 
 - (void)setupUI {

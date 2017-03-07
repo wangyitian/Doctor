@@ -27,8 +27,9 @@
     for (int i = 0; i < self.types.count; i++) {
         MY_TitleSegmentItem* item = [[MY_TitleSegmentItem alloc] init];
         item.title = self.types[i];
-        item.index = i;
+        item.index = i + 1;
         [dataArray addObject:item];
+        item.typeArray = [NSArray arrayWithObjects:@"dsf",@"dsf",@"dsf", nil];
     }
     self.sgView=[[MY_TitleSegmentView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, 45) dataArray:dataArray delegate:self];
     self.segmentContentView.scrollView.backgroundColor = [UIColor purpleColor];
@@ -39,11 +40,19 @@
 
 
 -(void)didSelectWithIndex:(MY_TitleSegmentItem *)indexItem {
-    [self setSelectedAt:indexItem.index];
+    if (self.typeIndex == 1) {
+//        if (indexItem.index != 1) {
+//            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT - 100)];
+//            view.backgroundColor = [UIColor blueColor];
+//            [self.view addSubview:view];
+//        }
+    } else {
+        [self setSelectedAt:indexItem.index];
+    }
 }
 
 -(void)setSegmentViewIndex:(NSInteger)index {
-    [super setSegmentViewIndex:index];
+//    [super setSegmentViewIndex:index];
     
     [self.sgView selectWithIndex:index];
 }

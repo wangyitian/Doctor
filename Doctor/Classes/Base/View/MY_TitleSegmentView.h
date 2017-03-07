@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong)NSString* title;
 @property(nonatomic,assign)NSInteger index;
+@property (nonatomic, strong) NSArray *typeArray;
 
 @end
 
