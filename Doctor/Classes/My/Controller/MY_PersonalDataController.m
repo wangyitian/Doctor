@@ -27,7 +27,7 @@
 
 - (void)setupUI {
     [self setTitle:@"个人资料" isBackButton:YES rightBttonName:nil rightImageName:nil];
-    self.tableView.contentInset = UIEdgeInsetsMake(MY_NAVBAR_HEIGHT, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     self.tableView.backgroundColor = [UIColor whiteColor];
 }
 

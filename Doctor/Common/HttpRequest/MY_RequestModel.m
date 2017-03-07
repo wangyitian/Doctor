@@ -25,7 +25,7 @@
     return self;
 }
 
-- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure {
+- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
     [self.manager GET:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {        NSDictionary *responseDic = (NSDictionary*)responseObject;
         if ([responseObject[@"status"] isEqualToString:@"1"]) {
             success(task, responseDic);
@@ -34,32 +34,51 @@
                 [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
             }
         } else {
-            if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:responseDic:)]) {
-                [self.delegate requestFailedWithModel:self responseDic:responseDic];
+            if ([self.delegate respondsToSelector:@selector(requestErrorWithModel:responseDic:)]) {
+                [self.delegate requestErrorWithModel:self responseDic:responseDic];
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failure(task, error);
+        if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:task:error:)]) {
+            [self.delegate requestFailedWithModel:self task:task error:error];
+        }
     }];
-    
 }
 
-- (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure {
-    [self.manager POST:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *responseDic = (NSDictionary*)responseObject;
-        if ([responseObject[@"status"] isEqualToString:@"1"]) {
-            success(task, responseDic);
-        } else if ([responseObject[@"status"] isEqualToString:@"999"]) {
-            if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
-                [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
-            }
-        } else {
-            if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:responseDic:)]) {
-                [self.delegate requestFailedWithModel:self responseDic:responseDic];
-            }
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
-}
+//- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure {
+//    [self.manager GET:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {        NSDictionary *responseDic = (NSDictionary*)responseObject;
+//        if ([responseObject[@"status"] isEqualToString:@"1"]) {
+//            success(task, responseDic);
+//        } else if ([responseObject[@"status"] isEqualToString:@"999"]) {
+//            if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
+//                [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
+//            }
+//        } else {
+//            if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:responseDic:)]) {
+//                [self.delegate requestFailedWithModel:self responseDic:responseDic];
+//            }
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        failure(task, error);
+//    }];
+//}
+
+//- (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure {
+//    [self.manager POST:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSDictionary *responseDic = (NSDictionary*)responseObject;
+//        if ([responseObject[@"status"] isEqualToString:@"1"]) {
+//            success(task, responseDic);
+//        } else if ([responseObject[@"status"] isEqualToString:@"999"]) {
+//            if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
+//                [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
+//            }
+//        } else {
+//            if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:responseDic:)]) {
+//                [self.delegate requestFailedWithModel:self responseDic:responseDic];
+//            }
+//        }
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
+//}
 @end

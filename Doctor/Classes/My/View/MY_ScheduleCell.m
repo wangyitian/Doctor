@@ -73,7 +73,7 @@
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
-//    MY_ScheduleModel *model = (MY_ScheduleModel*)object;
+    MY_ScheduleModel *model = (MY_ScheduleModel*)object;
     return 59;
 }
 

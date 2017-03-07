@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^HeaderButtonBlock)(NSString *index);
+typedef void(^HeaderButtonBlock)(NSInteger index);
 
 @interface MY_CollegeHeaderView : UIView
 @property (nonatomic, copy) HeaderButtonBlock headerButtonBlock;

@@ -71,7 +71,7 @@
     return header;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MY_MyCell *cell = [MY_MyCell cellWithTablebView:tableView index:indexPath];
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     return cell;

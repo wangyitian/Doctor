@@ -16,9 +16,9 @@ typedef void(^Failure)(NSURLSessionDataTask *operation, NSError *error);
 
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC;
 
-- (void)requestFailedWithModel:(MY_RequestModel*)requestModel responseDic:(NSDictionary*)responseDic;
+- (void)requestErrorWithModel:(MY_RequestModel*)requestModel responseDic:(NSDictionary*)responseDic;
 
-- (void)requestFailedForServerErrorWithModel:(MY_RequestModel*)requestModel responseDic:(NSDictionary*)responseDic;
+- (void)requestFailedWithModel:(MY_RequestModel*)requestModel task:(NSURLSessionDataTask*)task error:(NSError*)error;
 
 @end
 
@@ -26,7 +26,9 @@ typedef void(^Failure)(NSURLSessionDataTask *operation, NSError *error);
 @interface MY_RequestModel : NSObject
 @property (nonatomic, assign) id<MY_RequestModelDelegate> delegate;
 
-- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure;
-
-- (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure;
+- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success;
+//
+//- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure;
+//
+//- (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure;
 @end

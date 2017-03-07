@@ -25,6 +25,5 @@
 }
 
 - (void)setupUI {
-    
 }
 @end

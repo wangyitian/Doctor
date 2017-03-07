@@ -11,5 +11,6 @@
 @interface MY_CourseSegmentController : MY_SegmentController<MY_TitleSegmentDelegate>
 @property(nonatomic,strong)MY_TitleSegmentView* sgView;
 @property(nonatomic,assign)NSInteger currtentIndex;
-
+@property (nonatomic, assign) NSInteger typeIndex;
+@property (nonatomic, strong) NSArray *types;
 @end

@@ -15,25 +15,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"医护技能" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    if (self.typeIndex == 1) {
+        [self setTitle:@"医护技能" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    } else if (self.typeIndex == 2) {
+        [self setTitle:@"管理进修" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    } else if (self.typeIndex == 3) {
+        [self setTitle:@"科研试验" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    }
     
-    MY_TitleSegmentItem* item1=[[MY_TitleSegmentItem alloc] init];
-    item1.title = @"全部";
-    item1.index=0;
-    
-    MY_TitleSegmentItem* item2=[[MY_TitleSegmentItem alloc] init];
-    item2.title = @"专科特训";
-    item2.index=1;
-    
-    MY_TitleSegmentItem* item3=[[MY_TitleSegmentItem alloc] init];
-    item3.title = @"医技培训";
-    item3.index=2;
-    
-    MY_TitleSegmentItem* item4=[[MY_TitleSegmentItem alloc] init];
-    item4.title = @"临床研修";
-    item4.index=3;
-    
-    self.sgView=[[MY_TitleSegmentView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, 45) dataArray:@[item1,item2,item3,item4] delegate:self];
+    NSMutableArray *dataArray = [NSMutableArray array];
+    for (int i = 0; i < self.types.count; i++) {
+        MY_TitleSegmentItem* item = [[MY_TitleSegmentItem alloc] init];
+        item.title = self.types[i];
+        item.index = i;
+        [dataArray addObject:item];
+    }
+    self.sgView=[[MY_TitleSegmentView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, 45) dataArray:dataArray delegate:self];
     self.segmentContentView.scrollView.backgroundColor = [UIColor purpleColor];
     [self.segmentView addSubview:self.sgView];
     

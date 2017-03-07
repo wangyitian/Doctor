@@ -30,7 +30,7 @@
     return UIStatusBarStyleLightContent;
 }
 
-- (void)requestFailedWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
+- (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
     
 }
 
@@ -43,7 +43,7 @@
     [self presentViewController:loginVC animated:YES completion:nil];
 }
 
-- (void)requestFailedForServerErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
+- (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
     
 }
 

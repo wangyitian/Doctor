@@ -10,6 +10,7 @@
 #import "HXSearchBar.h"
 #import "MY_SearchController.h"
 #import "MY_RecommendController.h"
+#import "MY_HomePageHeaderView.h"
 @interface MY_HomePageController () <UISearchBarDelegate>
 
 @end
@@ -19,10 +20,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavBar];
+    [self setupUI];
+    [self addHeaderRefresh:YES footerRefresh:YES];
+    [self loadMore:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)loadMore:(BOOL)loadMore {
+    MY_RequestModel *model = [[MY_RequestModel alloc] init];
+//    [model getDataWithURL:@"" paramter:nil success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+//        
+//    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
+//        
+//    }];
+}
+
+- (void)headerRereshing {
+    [self loadMore:NO];
+}
+
+- (void)footerRereshing {
+    [self loadMore:YES];
 }
 
 - (void)initNavBar {
@@ -57,6 +78,13 @@
     rightButton.frame = CGRectMake(MY_ScreenWidth - 30 - 7, 27, 30, 30);
     [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.navBar addSubview:rightButton];
+}
+
+- (void)setupUI {
+    self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
+    
+    MY_HomePageHeaderView *headerView = [[MY_HomePageHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    self.tableView.tableHeaderView = headerView;
 }
 
 - (void)rightButtonAction {

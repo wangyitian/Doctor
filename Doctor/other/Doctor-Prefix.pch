@@ -18,6 +18,7 @@
 #import "MY_Util.h"
 #import "MY_LoginController.h"
 #import "MY_RequestModel.h"
+#import "UIImageView+WebCache.h"
 
 #import "MY_TextView.h"
 
