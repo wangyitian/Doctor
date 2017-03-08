@@ -91,6 +91,8 @@
 		95C453021E5AF49400C9A30D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453011E5AF49400C9A30D /* libc++.tbd */; };
 		95C453041E5AF49D00C9A30D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453031E5AF49D00C9A30D /* libz.tbd */; };
 		95C453061E5AF4B200C9A30D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95C453051E5AF4B200C9A30D /* ImageIO.framework */; };
+		95CB0E161E6FCE2300EEBDED /* MY_CourseCustomedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0E151E6FCE2300EEBDED /* MY_CourseCustomedView.m */; };
+		95CB0E191E6FCFB400EEBDED /* MY_CustomedCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95CB0E181E6FCFB400EEBDED /* MY_CustomedCourseModel.m */; };
 		95D166651E6665C700731570 /* MY_SegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166641E6665C700731570 /* MY_SegmentController.m */; };
 		95D1666A1E6666A100731570 /* MY_SegmentContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166671E6666A100731570 /* MY_SegmentContentView.m */; };
 		95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166691E6666A100731570 /* MY_TitleSegmentView.m */; };
@@ -296,6 +298,10 @@
 		95C453011E5AF49400C9A30D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		95C453031E5AF49D00C9A30D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		95C453051E5AF4B200C9A30D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		95CB0E141E6FCE2300EEBDED /* MY_CourseCustomedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCustomedView.h; sourceTree = "<group>"; };
+		95CB0E151E6FCE2300EEBDED /* MY_CourseCustomedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCustomedView.m; sourceTree = "<group>"; };
+		95CB0E171E6FCFB400EEBDED /* MY_CustomedCourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CustomedCourseModel.h; sourceTree = "<group>"; };
+		95CB0E181E6FCFB400EEBDED /* MY_CustomedCourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CustomedCourseModel.m; sourceTree = "<group>"; };
 		95D166631E6665C700731570 /* MY_SegmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SegmentController.h; sourceTree = "<group>"; };
 		95D166641E6665C700731570 /* MY_SegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SegmentController.m; sourceTree = "<group>"; };
 		95D166661E6666A100731570 /* MY_SegmentContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SegmentContentView.h; sourceTree = "<group>"; };
@@ -942,6 +948,8 @@
 				9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */,
 				95229A951E6003B000C28FD9 /* MY_CourseModel.h */,
 				95229A961E6003B000C28FD9 /* MY_CourseModel.m */,
+				95CB0E171E6FCFB400EEBDED /* MY_CustomedCourseModel.h */,
+				95CB0E181E6FCFB400EEBDED /* MY_CustomedCourseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -959,6 +967,8 @@
 				95C452B41E5AE2ED00C9A30D /* MY_EnrollView.m */,
 				95229A981E60041F00C28FD9 /* MY_CourseDetailView.h */,
 				95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */,
+				95CB0E141E6FCE2300EEBDED /* MY_CourseCustomedView.h */,
+				95CB0E151E6FCE2300EEBDED /* MY_CourseCustomedView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1228,6 +1238,7 @@
 				95D166651E6665C700731570 /* MY_SegmentController.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
+				95CB0E161E6FCE2300EEBDED /* MY_CourseCustomedView.m in Sources */,
 				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
@@ -1258,6 +1269,7 @@
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
 				957BE1A11E641FD200AB3D09 /* MY_HomePageHeaderView.m in Sources */,
 				95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */,
+				95CB0E191E6FCFB400EEBDED /* MY_CustomedCourseModel.m in Sources */,
 				9510A4701E580556009FCBF3 /* MY_RegisterView.m in Sources */,
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
 				95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */,

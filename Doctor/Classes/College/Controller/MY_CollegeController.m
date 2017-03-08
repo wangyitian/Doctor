@@ -116,15 +116,19 @@
 }
 
 - (void)phoneButtonAction {
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"111";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"www.baidu.com";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.shareText = @"hehe";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.shareImage = nil;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"测试";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"测试";
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
+    
+    [UMSocialData defaultData].extConfig.qqData.title = @"测试";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
     
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:UMengKey
-                                      shareText:@"hehe"
-                                     shareImage:nil
+                                      shareText:@"测试一下，我好帅啊，帅超和帅永也挺帅"
+                                     shareImage:[UIImage imageNamed:@"icon"]
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToSina,nil]
                                        delegate:self];
 }

@@ -27,6 +27,7 @@ typedef void(^Failure)(NSURLSessionDataTask *operation, NSError *error);
 @property (nonatomic, assign) id<MY_RequestModelDelegate> delegate;
 
 - (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success;
+- (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success;
 //
 //- (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success failure:(Failure)failure;
 //

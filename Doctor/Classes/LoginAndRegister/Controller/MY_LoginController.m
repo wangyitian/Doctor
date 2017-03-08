@@ -38,9 +38,8 @@
         [self.navigationController pushViewController:registerVC animated:YES];
     };
     loginView.tiyanButtonBlock = ^(){
-//        MY_TabController *tabVC = (MY_TabController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
-//        tabVC.selectedIndex = 0;
-        [MY_Util popAnimationViewController:self];
+        MY_TabController *tabVC = [[MY_TabController alloc] init];
+        [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
     };
     
     [self.scrollView addSubview:loginView];

@@ -196,9 +196,10 @@
 }
 
 - (void)validateButtonAction {
+    [self endEditing:YES];
     if ([self.phoneTextField.text isPhoneNum]) {
         if (self.validateBlock) {
-            self.validateBlock(self.validateTextField.text);
+            self.validateBlock(self.phoneTextField.text);
         }
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入正确的手机号" preferredStyle:UIAlertControllerStyleAlert];

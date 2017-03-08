@@ -60,7 +60,33 @@
     model.status = @"1";
     model.detail = @"为飞机啊快点放假快速的减肥了看电视剧 ";
     model.time = @"20142222";
-    NSArray *array = [NSArray arrayWithObjects:model,model,model,model,model, nil];
+    model.isFirst = YES;
+    
+    MY_ScheduleModel *model1 = [[MY_ScheduleModel alloc] init];
+    model1.name = @"发生的";
+    model1.status = @"1";
+    model1.detail = @"为飞机啊快点放假快速的减肥了看电视剧 ";
+    model1.time = @"20142222";
+    
+    MY_ScheduleModel *model2 = [[MY_ScheduleModel alloc] init];
+    model2.name = @"发生的";
+    model2.status = @"1";
+    model2.detail = @"为飞机啊快点放假快速的减肥了看电视剧 ";
+    model2.time = @"20142222";
+    
+    MY_ScheduleModel *model3 = [[MY_ScheduleModel alloc] init];
+    model3.name = @"发生的";
+    model3.status = @"1";
+    model3.detail = @"为飞机啊快点放假快速的减肥了看电视剧为飞机啊快点放假快速的减肥了看电视剧 ";
+    model3.time = @"20142222";
+    
+    MY_ScheduleModel *model4 = [[MY_ScheduleModel alloc] init];
+    model4.name = @"发生的";
+    model4.status = @"1";
+    model4.detail = @"为飞机啊快点放假快速的减肥了看电视剧 ";
+    model4.time = @"20142222";
+    model4.isLast = YES;
+    NSArray *array = [NSArray arrayWithObjects:model,model1,model2,model3,model4, nil];
     [self.dataSource addObject:array];
     [self.tableView reloadData];
 }

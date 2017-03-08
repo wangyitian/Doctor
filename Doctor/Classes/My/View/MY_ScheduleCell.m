@@ -35,12 +35,6 @@
     self.lineView = [[UIView alloc] init];
     self.lineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     [self.contentView addSubview:self.lineView];
-    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.circleImageView);
-        make.width.mas_equalTo(@1);
-        make.top.mas_equalTo(self.circleImageView.mas_bottom).with.offset(-1);
-        make.bottom.mas_equalTo(self);
-    }];
     
     self.scheduleLabel = [[UILabel alloc] init];
     self.scheduleLabel.textColor = [MY_Util setColorWithInt:0x666666];
@@ -54,6 +48,7 @@
     
     self.detailLabel = [[UILabel alloc] init];
     self.detailLabel.textColor = self.scheduleLabel.textColor;
+    self.detailLabel.numberOfLines = 0;
     self.detailLabel.font = MY_Font(14);
     [self.contentView addSubview:self.detailLabel];
     
@@ -69,12 +64,55 @@
     
     self.scheduleLabel.text = model.name;
     self.detailLabel.text = model.detail;
+    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-140-15, MAXFLOAT)];
+    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(@140);
+        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-140-15, size.height + 3));
+        make.top.mas_equalTo(self);
+    }];
+    
     self.timeLabel.text = model.time;
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.detailLabel);
+        make.top.mas_equalTo(self.detailLabel.mas_bottom).with.offset(10);
+        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-140-15, 12));
+    }];
+    
+    
+    if (model.isFirst && model.isLast) {
+        self.lineView.hidden = YES;
+    } else {
+        if (model.isFirst) {
+            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(self.circleImageView);
+                make.top.mas_equalTo(self.circleImageView);
+                make.width.mas_equalTo(@1);
+                make.bottom.mas_equalTo(self);
+            }];
+        } else if (model.isLast) {
+            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(self.circleImageView);
+                make.top.mas_equalTo(self);
+                make.width.mas_equalTo(@1);
+                make.bottom.mas_equalTo(self.circleImageView);
+            }];
+        } else {
+            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(self.circleImageView);
+                make.top.mas_equalTo(self);
+                make.width.mas_equalTo(@1);
+                make.bottom.mas_equalTo(self);
+            }];
+        }
+    }
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_ScheduleModel *model = (MY_ScheduleModel*)object;
-    return 59;
+    
+    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-140-15, MAXFLOAT)];
+    
+    return 70 + (size.height - 15);
 }
 
 @end

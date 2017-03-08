@@ -9,7 +9,9 @@
 #ifndef MY_Api_h
 #define MY_Api_h
 
-#define MY_BASE_API_PATH    @""
+#define MY_BASE_API_PATH        @"http://ohs.meiyujiankang.com/index1.php/Index/"
+#define MY_API_REGISTER         @"meiyu_register"
+#define MY_API_GET_CODE         @"meiyu_information"
 
 
 

@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) NSString *detail;
 @property (nonatomic, strong) NSString *time;
+@property (nonatomic, assign) BOOL  isFirst;
+@property (nonatomic, assign) BOOL  isLast;
 @end
