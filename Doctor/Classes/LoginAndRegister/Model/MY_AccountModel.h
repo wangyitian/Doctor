@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface MY_AccountModel : MY_BaseModel<NSCoding>
-
+@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *phonen;
 @end

@@ -13,7 +13,6 @@
 + (void)saveAccount:(MY_AccountModel *)model {
     //准备路径:
     NSString *path = NSHomeDirectory();
-    
     path = [path stringByAppendingPathComponent:@"accountModel.archiver"];
     //1:准备存储数据的对象
     NSMutableData *data = [NSMutableData data];
@@ -27,8 +26,7 @@
     BOOL result = [data writeToFile:path atomically:YES];
     if (result) {
         MY_Log(@"归档成功:%@",path);
-    }else
-    {
+    } else {
         MY_Log(@"归档不成功!!!");
     }
 }
@@ -45,16 +43,33 @@
     accountModel = [unarchiver decodeObjectForKey:@"accountModel"];
     //完成反归档
     [unarchiver finishDecoding];
-    
     return accountModel;
 }
 
 + (void)removeAccount {
+    NSString *path = NSHomeDirectory();
+    path = [path stringByAppendingPathComponent:@"accountModel.archiver"];
+    NSError *error = nil;
     
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+        if (error) {
+            MY_Log(@"移除文件失败，错误信息：%@", error);
+        } else {
+            MY_Log(@"成功移除文件");
+        }
+    } else {
+        MY_Log(@"文件不存在");
+    }
 }
 
 + (BOOL)isLogin {
-    return NO;
+    MY_AccountModel *accountModel = [self getAccountModel];
+    if (accountModel.uid.length) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 + (NSString*)convertDate:(NSNumber*)timestamp {

@@ -10,7 +10,6 @@
 @interface MY_ChangePWDView ()
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *validateTextField;
-@property (nonatomic, strong) UIButton *validateButton;
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) UITextField *confirmTextField;
 @end
