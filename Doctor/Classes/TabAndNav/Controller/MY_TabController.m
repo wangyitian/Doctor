@@ -15,7 +15,7 @@
 #import "MY_CollegeController.h"
 #import "MY_MessageController.h"
 #import "MY_MyController.h"
-//#import "MY_PlayVedioController.h"
+#import "MY_LiveController.h"
 @interface MY_TabController () <MY_TabBarDelegate>
 @property (nonatomic, weak) MY_TabBar *customTabBar;
 @end
@@ -50,7 +50,7 @@
 - (void)setupChildVCs {
     [self setupChildViewController:[[MY_HomePageController alloc] init] title:@"首页" imageName:@"tab_homePage" selectedImageName:@"tab_homePage_s"];
     [self setupChildViewController:[[MY_CollegeController alloc] init] title:@"学院" imageName:@"tab_college" selectedImageName:@"tab_college_s"];
-//    [self setupChildViewController:[[MY_PlayVedioController alloc] init] title:@"直播" imageName:@"tab_vedio" selectedImageName:@"tab_vedio_s"];
+    [self setupChildViewController:[[MY_LiveController alloc] init] title:@"直播" imageName:@"tab_vedio" selectedImageName:@"tab_vedio_s"];
     [self setupChildViewController:[[MY_MessageController alloc] init] title:@"消息" imageName:@"tab_message" selectedImageName:@"tab_message_h"];
     [self setupChildViewController:[[MY_MyController alloc] init] title:@"我的" imageName:@"tab_my" selectedImageName:@"tab_my_s"];
 }

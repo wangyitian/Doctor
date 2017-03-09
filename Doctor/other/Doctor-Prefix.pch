@@ -8,6 +8,7 @@
 
 #ifndef Doctor_Prefix_pch
 #define Doctor_Prefix_pch
+#ifdef __OBJC__ 
 #import "MY_Common.h"
 #import "MJRefresh.h"
 #import "MY_Api.h"
@@ -30,4 +31,6 @@
 #import "UIButton+Base.h"
 #import "NSString+Base.h"
 #import "UILabel+Base.h"
+#endif
+
 #endif

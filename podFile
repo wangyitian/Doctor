@@ -11,7 +11,7 @@ target 'Doctor' do
   pod 'MBProgressHUD'
   pod 'SDCycleScrollView'
   pod 'YYCache'
-  
+#  pod 'LFLiveKit'
 #  pod 'UMengUShare/UI'
 #  # 集成新浪微博
 #  pod 'UMengUShare/Social/Sina'
