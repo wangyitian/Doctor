@@ -285,7 +285,7 @@
 		95B8BF1D1E7128D500197B84 /* UIControl+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B8BF1A1E7128D500197B84 /* UIControl+Add.m */; };
 		95B8BF1E1E7128D500197B84 /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B8BF1C1E7128D500197B84 /* UIView+Add.m */; };
 		95B8BF231E712DD000197B84 /* MY_PullLiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B8BF221E712DD000197B84 /* MY_PullLiveController.m */; };
-		95B8BF251E712E4400197B84 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B8BF241E712E4400197B84 /* IJKMediaFramework.framework */; };
+		95B8BF2C1E714A1300197B84 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B8BF2B1E714A1300197B84 /* IJKMediaFramework.framework */; };
 		95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */; };
 		95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452961E5AB81500C9A30D /* MY_SettingCell.m */; };
 		95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C452991E5ABD6700C9A30D /* MY_PersonalDataCell.m */; };
@@ -910,7 +910,7 @@
 		95B8BF1C1E7128D500197B84 /* UIView+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Add.m"; sourceTree = "<group>"; };
 		95B8BF211E712DD000197B84 /* MY_PullLiveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PullLiveController.h; sourceTree = "<group>"; };
 		95B8BF221E712DD000197B84 /* MY_PullLiveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PullLiveController.m; sourceTree = "<group>"; };
-		95B8BF241E712E4400197B84 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		95B8BF2B1E714A1300197B84 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		95C452921E5AB07000C9A30D /* MY_MyHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MyHeaderView.h; sourceTree = "<group>"; };
 		95C452931E5AB07000C9A30D /* MY_MyHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MyHeaderView.m; sourceTree = "<group>"; };
 		95C452951E5AB81500C9A30D /* MY_SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SettingCell.h; sourceTree = "<group>"; };
@@ -1022,7 +1022,7 @@
 				95C453001E5AF48900C9A30D /* CoreTelephony.framework in Frameworks */,
 				95C452FE1E5AF47E00C9A30D /* SystemConfiguration.framework in Frameworks */,
 				9522E22E1E6EAD8D000FA06A /* libSocialSinaSSO.a in Frameworks */,
-				95B8BF251E712E4400197B84 /* IJKMediaFramework.framework in Frameworks */,
+				95B8BF2C1E714A1300197B84 /* IJKMediaFramework.framework in Frameworks */,
 				9522E2321E6EAD8D000FA06A /* TencentOpenAPI.framework in Frameworks */,
 				95C452FC1E5AF46200C9A30D /* CoreGraphics.framework in Frameworks */,
 				9522E22D1E6EAD8D000FA06A /* libSocialInstagram.a in Frameworks */,
@@ -2068,10 +2068,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		95B8BF2A1E714A1300197B84 /* IJKMediaFramework */ = {
+			isa = PBXGroup;
+			children = (
+				95B8BF2B1E714A1300197B84 /* IJKMediaFramework.framework */,
+			);
+			path = IJKMediaFramework;
+			sourceTree = "<group>";
+		};
 		95C452B61E5AF30600C9A30D /* Third */ = {
 			isa = PBXGroup;
 			children = (
-				95B8BF241E712E4400197B84 /* IJKMediaFramework.framework */,
+				95B8BF2A1E714A1300197B84 /* IJKMediaFramework */,
 				95B8BC901E71257400197B84 /* LFLiveKit */,
 				9522E1DA1E6EAD8D000FA06A /* UMSocial_Sdk_5.2.1 */,
 				9522E1F61E6EAD8D000FA06A /* UMSocial_Sdk_Extra_Frameworks */,
@@ -2827,6 +2835,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/Doctor/Common/Third",
+					"$(PROJECT_DIR)/Doctor/Common/Third/IJKMediaFramework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
@@ -2892,6 +2901,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/Doctor/Common/Third",
+					"$(PROJECT_DIR)/Doctor/Common/Third/IJKMediaFramework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
