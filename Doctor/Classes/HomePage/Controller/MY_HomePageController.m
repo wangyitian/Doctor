@@ -30,7 +30,7 @@
 }
 
 - (void)loadMore:(BOOL)loadMore {
-    MY_RequestModel *model = [[MY_RequestModel alloc] init];
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
 //    [model getDataWithURL:@"" paramter:nil success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
 //        
 //    } failure:^(NSURLSessionDataTask *operation, NSError *error) {

@@ -115,6 +115,26 @@
     }];
 }
 
+- (void)timerFire {
+    self.validateButton.enabled = NO;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
+    [self.timer fire];
+}
+- (void)timer:(NSTimer*)timer {
+    
+    static NSInteger second = 60;
+    second--;
+    [self.validateButton setTitle:[NSString stringWithFormat:@"%ld秒后重试",(long)second] forState:UIControlStateDisabled];
+    
+    if (second == 0) {
+        self.validateButton.enabled = YES;
+        second = 60;
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
 - (void)validateButtonAction {
     if (self.validateBlcok) {
         self.validateBlcok(self.phoneTextField.text);

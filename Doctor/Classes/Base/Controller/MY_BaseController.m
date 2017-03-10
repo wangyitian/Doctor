@@ -101,4 +101,12 @@
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)showLoading {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)hideLoading {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+}
 @end

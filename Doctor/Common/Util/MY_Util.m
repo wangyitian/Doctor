@@ -46,6 +46,11 @@
     return accountModel;
 }
 
++ (NSString *)getUid {
+    MY_AccountModel *model = [self getAccountModel];
+    return model.uid;
+}
+
 + (void)removeAccount {
     NSString *path = NSHomeDirectory();
     path = [path stringByAppendingPathComponent:@"accountModel.archiver"];

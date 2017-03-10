@@ -51,7 +51,18 @@
 }
 
 - (void)rightButtonAction {
-    
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    if (self.changeType == Change_NickName) {
+        [paramter setObject:self.changeTextField.text forKey:@"nickname"];
+    } else if (self.changeType == Change_RealName) {
+        [paramter setObject:self.changeTextField.text forKey:@"username"];
+    } else if (self.changeType == Change_Hospital) {
+        [paramter setObject:self.changeTextField.text forKey:@"hospital"];
+    }
+    [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        
+    }];
 }
 
 @end

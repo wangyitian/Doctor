@@ -16,4 +16,6 @@ typedef void(^ConfirmBlcok)(NSString *phone, NSString*validate);
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *validateTextField;
 @property (nonatomic, strong) UIButton *validateButton;
+@property (nonatomic, strong) NSTimer *timer;
+- (void)timerFire;
 @end

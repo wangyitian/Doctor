@@ -24,6 +24,14 @@
 - (void)setupUI {
     MY_FeedbackView *feedbackView = [[MY_FeedbackView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     feedbackView.confirmBlock = ^(NSString *suggest, NSString*phone){
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        [paramter setObject:suggest forKey:@"feedback"];
+        [paramter setObject:phone forKey:@"contact"];
+        [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+        [model postDataWithURL:MY_API_FEEDBACK paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            
+        }];
     };
     [self.scrollView addSubview:feedbackView];
     self.scrollView.contentSize = feedbackView.frame.size;

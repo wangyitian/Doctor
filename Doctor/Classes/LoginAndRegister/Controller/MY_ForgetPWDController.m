@@ -23,11 +23,30 @@
     [self setTitle:@"注册" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     MY_ChangePWDView *registerView = [[MY_ChangePWDView alloc] initWithFrame:self.view.bounds];
+    __block typeof(registerView) weakRegisterView = registerView;
     registerView.validateBlock = ^(NSString *account){
-        
+        [self showLoading];
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        model.delegate = self;
+        NSMutableDictionary *paramters = [NSMutableDictionary dictionary];
+        [paramters setObject:account forKey:@"phonen"];
+        [model getDataWithURL:MY_API_GET_CODE paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            [self hideLoading];
+            [self.view makeToast:@"获取短信验证码成功" duration:2 position:CSToastPositionCenter];
+            [weakRegisterView timerFire];
+        }];
     };
     registerView.confirmBlock = ^(NSString *account, NSString *pwd, NSString *validate){
-        
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        [paramter setObject:account forKey:@"phonen"];
+        [paramter setObject:pwd forKey:@"password"];
+        [paramter setObject:validate forKey:@"code"];
+        [model postDataWithURL:MY_API_FORGET_PWD paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            [self.view makeToast:@"修改密码成功" duration:2 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+        }];
     };
     [self.scrollView addSubview:registerView];
 }

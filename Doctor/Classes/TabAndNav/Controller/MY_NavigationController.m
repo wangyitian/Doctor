@@ -15,15 +15,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UINavigationBar *bar = [UINavigationBar appearance];
-//    // 去掉bar下面的底线
-//    bar.barStyle = UIBaselineAdjustmentNone;
-////    [bar setBackgroundImage:[UIImage imageNamed:@"Nav_background"] forBarMetrics:UIBarMetricsDefault];
-//    bar.backgroundColor = [UIColor redColor];
-//    
-//    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:MY_Color(70, 71, 75), NSForegroundColorAttributeName,[UIFont boldSystemFontOfSize:17.0], NSFontAttributeName, nil]];
-    self.interactivePopGestureRecognizer.delegate = self;
-    self.interactivePopGestureRecognizer.enabled = YES;
+//    self.interactivePopGestureRecognizer.delegate = self;
+//    self.interactivePopGestureRecognizer.enabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,8 +32,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
+-(UIStatusBarStyle)preferredStatusBarStyle {
     return [[self.viewControllers lastObject] preferredStatusBarStyle];
 }
 

@@ -11,6 +11,7 @@
 #import "MY_ChangePersonalDataController.h"
 #import "MY_PersonalAvatarCell.h"
 #import "MY_ChangePhoneController.h"
+#import "MY_PickerView.h"
 @interface MY_PersonalDataController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
@@ -87,7 +88,18 @@
         MY_ChangePhoneController *vc = [[MY_ChangePhoneController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 4) {
-        
+        NSArray *array = [NSArray arrayWithObjects:@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是", nil];
+        MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:array title:@"选择科室"];
+        pickerView.confirmBlock = ^(NSString *value) {
+            MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+            NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+            [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+            [paramter setObject:value forKey:@"department"];
+            [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+                
+            }];
+        };
+        [self.view addSubview:pickerView];
     } else if (indexPath.row == 5) {
         MY_ChangePersonalDataController *vc = [[MY_ChangePersonalDataController alloc] init];
         vc.changeType = Change_Hospital;
@@ -100,7 +112,19 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
         UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
-        [self performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
+        UIImage *smallImage = [self thumbnailWithImageWithoutScale:img size:CGSizeMake(93, 93)];
+        
+        NSData *imageData = UIImagePNGRepresentation(smallImage);
+        
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        [paramter setObject:imageData forKey:@"head"];
+        [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+        [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            
+        }];
+        
+//        [self performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

@@ -47,6 +47,8 @@
 		9522E2341E6EAD8D000FA06A /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9522E2161E6EAD8D000FA06A /* libSocialWechat.a */; };
 		9522E2351E6EAD8D000FA06A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9522E2171E6EAD8D000FA06A /* libWeChatSDK.a */; };
 		9522E2361E6EAD8D000FA06A /* libSocialWhatsapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9522E21D1E6EAD8D000FA06A /* libSocialWhatsapp.a */; };
+		953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C491E7245B400A755F0 /* MY_PickerView.m */; };
+		953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */; };
 		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
 		954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398A1E5C160000C05B9F /* HXSearchBar.m */; };
 		954A398E1E5C16E100C05B9F /* MY_SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A398D1E5C16E100C05B9F /* MY_SearchController.m */; };
@@ -426,6 +428,10 @@
 		9522E21B1E6EAD8D000FA06A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		9522E21D1E6EAD8D000FA06A /* libSocialWhatsapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWhatsapp.a; sourceTree = "<group>"; };
 		9522E21E1E6EAD8D000FA06A /* UMSocialWhatsappHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialWhatsappHandler.h; sourceTree = "<group>"; };
+		953C8C481E7245B400A755F0 /* MY_PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PickerView.h; sourceTree = "<group>"; };
+		953C8C491E7245B400A755F0 /* MY_PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PickerView.m; sourceTree = "<group>"; };
+		953C8C4E1E72741E00A755F0 /* MY_CourseCustomedDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCustomedDemoCell.h; sourceTree = "<group>"; };
+		953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseCustomedDemoCell.m; sourceTree = "<group>"; };
 		9549B2211E5D337000ED2D6A /* MY_AboutUSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_AboutUSView.h; sourceTree = "<group>"; };
 		9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_AboutUSView.m; sourceTree = "<group>"; };
 		954A39891E5C160000C05B9F /* HXSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXSearchBar.h; sourceTree = "<group>"; };
@@ -1350,6 +1356,8 @@
 				9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */,
 				95F854361E66B1CC003C7013 /* MY_TextView.h */,
 				95F854371E66B1CC003C7013 /* MY_TextView.m */,
+				953C8C481E7245B400A755F0 /* MY_PickerView.h */,
+				953C8C491E7245B400A755F0 /* MY_PickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2188,6 +2196,8 @@
 				95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */,
 				95CB0E141E6FCE2300EEBDED /* MY_CourseCustomedView.h */,
 				95CB0E151E6FCE2300EEBDED /* MY_CourseCustomedView.m */,
+				953C8C4E1E72741E00A755F0 /* MY_CourseCustomedDemoCell.h */,
+				953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2635,6 +2645,7 @@
 				95B8BEDF1E71257500197B84 /* GPUImageThreeInputFilter.m in Sources */,
 				95B8BE561E71257500197B84 /* GPUImageBilateralFilter.m in Sources */,
 				95B8BEDE1E71257500197B84 /* GPUImageTextureOutput.m in Sources */,
+				953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */,
 				95B8BEB71E71257500197B84 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				95B8BEAF1E71257500197B84 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				95B8BE8D1E71257500197B84 /* GPUImageHighPassFilter.m in Sources */,
@@ -2689,6 +2700,7 @@
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
 				95C452AF1E5ADA3F00C9A30D /* MY_FeedbackView.m in Sources */,
 				950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */,
+				953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */,
 				95B8BEA71E71257500197B84 /* GPUImageMedianFilter.m in Sources */,
 				95B8BE8C1E71257500197B84 /* GPUImageHighlightShadowTintFilter.m in Sources */,
 				95B8BEFA1E71257500197B84 /* error.c in Sources */,

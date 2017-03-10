@@ -124,10 +124,19 @@
     self.agreeButtons = [NSArray arrayWithObjects:agreeButton,noAgreeButton, nil];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
     
     [self layoutIfNeeded];
     self.height = agreeLabel.bottom + 30;
+}
+
+- (void)confirmButtonAction {
+    if (self.recommendBlock) {
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        
+        self.recommendBlock(paramter);
+    }
 }
 
 @end

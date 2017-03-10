@@ -9,11 +9,17 @@
 #ifndef MY_Api_h
 #define MY_Api_h
 
-#define MY_BASE_API_PATH        @"http://ohs.meiyujiankang.com/index1.php/Index/"
-#define MY_API_REGISTER         @"meiyu_register"
-#define MY_API_GET_CODE         @"meiyu_information"
-
-
+#define MY_BASE_API_PATH                @"http://ohs.meiyujiankang.com/index1.php/Index/"
+#define MY_API_REGISTER                 @"meiyu_register"               //注册
+#define MY_API_GET_CODE                 @"meiyu_information"            //获取验证码
+#define MY_API_LOGIN                    @"meiyu_Sign_in"                //登录
+#define MY_API_CHANGE_PWD               @"meiyu_forget"                 //修改密码
+#define MY_API_FORGET_PWD               @"meiyu_forget"                 //忘记密码
+#define MY_API_PATIENT_RECOMMEND        @"meiyu_Patient_Recommend"      //患者推荐
+#define MY_API_ENROLL                   @"meiyu_sign_up"                //报名
+#define MY_API_CHANGE_PHONE             @"meiyu_modify_phone"           //修改手机号
+#define MY_API_FEEDBACK                 @"meiyu_feedback"               //意见反馈
+#define MY_API_CHANGE_PERSONAL_DATA     @"meiyu_Personal_information"   //修改个人信息
 
 
 

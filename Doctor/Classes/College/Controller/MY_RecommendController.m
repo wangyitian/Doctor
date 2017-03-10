@@ -22,6 +22,12 @@
 
 - (void)setupUI {
     MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    recommendView.recommendBlock = ^(NSDictionary *paramter) {
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        [model postDataWithURL:MY_API_PATIENT_RECOMMEND paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            
+        }];
+    };
     [self.scrollView addSubview:recommendView];
     self.scrollView.contentSize = CGSizeMake(MY_ScreenWidth, recommendView.height+30);
 }

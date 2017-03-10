@@ -11,6 +11,7 @@
 @interface MY_Util : NSObject
 + (void)saveAccount:(MY_AccountModel*)model;
 + (MY_AccountModel*)getAccountModel;
++ (NSString*)getUid;
 + (void)removeAccount;
 + (BOOL)isLogin;
 

@@ -115,6 +115,7 @@
     }];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
     [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.intentionTextView.mas_bottom).with.offset(50);
@@ -125,6 +126,13 @@
     [self layoutIfNeeded];
     self.height = confirmButton.bottom + 30;
     
+}
+
+- (void)confirmButtonAction {
+    if (self.confirmBlock) {
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        self.confirmBlock(paramter);
+    }
 }
 
 @end

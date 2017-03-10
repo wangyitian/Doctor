@@ -24,6 +24,8 @@ typedef void(^Failure)(NSURLSessionDataTask *operation, NSError *error);
 
 
 @interface MY_RequestModel : NSObject
+
+- (instancetype)initWithDelegate:(id<MY_RequestModelDelegate>)delegate;
 @property (nonatomic, assign) id<MY_RequestModelDelegate> delegate;
 
 - (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success;

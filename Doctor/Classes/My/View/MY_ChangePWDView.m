@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UITextField *validateTextField;
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) UITextField *confirmTextField;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 @implementation MY_ChangePWDView
 
@@ -80,6 +81,7 @@
     
     self.validateButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.validateButton setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [self.validateButton setTitleColor:[MY_Util setColorWithInt:0x999999] forState:UIControlStateDisabled];
     [self.validateButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
     self.validateButton.titleLabel.font = MY_Font(12);
     self.validateButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
@@ -204,6 +206,26 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入正确的手机号" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
         [[self findController] presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+- (void)timerFire {
+    self.validateButton.enabled = NO;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timer:) userInfo:nil repeats:YES];
+    [self.timer fire];
+}
+- (void)timer:(NSTimer*)timer {
+    
+    static NSInteger second = 60;
+    second--;
+    [self.validateButton setTitle:[NSString stringWithFormat:@"%ld秒后重试",(long)second] forState:UIControlStateDisabled];
+    
+    if (second == 0) {
+        self.validateButton.enabled = YES;
+        second = 60;
+        [self.timer invalidate];
+        self.timer = nil;
     }
 }
 

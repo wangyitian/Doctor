@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^RecommendBlock)(NSDictionary *paramter);
 @interface MY_RecommendView : UIView
-
+@property (nonatomic, copy) RecommendBlock recommendBlock;
 @end

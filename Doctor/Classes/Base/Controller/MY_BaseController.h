@@ -14,5 +14,6 @@ typedef void(^LoginSuccessedBlock)();
 @property (nonatomic, strong) UIImageView *navBar;
 @property (nonatomic, strong) UILabel *navLabel;
 - (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
-
+- (void)showLoading;
+- (void)hideLoading;
 @end

@@ -13,7 +13,7 @@
 #import "MY_SegmentController.h"
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
-
+#import "MY_CourseCustomedController.h"
 #import "UMSocialData.h"
 #import "UMSocialSnsService.h"
 #import "UMSocialSnsPlatformManager.h"
@@ -55,7 +55,8 @@
     tableHeaderView.headerButtonBlock = ^(NSInteger index) {
        NSMutableArray *vcArray = [NSMutableArray array];
         if (index == 4) {
-            
+            MY_CourseCustomedController *vc = [[MY_CourseCustomedController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         } else {
             NSArray *types = nil;
             if (index == 1) {

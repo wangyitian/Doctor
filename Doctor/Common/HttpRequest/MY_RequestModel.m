@@ -13,13 +13,14 @@
 
 @implementation MY_RequestModel
 
-- (instancetype)init {
+- (instancetype)initWithDelegate:(id<MY_RequestModelDelegate>)delegate {
     if (self = [super init]) {
         self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:MY_BASE_API_PATH]];
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
         self.manager.requestSerializer.timeoutInterval = 10;
+        self.delegate = delegate;
     }
     return self;
 }
