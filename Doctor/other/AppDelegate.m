@@ -43,12 +43,9 @@
     /* 设置微信的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];
-    
-    /* 设置分享到QQ互联的appID
-     * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
-     */
+
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAppID/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
-    
+    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_Qzone)]];
     /* 设置新浪的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
     
@@ -63,21 +60,6 @@
     }
     return result;
 }
-
-//- (void)createUM{
-//    //设置友盟社会化组件appkey
-//    [UMSocialData setAppKey:UMengKey];
-//    [UMSocialWechatHandler setWXAppId:WechatAppKey appSecret:WechatAppSecret url:@""];
-//    [UMSocialQQHandler setQQWithAppId:QQAppID appKey:QQAppKey url:@""];
-//    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:WeiboAppKey secret:WeiboAppSecret RedirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-//    [UMSocialConfig setFinishToastIsHidden:YES position:UMSocialiToastPositionBottom];
-//}
-/**
- 这里处理新浪微博SSO授权之后跳转回来，和微信分享完成之后跳转回来
- */
-//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//    return  [UMSocialSnsService handleOpenURL:url wxApiDelegate:nil];
-//}
 
 - (void)chooseRootViewController {
     // 如何知道第一次使用这个版本？比较上次的使用情况
