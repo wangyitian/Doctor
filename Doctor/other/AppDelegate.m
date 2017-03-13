@@ -40,7 +40,7 @@
     //设置友盟社会化组件appkey
     [UMSocialData setAppKey:UMengKey];
     [UMSocialWechatHandler setWXAppId:WechatAppKey appSecret:WechatAppSecret url:@""];
-    [UMSocialQQHandler setQQWithAppId:QQAppID appKey:nil url:@""];
+    [UMSocialQQHandler setQQWithAppId:QQAppID appKey:QQAppKey url:@""];
     [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:WeiboAppKey secret:WeiboAppSecret RedirectURL:@"https://sns.whalecloud.com/sina2/callback"];
     [UMSocialConfig setFinishToastIsHidden:YES position:UMSocialiToastPositionBottom];
 }

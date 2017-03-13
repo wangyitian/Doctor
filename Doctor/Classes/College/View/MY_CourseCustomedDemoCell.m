@@ -7,9 +7,25 @@
 //
 
 #import "MY_CourseCustomedDemoCell.h"
-
+@interface MY_CourseCustomedDemoCell ()
+@property (nonatomic, strong) UIButton *mainButton;
+@property (nonatomic, strong) UIView *detailView;
+@end
 @implementation MY_CourseCustomedDemoCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        [self setupUI];
+    }
+    return self;
+}
 
+- (void)setupUI {
+    
+}
+
++ (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
+    return 100;
+}
 
 @end

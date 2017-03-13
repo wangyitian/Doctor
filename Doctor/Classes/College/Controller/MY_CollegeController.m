@@ -126,6 +126,10 @@
     [UMSocialData defaultData].extConfig.qqData.title = @"测试";
     [UMSocialData defaultData].extConfig.qqData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
     
+    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:@"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108"];
+    [UMSocialData defaultData].extConfig.sinaData.urlResource = resource;
+    
+    
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:UMengKey
                                       shareText:@"测试一下，我好帅啊，帅超和帅永也挺帅"
