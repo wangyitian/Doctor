@@ -14,10 +14,13 @@
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
 #import "MY_CourseCustomedController.h"
-#import "UMSocialData.h"
-#import "UMSocialSnsService.h"
-#import "UMSocialSnsPlatformManager.h"
-@interface MY_CollegeController () <UMSocialUIDelegate>
+//#import "UMSocialData.h"
+//#import "UMSocialSnsService.h"
+//#import "UMSocialSnsPlatformManager.h"
+//<UMSocialUIDelegate>
+
+#import <UShareUI/UShareUI.h>
+@interface MY_CollegeController ()
 
 @end
 
@@ -116,26 +119,67 @@
     return [MY_CourseIntroCell class];
 }
 
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType {
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    //创建网页内容对象
+    NSString* thumbURL =  @"https://mobile.umeng.com/images/pic/home/social/img-1.png";
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"欢迎使用【友盟+】社会化组件U-Share" descr:@"欢迎使用【友盟+】社会化组件U-Share，SDK包最小，集成成本最低，助力您的产品开发、运营与推广！" thumImage:thumbURL];
+    //设置网页地址
+    shareObject.webpageUrl = @"http://mobile.umeng.com/social";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            UMSocialLogInfo(@"************Share fail with error %@*********",error);
+        }else{
+            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = data;
+                //分享结果消息
+                UMSocialLogInfo(@"response message is %@",resp.message);
+                //第三方原始返回的数据
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+                
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+//        [self alertWithError:error];
+    }];
+}
+
 - (void)phoneButtonAction {
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"测试";
-    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-    
-    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"测试";
-    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-    
-    [UMSocialData defaultData].extConfig.qqData.title = @"测试";
-    [UMSocialData defaultData].extConfig.qqData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-    
-    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:@"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108"];
-    [UMSocialData defaultData].extConfig.sinaData.urlResource = resource;
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        [self shareWebPageToPlatformType:platformType];
+    }];
     
     
-    [UMSocialSnsService presentSnsIconSheetView:self
-                                         appKey:UMengKey
-                                      shareText:@"测试一下，我好帅啊，帅超和帅永也挺帅"
-                                     shareImage:[UIImage imageNamed:@"icon"]
-                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToSina,nil]
-                                       delegate:self];
+    
+    
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"测试";
+//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
+//    
+//    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"测试";
+//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
+//    
+//    [UMSocialData defaultData].extConfig.qqData.title = @"测试";
+//    [UMSocialData defaultData].extConfig.qqData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
+//    
+//    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:@"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108"];
+//    [UMSocialData defaultData].extConfig.sinaData.urlResource = resource;
+//    
+//    
+//    [UMSocialSnsService presentSnsIconSheetView:self
+//                                         appKey:UMengKey
+//                                      shareText:@"测试一下，我好帅啊，帅超和帅永也挺帅"
+//                                     shareImage:[UIImage imageNamed:@"icon"]
+//                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToSina,nil]
+//                                       delegate:self];
 }
 
 
