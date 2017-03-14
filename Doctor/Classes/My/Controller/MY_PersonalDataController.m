@@ -18,6 +18,7 @@
 
 @implementation MY_PersonalDataController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -26,18 +27,21 @@
     [self initData];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"个人资料" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     self.tableView.backgroundColor = [UIColor whiteColor];
 }
 
+#pragma mark - 数据
 - (void)initData {
     NSArray *dataArray = [NSArray arrayWithObjects:@"头像",@"昵称",@"真实姓名",@"手机号码",@"科室",@"医院", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
 
+#pragma mark - tableview delegate
 - (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return [MY_PersonalAvatarCell class];
@@ -153,10 +157,6 @@
     [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
     UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
     //    [userPhotoButton setImage:selfPhoto forState:UIControlStateNormal];
-    
-    
-    
-    
 //    self.img.image = selfPhoto;
 }
 

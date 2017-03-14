@@ -15,6 +15,7 @@
 
 @implementation MY_BaseController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
@@ -26,15 +27,21 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
+#pragma mark - 状态栏样式
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
 
+#pragma mark - 网络请求代理方法
 - (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
-    
+    [self hideLoading];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请求失败" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
+    [self hideLoading];
     MY_LoginController *loginVC = [[MY_LoginController alloc] init];
     loginVC.enterType = MY_EnterLoginTypeSingleLoginOut;
     loginVC.loginSuccessedBlock = ^() {
@@ -44,11 +51,13 @@
 }
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
+    [self hideLoading];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:responseDic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - 导航栏
 - (void)setTitle:(NSString *)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString *)rightBttonName rightImageName:(NSString *)rightImageName {
     self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
     self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
@@ -94,14 +103,17 @@
     }
 }
 
+#pragma mark - 右导航按钮点击事件
 - (void)rightButtonAction {
     
 }
 
+#pragma mark - 返回按钮
 - (void)back {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - 显示和隐藏loading
 - (void)showLoading {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }

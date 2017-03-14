@@ -32,6 +32,7 @@
     return self;
 }
 
+#pragma mark - cell高度
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     return 0.0;
 }

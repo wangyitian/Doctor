@@ -23,6 +23,7 @@
 		95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A961E6003B000C28FD9 /* MY_CourseModel.m */; };
 		95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */; };
 		9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */; };
+		9526FA9B1E778D1B00C52433 /* MY_SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9526FA9A1E778D1B00C52433 /* MY_SelectView.m */; };
 		953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C491E7245B400A755F0 /* MY_PickerView.m */; };
 		953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */; };
 		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
@@ -367,6 +368,8 @@
 		95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseDetailView.m; sourceTree = "<group>"; };
 		9522E1D51E6E7B5A000FA06A /* MY_BaseWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseWebController.h; sourceTree = "<group>"; };
 		9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseWebController.m; sourceTree = "<group>"; };
+		9526FA991E778D1B00C52433 /* MY_SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SelectView.h; sourceTree = "<group>"; };
+		9526FA9A1E778D1B00C52433 /* MY_SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SelectView.m; sourceTree = "<group>"; };
 		953C8C481E7245B400A755F0 /* MY_PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PickerView.h; sourceTree = "<group>"; };
 		953C8C491E7245B400A755F0 /* MY_PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PickerView.m; sourceTree = "<group>"; };
 		953C8C4E1E72741E00A755F0 /* MY_CourseCustomedDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCustomedDemoCell.h; sourceTree = "<group>"; };
@@ -1071,14 +1074,14 @@
 		950142E21E4C7F0500987828 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95B8BF091E71281600197B84 /* Player(直播) */,
+				95706F421E4D50D700536AE2 /* Base(基类) */,
 				95EC73E31E568CE80027EED8 /* HomePage(首页) */,
 				95EC73EA1E568DAB0027EED8 /* College(学院) */,
+				95B8BF091E71281600197B84 /* Player(直播) */,
 				957BE1A21E64215D00AB3D09 /* Message(消息) */,
 				95EC73F21E568DAC0027EED8 /* My(我的) */,
 				95706F4E1E4D50D700536AE2 /* LoginAndRegister(登陆和注册) */,
 				950142E31E4C7F0500987828 /* TabAndNav */,
-				95706F421E4D50D700536AE2 /* Base(基类) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2136,6 +2139,8 @@
 				957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */,
 				957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */,
 				957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */,
+				9526FA991E778D1B00C52433 /* MY_SelectView.h */,
+				9526FA9A1E778D1B00C52433 /* MY_SelectView.m */,
 				95C452A11E5AC8B500C9A30D /* MY_CourseCell.h */,
 				95C452A21E5AC8B500C9A30D /* MY_CourseCell.m */,
 				95C452B31E5AE2ED00C9A30D /* MY_EnrollView.h */,
@@ -2558,6 +2563,7 @@
 				95F854381E66B1CC003C7013 /* MY_TextView.m in Sources */,
 				95EC74131E5697BB0027EED8 /* MY_SettingController.m in Sources */,
 				95B8BEFB1E71257500197B84 /* hashswf.c in Sources */,
+				9526FA9B1E778D1B00C52433 /* MY_SelectView.m in Sources */,
 				95B8BE831E71257500197B84 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,

@@ -17,13 +17,14 @@
 @end
 
 @implementation MY_SettingController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
     [self initData];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"设置" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
@@ -43,10 +44,12 @@
     }];
 }
 
+#pragma mark - tableview样式
 - (UITableViewStyle)getTableViewStyle {
     return UITableViewStyleGrouped;
 }
 
+#pragma mark - 数据
 - (void)initData {
     NSArray *section1 = [NSArray arrayWithObjects:@"清除缓存", nil];
     NSArray *section2 = [NSArray arrayWithObjects:@"客服电话",@"修改密码", nil];
@@ -55,6 +58,7 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - tableview delegate
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 5)];
@@ -101,6 +105,7 @@
     return [MY_SettingCell class];
 }
 
+#pragma mark - 推出按钮点击事件
 - (void)logoutButtonAction {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"您确定要退出账号？" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];

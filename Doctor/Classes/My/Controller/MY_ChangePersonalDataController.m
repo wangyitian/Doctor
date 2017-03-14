@@ -13,13 +13,14 @@
 @end
 
 @implementation MY_ChangePersonalDataController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupUI];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     if(self.changeType == Change_NickName) {
         [self setTitle:@"修改昵称" isBackButton:YES rightBttonName:@"完成" rightImageName:nil];
@@ -50,19 +51,27 @@
     self.changeTextField = changeTextField;
 }
 
+#pragma mark - 完成按钮点击事件
 - (void)rightButtonAction {
-    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
-    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
-    if (self.changeType == Change_NickName) {
-        [paramter setObject:self.changeTextField.text forKey:@"nickname"];
-    } else if (self.changeType == Change_RealName) {
-        [paramter setObject:self.changeTextField.text forKey:@"username"];
-    } else if (self.changeType == Change_Hospital) {
-        [paramter setObject:self.changeTextField.text forKey:@"hospital"];
+    
+    if (self.changeTextField.text.length) {
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        if (self.changeType == Change_NickName) {
+            [paramter setObject:self.changeTextField.text forKey:@"nickname"];
+        } else if (self.changeType == Change_RealName) {
+            [paramter setObject:self.changeTextField.text forKey:@"username"];
+        } else if (self.changeType == Change_Hospital) {
+            [paramter setObject:self.changeTextField.text forKey:@"hospital"];
+        }
+        [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            
+        }];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"输入不能为空" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-        
-    }];
 }
 
 @end

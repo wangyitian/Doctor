@@ -14,7 +14,7 @@
 @end
 
 @implementation MY_ServiceScheduleController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,6 +25,7 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"服务进度" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 49, 0);
@@ -54,6 +55,7 @@
     [self falseData];
 }
 
+#pragma mark - 假数据
 - (void)falseData {
     MY_ScheduleModel *model = [[MY_ScheduleModel alloc] init];
     model.name = @"发生的";
@@ -91,10 +93,12 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - tableview delegate
 - (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
     return [MY_ScheduleCell class];
 }
 
+#pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
     
 }

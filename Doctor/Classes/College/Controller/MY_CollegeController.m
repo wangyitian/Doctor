@@ -26,12 +26,18 @@
 
 @implementation MY_CollegeController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
     [self falseData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+#pragma mark - 假数据
 - (void)falseData {
     NSArray *array = [NSArray arrayWithObjects:@"", nil];
     for (int i = 0; i < 5; i++) {
@@ -40,14 +46,12 @@
     [self.tableView reloadData];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
+#pragma mark - tableview样式
 - (UITableViewStyle)getTableViewStyle {
     return UITableViewStyleGrouped;
 }
 
+#pragma mark - UI
 - (void)setupUI {
     UIView *statusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_STATUS_HEIGHT)];
     statusView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
@@ -106,6 +110,7 @@
     [self.view addSubview:line];
 }
 
+#pragma mark - tableview delegate
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
     header.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
@@ -152,37 +157,15 @@
     }];
 }
 
+#pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作
         [self shareWebPageToPlatformType:platformType];
     }];
-    
-    
-    
-    
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"测试";
-//    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-//    
-//    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"测试";
-//    [UMSocialData defaultData].extConfig.wechatSessionData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-//    
-//    [UMSocialData defaultData].extConfig.qqData.title = @"测试";
-//    [UMSocialData defaultData].extConfig.qqData.url = @"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108";
-//    
-//    UMSocialUrlResource *resource = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:@"http://k.sina.cn/article_1750935105_685d26410190023we.html?cre=sinaw&mod=b&loc=2&r=0&doct=9&rfunc=75&tj=hrt&s=0&from=news&subch=zx&vt=4&pos=108"];
-//    [UMSocialData defaultData].extConfig.sinaData.urlResource = resource;
-//    
-//    
-//    [UMSocialSnsService presentSnsIconSheetView:self
-//                                         appKey:UMengKey
-//                                      shareText:@"测试一下，我好帅啊，帅超和帅永也挺帅"
-//                                     shareImage:[UIImage imageNamed:@"icon"]
-//                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQQ,UMShareToSina,nil]
-//                                       delegate:self];
 }
 
-
+#pragma mark - 报名按钮点击事件
 - (void)enrollButtonAction {
     MY_EnrollController *enrollVC = [[MY_EnrollController alloc] init];
     [self.navigationController pushViewController:enrollVC animated:YES];

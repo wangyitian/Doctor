@@ -100,7 +100,7 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    NSUInteger page = scrollView.contentOffset.x / scrollView.frame.size.width;
+//    NSUInteger page = scrollView.contentOffset.x / scrollView.frame.size.width;
 //    NSUInteger offsetX = page + (NSInteger)scrollView.contentOffset.x % (NSInteger)scrollView.frame.size.width;
     if ([_delegate respondsToSelector:@selector(segmentContentView:selectOffsetX:)]){
         [_delegate segmentContentView:self selectOffsetX:scrollView.contentOffset.x];

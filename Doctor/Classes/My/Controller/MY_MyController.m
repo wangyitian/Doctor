@@ -20,6 +20,7 @@
 
 @implementation MY_MyController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,22 +36,27 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - tableview样式
 - (UITableViewStyle)getTableViewStyle {
     return UITableViewStyleGrouped;
 }
 
+#pragma mark - 状态栏样式
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
 
+#pragma mark - 网络请求
 - (void)loadData {
     
 }
 
+#pragma mark - 刷新
 - (void)headerRereshing {
     [self loadData];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     self.tableView.backgroundColor = [UIColor whiteColor];
     MY_MyHeaderView *tableHeaderView = [[MY_MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
@@ -66,12 +72,14 @@
     self.tableView.tableHeaderView = tableHeaderView;
 }
 
+#pragma mark - 数据
 - (void)initData {
     NSArray *dataArray = [NSArray arrayWithObjects:@"意见反馈",@"关于我们",@"设置", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
 
+#pragma mark - tableview delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
 }

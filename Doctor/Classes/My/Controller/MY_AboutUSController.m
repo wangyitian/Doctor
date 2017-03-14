@@ -13,7 +13,7 @@
 @end
 
 @implementation MY_AboutUSController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"关于我们" isBackButton:YES rightBttonName:nil rightImageName:nil];
@@ -21,6 +21,7 @@
     [self setupUI];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     MY_AboutUSView *aboutView = [[MY_AboutUSView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     [self.scrollView addSubview:aboutView];

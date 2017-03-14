@@ -14,6 +14,7 @@
 
 @implementation MY_FeedbackController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
@@ -21,6 +22,7 @@
     [self setupUI];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     MY_FeedbackView *feedbackView = [[MY_FeedbackView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     feedbackView.confirmBlock = ^(NSString *suggest, NSString*phone){

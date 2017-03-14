@@ -33,6 +33,7 @@
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
         MY_Log(@"%@~~~~~~~~~~%@",url,responseDic);
         if ([responseDic[@"status"] isEqualToString:@"1"]) {
+            [((MY_BaseController*)self.delegate) hideLoading];
             success(task, responseDic);
         } else if ([responseDic[@"status"] isEqualToString:@"999"]) {
             if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
@@ -52,11 +53,11 @@
 }
 
 - (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
-    [self.manager POST:@"" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager POST:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSData * data = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        MY_Log(@"%@~~~~~~~~~~%@",url,responseDic);
+        MY_Log(@"%@~~~~~~~~~~~~~~~~~~%@~~~~~~~~~~~~~~~~~~~~~~~~%@",url,paramter,responseDic);
         if ([responseDic[@"status"] isEqualToString:@"1"]) {
             success(task, responseDic);
         } else if ([responseDic[@"status"] isEqualToString:@"999"]) {

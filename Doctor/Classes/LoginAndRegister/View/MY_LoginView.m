@@ -68,6 +68,7 @@
     self.pwdTextField = [[UITextField alloc] init];
     self.pwdTextField.placeholder = @"请输入密码";
     self.pwdTextField.font = MY_Font(14);
+    self.pwdTextField.secureTextEntry = YES;
     [self addSubview:self.pwdTextField];
     [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.accountTextField.mas_left);
@@ -159,8 +160,14 @@
 }
 
 - (void)loginButtonAction {
-    if (self.loginButtonBlock) {
-        self.loginButtonBlock(self.accountTextField.text, self.pwdTextField.text);
+    if (self.accountTextField.text.length && self.pwdTextField.text.length) {
+        if (self.loginButtonBlock) {
+            self.loginButtonBlock(self.accountTextField.text, self.pwdTextField.text);
+        }
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入用户名或密码" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        [[self findController] presentViewController:alert animated:YES completion:nil];
     }
 }
 

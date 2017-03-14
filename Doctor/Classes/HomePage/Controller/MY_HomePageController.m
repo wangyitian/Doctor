@@ -17,6 +17,7 @@
 
 @implementation MY_HomePageController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavBar];
@@ -29,15 +30,16 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - 网络请求
 - (void)loadMore:(BOOL)loadMore {
     MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
-//    [model getDataWithURL:@"" paramter:nil success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-//        
-//    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
-//        
-//    }];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [model getDataWithURL:@"" paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        
+    }];
 }
 
+#pragma mark - 上拉加载下拉刷新
 - (void)headerRereshing {
     [self loadMore:NO];
 }
@@ -46,6 +48,7 @@
     [self loadMore:YES];
 }
 
+#pragma mark - 自定义导航栏
 - (void)initNavBar {
     self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
     self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
@@ -80,6 +83,7 @@
     [self.navBar addSubview:rightButton];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
@@ -87,6 +91,7 @@
     self.tableView.tableHeaderView = headerView;
 }
 
+#pragma mark - 右导航按钮点击事件
 - (void)rightButtonAction {
     MY_RecommendController *recommendVC = [[MY_RecommendController alloc] init];
     [self.navigationController pushViewController:recommendVC animated:YES];

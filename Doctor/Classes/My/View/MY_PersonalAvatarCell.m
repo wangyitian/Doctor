@@ -23,7 +23,7 @@
     self.avatarImageView = [[UIImageView alloc] init];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 25;
-    self.avatarImageView.backgroundColor = [UIColor lightGrayColor];
+    self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     [self.contentView addSubview:self.avatarImageView];
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(50, 50));

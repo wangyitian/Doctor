@@ -92,6 +92,7 @@
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.delegate = self;
     pickerView.dataSource = self;
+    pickerView.showsSelectionIndicator = YES;
     [mainView addSubview:pickerView];
     [pickerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 217));
@@ -124,6 +125,13 @@
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return self.dataSource[row];
 }
+
+//- (UIView*)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+//    label.textColor = [MY_Util setColorWithInt:0x68d6a7];
+//    label.text = self.dataSource[row];
+//    return label;
+//}
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.selectedValue = self.dataSource[row];

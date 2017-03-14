@@ -37,7 +37,7 @@
             [weakRegisterView timerFire];
         }];
     };
-    registerView.confirmBlock = ^(NSString *account, NSString *pwd, NSString *validate){
+    registerView.confirmBlock = ^(NSString *account, NSString *validate, NSString *pwd){
         [self showLoading];
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;

@@ -16,6 +16,7 @@
 
 @implementation MY_BaseTableController
 
+#pragma mark - 生命周期
 - (instancetype)init {
     if (self = [super init]) {
         self.dataSource = [NSMutableArray array];
@@ -25,9 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initTableView];
 }
 
+#pragma mark - 实例化tableview
 - (void)initTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_ScreenHeight) style:[self getTableViewStyle]];
     self.tableView.delegate = self;
@@ -40,10 +43,12 @@
     [self.view addSubview:self.tableView];
 }
 
+#pragma mark - tableview样式，子类可以重写
 - (UITableViewStyle)getTableViewStyle {
     return UITableViewStylePlain;
 }
 
+#pragma mark - 是否增加上拉加载和下拉刷新
 - (void)addHeaderRefresh:(BOOL)isAddHeaderRefresh footerRefresh:(BOOL)isAddFooterRefresh {
     if (isAddHeaderRefresh) {
         [self.tableView addHeaderRefreshTarget:self refreshingAction:@selector(headerRereshing)];
@@ -51,6 +56,34 @@
     if (isAddFooterRefresh) {
         [self.tableView addFooterRefreshTarget:self refreshingAction:@selector(footerRereshing)];
     }
+}
+
+#pragma mark - 上拉加载和下拉刷新触发的方法，子类需要重写
+- (void)headerRereshing {
+    
+}
+
+- (void)footerRereshing {
+    
+}
+
+#pragma mark - 网络请求相关代理方法
+- (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
+    [self.tableView footerEndRefreshing];
+    [self.tableView headerEndRefreshing];
+    [super requestFailedWithModel:requestModel task:task error:error];
+}
+
+- (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
+    [self.tableView footerEndRefreshing];
+    [self.tableView headerEndRefreshing];
+    [super requestFailedForSingleLoginWithPreVC:preVC];
+}
+
+- (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
+    [self.tableView footerEndRefreshing];
+    [self.tableView headerEndRefreshing];
+    [super requestErrorWithModel:requestModel responseDic:responseDic];
 }
 
 #pragma mark -
@@ -89,14 +122,6 @@
 //需要重写
 - (Class)cellClassForObject:(id)object indexPath:(NSIndexPath*)indexPath {
     return [NSObject class];
-}
-
-- (void)headerRereshing {
-    
-}
-
-- (void)footerRereshing {
-    
 }
 
 @end

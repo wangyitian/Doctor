@@ -13,7 +13,7 @@
 @end
 
 @implementation MY_CourseListController
-
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
@@ -26,10 +26,12 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - 网络请求
 - (void)loadMore:(BOOL)loadMore {
     
 }
 
+#pragma mark - 上拉加载下拉刷新触发方法
 - (void)headerRereshing {
     [self loadMore:NO];
 }
@@ -38,6 +40,7 @@
     [self loadMore:YES];
 }
 
+#pragma mark - UI
 - (void)setupUI {
 }
 @end

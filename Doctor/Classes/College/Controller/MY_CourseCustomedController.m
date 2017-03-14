@@ -14,6 +14,7 @@
 
 @implementation MY_CourseCustomedController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,6 +25,7 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"项目定制" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 50, 0);

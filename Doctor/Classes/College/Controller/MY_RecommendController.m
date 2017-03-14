@@ -14,12 +14,14 @@
 
 @implementation MY_RecommendController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
     [self setupUI];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     recommendView.recommendBlock = ^(NSDictionary *paramter) {

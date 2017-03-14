@@ -71,7 +71,7 @@
     // 返回
     UIButton * backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(10, 64 / 2 - 8, 33, 33);
-    [backBtn setImage:[UIImage imageNamed:@"返回"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"goback"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     backBtn.layer.shadowColor = [UIColor blackColor].CGColor;
     backBtn.layer.shadowOffset = CGSizeMake(0, 0);

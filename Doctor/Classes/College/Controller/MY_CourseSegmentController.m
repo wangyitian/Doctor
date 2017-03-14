@@ -7,12 +7,14 @@
 //
 
 #import "MY_CourseSegmentController.h"
+#import "MY_SelectView.h"
 @interface MY_CourseSegmentController ()
-
+@property (nonatomic, strong) MY_SelectView *selectedView;
 @end
 
 @implementation MY_CourseSegmentController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     if (self.typeIndex == 1) {
@@ -42,9 +44,14 @@
 -(void)didSelectWithIndex:(MY_TitleSegmentItem *)indexItem {
     if (self.typeIndex == 1) {
         if (indexItem.index != 0) {
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT - 100)];
-            view.backgroundColor = [UIColor blueColor];
-            [self.view addSubview:view];
+            if (!self.selectedView) {
+                self.selectedView = [[MY_SelectView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT)];
+            }
+            self.selectedView.options = [NSArray arrayWithObjects:@"发生的",@"是否代购",@"的官方的",@"的说法是对方",@"说时代",@"三大纪律卡",@"福建卡雷拉斯",@"阿胶肯德基",@"啊摔",@"发的",@"蜂蜜水",@"房价疯狂",@"让方法",@"各分", nil];
+            [self.view addSubview:self.selectedView];
+            self.selectedView.hidden = NO;
+        } else {
+            self.selectedView.hidden = YES;
         }
     } else {
         [self setSelectedAt:indexItem.index];

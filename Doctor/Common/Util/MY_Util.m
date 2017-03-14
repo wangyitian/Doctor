@@ -48,7 +48,10 @@
 
 + (NSString *)getUid {
     MY_AccountModel *model = [self getAccountModel];
-    return model.uid;
+    if (model.uid.length) {
+         return model.uid;
+    }
+    return @"";
 }
 
 + (void)removeAccount {

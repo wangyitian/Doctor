@@ -14,6 +14,7 @@
 
 @implementation MY_EnrollController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
@@ -24,6 +25,7 @@
     
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"报名参加" isBackButton:YES rightBttonName:nil rightImageName:nil];
     

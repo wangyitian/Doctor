@@ -38,7 +38,7 @@
     }];
     
     self.avatarImageView = [[UIImageView alloc] init];
-    self.avatarImageView.backgroundColor = [UIColor lightGrayColor];
+    self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 43.5;
     [self addSubview:self.avatarImageView];

@@ -10,4 +10,5 @@
 #import "TPKeyboardAvoidingScrollView.h"
 @interface MY_BaseScrollController : MY_BaseController
 @property (nonatomic, strong) TPKeyboardAvoidingScrollView* scrollView;
+
 @end

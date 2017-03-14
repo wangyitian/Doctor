@@ -15,6 +15,7 @@
 
 @implementation MY_BaseWebController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
@@ -24,6 +25,7 @@
     [super viewWillAppear:animated];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"" isBackButton:YES rightBttonName:@"分享" rightImageName:nil];
     
@@ -39,7 +41,6 @@
 }
 
 #pragma mark - UIWebViewDelegate 方法
-
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     self.activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((MY_ScreenWidth - 30)/2, (MY_ScreenHeight - MY_APP_STATUS_NAVBAR_HEIGHT- 30)/2, 30, 30)];
     self.activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -57,6 +58,7 @@
     [self.activityView removeFromSuperview];
 }
 
+#pragma mark - 返回按钮方法
 - (void)back {
     if (self.webView.canGoBack) {
         [self.webView goBack];
@@ -66,6 +68,7 @@
     }
 }
 
+#pragma mark - 分享
 - (void)rightButtonAction {
     //分享
 }

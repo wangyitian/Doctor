@@ -9,10 +9,6 @@
 #import "AppDelegate.h"
 #import "MY_TabController.h"
 #import "MY_GuideController.h"
-//#import "UMSocial.h"
-//#import "UMSocialWechatHandler.h"
-//#import "UMSocialQQHandler.h"
-//#import "UMSocialSinaSSOHandler.h"
 #import "MY_LoginController.h"
 #import "MY_NavigationController.h"
 #import <UMSocialCore/UMSocialCore.h>
@@ -22,7 +18,6 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] init];
@@ -30,15 +25,17 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-//    [self createUM];//创建UM分享
-    
+    //友盟分享相关
     [[UMSocialManager defaultManager] openLog:YES];
     [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
     [self configUSharePlatforms];
+    
+    //rootController
     [self chooseRootViewController];
     return YES;
 }
 
+#pragma mark - 友盟配置
 - (void)configUSharePlatforms {
     /* 设置微信的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
@@ -48,11 +45,10 @@
     [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_Qzone)]];
     /* 设置新浪的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
-    
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
+#pragma mark - 分享回调app
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
@@ -61,6 +57,7 @@
     return result;
 }
 
+#pragma mark - 选择rootController
 - (void)chooseRootViewController {
     // 如何知道第一次使用这个版本？比较上次的使用情况
     NSString *versionKey = @"CFBundleShortVersionString";
@@ -68,7 +65,6 @@
     NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
     // 获得当前打开软件的版本号
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
-    
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     if ([currentVersion isEqualToString:lastVersion]) {
         // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
@@ -78,7 +74,6 @@
         } else {
             window.rootViewController = [[MY_NavigationController alloc] initWithRootViewController:[[MY_LoginController alloc] init]];
         }
-        
     } else { // 当前版本号 != 上次使用的版本：显示版本新特性
         window.rootViewController = [[MY_GuideController alloc] init];
     }

@@ -14,6 +14,7 @@
 
 @implementation MY_ChangePWDController
 
+#pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -23,6 +24,7 @@
     [self setupUI];
 }
 
+#pragma mark - UI
 - (void)setupUI {
     MY_ChangePWDView *changePwdView = [[MY_ChangePWDView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     
