@@ -6,8 +6,8 @@
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
-#import "MY_BaseTableController.h"
+#import "MY_BaseScrollController.h"
 
-@interface MY_CourseDetailController : MY_BaseTableController
+@interface MY_CourseDetailController : MY_BaseScrollController
 
 @end
