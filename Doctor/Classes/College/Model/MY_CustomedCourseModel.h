@@ -9,5 +9,5 @@
 #import "MY_BaseModel.h"
 
 @interface MY_CustomedCourseModel : MY_BaseModel
-
+@property (nonatomic, assign) BOOL isOpen;
 @end

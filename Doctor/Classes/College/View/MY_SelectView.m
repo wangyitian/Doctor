@@ -68,7 +68,9 @@
 }
 
 - (void)buttonAction:(UIButton*)button {
-    
+    if (self.selectedBlock) {
+        self.selectedBlock(button.titleLabel.text);
+    }
 }
 
 @end

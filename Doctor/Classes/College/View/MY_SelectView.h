@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^SelectedBlock)(NSString *option);
 @interface MY_SelectView : UIView
 @property (nonatomic, strong) NSArray *options;
+@property (nonatomic, copy) SelectedBlock selectedBlock;
 @end

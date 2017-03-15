@@ -47,11 +47,19 @@
             if (!self.selectedView) {
                 self.selectedView = [[MY_SelectView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT + 45, MY_ScreenWidth, MY_ScreenHeight - 45 - MY_APP_STATUS_NAVBAR_HEIGHT)];
             }
+            
+            __block typeof(self) weakSelf = self;
+            self.selectedView.selectedBlock = ^(NSString *option) {
+                [weakSelf.selectedView removeFromSuperview];
+                [weakSelf setSelectedAt:indexItem.index];
+            };
             self.selectedView.options = [NSArray arrayWithObjects:@"发生的",@"是否代购",@"的官方的",@"的说法是对方",@"说时代",@"三大纪律卡",@"福建卡雷拉斯",@"阿胶肯德基",@"啊摔",@"发的",@"蜂蜜水",@"房价疯狂",@"让方法",@"各分", nil];
             [self.view addSubview:self.selectedView];
-            self.selectedView.hidden = NO;
+//            self.selectedView.hidden = NO;
         } else {
-            self.selectedView.hidden = YES;
+//            self.selectedView.hidden = YES;
+            [self.selectedView removeFromSuperview];
+            [self setSelectedAt:indexItem.index];
         }
     } else {
         [self setSelectedAt:indexItem.index];

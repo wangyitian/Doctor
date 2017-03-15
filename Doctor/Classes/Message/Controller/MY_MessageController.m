@@ -39,7 +39,7 @@
     
     MY_MessageModel *model2 = [[MY_MessageModel alloc] init];
     model2.time = @"2017-01-01";
-    model2.message = @"别靠近阿富汗客户的反馈就啊好多款精华反阿斯顿看健康就拉开多久俩家啦看电视剧福利卡三等奖卢卡斯简单浪费空间啊舍得离开就发了开始的家里看世界卢卡斯家里大声讲鲁昆吉里卡三等奖快乐馈就啊是大喊大叫开始恢复叫卡收到后即可shark啊收到后即可哈速度加快别靠近阿富汗客户的反馈就啊好多款精华反阿斯顿看健康就拉开多久俩家啦看电视剧福利卡三等奖卢卡斯简单浪费空间啊舍得离开就发了开始的开始的家里看世界卢卡斯家里大声讲鲁昆吉里卡三等奖快乐馈就啊是大喊大叫开始恢复叫卡收收收到后即可shark啊收到后即可哈速度加快";
+    model2.message = @"iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
     NSMutableArray *array = [NSMutableArray array];
     [array addObject:model];
     [array addObject:model1];

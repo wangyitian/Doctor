@@ -56,25 +56,25 @@
     
     self.timeLabel.text = model.time;
     
-    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 40*2, MAXFLOAT)];
+    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
     self.messageLabel.text = model.message;
     [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@40);
+        make.left.mas_equalTo(@30);
         make.top.mas_equalTo(self.timeLabel.mas_bottom).with.offset(25);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-40*2, size.height+5));
+        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-30*2, size.height+5));
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.messageLabel).with.offset(-18);
+        make.left.mas_equalTo(self.messageLabel).with.offset(-10);
         make.top.mas_equalTo(self.messageLabel).with.offset(-10);
-        make.right.mas_equalTo(self.messageLabel).with.offset(18);
+        make.right.mas_equalTo(self.messageLabel).with.offset(10);
         make.bottom.mas_equalTo(self.messageLabel).with.offset(10);
     }];
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_MessageModel *model = (MY_MessageModel*)object;
-    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 40*2, MAXFLOAT)];
+    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
     return size.height+10*2+10+15+20+25+5;
 }
 

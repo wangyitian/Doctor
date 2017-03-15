@@ -60,7 +60,7 @@
 
 - (void)pullButtonAction {
     MY_PullLiveController *pullVC = [[MY_PullLiveController alloc] init];
-    pullVC.liveUrl = @"http://pull99.a8.com/live/1489388043041503.flv?ikHost=ws&ikOp=1&CodecInfo=8192";
+    pullVC.liveUrl = @"http://pull99.a8.com/live/148938804304103.flv?ikHost=ws&ikOp=1&CodecInfo=8192";
     pullVC.imageUrl = @"http://img2.inke.cn/MTQ4ODkwMTMwMDkxNyMyMyNqcGc=.jpg";
     [MY_Util pushAnimationFromVC:self toVC:pullVC];
 }

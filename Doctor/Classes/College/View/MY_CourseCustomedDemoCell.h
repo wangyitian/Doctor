@@ -8,6 +8,7 @@
 
 #import "MY_BaseCell.h"
 
+typedef void (^IsOpenBlock)(NSIndexPath *indexPath, BOOL isOpen);
 @interface MY_CourseCustomedDemoCell : MY_BaseCell
-
+@property (nonatomic, copy) IsOpenBlock isOpenBlock;
 @end

@@ -94,7 +94,8 @@
     self.scrollView = [[UIScrollView alloc] init];
     self.scrollView.delegate = self;
     self.scrollView.pagingEnabled = YES;
-    self.scrollView.backgroundColor = MY_RandomColor;
+    self.scrollView.scrollEnabled = NO;
+    self.scrollView.backgroundColor = [UIColor redColor];
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
     [self addSubview:self.scrollView];
@@ -102,49 +103,50 @@
         make.left.mas_equalTo(self);
         make.top.mas_equalTo(space.mas_bottom);
         make.width.mas_equalTo(MY_ScreenWidth);
-        make.bottom.mas_equalTo(self);
+        make.bottom.mas_equalTo(self).with.offset(MY_APP_STATUS_NAVBAR_HEIGHT*(-1));
     }];
+    [self layoutIfNeeded];
     
     self.introView = [[UIView alloc] init];
     [self.scrollView addSubview:self.introView];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(MY_ScreenWidth, 0, MY_ScreenWidth, self.scrollView.height) style:UITableViewStylePlain];
     self.tableView.delegate = self;
+    self.tableView.backgroundColor = [UIColor grayColor];
     self.tableView.dataSource = self;
     [self.tableView registerClass:[MY_CourseCustomedDemoCell class] forCellReuseIdentifier:@"CourseCustomedDemoCell"];
     [self.scrollView addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(MY_ScreenWidth);
-        make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.scrollView);
-        make.width.mas_equalTo(MY_ScreenWidth);
-    }];
 }
 
 - (void)setDataDic:(NSDictionary *)dataDic {
     _dataDic = dataDic;
-    
-    
-    
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.width*2, self.scrollView.height);
+    [self.tableView reloadData];
 }
 
 - (void)buttonAction:(UIButton*)btn {
     [UIView animateWithDuration:0.25 animations:^{
         self.selectedLineView.left = btn.left;
+        [self.scrollView scrollRectToVisible:CGRectMake((btn.tag-2000)*MY_ScreenWidth, 0, MY_ScreenWidth, self.scrollView.height) animated:YES];
     }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return ((NSArray*)self.dataDic[@"models"]).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MY_CourseCustomedDemoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseCustomedDemoCell" forIndexPath:indexPath];
+    [cell setObject:((NSArray*)self.dataDic[@"models"])[indexPath.row] indexPath:indexPath];
+    cell.isOpenBlock = ^(NSIndexPath *indexPath, BOOL isOpen) {
+        ((MY_CustomedCourseModel*)((NSArray*)self.dataDic[@"models"])[indexPath.row]).isOpen = isOpen;
+        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    };
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return [MY_CourseCustomedDemoCell tableView:tableView rowHeightForObject:((NSArray*)self.dataDic[@"models"])[indexPath.row]];
 }
 
 @end
