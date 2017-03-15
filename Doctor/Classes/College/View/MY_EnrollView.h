@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void(^ConfirmBlock)(NSDictionary *paramter);
+typedef void(^SubmitBlock)(NSDictionary *paramter);
 @interface MY_EnrollView : UIView
 
-@property (nonatomic, copy) ConfirmBlock confirmBlock;
+@property (nonatomic, copy) SubmitBlock submitBlock;
 
 @end

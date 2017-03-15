@@ -24,6 +24,7 @@
 		95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A991E60041F00C28FD9 /* MY_CourseDetailView.m */; };
 		9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */; };
 		9526FA9B1E778D1B00C52433 /* MY_SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9526FA9A1E778D1B00C52433 /* MY_SelectView.m */; };
+		9526FA9E1E77FAA800C52433 /* MY_DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */; };
 		953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C491E7245B400A755F0 /* MY_PickerView.m */; };
 		953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */; };
 		9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9549B2221E5D337000ED2D6A /* MY_AboutUSView.m */; };
@@ -370,6 +371,8 @@
 		9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseWebController.m; sourceTree = "<group>"; };
 		9526FA991E778D1B00C52433 /* MY_SelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_SelectView.h; sourceTree = "<group>"; };
 		9526FA9A1E778D1B00C52433 /* MY_SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SelectView.m; sourceTree = "<group>"; };
+		9526FA9C1E77FAA800C52433 /* MY_DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_DatePickerView.h; sourceTree = "<group>"; };
+		9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_DatePickerView.m; sourceTree = "<group>"; };
 		953C8C481E7245B400A755F0 /* MY_PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PickerView.h; sourceTree = "<group>"; };
 		953C8C491E7245B400A755F0 /* MY_PickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PickerView.m; sourceTree = "<group>"; };
 		953C8C4E1E72741E00A755F0 /* MY_CourseCustomedDemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseCustomedDemoCell.h; sourceTree = "<group>"; };
@@ -1201,6 +1204,8 @@
 				95F854371E66B1CC003C7013 /* MY_TextView.m */,
 				953C8C481E7245B400A755F0 /* MY_PickerView.h */,
 				953C8C491E7245B400A755F0 /* MY_PickerView.m */,
+				9526FA9C1E77FAA800C52433 /* MY_DatePickerView.h */,
+				9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2443,6 +2448,7 @@
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				95B8BE451E71257500197B84 /* LFAudioFrame.m in Sources */,
 				95B8BE6E1E71257500197B84 /* GPUImageDarkenBlendFilter.m in Sources */,
+				9526FA9E1E77FAA800C52433 /* MY_DatePickerView.m in Sources */,
 				95B8BE9C1E71257500197B84 /* GPUImageLightenBlendFilter.m in Sources */,
 				95B8BEA31E71257500197B84 /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				95B8BEA81E71257500197B84 /* GPUImageMissEtikateFilter.m in Sources */,

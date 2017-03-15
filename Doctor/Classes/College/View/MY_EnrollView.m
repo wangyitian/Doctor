@@ -7,6 +7,8 @@
 //
 
 #import "MY_EnrollView.h"
+#import "MY_DatePickerView.h"
+#import "MY_PickerView.h"
 @interface MY_EnrollView () <UITextViewDelegate>
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
@@ -207,6 +209,8 @@
     }];
     
     UIView *validityView = [[UIView alloc] init];
+    UITapGestureRecognizer *validityTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectValidity)];
+    [validityView addGestureRecognizer:validityTap];
     [self addSubview:validityView];
     [validityView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self);
@@ -275,6 +279,8 @@
     }];
     
     UIView *positionView = [[UIView alloc] init];
+    UITapGestureRecognizer *positionTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectPosition)];
+    [positionView addGestureRecognizer:positionTap];
     [self addSubview:positionView];
     [positionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(@0);
@@ -393,6 +399,23 @@
     self.height = confirmButton.bottom + 30;
 }
 
+- (void)selectValidity {
+    MY_DatePickerView *datePickerView = [[MY_DatePickerView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_ScreenHeight)];
+    datePickerView.selectDateBlock = ^(NSString *date) {
+        self.validityLabel.text = date;
+    };
+    [[self findController].view addSubview:datePickerView];
+}
+
+- (void)selectPosition {
+    NSArray *positions = [NSArray arrayWithObjects:@"电风扇",@"师傅说的",@"收费是多少",@"电风扇",@"师傅说的",@"收费是多少", nil];
+    MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:positions title:@"请选择职称"];
+    pickerView.confirmBlock = ^(NSString *value) {
+        self.positionLabel.text = value;
+    };
+    [[self findController].view addSubview:pickerView];
+}
+
 - (void)passportTypeButtonAction:(UIButton*)button {
     button.selected = !button.selected;
     for (UIButton *btn in self.passportButtonArray) {
@@ -475,8 +498,8 @@
     if (self.intentionTextView.text.length) {
         [paramter setObject:self.intentionTextView.text forKey:@"request"];
     }
-    if (self.confirmBlock) {
-        self.confirmBlock(paramter);
+    if (self.submitBlock) {
+        self.submitBlock(paramter);
     }
 }
 
