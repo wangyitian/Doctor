@@ -162,8 +162,8 @@
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(13);
         button.tag = 3000 + i;
-        [button setImage:[UIImage imageNamed:@"my_circle_empty"] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"my_circle"] forState:UIControlStateSelected];
+        [button setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(passportTypeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
         [self.passportButtonArray addObject:button];

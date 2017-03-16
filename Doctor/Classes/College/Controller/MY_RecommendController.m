@@ -17,12 +17,14 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
     [self setupUI];
 }
 
 #pragma mark - UI
 - (void)setupUI {
+    [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    
+    self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     recommendView.recommendBlock = ^(NSDictionary *paramter) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];

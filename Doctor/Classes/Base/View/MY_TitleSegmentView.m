@@ -104,8 +104,8 @@
 //    UIImageView* horizontalLine = (UIImageView *)[self viewWithTag:500+index];
 //    horizontalLine.backgroundColor = [self selectColor];
     if (self.delegate&&[self.delegate respondsToSelector:@selector(didSelectWithIndex:)]) {
-        MY_TitleSegmentItem* item=[self.dataArray objectAtIndex:index];
-        [self.delegate didSelectWithIndex:item];
+//        MY_TitleSegmentItem* item=[self.dataArray objectAtIndex:index];
+//        [self.delegate didSelectWithIndex:item];
     }
 }
 

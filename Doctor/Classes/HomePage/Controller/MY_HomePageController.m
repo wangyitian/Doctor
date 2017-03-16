@@ -55,17 +55,15 @@
     self.navBar.userInteractionEnabled = YES;
     [self.view addSubview:self.navBar];
     
-    HXSearchBar *searchBar = [[HXSearchBar alloc] initWithFrame:CGRectMake(10, 27, MY_ScreenWidth - 120, 30)];
+    HXSearchBar *searchBar = [[HXSearchBar alloc] initWithFrame:CGRectMake(12, 27, MY_ScreenWidth - 18 - 20 - 17, 30)];
     searchBar.backgroundColor = [UIColor clearColor];
     searchBar.delegate = self;
-    //输入框提示
-    searchBar.placeholder = @"搜索材质";
     //光标颜色
-    searchBar.cursorColor = [UIColor redColor];
+    searchBar.cursorColor = [MY_Util setColorWithInt:0x68d6a7];
     //TextField
     searchBar.searchBarTextField.layer.cornerRadius = 4;
     searchBar.searchBarTextField.layer.masksToBounds = YES;
-    searchBar.searchBarTextField.layer.borderColor = [UIColor orangeColor].CGColor;
+    searchBar.searchBarTextField.layer.borderColor = [MY_Util setColorWithInt:0xababab].CGColor;
     searchBar.searchBarTextField.layer.borderWidth = 1.0;
     
     //清除按钮图标
@@ -77,8 +75,8 @@
     [self.navBar addSubview:searchBar];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightButton.backgroundColor = [UIColor yellowColor];
-    rightButton.frame = CGRectMake(MY_ScreenWidth - 30 - 7, 27, 30, 30);
+    [rightButton setImage:[UIImage imageNamed:@"homePage_recommend"] forState:UIControlStateNormal];
+    rightButton.frame = CGRectMake(MY_ScreenWidth - 20 - 17 - 5, 29, 27, 27);
     [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.navBar addSubview:rightButton];
 }
@@ -97,30 +95,17 @@
     [self.navigationController pushViewController:recommendVC animated:YES];
 }
 
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
+    return NO;
+}
+
 //已经开始编辑时的回调
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    HXSearchBar *sear = (HXSearchBar *)searchBar;
-    //取消按钮
-    sear.cancleButton.backgroundColor = [UIColor clearColor];
-    [sear.cancleButton setTitle:@"取消" forState:UIControlStateNormal];
-    [sear.cancleButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-    sear.cancleButton.titleLabel.font = [UIFont systemFontOfSize:14];
-}
-
-//编辑文字改变的回调
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"searchText:%@",searchText);
-}
-
-//搜索按钮
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-}
-
-//取消按钮点击的回调
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    searchBar.showsCancelButton = NO;
-    searchBar.text = nil;
-    [self.view endEditing:YES];
-}
+//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+//    [searchBar resignFirstResponder];
+//    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
+//    [self.navigationController pushViewController:searchVC animated:YES];
+//}
 
 @end

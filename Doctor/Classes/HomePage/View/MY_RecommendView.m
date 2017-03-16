@@ -26,20 +26,34 @@
 
 - (void)setupUI {
     UILabel *nameLabel = [[UILabel alloc] init];
+    nameLabel.textColor = [MY_Util setColorWithInt:0x666666];
+    nameLabel.font = MY_Font(15);
+    nameLabel.text = @"患者姓名";
     [self addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(@10);
-        make.left.mas_equalTo(@10);
-        make.size.mas_equalTo(CGSizeMake(60, 30));
+        make.top.mas_equalTo(@15);
+        make.left.mas_equalTo(@20);
+        make.size.mas_equalTo(CGSizeMake(70, 15));
     }];
     
     self.nameTextField = [[UITextField alloc] init];
+    self.nameTextField.font = MY_Font(12);
+    self.nameTextField.placeholder = @"请输入患者的姓名";
     [self addSubview:self.nameTextField];
     [self.nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(nameLabel.mas_right).with.offset(10);
+        make.left.mas_equalTo(nameLabel.mas_right);
         make.top.mas_equalTo(nameLabel);
-        make.height.mas_equalTo(@30);
+        make.height.mas_equalTo(nameLabel);
         make.right.mas_equalTo(self).with.offset(-10);
+    }];
+    
+    UIView *line1 = [[UIView alloc] init];
+    line1.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
+    [self addSubview:line1];
+    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(@6);
+        make.top.mas_equalTo(nameLabel.mas_bottom).with.offset(15);
+        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-6*2, 0.5));
     }];
     
     UILabel *phoneLabel = [[UILabel alloc] init];

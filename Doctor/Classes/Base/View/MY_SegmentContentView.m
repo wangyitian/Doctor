@@ -30,6 +30,7 @@
         [_scrollView setDelegate:self];
         [_scrollView setPagingEnabled:YES];
         [self addSubview:_scrollView];
+        [_scrollView setScrollEnabled:NO];
         [_scrollView setBounces:NO];
         [_scrollView setShowsHorizontalScrollIndicator:NO];
         [_scrollView setShowsVerticalScrollIndicator:NO];
