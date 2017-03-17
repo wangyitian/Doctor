@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^ButtonBlock)(NSInteger index);
 @interface MY_HomePageHeaderView : UIView
-
+@property (nonatomic, copy) ButtonBlock buttonBlock;
 @end

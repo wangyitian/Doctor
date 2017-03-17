@@ -11,6 +11,9 @@
 #import "MY_SearchController.h"
 #import "MY_RecommendController.h"
 #import "MY_HomePageHeaderView.h"
+#import "MY_CourseCustomedController.h"
+#import "MY_CourseListController.h"
+#import "MY_CourseSegmentController.h"
 @interface MY_HomePageController () <UISearchBarDelegate>
 
 @end
@@ -86,6 +89,34 @@
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     MY_HomePageHeaderView *headerView = [[MY_HomePageHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    
+    headerView.buttonBlock = ^(NSInteger index) {
+        NSMutableArray *vcArray = [NSMutableArray array];
+        if (index == 4) {
+            MY_CourseCustomedController *vc = [[MY_CourseCustomedController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else {
+            NSArray *types = nil;
+            if (index == 1) {
+                types = [NSArray arrayWithObjects:@"全部",@"临床研修",@"医技培训",@"专科特训", nil];
+            } else if (index == 2) {
+                types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾",@"新加坡", nil];
+            } else if (index == 3) {
+                types = [NSArray arrayWithObjects:@"实验室访学", nil];
+            }
+            for (NSString *type in types) {
+                MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+                rdVC.listType = type;
+                [vcArray addObject:rdVC];
+            }
+            MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
+            vc.typeIndex = index;
+            vc.types = types;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    };
+    
+    
     self.tableView.tableHeaderView = headerView;
 }
 
@@ -101,11 +132,5 @@
     return NO;
 }
 
-//已经开始编辑时的回调
-//- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-//    [searchBar resignFirstResponder];
-//    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
-//    [self.navigationController pushViewController:searchVC animated:YES];
-//}
 
 @end

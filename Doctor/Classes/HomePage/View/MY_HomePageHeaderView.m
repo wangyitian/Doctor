@@ -58,7 +58,9 @@
 }
 
 - (void)buttonAction:(UIButton*)button {
-    
+    if (self.buttonBlock) {
+        self.buttonBlock(button.tag-2000+1);
+    }
 }
 
 @end

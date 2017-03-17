@@ -25,7 +25,7 @@
     [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
     
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
-    MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    MY_RecommendView *recommendView = [[MY_RecommendView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_ScreenHeight)];
     recommendView.recommendBlock = ^(NSDictionary *paramter) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         [model postDataWithURL:MY_API_PATIENT_RECOMMEND paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {

@@ -360,7 +360,6 @@
         make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-30, 90));
     }];
     
-    
     UILabel *intentionLabel = [self createLabelWithText:@"进修意向"];
     [self.intentionTextView addSubview:intentionLabel];
     [intentionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -368,7 +367,6 @@
         make.top.mas_equalTo(8);
         make.size.mas_equalTo(CGSizeMake(64, 15));
     }];
-
     
     UIView *space5 = [[UIView alloc] init];
     space5.backgroundColor = space4.backgroundColor;
@@ -495,21 +493,23 @@
     if (self.companyTextField.text.length) {
         [paramter setObject:self.companyTextField.text forKey:@"hospital"];
     }
-    if (self.intentionTextView.text.length) {
-        [paramter setObject:self.intentionTextView.text forKey:@"request"];
+    NSString *intention = [self.intentionTextView.text substringFromIndex:21];
+    if (intention.length) {
+        [paramter setObject:intention forKey:@"request"];
     }
     if (self.submitBlock) {
         self.submitBlock(paramter);
     }
 }
 
-- (void)textViewDidChange:(UITextView *)textView {
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = 3;    //行间距
-    paragraphStyle.firstLineHeadIndent = 70;    /**首行缩进宽度*/
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13], NSParagraphStyleAttributeName:paragraphStyle};
-    textView.attributedText = [[NSAttributedString alloc] initWithString:textView.text attributes:attributes];
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    textView.text = @"                     ";
+}
+
+-(void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length < 21) {
+        textView.text = @"                     ";
+    }
 }
 
 - (UILabel*)createLabelWithText:(NSString*)text {
