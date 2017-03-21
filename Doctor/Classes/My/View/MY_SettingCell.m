@@ -24,47 +24,25 @@
 }
 
 - (void)setupUI {
-    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 70, 15)];
     self.titleLabel.font = MY_Font(15);
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [self.contentView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@20);
-        make.top.equalTo(@15);
-        make.height.equalTo(@15);
-        make.width.equalTo(@70);
-    }];
     
-    self.valueLabel = [[UILabel alloc] init];
+    self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-100, self.titleLabel.top, 100, self.titleLabel.height)];
     self.valueLabel.font = MY_Font(14);
     self.valueLabel.textColor = [MY_Util setColorWithInt:0xbbbbbb];
     self.valueLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:self.valueLabel];
-    [self.valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.top.mas_equalTo(self.titleLabel);
-        make.height.mas_equalTo(self.titleLabel);
-        make.width.mas_equalTo(@100);
-    }];
     
-    self.arrowImageView = [[UIImageView alloc] init];
+    self.arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7)];
+    self.arrowImageView.centerY = self.centerY;
     self.arrowImageView.image = [UIImage imageNamed:@"arrow"];
     [self addSubview:self.arrowImageView];
-    [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.centerY.mas_equalTo(self);
-    }];
     
-    self.bottomLineView = [[UIView alloc] init];
+    self.bottomLineView = [[UIView alloc] initWithFrame:CGRectMake(6, self.bottom-0.5, MY_ScreenWidth-6*2, 0.5)];
     self.bottomLineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self addSubview:self.bottomLineView];
-    [self.bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@6);
-        make.right.mas_equalTo(self).with.offset(-6);
-        make.bottom.mas_equalTo(self);
-        make.height.mas_equalTo(@0.5);
-    }];
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

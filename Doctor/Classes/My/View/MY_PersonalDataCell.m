@@ -41,43 +41,27 @@
 }
 
 - (void)setupUI {
-    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 70, 16)];
+    self.titleLabel.centerY = self.centerY;
     self.titleLabel.font = MY_Font(15);
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
     [self.contentView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.centerY.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(70, 16));
-    }];
     
-    self.valueLabel = [[UILabel alloc] init];
+    self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-36-200, 0, 200, 15)];
+    self.valueLabel.centerY = self.centerY;
     self.valueLabel.font = MY_Font(13);
     self.valueLabel.textAlignment = NSTextAlignmentRight;
     self.valueLabel.textColor = [MY_Util setColorWithInt:0x999999];
     [self.contentView addSubview:self.valueLabel];
-    [self.valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-36);
-        make.centerY.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(200, 15));
-    }];
     
     UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    arrowImageView.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrowImageView.centerY = self.centerY;
     [self.contentView addSubview:arrowImageView];
-    [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.centerY.mas_equalTo(self);
-    }];
     
-    UIView *lineView = [[UIView alloc] init];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bottom-0.5, MY_ScreenWidth, 0.5)];
     lineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@0);
-        make.bottom.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 0.5));
-    }];
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

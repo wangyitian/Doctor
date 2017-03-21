@@ -312,6 +312,7 @@
 		95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166691E6666A100731570 /* MY_TitleSegmentView.m */; };
 		95D1666E1E666D6300731570 /* MY_CourseSegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */; };
 		95D166711E669ACC00731570 /* UILabel+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D166701E669ACC00731570 /* UILabel+Base.m */; };
+		95DA55F11E7FCC7D00A4C4D6 /* MY_HotSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DA55F01E7FCC7C00A4C4D6 /* MY_HotSearchView.m */; };
 		95E78E181E69436400934A75 /* MY_GuideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E78E171E69436400934A75 /* MY_GuideController.m */; };
 		95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73F71E568E370027EED8 /* MY_RegisterController.m */; };
 		95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC73FA1E568E7D0027EED8 /* MY_ForgetPWDController.m */; };
@@ -944,6 +945,8 @@
 		95D1666D1E666D6300731570 /* MY_CourseSegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseSegmentController.m; sourceTree = "<group>"; };
 		95D1666F1E669ACC00731570 /* UILabel+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Base.h"; sourceTree = "<group>"; };
 		95D166701E669ACC00731570 /* UILabel+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Base.m"; sourceTree = "<group>"; };
+		95DA55EF1E7FCC7C00A4C4D6 /* MY_HotSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HotSearchView.h; sourceTree = "<group>"; };
+		95DA55F01E7FCC7C00A4C4D6 /* MY_HotSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HotSearchView.m; sourceTree = "<group>"; };
 		95E78E161E69436400934A75 /* MY_GuideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_GuideController.h; sourceTree = "<group>"; };
 		95E78E171E69436400934A75 /* MY_GuideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_GuideController.m; sourceTree = "<group>"; };
 		95EC73F61E568E370027EED8 /* MY_RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RegisterController.h; sourceTree = "<group>"; };
@@ -2090,6 +2093,8 @@
 				957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */,
 				95C452A71E5ACAC000C9A30D /* MY_RecommendView.h */,
 				95C452A81E5ACAC000C9A30D /* MY_RecommendView.m */,
+				95DA55EF1E7FCC7C00A4C4D6 /* MY_HotSearchView.h */,
+				95DA55F01E7FCC7C00A4C4D6 /* MY_HotSearchView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2575,6 +2580,7 @@
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
 				957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */,
 				95B8BEEF1E71257500197B84 /* GPUImageVoronoiConsumerFilter.m in Sources */,
+				95DA55F11E7FCC7D00A4C4D6 /* MY_HotSearchView.m in Sources */,
 				95B8BECA1E71257500197B84 /* GPUImageScreenBlendFilter.m in Sources */,
 				95B8BE5C1E71257500197B84 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
@@ -2795,7 +2801,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/Doctor/Common/Third",
 					"$(PROJECT_DIR)/Doctor/Common/Third/IJKMediaFramework",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
@@ -2808,13 +2813,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_5.2.1",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/AlipayShare",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Instagram",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Wechat",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/WeChat",
@@ -2868,7 +2866,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/Doctor/Common/Third",
 					"$(PROJECT_DIR)/Doctor/Common/Third/IJKMediaFramework",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
@@ -2897,13 +2894,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_5.2.1",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/AlipayShare",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Instagram",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Wechat",
-					"$(PROJECT_DIR)/Doctor/Common/Third/UMSocial_Sdk_Extra_Frameworks/Whatsapp",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/WeChat",

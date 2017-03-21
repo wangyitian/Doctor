@@ -46,34 +46,20 @@
     self.iconView = [[UIImageView alloc] init];
     [self.contentView addSubview:self.iconView];
     
-    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(47, 15, 100, 15)];
     self.titleLabel.font = MY_Font(15);
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
     self.titleLabel.frame = CGRectMake(47, 15, 100, 15);
     [self.contentView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 15));
-        make.left.mas_equalTo(@47);
-        make.top.mas_equalTo(@15);
-    }];
     
-    UIView *line = [[UIView alloc] init];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.bottom-0.5, MY_ScreenWidth, 0.5)];
     line.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 0.5));
-        make.left.mas_equalTo(self);
-        make.bottom.mas_equalTo(self);
-    }];
     
-    UIImageView *arrow = [[UIImageView alloc] init];
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7)];
+    arrow.centerY = self.centerY;
     arrow.image = [UIImage imageNamed:@"arrow"];
     [self.contentView addSubview:arrow];
-    [arrow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.centerY.mas_equalTo(self);
-    }];
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

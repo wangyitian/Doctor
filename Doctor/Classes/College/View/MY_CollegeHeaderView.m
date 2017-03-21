@@ -19,16 +19,11 @@
 }
 
 - (void)setupUI {
-    UILabel *titleLabel = [[UILabel alloc] init];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 15, 100, 18)];
     titleLabel.text = @"选择课程";
     titleLabel.textColor = [MY_Util setColorWithInt:0x68d6a7];
     titleLabel.font = MY_Font(18);
     [self addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@15);
-        make.top.mas_equalTo(@15);
-        make.size.mas_equalTo(CGSizeMake(100, 18));
-    }];
     
     NSArray *buttonTitles = [NSArray arrayWithObjects:@"医护技能",@"管理进修",@"科研试验",@"项目定制", nil];
     

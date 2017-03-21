@@ -23,6 +23,7 @@
 
 - (void)setupUI {
     self.phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.phoneButton.frame = CGRectMake(18, 20, MY_ScreenWidth-18*2, 43);
     [self.phoneButton setTitle:@"400-882-3548" forState:UIControlStateNormal];
     [self.phoneButton setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
     self.phoneButton.titleLabel.font = MY_Font(15);
@@ -32,43 +33,26 @@
     self.phoneButton.layer.borderWidth = 1;
     [self.phoneButton addTarget:self action:@selector(phoneButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.phoneButton];
-    [self.phoneButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).with.offset(18);
-        make.right.equalTo(self).with.offset(-18);
-        make.top.equalTo(self).with.offset(20);
-        make.height.equalTo(@43);
-    }];
     
-    self.suggestTextView = [[MY_TextView alloc] init];
+    self.suggestTextView = [[MY_TextView alloc] initWithFrame:CGRectMake(self.phoneButton.left, self.phoneButton.bottom+10, self.phoneButton.width, 150)];
     self.suggestTextView.font = MY_Font(12);
     self.suggestTextView.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.suggestTextView.layer.borderWidth = 1;
     self.suggestTextView.myPlaceholder = @" 请输入您对我们的意见和建议...(200字以内)";
     [self addSubview:self.suggestTextView];
-    [self.suggestTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.phoneButton.mas_bottom).with.offset(10);
-        make.left.equalTo(self.phoneButton.mas_left);
-        make.right.equalTo(self.phoneButton.mas_right);
-        make.height.equalTo(@150);
-    }];
     
-    self.phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.suggestTextView.left, self.suggestTextView.bottom+10, self.suggestTextView.width, 44)];
     self.phoneTextField.placeholder = @"请输入QQ号／手机号（必填）";
     self.phoneTextField.font = MY_Font(12);
     self.phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     self.phoneTextField.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.phoneTextField.layer.borderWidth = 1;
     [self addSubview: self.phoneTextField];
-    [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.suggestTextView.mas_bottom).with.offset(10);
-        make.left.equalTo(self.suggestTextView.mas_left);
-        make.right.equalTo(self.suggestTextView.mas_right);
-        make.height.equalTo(@44);
-    }];
     self.phoneTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
     self.phoneTextField.leftViewMode = UITextFieldViewModeAlways;
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    confirmButton.frame = CGRectMake(self.phoneTextField.left, self.phoneTextField.bottom+20, self.phoneTextField.width, 44);
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = MY_Font(15);
@@ -77,14 +61,7 @@
     confirmButton.layer.cornerRadius = 2;
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
-    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.phoneTextField.mas_bottom).with.offset(20);
-        make.left.equalTo(self.phoneTextField.mas_left);
-        make.right.equalTo(self.phoneTextField.mas_right);
-        make.height.equalTo(@44);
-    }];
-    
-    [self layoutIfNeeded];
+
     self.height = confirmButton.bottom + 30;
 }
 

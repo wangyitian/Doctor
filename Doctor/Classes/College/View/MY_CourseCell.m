@@ -28,54 +28,28 @@
 
 - (void)setupUI {
     CGFloat imageH = 140*MY_ScreenWidth/375;
-    self.courseImageView = [[UIImageView alloc] init];
+    self.courseImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, imageH)];
     [self.contentView addSubview:self.courseImageView];
-    [self.courseImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, imageH));
-    }];
     
-    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, self.courseImageView.bottom+18, 150, 15)];
     self.titleLabel.font = MY_Font(15);
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
     [self.contentView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@15);
-        make.top.mas_equalTo(self.courseImageView.mas_bottom).with.offset(18);
-        make.size.mas_equalTo(CGSizeMake(150, 15));
-    }];
     
-    self.roomTypeLabel = [[UILabel alloc] init];
+    self.roomTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-15-150, self.titleLabel.top, 150, 15)];
     self.roomTypeLabel.font = MY_Font(14);
     self.roomTypeLabel.textColor = [MY_Util setColorWithInt:0x68d6a7];
     self.roomTypeLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:self.roomTypeLabel];
-    [self.roomTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-15);
-        make.top.mas_equalTo(self.titleLabel);
-        make.size.mas_equalTo(CGSizeMake(150, 15));
-    }];
     
-    self.buttonView = [[UIView alloc] init];
+    self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, self.roomTypeLabel.bottom+12, MY_ScreenWidth, 20)];
     [self.contentView addSubview:self.buttonView];
-    [self.buttonView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(self.roomTypeLabel).with.offset(12);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 20));
-    }];
     
-    self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, self.buttonView.bottom + 10, MY_ScreenWidth - 15*2, 0)];
+    self.introLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, self.buttonView.bottom + 10, MY_ScreenWidth - 15*2, 100)];
     self.introLabel.numberOfLines = 4;
     self.introLabel.font = MY_Font(14);
     self.introLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [self.contentView addSubview:self.introLabel];
-    [self.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@15);
-        make.right.mas_equalTo(self).with.offset(-15);
-        make.top.mas_equalTo(self.buttonView.mas_bottom).with.offset(10);
-        make.height.mas_equalTo(100);
-    }];
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

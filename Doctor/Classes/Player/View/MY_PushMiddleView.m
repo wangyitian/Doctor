@@ -20,18 +20,14 @@
 }
 
 - (void)setupUI {
-    self.titleTextField = [[UITextField alloc] init];
+    self.titleTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 30, 180, 22)];
+    self.titleTextField.centerX = self.centerX;
     self.titleTextField.textAlignment = NSTextAlignmentCenter;
     self.titleTextField.font = MY_Font(18);
     self.titleTextField.placeholder = @"给直播起个标题吧";
     [self.titleTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     [self.titleTextField becomeFirstResponder];
     [self addSubview:self.titleTextField];
-    [self.titleTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.top.mas_equalTo(@30);
-        make.size.mas_equalTo(CGSizeMake(180, 22));
-    }];
     
     self.liveButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.liveButton setTitle:@"开始直播" forState:UIControlStateNormal];
@@ -39,15 +35,12 @@
     self.liveButton.titleLabel.font = MY_Font(15);
     self.liveButton.layer.masksToBounds = YES;
     self.liveButton.layer.cornerRadius = 22;
+    self.liveButton.frame = CGRectMake(0, self.titleTextField.bottom+60, 120, 44);
+    self.liveButton.centerX = self.centerX;
     self.liveButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.liveButton.layer.borderWidth = 1;
     [self.liveButton addTarget:self action:@selector(liveButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.liveButton];
-    [self.liveButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self);
-        make.top.mas_equalTo(self.titleTextField.mas_bottom).with.offset(60);
-        make.size.mas_equalTo(CGSizeMake(120, 44));
-    }];
 }
 
 - (void)liveButtonAction {

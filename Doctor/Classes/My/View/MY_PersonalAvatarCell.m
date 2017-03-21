@@ -20,38 +20,26 @@
 }
 
 - (void)setupUI {
-    self.avatarImageView = [[UIImageView alloc] init];
+    self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 50, 50)];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 25;
     self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     [self.contentView addSubview:self.avatarImageView];
-    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(50, 50));
-        make.left.mas_equalTo(@20);
-        make.top.mas_equalTo(@13);
-    }];
     
-    UILabel *titleLabel = [[UILabel alloc] init];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-36-200, 0, 200, 15)];
+    titleLabel.centerY = self.avatarImageView.centerY;
     titleLabel.font = MY_Font(13);
     titleLabel.textColor = [MY_Util setColorWithInt:0x999999];
     titleLabel.textAlignment = NSTextAlignmentRight;
     titleLabel.text = @"修改头像";
     [self.contentView addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-36);
-        make.centerY.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(200, 15));
-    }];
     
     UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    arrowImageView.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrowImageView.centerY = self.avatarImageView.centerY;
     [self.contentView addSubview:arrowImageView];
-    [arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.centerY.mas_equalTo(self);
-    }];
     
-    UIView *lineView = [[UIView alloc] init];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bottom-0.5, MY_ScreenWidth, 0.5)];
     lineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:lineView];
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {

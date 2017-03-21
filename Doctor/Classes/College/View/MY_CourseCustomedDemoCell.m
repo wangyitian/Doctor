@@ -29,14 +29,9 @@
 
 - (void)setupUI {
     
-    self.mainView = [[UIView alloc] init];
+    self.mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 44)];
     self.mainView.backgroundColor = MY_RandomColor;
     [self.contentView addSubview:self.mainView];
-    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.contentView);
-        make.top.mas_equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 44));
-    }];
     
     self.detailView = [[UIView alloc] init];
     self.detailView.backgroundColor = MY_RandomColor;
@@ -51,11 +46,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openAction)];
     [self.mainView addGestureRecognizer:tap];
     
-    [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.mainView);
-        make.top.mas_equalTo(self.mainView.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 156));
-    }];
+    self.detailView.frame = CGRectMake(0, self.mainView.bottom, MY_ScreenWidth, 156);
+
     if (_model.isOpen) {
         self.detailView.hidden = NO;
     } else {

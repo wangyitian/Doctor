@@ -30,66 +30,35 @@
 }
 
 - (void)setupUI {
-    UILabel *nameLabel = [[UILabel alloc] init];
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 70, 15)];
     nameLabel.textColor = [MY_Util setColorWithInt:0x666666];
     nameLabel.font = MY_Font(15);
     nameLabel.text = @"患者姓名";
     [self addSubview:nameLabel];
-    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(@15);
-        make.left.mas_equalTo(@20);
-        make.size.mas_equalTo(CGSizeMake(70, 15));
-    }];
     
-    self.nameTextField = [[UITextField alloc] init];
+    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(nameLabel.right, nameLabel.top, MY_ScreenWidth-nameLabel.right-10, nameLabel.height)];
     self.nameTextField.font = MY_Font(12);
     self.nameTextField.placeholder = @"请输入患者的姓名";
     [self addSubview:self.nameTextField];
-    [self.nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(nameLabel.mas_right);
-        make.top.mas_equalTo(nameLabel);
-        make.height.mas_equalTo(nameLabel);
-        make.right.mas_equalTo(self).with.offset(-10);
-    }];
     
-    UIView *line1 = [[UIView alloc] init];
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(6, nameLabel.bottom+15, MY_ScreenWidth-6*2, 0.5)];
     line1.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self addSubview:line1];
-    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@6);
-        make.top.mas_equalTo(nameLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-6*2, 0.5));
-    }];
     
-    UILabel *phoneLabel = [[UILabel alloc] init];
+    UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(nameLabel.left, line1.top+15, nameLabel.width, nameLabel.height)];
     phoneLabel.textColor = [MY_Util setColorWithInt:0x666666];
     phoneLabel.font = MY_Font(15);
     phoneLabel.text = @"联系电话";
     [self addSubview:phoneLabel];
-    [phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(nameLabel);
-        make.top.mas_equalTo(line1).with.offset(15);
-        make.size.mas_equalTo(nameLabel);
-    }];
     
-    self.phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.nameTextField.left, phoneLabel.top, self.nameTextField.width, self.nameTextField.height)];
     self.phoneTextField.font = MY_Font(12);
     self.phoneTextField.placeholder = @"请输入患者或家属手机号";
     [self addSubview:self.phoneTextField];
-    [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.nameTextField);
-        make.top.mas_equalTo(phoneLabel);
-        make.size.mas_equalTo(self.nameTextField);
-    }];
     
-    UIView *line2 = [[UIView alloc] init];
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(line1.left, phoneLabel.bottom+15, line1.width, line1.height)];
     line2.backgroundColor = line1.backgroundColor;
     [self addSubview:line2];
-    [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line1);
-        make.size.mas_equalTo(line1);
-        make.top.mas_equalTo(phoneLabel.mas_bottom).with.offset(15);
-    }];
     
     NSArray *buttonTitles = [NSArray arrayWithObjects:@" 患者本人",@" 患者家属", nil];
     for (int i = 0; i < buttonTitles.count; i++) {
@@ -101,116 +70,63 @@
         button.titleLabel.font = MY_Font(14);
         button.tag = 2000 + i;
         [button addTarget:self action:@selector(patientButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        button.frame = CGRectMake((MY_ScreenWidth-100*2)/2+100*i, line2.top+5, 100, 35);
         [self addSubview:button];
         [self.patientButtons addObject:button];
-        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self).with.offset((MY_ScreenWidth-100*2)/2+100*i);
-            make.top.mas_equalTo(line2).with.offset(5);
-            make.size.mas_equalTo(CGSizeMake(100, 35));
-        }];
     }
     
-    UIView *space1 = [[UIView alloc] init];
+    UIView *space1 = [[UIView alloc] initWithFrame:CGRectMake(0, line2.top+45, MY_ScreenWidth, 10)];
     space1.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [self addSubview:space1];
-    [space1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(line2).with.offset(45);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 10));
-    }];
     
-    UIView *sickTypeView = [[UIView alloc] init];
+    UIView *sickTypeView = [[UIView alloc] initWithFrame:CGRectMake(0, space1.bottom, MY_ScreenWidth, 45)];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectSickType)];
     [sickTypeView addGestureRecognizer:tap];
     [self addSubview:sickTypeView];
-    [sickTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(space1.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 45));
-    }];
     
-    UILabel *sickTypeLabel = [[UILabel alloc] init];
+    UILabel *sickTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(phoneLabel.left, 15, phoneLabel.width, phoneLabel.height)];
     sickTypeLabel.textColor = [MY_Util setColorWithInt:0x666666];
     sickTypeLabel.font = MY_Font(15);
     sickTypeLabel.text = @"患者病种";
     [sickTypeView addSubview:sickTypeLabel];
-    [sickTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(phoneLabel);
-        make.top.mas_equalTo(@15);
-        make.size.mas_equalTo(phoneLabel);
-    }];
     
-    self.sickTypeLabel = [[UILabel alloc] init];
+    self.sickTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(sickTypeLabel.right, sickTypeLabel.top, 150, sickTypeLabel.height)];
     self.sickTypeLabel.textColor = [MY_Util setColorWithInt:0x666666];
     self.sickTypeLabel.font = MY_Font(12);
     self.sickTypeLabel.text = @"请选择患者病种";
     [sickTypeView addSubview:self.sickTypeLabel];
-    [self.sickTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(sickTypeLabel.mas_right);
-        make.top.mas_equalTo(sickTypeLabel);
-        make.height.mas_equalTo(sickTypeLabel);
-        make.width.mas_equalTo(150);
-    }];
     
     UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    arrow.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrow.centerY = sickTypeLabel.centerY;
     [sickTypeView addSubview:arrow];
-    [arrow mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.right.mas_equalTo(sickTypeView).with.offset(-20);
-        make.centerY.mas_equalTo(sickTypeLabel);
-    }];
     
-    UIView *space2 = [[UIView alloc] init];
+    UIView *space2 = [[UIView alloc] initWithFrame:CGRectMake(space1.left, sickTypeView.bottom, space1.width, space1.height)];
     space2.backgroundColor = space1.backgroundColor;
     [self addSubview:space2];
-    [space2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(space1);
-        make.size.mas_equalTo(space1);
-        make.top.mas_equalTo(sickTypeView.mas_bottom);
-    }];
     
-    self.sickTextView = [[MY_TextView alloc] init];
+    self.sickTextView = [[MY_TextView alloc] initWithFrame:CGRectMake(15, space2.bottom, MY_ScreenWidth-15*2, 90)];
     self.sickTextView.font = MY_Font(12);
     self.sickTextView.delegate = self;
     self.sickTextView.myPlaceholderColor = [MY_Util setColorWithInt:0xcccccc];
     self.sickTextView.myPlaceholder = @"                     请描述患者病情";
     [self addSubview:self.sickTextView];
-    [self.sickTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self).with.offset(15);
-        make.top.mas_equalTo(space2.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-30, 90));
-    }];
     
-    UILabel *intentionLabel = [[UILabel alloc] init];
+    UILabel *intentionLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 8, 64, 15)];
     intentionLabel.textColor = [MY_Util setColorWithInt:0x666666];
     intentionLabel.font = MY_Font(15);
     intentionLabel.text = @"病        情";
     [self.sickTextView addSubview:intentionLabel];
-    [intentionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@5);
-        make.top.mas_equalTo(8);
-        make.size.mas_equalTo(CGSizeMake(64, 15));
-    }];
     
-    UIView *space3 = [[UIView alloc] init];
+    UIView *space3 = [[UIView alloc] initWithFrame:CGRectMake(space2.left, self.sickTextView.bottom, space2.width, space2.height)];
     space3.backgroundColor = space2.backgroundColor;
     [self addSubview:space3];
-    [space3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(space2);
-        make.size.mas_equalTo(space2);
-        make.top.mas_equalTo(self.sickTextView.mas_bottom);
-    }];
     
-    UILabel *agreeLabel = [[UILabel alloc] init];
+    UILabel *agreeLabel = [[UILabel alloc] initWithFrame:CGRectMake(intentionLabel.left, space3.bottom+15, 140, 15)];
     agreeLabel.textColor = [MY_Util setColorWithInt:0x666666];
     agreeLabel.font = MY_Font(15);
     agreeLabel.text = @"是否征得患者同意";
     [self addSubview:agreeLabel];
-    [agreeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(intentionLabel);
-        make.top.mas_equalTo(space3.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(140, 15));
-    }];
     
     NSArray *agreeTitles = [NSArray arrayWithObjects:@" 是",@" 否", nil];
     for (int i = 0; i < agreeTitles.count; i++) {
@@ -221,14 +137,10 @@
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(14);
         button.tag = 3000 + i;
+        button.frame = CGRectMake(180+60*i, space3.bottom+5, 60, 35);
         [button addTarget:self action:@selector(agreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
         [self.agreeButtons addObject:button];
-        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self).with.offset(180+60*i);
-            make.top.mas_equalTo(space3.mas_bottom).with.offset(5);
-            make.size.mas_equalTo(CGSizeMake(60, 35));
-        }];
     }
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -238,15 +150,10 @@
     confirmButton.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     confirmButton.layer.masksToBounds = YES;
     confirmButton.layer.cornerRadius = 2;
+    confirmButton.frame = CGRectMake(20, agreeLabel.bottom+30+15, MY_ScreenWidth-20*2, 44);
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
-    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.top.mas_equalTo(agreeLabel.mas_bottom).with.offset(30+15);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-20*2, 44));
-    }];
   
-    [self layoutIfNeeded];
     self.height = confirmButton.bottom + 30;
 }
 

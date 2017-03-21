@@ -71,6 +71,7 @@
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:task:error:)]) {
+            MY_Log(@"%@~~~~~~~~~~~%@",url,error);
             [self.delegate requestFailedWithModel:self task:task error:error];
         }
     }];

@@ -35,125 +35,61 @@
 }
 
 - (void)setupUI {
-    UIView *space1 = [[UIView alloc] init];
+    UIView *space1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 5)];
     space1.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [self addSubview:space1];
-    [space1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 5));
-    }];
     
     UILabel *nameLabel = [self createLabelWithText:@"您的姓名"];
+    nameLabel.frame = CGRectMake(20, space1.bottom+15, 70, 15);
     [self addSubview:nameLabel];
-    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@20);
-        make.top.equalTo(space1.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(70, 15));
-    }];
     
     self.nameTextField = [self createTextFieldWithPlaceholder:@"请输入您的姓名"];
+    self.nameTextField.frame = CGRectMake(nameLabel.right, nameLabel.top, MY_ScreenWidth-nameLabel.right, nameLabel.height);
     [self addSubview:self.nameTextField];
-    [self.nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(nameLabel.mas_right);
-        make.right.equalTo(self);
-        make.top.equalTo(nameLabel.mas_top);
-        make.height.equalTo(nameLabel.mas_height);
-    }];
     
-    UIView *line1 = [[UIView alloc] init];
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(6, nameLabel.bottom+15, MY_ScreenWidth-6*2, 0.5)];
     line1.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self addSubview:line1];
-    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self).with.offset(6);
-        make.height.mas_equalTo(@0.5);
-        make.top.mas_equalTo(nameLabel.mas_bottom).with.offset(15);
-        make.right.mas_equalTo(self).with.offset(-6);
-    }];
     
     UILabel *phoneLabel = [self createLabelWithText:@"您的电话"];
+    phoneLabel.frame = CGRectMake(nameLabel.left, line1.top+15, nameLabel.width, nameLabel.height);
     [self addSubview:phoneLabel];
-    [phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(nameLabel);
-        make.top.equalTo(line1).with.offset(15);
-        make.size.mas_equalTo(nameLabel);
-    }];
     
     self.phoneTextField = [self createTextFieldWithPlaceholder:@"请输入您的手机号"];
+    self.phoneTextField.frame = CGRectMake(self.nameTextField.left, phoneLabel.top, self.nameTextField.width, phoneLabel.height);
     [self addSubview:self.phoneTextField];
-    [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.nameTextField);
-        make.right.equalTo(self.nameTextField);
-        make.top.equalTo(phoneLabel);
-        make.height.equalTo(phoneLabel);
-    }];
     
-    UIView *line2 = [[UIView alloc] init];
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(line1.left, phoneLabel.bottom+15, line1.width, line1.height)];
     line2.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self addSubview:line2];
-    [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line1);
-        make.top.mas_equalTo(phoneLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(line1);
-    }];
     
     UILabel *emailLabel = [self createLabelWithText:@"您的邮箱"];
+    emailLabel.frame = CGRectMake(phoneLabel.left, line2.top+15, phoneLabel.width, phoneLabel.height);
     [self addSubview:emailLabel];
-    [emailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(phoneLabel);
-        make.top.equalTo(line2).with.offset(15);
-        make.size.mas_equalTo(phoneLabel);
-    }];
     
     self.emailTextField = [self createTextFieldWithPlaceholder:@"输入您的邮箱"];
+    self.emailTextField.frame = CGRectMake(self.phoneTextField.left, emailLabel.top, self.phoneTextField.width, self.phoneTextField.height);
     [self addSubview:self.emailTextField];
-    [self.emailTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.phoneTextField);
-        make.top.equalTo(emailLabel);
-        make.size.mas_equalTo(self.phoneTextField);
-    }];
     
-    UIView *space2 = [[UIView alloc] init];
+    UIView *space2 = [[UIView alloc] initWithFrame:CGRectMake(0, emailLabel.bottom+15, MY_ScreenWidth, 10)];
     space2.backgroundColor = space1.backgroundColor;
     [self addSubview:space2];
-    [space2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(emailLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 10));
-    }];
     
     UILabel *idLabel = [self createLabelWithText:@"身份证号"];
+    idLabel.frame = CGRectMake(emailLabel.left, space2.bottom+15, emailLabel.width, emailLabel.height);
     [self addSubview:idLabel];
-    [idLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(emailLabel);
-        make.top.mas_equalTo(space2.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(emailLabel);
-    }];
     
     self.idTextField = [self createTextFieldWithPlaceholder:@"请输入您的身份证号码"];
+    self.idTextField.frame = CGRectMake(self.emailTextField.left, idLabel.top, self.emailTextField.width, self.emailTextField.height);
     [self addSubview:self.idTextField];
-    [self.idTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.emailTextField);
-        make.top.mas_equalTo(idLabel);
-        make.size.mas_equalTo(self.emailTextField);
-    }];
     
-    UIView *line3 = [[UIView alloc] init];
+    UIView *line3 = [[UIView alloc] initWithFrame:CGRectMake(line2.left, idLabel.bottom+15, line2.width, line2.height)];
     line3.backgroundColor = line2.backgroundColor;
     [self addSubview:line3];
-    [line3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line2);
-        make.top.mas_equalTo(idLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(line2);
-    }];
     
     UILabel *passportTypeLabel = [self createLabelWithText:@"护照类型"];
+    passportTypeLabel.frame = CGRectMake(idLabel.left, line3.top+15, idLabel.width, idLabel.height);
     [self addSubview:passportTypeLabel];
-    [passportTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(idLabel);
-        make.top.mas_equalTo(line3).with.offset(15);
-        make.size.mas_equalTo(idLabel);
-    }];
     
     NSArray *buttonTitles = [NSArray arrayWithObjects:@" 因私",@" 因公", nil];
     for (int i = 0; i < buttonTitles.count; i++) {
@@ -162,213 +98,115 @@
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(13);
         button.tag = 3000 + i;
+        button.frame = CGRectMake(100+100*i, line3.top+5, 80, 35);
         [button setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(passportTypeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
         [self.passportButtonArray addObject:button];
-        [button mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(@(100+100*i));
-            make.top.mas_equalTo(line3).with.offset(5);
-            make.size.mas_equalTo(CGSizeMake(80, 35));
-        }];
     }
     
-    UIView *line4 = [[UIView alloc] init];
+    UIView *line4 = [[UIView alloc] initWithFrame:CGRectMake(line3.left, passportTypeLabel.bottom+15, line3.width, line3.height)];
     line4.backgroundColor = line3.backgroundColor;
     [self addSubview:line4];
-    [line4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line3);
-        make.top.mas_equalTo(passportTypeLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(line3);
-    }];
     
     UILabel *passportIdLabel = [self createLabelWithText:@"护照号码"];
+    passportIdLabel.frame = CGRectMake(passportTypeLabel.left, line4.top+15, passportTypeLabel.width, passportTypeLabel.height);
     [self addSubview:passportIdLabel];
-    [passportIdLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(passportTypeLabel);
-        make.top.mas_equalTo(line4).with.offset(15);
-        make.size.mas_equalTo(passportTypeLabel);
-    }];
     
     self.passportIdTextField = [self createTextFieldWithPlaceholder:@"请输入您的护照号码"];
+    self.passportIdTextField.frame = CGRectMake(self.idTextField.left, line4.top+15, self.idTextField.width, self.idTextField.height);
     [self addSubview:self.passportIdTextField];
-    [self.passportIdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.idTextField);
-        make.top.mas_equalTo(line4).with.offset(15);
-        make.size.mas_equalTo(self.idTextField);
-    }];
     
-    UIView *line5 = [[UIView alloc] init];
+    UIView *line5 = [[UIView alloc] initWithFrame:CGRectMake(line4.left, passportIdLabel.bottom+15, line4.width, line4.height)];
     line5.backgroundColor = line4.backgroundColor;
     [self addSubview:line5];
-    [line5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line4);
-        make.top.mas_equalTo(passportIdLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(line4);
-    }];
     
-    UIView *validityView = [[UIView alloc] init];
+    UIView *validityView = [[UIView alloc] initWithFrame:CGRectMake(0, line5.top, MY_ScreenWidth, 45)];
     UITapGestureRecognizer *validityTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectValidity)];
     [validityView addGestureRecognizer:validityTap];
     [self addSubview:validityView];
-    [validityView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(line5);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 45));
-    }];
     
     UILabel *titleLabel = [self createLabelWithText:@"请选择护照有效期"];
+    titleLabel.frame = CGRectMake(20, 15, 130, 15);
     [validityView addSubview:titleLabel];
-    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.top.mas_equalTo(@15);
-        make.size.mas_equalTo(CGSizeMake(130, 15));
-    }];
     
-    self.validityLabel = [[UILabel alloc] init];
+    self.validityLabel = [[UILabel alloc] initWithFrame:CGRectMake(titleLabel.right+10, 0, 100, 13)];
+    self.validityLabel.centerY = titleLabel.centerY;
     self.validityLabel.textColor = [MY_Util setColorWithInt:0xbbbbbb];
     self.validityLabel.font = MY_Font(12);
     [validityView addSubview:self.validityLabel];
-    [self.validityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(titleLabel.mas_right).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(100, 13));
-        make.centerY.mas_equalTo(titleLabel);
-    }];
     
     UIImageView *arrow1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    arrow1.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrow1.centerY = titleLabel.centerY;
     [validityView addSubview:arrow1];
-    [arrow1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.right.mas_equalTo(validityView).with.offset(-20);
-        make.centerY.mas_equalTo(titleLabel);
-    }];
     
-    UIView *space3 = [[UIView alloc] init];
+    UIView *space3 = [[UIView alloc] initWithFrame:CGRectMake(0, validityView.bottom, MY_ScreenWidth, space2.height)];
     space3.backgroundColor = space2.backgroundColor;
     [self addSubview:space3];
-    [space3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(validityView.mas_bottom);
-        make.size.mas_equalTo(space2);
-    }];
     
     UILabel *roomTypeLabel = [self createLabelWithText:@"科  室"];
+    roomTypeLabel.frame = CGRectMake(passportIdLabel.left, space3.bottom+15, passportIdLabel.width, passportIdLabel.height);
     [self addSubview:roomTypeLabel];
-    [roomTypeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(passportIdLabel);
-        make.top.mas_equalTo(space3.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(passportIdLabel);
-    }];
     
     self.roomTypeTextField = [self createTextFieldWithPlaceholder:@"请输入科室名称"];
+    self.roomTypeTextField.frame = CGRectMake(self.passportIdTextField.left, roomTypeLabel.top, self.passportIdTextField.width, self.passportIdTextField.height);
     [self addSubview:self.roomTypeTextField];
-    [self.roomTypeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.passportIdTextField);
-        make.top.mas_equalTo(roomTypeLabel);
-        make.size.mas_equalTo(self.passportIdTextField);
-    }];
     
-    UIView *line6 = [[UIView alloc] init];
+    UIView *line6 = [[UIView alloc] initWithFrame:CGRectMake(line5.left, roomTypeLabel.bottom+15, line5.width, line5.height)];
     line6.backgroundColor = line5.backgroundColor;
     [self addSubview:line6];
-    [line6 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line5);
-        make.size.mas_equalTo(line5);
-        make.top.mas_equalTo(roomTypeLabel.mas_bottom).with.offset(15);
-    }];
     
-    UIView *positionView = [[UIView alloc] init];
+    UIView *positionView = [[UIView alloc] initWithFrame:CGRectMake(0, line6.top, MY_ScreenWidth, 45)];
     UITapGestureRecognizer *positionTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectPosition)];
     [positionView addGestureRecognizer:positionTap];
     [self addSubview:positionView];
-    [positionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@0);
-        make.top.mas_equalTo(line6);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 45));
-    }];
     
     UILabel *pLabel = [self createLabelWithText:@"请选择职称"];
+    pLabel.frame = CGRectMake(roomTypeLabel.left, 15, 85, 15);
     [positionView addSubview:pLabel];
-    [pLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(roomTypeLabel);
-        make.top.mas_equalTo(@15);
-        make.size.mas_equalTo(CGSizeMake(85, 15));
-    }];
     
-    self.positionLabel = [[UILabel alloc] init];
+    self.positionLabel = [[UILabel alloc] initWithFrame:CGRectMake(pLabel.right+10, 0, 120, 13)];
+    self.positionLabel.centerY = pLabel.centerY;
     self.positionLabel.font = MY_Font(12);
     self.positionLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [positionView addSubview:self.positionLabel];
-    [self.positionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(pLabel.mas_right).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(120, 13));
-        make.centerY.mas_equalTo(pLabel);
-    }];
     
     UIImageView *arrow2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    arrow2.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrow2.centerY = pLabel.centerY;
     [positionView addSubview:arrow2];
-    [arrow2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(7, 7));
-        make.right.mas_equalTo(positionView).with.offset(-20);
-        make.centerY.mas_equalTo(pLabel);
-    }];
     
-    UIView *line7 = [[UIView alloc] init];
+    UIView *line7 = [[UIView alloc] initWithFrame:CGRectMake(line6.left, positionView.bottom, line6.width, line6.height)];
     line7.backgroundColor = line6.backgroundColor;
     [self addSubview:line7];
-    [line7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line6);
-        make.size.mas_equalTo(line6);
-        make.top.mas_equalTo(positionView.mas_bottom);
-    }];
     
     UILabel *companyLabel = [self createLabelWithText:@"工作单位"];
+    companyLabel.frame = CGRectMake(roomTypeLabel.left, line7.top+15, roomTypeLabel.width, roomTypeLabel.height);
     [self addSubview:companyLabel];
-    [companyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(roomTypeLabel);
-        make.size.mas_equalTo(roomTypeLabel);
-        make.top.mas_equalTo(line7).with.offset(15);
-    }];
     
     self.companyTextField = [self createTextFieldWithPlaceholder:@"请输入您的单位名称"];
+    self.companyTextField.frame = CGRectMake(self.roomTypeTextField.left, 0, self.roomTypeTextField.width, self.roomTypeTextField.height);
+    self.companyTextField.centerY = companyLabel.centerY;
     [self addSubview:self.companyTextField];
-    [self.companyTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.roomTypeTextField);
-        make.size.mas_equalTo(self.roomTypeTextField);
-        make.centerY.mas_equalTo(companyLabel);
-    }];
     
-    UIView *space4 = [[UIView alloc] init];
+    UIView *space4 = [[UIView alloc] initWithFrame:CGRectMake(0, companyLabel.bottom+15, space3.width, space3.height)];
     space4.backgroundColor = space3.backgroundColor;
     [self addSubview:space4];
-    [space4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(companyLabel.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(space3);
-    }];
     
-    self.intentionTextView = [[MY_TextView alloc] init];
+    self.intentionTextView = [[MY_TextView alloc] initWithFrame:CGRectMake(15, space4.bottom, MY_ScreenWidth-15*2, 90)];
     self.intentionTextView.font = MY_Font(12);
     self.intentionTextView.delegate = self;
     self.intentionTextView.myPlaceholderColor = [MY_Util setColorWithInt:0xcccccc];
     self.intentionTextView.myPlaceholder = @"                     请输入您想出行的地区，医院，时间等";
     [self addSubview:self.intentionTextView];
-    [self.intentionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self).with.offset(15);
-        make.top.mas_equalTo(space4.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-30, 90));
-    }];
     
     UILabel *intentionLabel = [self createLabelWithText:@"进修意向"];
+    intentionLabel.frame = CGRectMake(5, 8, 64, 15);
     [self.intentionTextView addSubview:intentionLabel];
-    [intentionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@5);
-        make.top.mas_equalTo(8);
-        make.size.mas_equalTo(CGSizeMake(64, 15));
-    }];
     
-    UIView *space5 = [[UIView alloc] init];
+    UIView *space5 = [[UIView alloc] initWithFrame:CGRectMake(space4.left, self.intentionTextView.bottom, space4.width, space4.height)];
     space5.backgroundColor = space4.backgroundColor;
     [self addSubview:space5];
     [space5 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -384,16 +222,10 @@
     confirmButton.titleLabel.font = MY_Font(16);
     confirmButton.layer.masksToBounds = YES;
     confirmButton.layer.cornerRadius = 2;
+    confirmButton.frame = CGRectMake(20, space5.bottom+30, MY_ScreenWidth-20*2, 44);
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
-    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.right.mas_equalTo(self).with.offset(-20);
-        make.top.mas_equalTo(space5.mas_bottom).with.offset(30);
-        make.height.mas_equalTo(@44);
-    }];
     
-    [self layoutIfNeeded];
     self.height = confirmButton.bottom + 30;
 }
 

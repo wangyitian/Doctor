@@ -26,29 +26,20 @@
 }
 
 - (void)setupUI {
-    self.accountLabel = [[UILabel alloc] init];
+    self.accountLabel = [[UILabel alloc] initWithFrame:CGRectMake((MY_ScreenWidth-200)/2, 30, 200, 17)];
     self.accountLabel.font = MY_Font(17);
     self.accountLabel.textColor = [MY_Util setColorWithInt:0x333333];
     self.accountLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.accountLabel];
-    [self.accountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).with.offset(30);
-        make.centerX.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(200, 17));
-    }];
     
-    self.avatarImageView = [[UIImageView alloc] init];
+    self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MY_ScreenWidth-87)/2, self.accountLabel.bottom+12, 87, 87)];
     self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 43.5;
     [self addSubview:self.avatarImageView];
-    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.accountLabel.mas_bottom).with.offset(12);
-        make.centerX.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(87, 87));
-    }];
     
     self.personalDataButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.personalDataButton.frame = CGRectMake(MY_ScreenWidth-100, self.avatarImageView.bottom-18, 100, 23);
     [self.personalDataButton setTitle:@"个人资料" forState:UIControlStateNormal];
     [self.personalDataButton setTitleColor:[MY_Util setColorWithInt:0x333333] forState:UIControlStateNormal];
     self.personalDataButton.titleLabel.font = MY_Font(13);
@@ -57,31 +48,16 @@
     self.personalDataButton.titleEdgeInsets = UIEdgeInsetsMake(5, 0, 5, 27);
     [self.personalDataButton addTarget:self action:@selector(personalDataButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.personalDataButton];
-    [self.personalDataButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self);
-        make.bottom.equalTo(self.avatarImageView.mas_bottom).with.offset(5);
-        make.size.mas_equalTo(CGSizeMake(100, 23));
-    }];
     
-    UIView *line = [[UIView alloc] init];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 160, MY_ScreenWidth, 5)];
     line.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [self addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(@160);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 5));
-    }];
     
-    UILabel *scheduleLabel = [[UILabel alloc] init];
+    UILabel *scheduleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, line.bottom+13, 100, 15)];
     scheduleLabel.text = @"服务进度";
     scheduleLabel.font = MY_Font(15);
     scheduleLabel.textColor = [MY_Util setColorWithInt:0x333333];
     [self addSubview:scheduleLabel];
-    [scheduleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.top.mas_equalTo(line.mas_bottom).with.offset(13);
-        make.size.mas_equalTo(CGSizeMake(100, 15));
-    }];
     
     UIButton *scheduleButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [scheduleButton setTitle:@"详情" forState:UIControlStateNormal];
@@ -90,22 +66,13 @@
     [scheduleButton setImage:[UIImage imageNamed:@"arrow"] forState:UIControlStateNormal];
     scheduleButton.imageEdgeInsets = UIEdgeInsetsMake(8, 46, 8, 20);
     scheduleButton.titleEdgeInsets = UIEdgeInsetsMake(5, 0, 5, 27);
+    scheduleButton.frame = CGRectMake(MY_ScreenWidth-73, line.bottom+12, 73, 23);
     [scheduleButton addTarget:self action:@selector(scheduleButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:scheduleButton];
-    [scheduleButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(line.mas_bottom).with.offset(12);
-        make.right.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(73, 23));
-    }];
     
-    self.scheduleView = [[UIView alloc] init];
+    self.scheduleView = [[UIView alloc] initWithFrame:CGRectMake(0, scheduleButton.bottom, MY_ScreenWidth, 75)];
     self.scheduleView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.scheduleView];
-    [self.scheduleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(scheduleButton.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 75));
-    }];
     
     [self layoutIfNeeded];
     self.height = self.scheduleView.bottom;

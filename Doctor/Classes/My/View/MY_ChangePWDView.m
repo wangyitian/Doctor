@@ -25,59 +25,32 @@
 }
 
 - (void)setupUI {
-    UIView *topView = [[UIView alloc] init];
+    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 5)];
     topView.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [self addSubview:topView];
-    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.top.mas_equalTo(self);
-        make.right.mas_equalTo(self);
-        make.height.mas_equalTo(@5);
-    }];
     
-    UILabel *phoneLabel = [[UILabel alloc] init];
+    UILabel *phoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, topView.bottom+15, 64, 15)];
     phoneLabel.text = @"手机号码";
     phoneLabel.font = MY_Font(15);
     phoneLabel.textColor = [MY_Util setColorWithInt:0x666666];
     [self addSubview:phoneLabel];
-    [phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@20);
-        make.top.mas_equalTo(topView.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(CGSizeMake(64, 15));
-    }];
     
-    self.phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(phoneLabel.right+10, 0, MY_ScreenWidth-phoneLabel.right-10, 30)];
+    self.phoneTextField.centerY = phoneLabel.centerY;
     self.phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     self.phoneTextField.placeholder = @"请输入手机号码";
     self.phoneTextField.font = MY_Font(12);
     [self addSubview:self.phoneTextField];
-    [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(phoneLabel.mas_right).with.offset(10);
-        make.right.mas_equalTo(self);
-        make.height.mas_equalTo(@30);
-        make.centerY.mas_equalTo(phoneLabel);
-    }];
     
-    UIView *line1 = [[UIView alloc] init];
+    UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(6, topView.bottom+44, MY_ScreenWidth-6*2, 0.5)];
     line1.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self addSubview:line1];
-    [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@6);
-        make.right.mas_equalTo(self).with.offset(-6);
-        make.height.mas_equalTo(@0.5);
-        make.top.mas_equalTo(topView.mas_bottom).with.offset(44);
-    }];
     
-    UILabel *validateLabel = [[UILabel alloc] init];
+    UILabel *validateLabel = [[UILabel alloc] initWithFrame:CGRectMake(phoneLabel.left, line1.top+15, phoneLabel.width, phoneLabel.height)];
     validateLabel.text = @"验证码";
     validateLabel.font = MY_Font(15);
     validateLabel.textColor = phoneLabel.textColor;
     [self addSubview:validateLabel];
-    [validateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(phoneLabel);
-        make.top.mas_equalTo(line1.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(phoneLabel);
-    }];
     
     self.validateButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.validateButton setTitle:@"获取验证码" forState:UIControlStateNormal];
@@ -86,13 +59,10 @@
     self.validateButton.titleLabel.font = MY_Font(12);
     self.validateButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
     self.validateButton.layer.borderWidth = 1;
+    self.validateButton.frame = CGRectMake(MY_ScreenWidth-30-80, 0, 80, 20);
+    self.validateButton.centerY = validateLabel.centerY;
     [self.validateButton addTarget:self action:@selector(validateButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.validateButton];
-    [self.validateButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(80, 20));
-        make.centerY.mas_equalTo(validateLabel);
-        make.right.mas_equalTo(self).with.offset(-30);
-    }];
     
     self.validateTextField = [[UITextField alloc] init];
     self.validateTextField.placeholder = @"请输入验证码";
