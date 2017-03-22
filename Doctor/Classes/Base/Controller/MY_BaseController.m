@@ -33,15 +33,17 @@
 }
 
 #pragma mark - 网络请求代理方法
-- (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
+- (void)hideLoadingAndMJ {
     [self hideLoading];
+}
+
+- (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请求失败" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
-    [self hideLoading];
     MY_LoginController *loginVC = [[MY_LoginController alloc] init];
     loginVC.enterType = MY_EnterLoginTypeSingleLoginOut;
     loginVC.loginSuccessedBlock = ^() {
@@ -51,7 +53,6 @@
 }
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
-    [self hideLoading];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:responseDic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];

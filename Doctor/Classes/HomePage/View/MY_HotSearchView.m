@@ -7,6 +7,7 @@
 //
 
 #import "MY_HotSearchView.h"
+#define TAG_FOR_BUTTON  2000
 @interface MY_HotSearchView ()
 @property (nonatomic, strong) UIView *hotDataView;
 @end
@@ -56,7 +57,7 @@
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
         buttonX = buttonX + buttonW + 20;
         
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.hotDataView addSubview:button];
         
@@ -66,7 +67,7 @@
 
 - (void)buttonAction:(UIButton*)button {
     if (self.hotSearchBlock) {
-        self.hotSearchBlock(self.dataArray[button.tag-2000]);
+        self.hotSearchBlock(self.dataArray[button.tag-TAG_FOR_BUTTON]);
     }
 }
 

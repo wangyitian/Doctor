@@ -29,7 +29,7 @@
     } else if (self.changeType == Change_Hospital) {
         [self setTitle:@"修改医院" isBackButton:YES rightBttonName:@"完成" rightImageName:nil];
     }
-    UITextField *changeTextField = [[UITextField alloc] init];
+    UITextField *changeTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, 44)];
     changeTextField.backgroundColor = [UIColor whiteColor];
     changeTextField.font = MY_Font(15);
     changeTextField.leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
@@ -42,12 +42,6 @@
     } else if (self.changeType == Change_Hospital) {
         changeTextField.placeholder = @"请输入医院名";
     }
-    [changeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(MY_APP_STATUS_NAVBAR_HEIGHT);
-        make.height.equalTo(@44);
-        make.left.equalTo(self.view.mas_left);
-        make.width.equalTo(self.view.mas_width);
-    }];
     self.changeTextField = changeTextField;
 }
 

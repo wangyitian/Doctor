@@ -7,6 +7,7 @@
 //
 
 #import "MY_SelectView.h"
+#define TAG_FOR_BUTTON  2000
 @interface MY_SelectView ()
 @property (nonatomic, strong) UIView *mainView;
 @end
@@ -46,7 +47,7 @@
         button.layer.cornerRadius = 10;
         button.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
         button.layer.borderWidth = 1;
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         CGFloat buttonW = [options[i] sizeWithAttributes:@{NSFontAttributeName:MY_Font(12)}].width + 16;
         
         if (buttonX+buttonW+15 > MY_ScreenWidth) {

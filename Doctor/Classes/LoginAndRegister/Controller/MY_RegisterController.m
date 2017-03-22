@@ -26,19 +26,16 @@
     
     __block typeof(registerView) weakRegisterView = registerView;
     registerView.validateBlock = ^(NSString *account){
-        [self showLoading];
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;
         NSMutableDictionary *paramters = [NSMutableDictionary dictionary];
         [paramters setObject:account forKey:@"phonen"];
         [model getDataWithURL:MY_API_GET_CODE paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            [self hideLoading];
             [self.view makeToast:@"获取短信验证码成功" duration:2 position:CSToastPositionCenter];
             [weakRegisterView timerFire];
         }];
     };
     registerView.confirmBlock = ^(NSString *account, NSString *validate, NSString *pwd){
-        [self showLoading];
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;
         NSMutableDictionary *paramters = [NSMutableDictionary dictionary];
@@ -46,7 +43,6 @@
         [paramters setObject:pwd forKey:@"password"];
         [paramters setObject:validate forKey:@"code"];
         [model postDataWithURL:MY_API_REGISTER paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            [self hideLoading];
             [self.view makeToast:@"注册成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
                 
             }];

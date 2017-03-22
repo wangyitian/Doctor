@@ -8,6 +8,8 @@
 
 #import "MY_RecommendView.h"
 #import "MY_PickerView.h"
+#define TAG_FOR_PATIENT 2000    
+#define TAG_FOR_AGREE   3000
 @interface MY_RecommendView ()<UITextViewDelegate>
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
@@ -68,7 +70,7 @@
         [button setTitle:buttonTitles[i] forState:UIControlStateNormal];
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(14);
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_PATIENT + i;
         [button addTarget:self action:@selector(patientButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = CGRectMake((MY_ScreenWidth-100*2)/2+100*i, line2.top+5, 100, 35);
         [self addSubview:button];
@@ -136,7 +138,7 @@
         [button setTitle:agreeTitles[i] forState:UIControlStateNormal];
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(14);
-        button.tag = 3000 + i;
+        button.tag = TAG_FOR_AGREE + i;
         button.frame = CGRectMake(180+60*i, space3.bottom+5, 60, 35);
         [button addTarget:self action:@selector(agreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
@@ -184,7 +186,7 @@
         }
     }
     if (button.selected) {
-        if (button.tag-2000 == 0) {
+        if (button.tag-TAG_FOR_PATIENT == 0) {
             self.isPatient = @"1";
         } else {
             self.isPatient = @"0";
@@ -202,7 +204,7 @@
         }
     }
     if (button.selected) {
-        if (button.tag-3000 == 0) {
+        if (button.tag-TAG_FOR_AGREE == 0) {
             self.isAgree = @"1";
         } else {
             self.isAgree = @"0";

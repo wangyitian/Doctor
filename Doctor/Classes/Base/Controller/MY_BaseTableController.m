@@ -68,23 +68,12 @@
 }
 
 #pragma mark - 网络请求相关代理方法
-- (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
+- (void)hideLoadingAndMJ {
+    [self hideLoading];
     [self.tableView footerEndRefreshing];
     [self.tableView headerEndRefreshing];
-    [super requestFailedWithModel:requestModel task:task error:error];
 }
 
-- (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
-    [self.tableView footerEndRefreshing];
-    [self.tableView headerEndRefreshing];
-    [super requestFailedForSingleLoginWithPreVC:preVC];
-}
-
-- (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
-    [self.tableView footerEndRefreshing];
-    [self.tableView headerEndRefreshing];
-    [super requestErrorWithModel:requestModel responseDic:responseDic];
-}
 
 #pragma mark -
 #pragma mark UITableViewDataSource

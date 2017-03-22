@@ -14,6 +14,8 @@ typedef void(^Failure)(NSURLSessionDataTask *operation, NSError *error);
 
 @protocol MY_RequestModelDelegate <NSObject>
 
+- (void)hideLoadingAndMJ;
+
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC;
 
 - (void)requestErrorWithModel:(MY_RequestModel*)requestModel responseDic:(NSDictionary*)responseDic;

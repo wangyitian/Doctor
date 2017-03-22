@@ -9,6 +9,7 @@
 #import "MY_EnrollView.h"
 #import "MY_DatePickerView.h"
 #import "MY_PickerView.h"
+#define TAG_FOR_BUTTON  2000
 @interface MY_EnrollView () <UITextViewDelegate>
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
@@ -97,7 +98,7 @@
         [button setTitle:buttonTitles[i] forState:UIControlStateNormal];
         [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(13);
-        button.tag = 3000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         button.frame = CGRectMake(100+100*i, line3.top+5, 80, 35);
         [button setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];

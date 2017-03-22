@@ -27,13 +27,11 @@
     MY_ChangePhoneView *changePhoneView = [[MY_ChangePhoneView alloc] initWithFrame:self.view.bounds];
     __block typeof(changePhoneView) weakPhoneView = changePhoneView;
     changePhoneView.validateBlcok = ^(NSString *phone) {
-        [self showLoading];
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;
         NSMutableDictionary *paramters = [NSMutableDictionary dictionary];
         [paramters setObject:phone forKey:@"phonen"];
         [model getDataWithURL:MY_API_GET_CODE paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            [self hideLoading];
             [self.view makeToast:@"获取短信验证码成功" duration:2 position:CSToastPositionCenter];
             [weakPhoneView timerFire];
         }];

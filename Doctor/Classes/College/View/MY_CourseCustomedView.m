@@ -9,6 +9,7 @@
 #import "MY_CourseCustomedView.h"
 #import "MY_CourseCustomedDemoCell.h"
 #import "MY_CustomedCourseModel.h"
+#define TAG_FOR_BUTTON  2000
 @interface MY_CourseCustomedView () <UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIView *buttonView;
@@ -44,7 +45,7 @@
         [button setTitle:buttontitles[i] forState:UIControlStateNormal];
         [button setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(16);
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         button.frame = CGRectMake(MY_ScreenWidth/buttontitles.count*i, 0, MY_ScreenWidth/buttontitles.count, 42);
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonView addSubview:button];
@@ -93,7 +94,7 @@
 - (void)buttonAction:(UIButton*)btn {
     [UIView animateWithDuration:0.25 animations:^{
         self.selectedLineView.left = btn.left;
-        [self.scrollView scrollRectToVisible:CGRectMake((btn.tag-2000)*MY_ScreenWidth, 0, MY_ScreenWidth, self.scrollView.height) animated:YES];
+        [self.scrollView scrollRectToVisible:CGRectMake((btn.tag-TAG_FOR_BUTTON)*MY_ScreenWidth, 0, MY_ScreenWidth, self.scrollView.height) animated:YES];
     }];
 }
 

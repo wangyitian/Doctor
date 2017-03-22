@@ -26,26 +26,38 @@
 }
 
 - (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
+    //loading
+    [((MY_BaseController*)self.delegate) showLoading];
     [self.manager GET:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSData * data = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        MY_Log(@"%@~~~~~~~~~~%@",url,responseDic);
+        //隐藏loading 和 mj相关的header和footer
+        if ([self.delegate respondsToSelector:@selector(hideLoadingAndMJ)]) {
+            [self.delegate hideLoadingAndMJ];
+        }
+        MY_Log(@"RequestUrl:%@\nParamter:%@\nResponse:%@\n",url,paramter,responseDic);
+        //请求成功处理
         if ([responseDic[@"status"] isEqualToString:@"1"]) {
-            [((MY_BaseController*)self.delegate) hideLoading];
             success(task, responseDic);
+            //特殊情况处理，例如单点登录
         } else if ([responseDic[@"status"] isEqualToString:@"999"]) {
             if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
                 [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
             }
         } else {
+            //请求出错
             if ([self.delegate respondsToSelector:@selector(requestErrorWithModel:responseDic:)]) {
                 [self.delegate requestErrorWithModel:self responseDic:responseDic];
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        MY_Log(@"%@~~~~~~~~~~~%@",url,error);
+        MY_Log(@"RequestUrl:%@\nParamter:%@\nError:%@\n",url,paramter,error);
+        //隐藏loading 和 mj相关的header和footer
+        if ([self.delegate respondsToSelector:@selector(hideLoadingAndMJ)]) {
+            [self.delegate hideLoadingAndMJ];
+        }
+        //请求出错，例如没有网络等
         if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:task:error:)]) {
             [self.delegate requestFailedWithModel:self task:task error:error];
         }
@@ -53,25 +65,39 @@
 }
 
 - (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
+    //loading
+    [((MY_BaseController*)self.delegate) showLoading];
     [self.manager POST:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSData * data = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        MY_Log(@"%@~~~~~~~~~~~~~~~~~~%@~~~~~~~~~~~~~~~~~~~~~~~~%@",url,paramter,responseDic);
+        //隐藏loading 和 mj相关的header和footer
+        if ([self.delegate respondsToSelector:@selector(hideLoadingAndMJ)]) {
+            [self.delegate hideLoadingAndMJ];
+        }
+        MY_Log(@"RequestUrl:%@\nParamter:%@\nResponse:%@\n",url,paramter,responseDic);
+        //请求成功处理
         if ([responseDic[@"status"] isEqualToString:@"1"]) {
             success(task, responseDic);
+            //特殊情况处理，例如单点登录
         } else if ([responseDic[@"status"] isEqualToString:@"999"]) {
             if ([self.delegate respondsToSelector:@selector(requestFailedForSingleLoginWithPreVC:)]) {
                 [self.delegate requestFailedForSingleLoginWithPreVC:(UIViewController*)self.delegate];
             }
+            //请求出错
         } else {
             if ([self.delegate respondsToSelector:@selector(requestErrorWithModel:responseDic:)]) {
                 [self.delegate requestErrorWithModel:self responseDic:responseDic];
             }
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        MY_Log(@"RequestUrl:%@\nParamter:%@\nError:%@\n",url,paramter,error);
+        //隐藏loading 和 mj相关的header和footer
+        if ([self.delegate respondsToSelector:@selector(hideLoadingAndMJ)]) {
+            [self.delegate hideLoadingAndMJ];
+        }
+        //请求出错，例如没有网络等
         if ([self.delegate respondsToSelector:@selector(requestFailedWithModel:task:error:)]) {
-            MY_Log(@"%@~~~~~~~~~~~%@",url,error);
             [self.delegate requestFailedWithModel:self task:task error:error];
         }
     }];

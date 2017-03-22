@@ -8,7 +8,7 @@
 
 #import "MY_HomePageHeaderView.h"
 #import "SDCycleScrollView.h"
-
+#define TAG_FOR_BUTTON  2000
 @interface MY_HomePageHeaderView ()
 @property (nonatomic, strong) SDCycleScrollView *imageScrollView;
 @property (nonatomic, strong) UIView *buttonView;
@@ -41,7 +41,7 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:buttonImages[i]] forState:UIControlStateNormal];
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonView addSubview:button];
         
@@ -59,7 +59,7 @@
 
 - (void)buttonAction:(UIButton*)button {
     if (self.buttonBlock) {
-        self.buttonBlock(button.tag-2000+1);
+        self.buttonBlock(button.tag-TAG_FOR_BUTTON+1);
     }
 }
 

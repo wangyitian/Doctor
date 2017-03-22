@@ -24,27 +24,17 @@
 }
 
 - (void)setupUI {
-    self.circleImageView = [[UIImageView alloc] init];
+    self.circleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(38, 2, 12, 12)];
     [self.contentView addSubview:self.circleImageView];
-    [self.circleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@38);
-        make.top.mas_equalTo(self).with.offset(2);
-        make.size.mas_equalTo(CGSizeMake(12, 13));
-    }];
     
     self.lineView = [[UIView alloc] init];
     self.lineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     [self.contentView addSubview:self.lineView];
     
-    self.scheduleLabel = [[UILabel alloc] init];
+    self.scheduleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.circleImageView.right+15, 0, 75, 15)];
     self.scheduleLabel.textColor = [MY_Util setColorWithInt:0x666666];
     self.scheduleLabel.font = MY_Font(15);
     [self.contentView addSubview:self.scheduleLabel];
-    [self.scheduleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.circleImageView.mas_right).with.offset(15);
-        make.top.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(75, 15));
-    }];
     
     self.detailLabel = [[UILabel alloc] init];
     self.detailLabel.textColor = self.scheduleLabel.textColor;
@@ -65,19 +55,10 @@
     self.scheduleLabel.text = model.name;
     self.detailLabel.text = model.detail;
     CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-140-15, MAXFLOAT)];
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@140);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-140-15, size.height + 3));
-        make.top.mas_equalTo(self);
-    }];
+    self.detailLabel.frame = CGRectMake(140, 0, MY_ScreenWidth-140-15, size.height);
     
     self.timeLabel.text = model.time;
-    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.detailLabel);
-        make.top.mas_equalTo(self.detailLabel.mas_bottom).with.offset(10);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth-140-15, 12));
-    }];
-    
+    self.timeLabel.frame = CGRectMake(self.detailLabel.left, self.detailLabel.bottom+10, MY_ScreenWidth-140-15, 12);
     
     if (model.isFirst && model.isLast) {
         self.lineView.hidden = YES;

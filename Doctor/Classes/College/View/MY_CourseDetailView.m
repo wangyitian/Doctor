@@ -7,6 +7,7 @@
 //
 
 #import "MY_CourseDetailView.h"
+#define TAG_FOR_BUTTON  2000
 @interface MY_CourseDetailView () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *typeLabel;
@@ -62,7 +63,7 @@
         [button setTitle:buttontitles[i] forState:UIControlStateNormal];
         [button setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
         button.titleLabel.font = MY_Font(16);
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonView addSubview:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {

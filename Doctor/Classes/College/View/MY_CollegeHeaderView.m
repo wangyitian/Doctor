@@ -7,7 +7,7 @@
 //
 
 #import "MY_CollegeHeaderView.h"
-
+#define TAG_FOR_BUTTON 2000
 @implementation MY_CollegeHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -37,7 +37,7 @@
         button.layer.borderWidth = 1;
         button.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
         button.titleLabel.font = MY_Font(13);
-        button.tag = 1000 + i + 1;
+        button.tag = TAG_FOR_BUTTON + i + 1;
         
         CGFloat buttonW = 0;
         CGFloat space = 0;
@@ -56,7 +56,7 @@
 
 - (void)buttonAction:(UIButton*)btn {
     if (self.headerButtonBlock) {
-        self.headerButtonBlock(btn.tag-1000);
+        self.headerButtonBlock(btn.tag-TAG_FOR_BUTTON);
     }
 }
 

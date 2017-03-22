@@ -73,9 +73,21 @@
     MY_HotSearchView *hotSearchView = [[MY_HotSearchView alloc] initWithFrame:self.tableView.bounds];
     hotSearchView.dataArray = [NSArray arrayWithObjects:@"阿斯顿飞",@"水淀粉",@"地方",@"发生的",@"阿迪感动",@"舒服的",@"电风扇",@"水淀粉",@"水淀粉 是",@"是谁非", nil];
     hotSearchView.hotSearchBlock = ^(NSString *search) {
-    
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        [model getDataWithURL:@"" paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            
+        }];
     };
     [self.tableView addSubview:hotSearchView];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [model getDataWithURL:@"" paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        
+    }];
 }
 
 - (void)cancelAction {

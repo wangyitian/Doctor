@@ -26,8 +26,6 @@
     [self.window makeKeyAndVisible];
     
     //友盟分享相关
-    [[UMSocialManager defaultManager] openLog:YES];
-    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
     [self configUSharePlatforms];
     
     //rootController
@@ -37,6 +35,10 @@
 
 #pragma mark - 友盟配置
 - (void)configUSharePlatforms {
+    
+    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] setUmSocialAppkey:UMengKey];
+    
     /* 设置微信的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:WechatAppKey appSecret:WechatAppSecret redirectURL:@"http://mobile.umeng.com/social"];
     [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_WechatFavorite)]];

@@ -8,6 +8,7 @@
 
 #import "MY_CourseCell.h"
 #import "MY_CourseModel.h"
+#define TAG_FOR_BUTTON 2000
 @interface MY_CourseCell ()
 @property (nonatomic, strong) UIImageView *courseImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -74,7 +75,7 @@
         CGFloat space = (MY_ScreenWidth - buttonW*count - 15*2)/(count - 1);
         CGFloat buttonX = 15 + (62+space)*i;
         button.frame = CGRectMake(buttonX, 0, buttonW, 20);
-        button.tag = 2000 + i;
+        button.tag = TAG_FOR_BUTTON + i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonView addSubview:button];
     }
