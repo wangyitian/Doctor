@@ -115,8 +115,6 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
     };
-    
-    
     self.tableView.tableHeaderView = headerView;
 }
 
@@ -131,6 +129,5 @@
     [self.navigationController pushViewController:searchVC animated:YES];
     return NO;
 }
-
 
 @end
