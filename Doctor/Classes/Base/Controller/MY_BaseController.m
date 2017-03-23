@@ -10,7 +10,7 @@
 #import "MY_RequestModel.h"
 #import "MY_LoginController.h"
 @interface MY_BaseController ()
-
+@property (nonatomic, strong) MBProgressHUD *loadingView;
 @end
 
 @implementation MY_BaseController
@@ -116,7 +116,9 @@
 
 #pragma mark - 显示和隐藏loading
 - (void)showLoading {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if (!self.loadingView) {
+        self.loadingView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
 }
 
 - (void)hideLoading {
