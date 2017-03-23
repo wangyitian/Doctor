@@ -28,7 +28,7 @@
 - (void)getDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
     //loading
     [((MY_BaseController*)self.delegate) showLoading];
-    [self.manager GET:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSURLSessionDataTask *task = [self.manager GET:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSData * data = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
@@ -62,12 +62,13 @@
             [self.delegate requestFailedWithModel:self task:task error:error];
         }
     }];
+    [((MY_BaseController*)self.delegate).requestArray addObject:task];
 }
 
 - (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
     //loading
     [((MY_BaseController*)self.delegate) showLoading];
-    [self.manager POST:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSURLSessionDataTask *task = [self.manager POST:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSData * data = [receiveStr dataUsingEncoding:NSUTF8StringEncoding];
         NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
@@ -101,6 +102,7 @@
             [self.delegate requestFailedWithModel:self task:task error:error];
         }
     }];
+    [((MY_BaseController*)self.delegate).requestArray addObject:task];
 }
 
 @end

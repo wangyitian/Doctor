@@ -40,12 +40,6 @@
     [model getDataWithURL:@"" paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
         
     }];
-    
-    MY_RequestModel *model1 = [[MY_RequestModel alloc] initWithDelegate:self];
-    NSMutableDictionary *paramter1 = [NSMutableDictionary dictionary];
-    [model1 getDataWithURL:@"" paramter:paramter1 success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-        
-    }];
 }
 
 #pragma mark - 上拉加载下拉刷新

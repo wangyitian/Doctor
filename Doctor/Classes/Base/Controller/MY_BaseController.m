@@ -20,11 +20,18 @@
     [super viewDidLoad];
     self.view.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.requestArray = [NSMutableArray array];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)dealloc {
+    for (NSURLSessionTask *task in self.requestArray) {
+        [task cancel];
+    }
 }
 
 #pragma mark - 状态栏样式

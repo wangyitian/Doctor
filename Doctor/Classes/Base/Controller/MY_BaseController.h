@@ -13,6 +13,7 @@ typedef void(^LoginSuccessedBlock)();
 @property (nonatomic, copy) LoginSuccessedBlock loginSuccessedBlock;
 @property (nonatomic, strong) UIImageView *navBar;
 @property (nonatomic, strong) UILabel *navLabel;
+@property (nonatomic, strong) NSMutableArray *requestArray;
 - (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
 - (void)showLoading;
 - (void)hideLoading;
