@@ -55,7 +55,7 @@
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     MY_CourseModel *model = (MY_CourseModel*)object;
-    [self.courseImageView sd_setImageWithURL:[NSURL URLWithString:model.courseImage] placeholderImage:nil];
+    [self.courseImageView sd_setImageWithURL:[NSURL URLWithString:model.courseImage] placeholderImage:[UIImage imageNamed:@"default"]];
     
     self.titleLabel.text = model.courseTitle;
     
