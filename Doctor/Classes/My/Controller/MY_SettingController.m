@@ -30,18 +30,13 @@
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     UIButton *logoutButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    logoutButton.frame = CGRectMake(0, 44*3+5+10+10, MY_ScreenWidth, 44);
     logoutButton.backgroundColor = [UIColor whiteColor];
     [logoutButton setTitle:@"退出账号" forState:UIControlStateNormal];
     [logoutButton setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
     logoutButton.titleLabel.font = MY_Font(15);
     [logoutButton addTarget:self action:@selector(logoutButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.tableView addSubview:logoutButton];
-    [logoutButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view);
-        make.right.mas_equalTo(self.view.mas_right);
-        make.height.mas_equalTo(@44);
-        make.top.mas_equalTo(@(44*3+5+10+10));
-    }];
 }
 
 #pragma mark - tableview样式

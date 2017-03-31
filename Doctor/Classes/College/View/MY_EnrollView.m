@@ -210,11 +210,6 @@
     UIView *space5 = [[UIView alloc] initWithFrame:CGRectMake(space4.left, self.intentionTextView.bottom, space4.width, space4.height)];
     space5.backgroundColor = space4.backgroundColor;
     [self addSubview:space5];
-    [space5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(space4);
-        make.size.mas_equalTo(space4);
-        make.top.mas_equalTo(self.intentionTextView.mas_bottom);
-    }];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];

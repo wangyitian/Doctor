@@ -64,89 +64,52 @@
     [self.validateButton addTarget:self action:@selector(validateButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.validateButton];
     
-    self.validateTextField = [[UITextField alloc] init];
+    self.validateTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.phoneTextField.left, 0, self.validateButton.left-self.phoneTextField.left, self.phoneTextField.height)];
+    self.validateTextField.centerY = validateLabel.centerY;
     self.validateTextField.placeholder = @"请输入验证码";
     self.validateTextField.font = MY_Font(12);
     [self addSubview:self.validateTextField];
-    [self.validateTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.phoneTextField);
-        make.right.mas_equalTo(self.validateButton.mas_left);
-        make.centerY.mas_equalTo(validateLabel);
-        make.height.mas_equalTo(self.phoneTextField);
-    }];
     
-    UIView *middleView = [[UIView alloc] init];
+    UIView *middleView = [[UIView alloc] initWithFrame:CGRectMake(topView.left, line1.bottom+44, MY_ScreenWidth, 10)];
     middleView.backgroundColor = topView.backgroundColor;
     [self addSubview:middleView];
-    [middleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(topView);
-        make.top.mas_equalTo(line1.mas_bottom).with.offset(44);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 10));
-    }];
     
-    UILabel *freshPwd = [[UILabel alloc] init];
+    UILabel *freshPwd = [[UILabel alloc] initWithFrame:CGRectMake(validateLabel.left, middleView.bottom+15, validateLabel.width, validateLabel.height)];
     freshPwd.textColor = validateLabel.textColor;
     freshPwd.font = validateLabel.font;
     freshPwd.text = @"新密码";
     [self addSubview:freshPwd];
-    [freshPwd mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(validateLabel);
-        make.left.mas_equalTo(validateLabel);
-        make.top.mas_equalTo(middleView.mas_bottom).with.offset(15);
-    }];
     
-    self.pwdTextField = [[UITextField alloc] init];
+    self.pwdTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.phoneTextField.left, 0, self.phoneTextField.width, self.phoneTextField.height)];
+    self.pwdTextField.centerY = freshPwd.centerY;
     self.pwdTextField.placeholder = @"请输入密码(6-16位数字或字母)";
     self.pwdTextField.secureTextEntry = YES;
     self.pwdTextField.font = MY_Font(12);
     [self addSubview:self.pwdTextField];
-    [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.phoneTextField);
-        make.size.mas_equalTo(self.phoneTextField);
-        make.centerY.mas_equalTo(freshPwd);
-    }];
     
-    UIView *line2 = [[UIView alloc] init];
+    UIView *line2 = [[UIView alloc] initWithFrame:CGRectMake(line1.left, middleView.bottom+44, line1.width, line1.height)];
     line2.backgroundColor = line1.backgroundColor;
     [self addSubview:line2];
-    [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(line1);
-        make.size.mas_equalTo(line1);
-        make.top.mas_equalTo(middleView.mas_bottom).with.offset(44);
-    }];
     
-    UILabel *confirmLabel = [[UILabel alloc] init];
+    UILabel *confirmLabel = [[UILabel alloc] initWithFrame:CGRectMake(freshPwd.left, line2.bottom+15, freshPwd.width, freshPwd.height)];
     confirmLabel.textColor = freshPwd.textColor;
     confirmLabel.font = freshPwd.font;
     confirmLabel.text = @"确认密码";
     [self addSubview:confirmLabel];
-    [confirmLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(freshPwd);
-        make.top.mas_equalTo(line2.mas_bottom).with.offset(15);
-        make.size.mas_equalTo(freshPwd);
-    }];
     
-    self.confirmTextField = [[UITextField alloc] init];
+    self.confirmTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.pwdTextField.left, 0, self.pwdTextField.width, self.pwdTextField.height)];
+    self.confirmTextField.centerY = confirmLabel.centerY;
     self.confirmTextField.placeholder = @"请再次输入密码(6-16位数字或字母)";
     self.confirmTextField.secureTextEntry = YES;
     self.confirmTextField.font = MY_Font(12);
     [self addSubview:self.confirmTextField];
-    [self.confirmTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.pwdTextField);
-        make.centerY.mas_equalTo(confirmLabel);
-        make.size.mas_equalTo(self.pwdTextField);
-    }];
     
-    UIView *bottomView = [[UIView alloc] init];
+    UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(middleView.left, line2.bottom+44, middleView.width, middleView.height)];
     bottomView.backgroundColor = middleView.backgroundColor;
     [self addSubview:bottomView];
-    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(middleView);
-        make.top.mas_equalTo(line2.mas_bottom).with.offset(44);
-        make.size.mas_equalTo(middleView);
-    }];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    confirmButton.frame = CGRectMake(18, bottomView.bottom+20, MY_ScreenWidth-18*2, 44);
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = MY_Font(15);
@@ -155,14 +118,7 @@
     confirmButton.layer.cornerRadius = 2;
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
-    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@18);
-        make.right.mas_equalTo(self).with.offset(-18);
-        make.top.mas_equalTo(bottomView.mas_bottom).with.offset(20);
-        make.height.mas_equalTo(44);
-    }];
-    
-    [self layoutIfNeeded];
+
     self.height = confirmButton.bottom + 30;
 }
 

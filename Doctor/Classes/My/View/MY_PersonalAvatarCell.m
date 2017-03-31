@@ -39,14 +39,9 @@
     arrowImageView.centerY = self.avatarImageView.centerY;
     [self.contentView addSubview:arrowImageView];
     
-    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bottom-0.5, MY_ScreenWidth, 0.5)];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 75-0.5, MY_ScreenWidth, 0.5)];
     lineView.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:lineView];
-    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self);
-        make.bottom.mas_equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 0.5));
-    }];
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {

@@ -36,6 +36,8 @@
     self.tableView.tableHeaderView = tableHeaderView;
     
     UIButton *phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    phoneButton.frame = CGRectMake(0, 0, MY_ScreenWidth, 49);
+    phoneButton.bottom = self.view.bottom;
     phoneButton.layer.borderColor = [MY_Util setColorWithInt:0xababab].CGColor;
     phoneButton.layer.borderWidth = 0.5;
     phoneButton.backgroundColor = [UIColor whiteColor];
@@ -44,11 +46,6 @@
     [phoneButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
     [phoneButton addTarget:self action:@selector(phoneButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:phoneButton];
-    [phoneButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view);
-        make.bottom.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 49));
-    }];
     
     
     

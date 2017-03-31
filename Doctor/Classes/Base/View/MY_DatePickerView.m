@@ -22,16 +22,12 @@
 }
 
 - (void)setupUI {
-    UIView *mainView = [[UIView alloc] init];
+    UIView *mainView = [[UIView alloc] initWithFrame:CGRectMake(0, self.bottom-260, MY_ScreenWidth, 260)];
     mainView.backgroundColor = [UIColor whiteColor];
     [self addSubview:mainView];
-    [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 260));
-        make.left.mas_equalTo(self);
-        make.bottom.mas_equalTo(self);
-    }];
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(10, 10, 56, 26);
     [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     [cancelButton setTitleColor:[MY_Util setColorWithInt:0x999999] forState:UIControlStateNormal];
     cancelButton.titleLabel.font = MY_Font(14);
@@ -41,13 +37,9 @@
     cancelButton.layer.borderWidth = 1;
     [cancelButton addTarget:self action:@selector(cancelButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [mainView addSubview:cancelButton];
-    [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(@10);
-        make.top.mas_equalTo(@10);
-        make.size.mas_equalTo(CGSizeMake(56, 26));
-    }];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    confirmButton.frame = CGRectMake(MY_ScreenWidth-10-cancelButton.width, cancelButton.top, cancelButton.width, cancelButton.height);
     [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = MY_Font(14);
@@ -56,34 +48,19 @@
     confirmButton.layer.cornerRadius = 2;
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [mainView addSubview:confirmButton];
-    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(cancelButton);
-        make.right.mas_equalTo(mainView).offset(-10);
-        make.top.mas_equalTo(cancelButton);
-    }];
     
-    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(cancelButton.right, 0, confirmButton.left-cancelButton.right, 20)];
+    self.titleLabel.centerY = cancelButton.centerY;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = MY_Font(15);
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x68d6a7];
     [mainView addSubview:self.titleLabel];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(cancelButton.mas_right);
-        make.right.mas_equalTo(confirmButton.mas_left);
-        make.height.mas_equalTo(20);
-        make.centerY.mas_equalTo(cancelButton);
-    }];
     
-    UIView *line = [[UIView alloc] init];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(mainView.left, 44, MY_ScreenWidth, 0.5)];
     line.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [mainView addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(mainView);
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 0.5));
-        make.top.mas_equalTo(@44);
-    }];
     
-    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(mainView.left, mainView.height-217, MY_ScreenWidth, 217)];
     datePicker.datePickerMode = UIDatePickerModeDate;
     
     NSDateFormatter *formatter_minDate = [[NSDateFormatter alloc] init];
@@ -103,11 +80,6 @@
     
     [datePicker addTarget:self action:@selector(datePickerChanged:) forControlEvents:UIControlEventValueChanged];
     [mainView addSubview:datePicker];
-    [datePicker mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(MY_ScreenWidth, 217));
-        make.left.mas_equalTo(mainView);
-        make.bottom.mas_equalTo(mainView);
-    }];
 }
 
 - (void)datePickerChanged:(UIDatePicker*)datePicker {
