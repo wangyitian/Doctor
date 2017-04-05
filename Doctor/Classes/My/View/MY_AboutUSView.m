@@ -25,6 +25,7 @@
     [self addSubview:logoView];
     
     UILabel *versonLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, logoView.bottom+15, 200, 13)];
+    versonLabel.centerX = logoView.centerX;
     versonLabel.text = @"国际进修v1.0";
     versonLabel.textColor = [MY_Util setColorWithInt:0x666666];
     versonLabel.font = MY_Font(13);

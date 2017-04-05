@@ -11,6 +11,7 @@
 #import "MY_LoginController.h"
 @interface MY_BaseController ()
 @property (nonatomic, strong) MBProgressHUD *loadingView;
+@property (nonatomic, strong) UIAlertController *alertVC;
 @end
 
 @implementation MY_BaseController
@@ -45,9 +46,14 @@
 }
 
 - (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请求失败" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
+    __block typeof(self) weakSelf = self;
+    if (!self.alertVC) {
+        self.alertVC = [UIAlertController alertControllerWithTitle:nil message:@"请求失败" preferredStyle:UIAlertControllerStyleAlert];
+        [self.alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            weakSelf.alertVC = nil;
+        }]];
+        [self presentViewController:self.alertVC animated:YES completion:nil];
+    }
 }
 
 - (void)requestFailedForSingleLoginWithPreVC:(UIViewController*)preVC {
@@ -60,9 +66,14 @@
 }
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:responseDic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-    [self presentViewController:alert animated:YES completion:nil];
+    __block typeof(self) weakSelf = self;
+    if (!self.alertVC) {
+        self.alertVC = [UIAlertController alertControllerWithTitle:nil message:responseDic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
+        [self.alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            weakSelf.alertVC = nil;
+        }]];
+        [self presentViewController:self.alertVC animated:YES completion:nil];
+    }
 }
 
 #pragma mark - 导航栏
