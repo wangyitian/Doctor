@@ -14,10 +14,6 @@
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
 #import "MY_CourseCustomedController.h"
-//#import "UMSocialData.h"
-//#import "UMSocialSnsService.h"
-//#import "UMSocialSnsPlatformManager.h"
-//<UMSocialUIDelegate>
 
 #import <UShareUI/UShareUI.h>
 @interface MY_CollegeController ()
