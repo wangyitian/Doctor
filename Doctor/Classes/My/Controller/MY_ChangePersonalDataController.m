@@ -58,8 +58,13 @@
         } else if (self.changeType == Change_Hospital) {
             [paramter setObject:self.changeTextField.text forKey:@"hospital"];
         }
+        [paramter setObject:[MY_Util getUid] forKey:@"uid"];
         [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:dic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
         }];
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"输入不能为空" preferredStyle:UIAlertControllerStyleAlert];

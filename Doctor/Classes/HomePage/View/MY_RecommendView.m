@@ -13,6 +13,7 @@
 @interface MY_RecommendView ()<UITextViewDelegate>
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
+@property (nonatomic, strong) UITextField *sickTypeTextField;
 @property (nonatomic, strong) NSMutableArray *patientButtons;
 @property (nonatomic, strong) UILabel *sickTypeLabel;
 @property (nonatomic, strong) MY_TextView *sickTextView;
@@ -81,29 +82,18 @@
     space1.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
     [self addSubview:space1];
     
-    UIView *sickTypeView = [[UIView alloc] initWithFrame:CGRectMake(0, space1.bottom, MY_ScreenWidth, 45)];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectSickType)];
-    [sickTypeView addGestureRecognizer:tap];
-    [self addSubview:sickTypeView];
-    
-    UILabel *sickTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(phoneLabel.left, 15, phoneLabel.width, phoneLabel.height)];
+    UILabel *sickTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(phoneLabel.left, space1.bottom+15, phoneLabel.width, phoneLabel.height)];
     sickTypeLabel.textColor = [MY_Util setColorWithInt:0x666666];
     sickTypeLabel.font = MY_Font(15);
     sickTypeLabel.text = @"患者病种";
-    [sickTypeView addSubview:sickTypeLabel];
+    [self addSubview:sickTypeLabel];
     
-    self.sickTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(sickTypeLabel.right, sickTypeLabel.top, 150, sickTypeLabel.height)];
-    self.sickTypeLabel.textColor = [MY_Util setColorWithInt:0x666666];
-    self.sickTypeLabel.font = MY_Font(12);
-    self.sickTypeLabel.text = @"请选择患者病种";
-    [sickTypeView addSubview:self.sickTypeLabel];
+    self.sickTypeTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.nameTextField.left, sickTypeLabel.top, self.nameTextField.width, self.nameTextField.height)];
+    self.sickTypeTextField.font = MY_Font(12);
+    self.sickTypeTextField.placeholder = @"请输入患者病种";
+    [self addSubview:self.sickTypeTextField];
     
-    UIImageView *arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
-    arrow.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
-    arrow.centerY = sickTypeLabel.centerY;
-    [sickTypeView addSubview:arrow];
-    
-    UIView *space2 = [[UIView alloc] initWithFrame:CGRectMake(space1.left, sickTypeView.bottom, space1.width, space1.height)];
+    UIView *space2 = [[UIView alloc] initWithFrame:CGRectMake(space1.left, space1.bottom+45, space1.width, space1.height)];
     space2.backgroundColor = space1.backgroundColor;
     [self addSubview:space2];
     
@@ -230,14 +220,14 @@
         [[self findController] presentViewController:alert animated:YES completion:nil];
         return;
     }
-    [paramter setObject:self.phoneTextField.text forKey:@"phonen"];
-    if ([self.sickTypeLabel.text isEqualToString:@"请选择患者病种"]) {
+    [paramter setObject:self.phoneTextField.text forKey:@"iphon"];
+    if (self.sickTypeTextField.text.length == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择患者病种" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
         [[self findController] presentViewController:alert animated:YES completion:nil];
         return;
     }
-    [paramter setObject:self.sickTypeLabel.text forKey:@"disease"];
+    [paramter setObject:self.sickTypeTextField.text forKey:@"disease"];
     if (self.isPatient.length) {
         [paramter setObject:self.isPatient forKey:@"relation"];
     }

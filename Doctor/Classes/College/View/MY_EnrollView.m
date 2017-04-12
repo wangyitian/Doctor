@@ -289,7 +289,7 @@
         [[self findController] presentViewController:alert animated:YES completion:nil];
         return;
     }
-    [paramter setObject:self.passportType forKey:@"Passport_type"];
+    [paramter setObject:self.passportType forKey:@"passport_type"];
     if (self.passportIdTextField.text.length == 0) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的护照号码" preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];

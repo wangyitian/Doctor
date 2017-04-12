@@ -37,14 +37,15 @@
     };
     registerView.confirmBlock = ^(NSString *account, NSString *validate, NSString *pwd){
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
-        model.delegate = self;
         NSMutableDictionary *paramters = [NSMutableDictionary dictionary];
         [paramters setObject:account forKey:@"phonen"];
         [paramters setObject:pwd forKey:@"password"];
         [paramters setObject:validate forKey:@"code"];
         [model postDataWithURL:MY_API_REGISTER paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
             [self.view makeToast:@"注册成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
-                
+                MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
+                [MY_Util saveAccount:account];
+                [self.navigationController popViewControllerAnimated:YES];
             }];
         }];
     };

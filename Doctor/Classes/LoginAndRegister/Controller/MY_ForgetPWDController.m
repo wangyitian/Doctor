@@ -20,7 +20,7 @@
 }
 
 - (void)setupUI {
-    [self setTitle:@"注册" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    [self setTitle:@"忘记密码" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     MY_ChangePWDView *registerView = [[MY_ChangePWDView alloc] initWithFrame:self.view.bounds];
     __block typeof(registerView) weakRegisterView = registerView;
@@ -34,7 +34,7 @@
             [weakRegisterView timerFire];
         }];
     };
-    registerView.confirmBlock = ^(NSString *account, NSString *pwd, NSString *validate){
+    registerView.confirmBlock = ^(NSString *account, NSString *validate, NSString *pwd){
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
         [paramter setObject:account forKey:@"phonen"];

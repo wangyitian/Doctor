@@ -39,6 +39,8 @@
         [paramter setObject:pwd forKey:@"password"];
         [model postDataWithURL:MY_API_LOGIN paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
             [self.view makeToast:@"登录成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
+                MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
+                [MY_Util saveAccount:account];
                 MY_TabController *tabVC = [[MY_TabController alloc] init];
                 [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
             }];

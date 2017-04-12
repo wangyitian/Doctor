@@ -141,5 +141,6 @@
 
 - (void)hideLoading {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    self.loadingView = nil;
 }
 @end

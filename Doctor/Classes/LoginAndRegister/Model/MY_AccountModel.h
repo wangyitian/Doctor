@@ -12,4 +12,9 @@
 @property (nonatomic, strong) NSString *uid;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *phonen;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *head;
+@property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, strong) NSString *department;
+@property (nonatomic, strong) NSString *hospital;
 @end

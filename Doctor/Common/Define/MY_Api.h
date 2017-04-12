@@ -9,7 +9,7 @@
 #ifndef MY_Api_h
 #define MY_Api_h
 
-#define MY_BASE_API_PATH                @"http://ohs.meiyujiankang.com/index1.php/Index/"
+#define MY_BASE_API_PATH                @"http://api.meiyujiankang.com/admin.php/Index/"
 #define MY_API_REGISTER                 @"meiyu_register"               //注册
 #define MY_API_GET_CODE                 @"meiyu_information"            //获取验证码
 #define MY_API_LOGIN                    @"meiyu_Sign_in"                //登录

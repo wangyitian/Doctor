@@ -12,6 +12,7 @@
 #import "MY_FeedbackController.h"
 #import "MY_AboutUSController.h"
 #import "SDImageCache.h"
+#import "MY_TabController.h"
 @interface MY_SettingController ()
 
 @end
@@ -105,7 +106,9 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"您确定要退出账号？" preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [MY_Util removeAccount];
+        MY_TabController *tabVC = [[MY_TabController alloc] init];
+        [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }
