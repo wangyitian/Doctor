@@ -27,7 +27,7 @@
 
 #pragma mark - UI
 - (void)setupUI {
-    [self setTitle:@"" isBackButton:YES rightBttonName:@"分享" rightImageName:nil];
+    [self setTitle:@" " isBackButton:YES rightBttonName:@"分享" rightImageName:nil];
     
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, MY_ScreenHeight - MY_APP_STATUS_NAVBAR_HEIGHT)];
     self.webView.delegate = self;

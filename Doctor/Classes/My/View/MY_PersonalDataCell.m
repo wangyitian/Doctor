@@ -65,7 +65,18 @@
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
-    
+    MY_AccountModel *account = [MY_Util getAccountModel];
+    if (indexpath.row == 1) {
+        self.valueLabel.text = account.nickname;
+    } else if (indexpath.row == 2) {
+        self.valueLabel.text = account.username;
+    } else if (indexpath.row == 3) {
+        self.valueLabel.text = account.phonen;
+    } else if (indexpath.row == 4) {
+        self.valueLabel.text = account.department;
+    } else if (indexpath.row == 5) {
+        self.valueLabel.text = account.hospital;
+    }
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

@@ -11,7 +11,7 @@
 #import "MY_ChangePersonalDataController.h"
 #import "MY_PersonalAvatarCell.h"
 #import "MY_ChangePhoneController.h"
-#import "MY_PickerView.h"
+#import "MY_SubPickerView.h"
 @interface MY_PersonalDataController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
@@ -25,6 +25,11 @@
     [self setupUI];
     
     [self initData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UI
@@ -55,6 +60,7 @@
     } else {
         MY_PersonalDataCell *cell = [MY_PersonalDataCell cellWithTablebView:tableView index:indexPath];
         tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        [cell setObject:[MY_Util getAccountModel] indexPath:indexPath];
         return cell;
     }
 }
@@ -92,15 +98,19 @@
         MY_ChangePhoneController *vc = [[MY_ChangePhoneController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 4) {
-        NSArray *array = [NSArray arrayWithObjects:@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是",@"可是", nil];
-        MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:array title:@"选择科室"];
+        MY_SubPickerView *pickerView = [[MY_SubPickerView alloc] initWithDataSource:@"RoomType.plist" title:@"选择科室"];
         pickerView.confirmBlock = ^(NSString *value) {
             MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
             NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
             [paramter setObject:[MY_Util getUid] forKey:@"uid"];
             [paramter setObject:value forKey:@"department"];
             [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-                
+                [self.view makeToast:dic[@"message"] duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
+                    MY_AccountModel *account = [MY_Util getAccountModel];
+                    account.department = value;
+                    [MY_Util saveAccount:account];
+                    [self.tableView reloadData];
+                }];
             }];
         };
         [self.view addSubview:pickerView];
@@ -118,11 +128,12 @@
         UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
         UIImage *smallImage = [self thumbnailWithImageWithoutScale:img size:CGSizeMake(93, 93)];
         
-        NSData *imageData = UIImagePNGRepresentation(smallImage);
+        NSData *imageData = UIImageJPEGRepresentation(smallImage,1);
+        NSString *encodedImageStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
-        [paramter setObject:imageData forKey:@"head"];
+        [paramter setObject:encodedImageStr forKey:@"head"];
         [paramter setObject:[MY_Util getUid] forKey:@"uid"];
         [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
             

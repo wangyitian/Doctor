@@ -43,7 +43,15 @@
         [paramter setObject:validate forKey:@"code"];
         [paramter setObject:[MY_Util getUid] forKey:@"uid"];
         [model postDataWithURL:MY_API_CHANGE_PHONE paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:dic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }]];
+            [self presentViewController:alert animated:YES completion:^{
+                MY_AccountModel *account = [MY_Util getAccountModel];
+                account.phonen = phone;
+                [MY_Util saveAccount:account];
+            }];
         }];
     };
     [self.scrollView addSubview:changePhoneView];

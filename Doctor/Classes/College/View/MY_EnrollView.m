@@ -9,6 +9,7 @@
 #import "MY_EnrollView.h"
 #import "MY_DatePickerView.h"
 #import "MY_PickerView.h"
+#import "MY_SubPickerView.h"
 #define TAG_FOR_BUTTON  2000
 @interface MY_EnrollView () <UITextViewDelegate>
 @property (nonatomic, strong) UITextField *nameTextField;
@@ -234,8 +235,7 @@
 }
 
 - (void)selectPosition {
-    NSArray *positions = [NSArray arrayWithObjects:@"电风扇",@"师傅说的",@"收费是多少",@"电风扇",@"师傅说的",@"收费是多少", nil];
-    MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:positions title:@"请选择职称"];
+    MY_SubPickerView *pickerView = [[MY_SubPickerView alloc] initWithDataSource:@"DoctorLevel.plist" title:@"请选择职称"];
     pickerView.confirmBlock = ^(NSString *value) {
         self.positionLabel.text = value;
     };

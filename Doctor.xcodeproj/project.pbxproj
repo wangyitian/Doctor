@@ -44,6 +44,9 @@
 		957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */; };
 		957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */; };
 		957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */; };
+		958BB5D31E9F089C00A976A7 /* RoomType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D21E9F089C00A976A7 /* RoomType.plist */; };
+		958BB5D61E9F0E5D00A976A7 /* MY_SubPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */; };
+		958BB5D81E9F206E00A976A7 /* DoctorLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D71E9F206E00A976A7 /* DoctorLevel.plist */; };
 		958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */; };
 		958C35E51E5400F8006FCCF3 /* MY_Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E41E5400F8006FCCF3 /* MY_Util.m */; };
 		958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 958C35E81E541BFB006FCCF3 /* MY_RequestModel.m */; };
@@ -411,6 +414,10 @@
 		957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CollegeHeaderView.m; sourceTree = "<group>"; };
 		957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroCell.h; sourceTree = "<group>"; };
 		957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseIntroCell.m; sourceTree = "<group>"; };
+		958BB5D21E9F089C00A976A7 /* RoomType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RoomType.plist; path = Doctor/other/RoomType.plist; sourceTree = SOURCE_ROOT; };
+		958BB5D41E9F0E5D00A976A7 /* MY_SubPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MY_SubPickerView.h; path = ../../My/View/MY_SubPickerView.h; sourceTree = "<group>"; };
+		958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MY_SubPickerView.m; path = ../../My/View/MY_SubPickerView.m; sourceTree = "<group>"; };
+		958BB5D71E9F206E00A976A7 /* DoctorLevel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DoctorLevel.plist; path = Doctor/other/DoctorLevel.plist; sourceTree = SOURCE_ROOT; };
 		958C35E01E53F8F6006FCCF3 /* UITableView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+MJRefresh.h"; sourceTree = "<group>"; };
 		958C35E11E53F8F6006FCCF3 /* UITableView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+MJRefresh.m"; sourceTree = "<group>"; };
 		958C35E31E5400F8006FCCF3 /* MY_Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_Util.h; sourceTree = "<group>"; };
@@ -1141,6 +1148,8 @@
 				950142EA1E4C7F1100987828 /* Info.plist */,
 				950142EB1E4C7F1100987828 /* main.m */,
 				95B022791E52DC8F00B672D3 /* Doctor-Prefix.pch */,
+				958BB5D21E9F089C00A976A7 /* RoomType.plist */,
+				958BB5D71E9F206E00A976A7 /* DoctorLevel.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1206,6 +1215,8 @@
 				953C8C491E7245B400A755F0 /* MY_PickerView.m */,
 				9526FA9C1E77FAA800C52433 /* MY_DatePickerView.h */,
 				9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */,
+				958BB5D41E9F0E5D00A976A7 /* MY_SubPickerView.h */,
+				958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2330,7 +2341,9 @@
 				95C2062E1E7631430023DCC7 /* UMSocialSDKPromptResources.bundle in Resources */,
 				95C206291E7631430023DCC7 /* read_me.txt in Resources */,
 				95C2061E1E7631430023DCC7 /* UShare快速集成.html in Resources */,
+				958BB5D31E9F089C00A976A7 /* RoomType.plist in Resources */,
 				95C2062A1E7631430023DCC7 /* README.txt in Resources */,
+				958BB5D81E9F206E00A976A7 /* DoctorLevel.plist in Resources */,
 				950142D01E4C7D1400987828 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2651,6 +2664,7 @@
 				95B8BE691E71257500197B84 /* GPUImageColourFASTSamplingOperation.m in Sources */,
 				95B8BECB1E71257500197B84 /* GPUImageSepiaFilter.m in Sources */,
 				95B8BE4F1E71257500197B84 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
+				958BB5D61E9F0E5D00A976A7 /* MY_SubPickerView.m in Sources */,
 				95B8BE391E71257500197B84 /* LFAVEncoder.mm in Sources */,
 				95B8BEDC1E71257500197B84 /* GPUImageSwirlFilter.m in Sources */,
 				95B8BEAA1E71257500197B84 /* GPUImageMosaicFilter.m in Sources */,

@@ -1,24 +1,23 @@
 //
-//  MY_PickerView.m
+//  MY_SubPickerView.m
 //  Doctor
 //
-//  Created by 王翼天 on 2017/3/10.
+//  Created by 王翼天 on 2017/4/13.
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
-#import "MY_PickerView.h"
+#import "MY_SubPickerView.h"
 
-@interface MY_PickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
-@property (nonatomic, strong) NSString *selectedValue;
+@interface MY_SubPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (nonatomic, strong) NSArray *dataSource;
-
 @end
 
-@implementation MY_PickerView
+@implementation MY_SubPickerView
 
-- (instancetype)initWithDataSource:(NSArray *)dataSource title:(NSString *)title {
+- (instancetype)initWithDataSource:(NSString *)dataSource title:(NSString *)title {
     if (self = [super initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_ScreenHeight)]) {
-        self.dataSource = dataSource;
+        NSString *path = [[NSBundle mainBundle] pathForResource:dataSource ofType:nil];
+        self.dataSource = [NSArray arrayWithContentsOfFile:path];
         [self setupUI];
         self.titleLabel.text = title;
     }
@@ -75,7 +74,7 @@
 
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
-    self.selectedValue = dataSource[0];
+//    self.selectedValue = dataSource[0];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -87,19 +86,34 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.dataSource.count;
+    if (component == 0) {
+        return self.dataSource.count;
+    } else {
+        return [self.dataSource[self.mainIndex][@"subNames"] count];
+    }
 }
 
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return self.dataSource[row];
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (component == 0) {
+        return [self.dataSource[row] objectForKey:@"name"];
+    } else {
+        return self.dataSource[self.mainIndex][@"subNames"][row];
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.selectedValue = self.dataSource[row];
+    if (component == 0) {
+        self.mainIndex = row;
+        self.subIndex = 0;
+        [pickerView selectRow:0 inComponent:1 animated:NO];
+    } else {
+        self.subIndex = row;
+    }
+    [pickerView reloadAllComponents];
 }
 
 - (void)cancelButtonAction {
@@ -108,9 +122,23 @@
 
 - (void)confirmButtonAction {
     if (self.confirmBlock) {
-        self.confirmBlock(self.selectedValue);
+        
+        NSString *mainType = self.dataSource[self.mainIndex][@"name"];
+        NSString *subType = @"";
+        if ([self.dataSource[self.mainIndex][@"subNames"] count] > self.subIndex) {
+            subType = self.dataSource[self.mainIndex][@"subNames"][self.subIndex];
+        }
+        
+        NSString *typeStr = @"";
+        if (subType.length) {
+            typeStr = [NSString stringWithFormat:@"%@-%@",mainType,subType];
+        } else {
+            typeStr = mainType;
+        }
+        self.confirmBlock(typeStr);
         [self removeFromSuperview];
     }
 }
 
 @end
+

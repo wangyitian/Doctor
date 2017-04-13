@@ -64,7 +64,17 @@
             [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 [self.navigationController popViewControllerAnimated:YES];
             }]];
-            [self presentViewController:alert animated:YES completion:nil];
+            [self presentViewController:alert animated:YES completion:^{
+                MY_AccountModel *account = [MY_Util getAccountModel];
+                if(self.changeType == Change_NickName) {
+                    account.nickname = self.changeTextField.text;
+                } else if (self.changeType == Change_RealName) {
+                    account.username = self.changeTextField.text;
+                } else if (self.changeType == Change_Hospital) {
+                    account.hospital = self.changeTextField.text;
+                }
+                [MY_Util saveAccount:account];
+            }];
         }];
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"输入不能为空" preferredStyle:UIAlertControllerStyleAlert];

@@ -8,6 +8,7 @@
 
 #import "MY_RecommendView.h"
 #import "MY_PickerView.h"
+#import "MY_BaseWebController.h"
 #define TAG_FOR_PATIENT 2000    
 #define TAG_FOR_AGREE   3000
 @interface MY_RecommendView ()<UITextViewDelegate>
@@ -19,7 +20,7 @@
 @property (nonatomic, strong) MY_TextView *sickTextView;
 @property (nonatomic, strong) NSMutableArray *agreeButtons;
 @property (nonatomic, copy) NSString *isPatient;
-@property (nonatomic, copy) NSString *isAgree;
+@property (nonatomic, strong) UIButton *isAgreeButton;
 @end
 @implementation MY_RecommendView
 
@@ -114,26 +115,21 @@
     space3.backgroundColor = space2.backgroundColor;
     [self addSubview:space3];
     
-    UILabel *agreeLabel = [[UILabel alloc] initWithFrame:CGRectMake(intentionLabel.left, space3.bottom+15, 140, 15)];
-    agreeLabel.textColor = [MY_Util setColorWithInt:0x666666];
-    agreeLabel.font = MY_Font(15);
-    agreeLabel.text = @"是否征得患者同意";
-    [self addSubview:agreeLabel];
     
-    NSArray *agreeTitles = [NSArray arrayWithObjects:@" 是",@" 否", nil];
-    for (int i = 0; i < agreeTitles.count; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
-        [button setTitle:agreeTitles[i] forState:UIControlStateNormal];
-        [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
-        button.titleLabel.font = MY_Font(14);
-        button.tag = TAG_FOR_AGREE + i;
-        button.frame = CGRectMake(180+60*i, space3.bottom+5, 60, 35);
-        [button addTarget:self action:@selector(agreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button];
-        [self.agreeButtons addObject:button];
-    }
+    self.isAgreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.isAgreeButton.frame = CGRectMake((MY_ScreenWidth-300-20)/2, space3.bottom+15, 20, 20);
+    [self.isAgreeButton setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
+    [self.isAgreeButton setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
+    [self.isAgreeButton addTarget:self action:@selector(isAgreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.isAgreeButton];
+    
+    UIButton *protocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    protocolButton.frame = CGRectMake(self.isAgreeButton.right, self.isAgreeButton.top, 300, 20);
+    [protocolButton setTitle:@"已阅读并同意《麻省医疗国际患者推荐服务协议》" forState:UIControlStateNormal];
+    [protocolButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+    protocolButton.titleLabel.font = MY_Font(13);
+    [protocolButton addTarget:self action:@selector(protocolButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:protocolButton];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];
@@ -142,7 +138,7 @@
     confirmButton.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     confirmButton.layer.masksToBounds = YES;
     confirmButton.layer.cornerRadius = 2;
-    confirmButton.frame = CGRectMake(20, agreeLabel.bottom+30+15, MY_ScreenWidth-20*2, 44);
+    confirmButton.frame = CGRectMake(20, protocolButton.bottom+30+15, MY_ScreenWidth-20*2, 44);
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
   
@@ -156,6 +152,17 @@
         self.sickTypeLabel.text = value;
     };
     [[self findController].view addSubview:pickerView];
+}
+- (void)isAgreeButtonAction:(UIButton*)button {
+    button.selected = !button.selected;
+    self.isAgreeButton.selected = button.selected;
+}
+
+- (void)protocolButtonAction {
+    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+    webVC.url = @"https://baidu.com";
+//    webVC.navTitle = @"麻省医疗国际患者推荐服务协议";
+    [[self findController].navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -186,24 +193,6 @@
     }
 }
 
-- (void)agreeButtonAction:(UIButton*)button {
-    button.selected = !button.selected;
-    for (UIButton *btn in self.agreeButtons) {
-        if (btn.tag != button.tag) {
-            btn.selected = NO;
-        }
-    }
-    if (button.selected) {
-        if (button.tag-TAG_FOR_AGREE == 0) {
-            self.isAgree = @"1";
-        } else {
-            self.isAgree = @"0";
-        }
-    } else {
-        self.isAgree = @"";
-    }
-}
-
 - (void)confirmButtonAction {
     NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
     [paramter setObject:[MY_Util getUid] forKey:@"uid"];
@@ -230,9 +219,6 @@
     [paramter setObject:self.sickTypeTextField.text forKey:@"disease"];
     if (self.isPatient.length) {
         [paramter setObject:self.isPatient forKey:@"relation"];
-    }
-    if (self.isAgree.length) {
-        [paramter setObject:self.isAgree forKey:@"agree"];
     }
     
     NSString *sick = [self.sickTextView.text substringFromIndex:21];
