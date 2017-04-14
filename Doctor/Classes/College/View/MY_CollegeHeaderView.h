@@ -10,6 +10,6 @@
 
 typedef void(^HeaderButtonBlock)(NSInteger index);
 
-@interface MY_CollegeHeaderView : UIView
+@interface MY_CollegeHeaderView : MY_View
 @property (nonatomic, copy) HeaderButtonBlock headerButtonBlock;
 @end

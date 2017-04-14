@@ -22,7 +22,7 @@
 
 @end
 
-@interface MY_TitleSegmentView : UIView
+@interface MY_TitleSegmentView : MY_View
 
 @property(nonatomic,assign)id<MY_TitleSegmentDelegate> delegate;
 @property(nonatomic,strong)NSMutableArray* dataArray;

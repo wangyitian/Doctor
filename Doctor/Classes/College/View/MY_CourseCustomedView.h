@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MY_CourseCustomedView : UIView
+@interface MY_CourseCustomedView : MY_View
 @property (nonatomic, strong) NSDictionary *dataDic;
 @end

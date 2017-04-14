@@ -20,7 +20,7 @@
 @end
 
 
-@interface MY_SegmentContentView : UIView
+@interface MY_SegmentContentView : MY_View
 @property (nonatomic, assign) NSUInteger pageCount;
 @property (nonatomic, strong) NSArray *views;
 @property (nonatomic, assign) id <MY_SegmentContentViewDelegate> delegate;

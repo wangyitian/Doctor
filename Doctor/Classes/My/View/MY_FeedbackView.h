@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^ConfirmBlock)(NSString *suggest, NSString*phone);
-@interface MY_FeedbackView : UIView
+@interface MY_FeedbackView : MY_View
 @property (nonatomic, copy) ConfirmBlock confirmBlock;
 @end

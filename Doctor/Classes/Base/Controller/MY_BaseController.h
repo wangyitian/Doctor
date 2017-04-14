@@ -17,4 +17,5 @@ typedef void(^LoginSuccessedBlock)();
 - (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
 - (void)showLoading;
 - (void)hideLoading;
+- (void)presentAlertWithMessage:(NSString*)message ConfirmAction:(void (^ __nullable)(UIAlertAction *action))confirmAction completion:(void(^ __nullable)(void))completion;
 @end

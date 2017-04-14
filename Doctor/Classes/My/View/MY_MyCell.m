@@ -27,13 +27,17 @@
     MY_MyCell  *cell = [tableView dequeueReusableCellWithIdentifier:indent];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *icons = [NSArray arrayWithObjects:@"my_feedback",@"my_about",@"my_setting", nil];
+    NSArray *icons = [NSArray arrayWithObjects:@"patient_recommend",@"feedback",@"aboutUS",@"setting",@"invite", nil];
     if (indexPath.row == 0) {
-        cell.titleLabel.text = @"意见反馈";
+        cell.titleLabel.text = @"患者推荐";
     } else if (indexPath.row == 1) {
-        cell.titleLabel.text = @"关于我们";
+        cell.titleLabel.text = @"意见反馈";
     } else if (indexPath.row == 2) {
+        cell.titleLabel.text = @"关于我们";
+    } else if (indexPath.row == 3) {
         cell.titleLabel.text = @"设置";
+    } else if (indexPath.row == 4) {
+        cell.titleLabel.text = @"邀请";
     }
     UIImage *icon = [UIImage imageNamed:icons[indexPath.row]];
     cell.iconView.image = icon;

@@ -10,7 +10,7 @@
 
 typedef void(^ValidateBlock)(NSString *phone);
 typedef void(^ConfirmBlcok)(NSString *phone, NSString*validate);
-@interface MY_ChangePhoneView : UIView
+@interface MY_ChangePhoneView : MY_View
 @property (nonatomic, copy) ValidateBlock validateBlcok;
 @property (nonatomic, copy) ConfirmBlcok confirmBlock;
 @property (nonatomic, strong) UITextField *phoneTextField;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^LiveButtonBlock)();
-@interface MY_PushMiddleView : UIView
+@interface MY_PushMiddleView : MY_View
 @property (nonatomic, strong) UITextField *titleTextField;
 @property (nonatomic, strong) UIButton *liveButton;
 @property (nonatomic, strong) LiveButtonBlock liveButtonBlock;

@@ -14,6 +14,8 @@
 #import "MY_FeedbackController.h"
 #import "MY_AboutUSController.h"
 #import "MY_ServiceScheduleController.h"
+#import "MY_PatientListController.h"
+#import "MY_RealNameController.h"
 @interface MY_MyController ()
 
 @end
@@ -60,6 +62,10 @@
 - (void)setupUI {
     self.tableView.backgroundColor = [UIColor whiteColor];
     MY_MyHeaderView *tableHeaderView = [[MY_MyHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    tableHeaderView.realNameBlock = ^(){
+        MY_RealNameController *realNameVC = [[MY_RealNameController alloc] init];
+        [self.navigationController pushViewController:realNameVC animated:YES];
+    };
     tableHeaderView.personalDataBlock = ^(){
         MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
         [self.navigationController pushViewController:personalVC animated:YES];
@@ -74,7 +80,7 @@
 
 #pragma mark - 数据
 - (void)initData {
-    NSArray *dataArray = [NSArray arrayWithObjects:@"意见反馈",@"关于我们",@"设置", nil];
+    NSArray *dataArray = [NSArray arrayWithObjects:@"患者推荐",@"意见反馈",@"关于我们",@"设置",@"邀请", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
@@ -98,14 +104,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        MY_PatientListController *patientListVC = [[MY_PatientListController alloc] init];
+        [self.navigationController pushViewController:patientListVC animated:YES];
+    } else if (indexPath.row == 1) {
         MY_FeedbackController *feedbackVC = [[MY_FeedbackController alloc] init];
         [self.navigationController pushViewController:feedbackVC animated:YES];
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 2) {
         MY_AboutUSController *aboutVC = [[MY_AboutUSController alloc] init];
         [self.navigationController pushViewController:aboutVC animated:YES];
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         MY_SettingController *settingVC = [[MY_SettingController alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
+    } else if (indexPath.row == 4) {
+        
     }
 }
 

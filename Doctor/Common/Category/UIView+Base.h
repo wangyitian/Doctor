@@ -26,6 +26,4 @@
 
 @property (nonatomic, assign) CGFloat centerY;
 
-- (UIViewController *)findController;
-
 @end

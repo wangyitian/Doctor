@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MY_PushStartLiveView : UIView
+@interface MY_PushStartLiveView : MY_View
 
 @end

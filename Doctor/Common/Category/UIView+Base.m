@@ -7,7 +7,7 @@
 //
 
 #import "UIView+Base.h"
-
+#import "MY_BaseController.h"
 @implementation UIView (Base)
 
 - (CGFloat)height {
@@ -80,17 +80,6 @@
 - (void)setBottom:(CGFloat)bottom {
     CGRect frame = CGRectMake(self.left, bottom - self.height, self.width, bottom);
     self.frame = frame;
-}
-
-- (UIViewController *)findController {
-    id target = self;
-    while (target) {
-        target = ((UIResponder *)target).nextResponder;
-        if ([target isKindOfClass:[UIViewController class]]) {
-            break;
-        }
-    }
-    return target;
 }
 
 @end

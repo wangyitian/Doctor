@@ -13,7 +13,7 @@
 - (void)tabBar:(MY_TabBar*)tabBar didSelectedButtonFrom:(NSInteger)from to:(NSInteger)to;
 @end
 
-@interface MY_TabBar : UIView
+@interface MY_TabBar : MY_View
 @property (nonatomic, weak) id<MY_TabBarDelegate> delegate;
 
 - (void)addTabBarButtonWithTabBarItem:(UITabBarItem*)tabBarItem;

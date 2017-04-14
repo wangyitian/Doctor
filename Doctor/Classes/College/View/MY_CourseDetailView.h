@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MY_CourseDetailView : UIView
+@interface MY_CourseDetailView : MY_View
 
 @end

@@ -13,7 +13,7 @@ typedef void(^ForgetButtonClick)();
 typedef void(^RegisterButtonClick)();
 typedef void(^TiyanButtonBlock)();
 
-@interface MY_LoginView : UIView
+@interface MY_LoginView : MY_View
 @property (nonatomic, copy) LoginButtonClick loginButtonBlock;
 @property (nonatomic, copy) ForgetButtonClick forgetButtonClick;
 @property (nonatomic, copy) RegisterButtonClick registerButtonClick;

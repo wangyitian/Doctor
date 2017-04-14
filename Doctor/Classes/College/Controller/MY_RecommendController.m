@@ -29,7 +29,9 @@
     recommendView.recommendBlock = ^(NSDictionary *paramter) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         [model postDataWithURL:MY_API_PATIENT_RECOMMEND paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            
+            [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } completion:nil];
         }];
     };
     [self.scrollView addSubview:recommendView];

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^ConfirmBlock)(NSString *value);
-@interface MY_SubPickerView : UIView
+@interface MY_SubPickerView : MY_View
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, copy) ConfirmBlock confirmBlock;
 @property (nonatomic, strong) NSString *tempMain;

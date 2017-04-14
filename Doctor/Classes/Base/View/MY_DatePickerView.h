@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^SelectDateBlock)(NSString *date);
-@interface MY_DatePickerView : UIView
+@interface MY_DatePickerView : MY_View
 @property (nonatomic, copy) SelectDateBlock selectDateBlock;
 @end

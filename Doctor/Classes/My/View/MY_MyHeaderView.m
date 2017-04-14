@@ -9,6 +9,7 @@
 #import "MY_MyHeaderView.h"
 
 @interface MY_MyHeaderView ()
+@property (nonatomic, strong) UIButton *realNameButton;
 @property (nonatomic, strong) UILabel *accountLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UIButton *personalDataButton;
@@ -26,6 +27,18 @@
 }
 
 - (void)setupUI {
+    self.realNameButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.realNameButton.frame = CGRectMake(MY_ScreenWidth-20-70, 30, 70, 17);
+    [self.realNameButton setTitle:@"实名认证" forState:UIControlStateNormal];
+    [self.realNameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.realNameButton.titleLabel.font = MY_Font(13);
+    self.realNameButton.layer.masksToBounds = YES;
+    self.realNameButton.layer.cornerRadius = 2;
+    [self.realNameButton setBackgroundColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.realNameButton setBackgroundColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateDisabled];
+    [self.realNameButton addTarget:self action:@selector(realNameButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.realNameButton];
+    
     self.accountLabel = [[UILabel alloc] initWithFrame:CGRectMake((MY_ScreenWidth-200)/2, 30, 200, 17)];
     self.accountLabel.font = MY_Font(17);
     self.accountLabel.textColor = [MY_Util setColorWithInt:0x333333];
@@ -107,6 +120,14 @@
         [self.scheduleView addSubview:lineView];
     }
     
+}
+
+- (void)realNameButtonAction {
+    if (self.realNameButton.enabled) {
+        if (self.realNameBlock) {
+            self.realNameBlock();
+        }
+    }
 }
 
 - (void)scheduleButtonAction {

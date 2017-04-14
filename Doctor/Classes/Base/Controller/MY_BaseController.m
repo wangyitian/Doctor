@@ -143,4 +143,10 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     self.loadingView = nil;
 }
+
+- (void)presentAlertWithMessage:(NSString*)message ConfirmAction:(void (^ __nullable)(UIAlertAction *action))confirmAction completion:(void(^ __nullable)(void))completion {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:confirmAction]];
+    [self presentViewController:alert animated:YES completion:completion];
+}
 @end

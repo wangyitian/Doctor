@@ -118,9 +118,7 @@
             self.loginButtonBlock(self.accountTextField.text, self.pwdTextField.text);
         }
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入用户名或密码" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入用户名或密码"];
     }
 }
 

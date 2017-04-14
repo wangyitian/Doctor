@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void(^SubmitBlock)(NSDictionary *paramter);
-@interface MY_EnrollView : UIView
+@interface MY_EnrollView : MY_View
 
 @property (nonatomic, copy) SubmitBlock submitBlock;
 

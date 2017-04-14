@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *sickTypeTextField;
 @property (nonatomic, strong) NSMutableArray *patientButtons;
-@property (nonatomic, strong) UILabel *sickTypeLabel;
 @property (nonatomic, strong) MY_TextView *sickTextView;
 @property (nonatomic, strong) NSMutableArray *agreeButtons;
 @property (nonatomic, copy) NSString *isPatient;
@@ -145,14 +144,6 @@
     self.height = confirmButton.bottom + 30;
 }
 
-- (void)selectSickType {
-    NSArray *sickTypes = [NSArray arrayWithObjects:@"电风扇",@"师傅说的",@"收费是多少",@"电风扇",@"师傅说的",@"收费是多少", nil];
-    MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:sickTypes title:@"请选择患者病种"];
-    pickerView.confirmBlock = ^(NSString *value) {
-        self.sickTypeLabel.text = value;
-    };
-    [[self findController].view addSubview:pickerView];
-}
 - (void)isAgreeButtonAction:(UIButton*)button {
     button.selected = !button.selected;
     self.isAgreeButton.selected = button.selected;
@@ -161,7 +152,6 @@
 - (void)protocolButtonAction {
     MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
     webVC.url = @"https://baidu.com";
-//    webVC.navTitle = @"麻省医疗国际患者推荐服务协议";
     [[self findController].navigationController pushViewController:webVC animated:YES];
 }
 
@@ -184,9 +174,9 @@
     }
     if (button.selected) {
         if (button.tag-TAG_FOR_PATIENT == 0) {
-            self.isPatient = @"1";
+            self.isPatient = @"患者本人";
         } else {
-            self.isPatient = @"0";
+            self.isPatient = @"患者家属";
         }
     } else {
         self.isPatient = @"";
@@ -197,30 +187,27 @@
     NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
     [paramter setObject:[MY_Util getUid] forKey:@"uid"];
     if (self.nameTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入患者姓名" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入患者姓名"];
         return;
     }
     [paramter setObject:self.nameTextField.text forKey:@"username"];
     if (self.phoneTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入患者或家属手机号" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入患者或家属手机号"];
         return;
     }
     [paramter setObject:self.phoneTextField.text forKey:@"iphon"];
     if (self.sickTypeTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择患者病种" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入患者病种"];
         return;
     }
     [paramter setObject:self.sickTypeTextField.text forKey:@"disease"];
+    if (!self.isAgreeButton.selected) {
+        [self alertWithMessage:@"请阅读并同意《麻省医疗国际患者推荐服务协议》"];
+        return;
+    }
     if (self.isPatient.length) {
         [paramter setObject:self.isPatient forKey:@"relation"];
     }
-    
     NSString *sick = [self.sickTextView.text substringFromIndex:21];
     if (sick.length) {
         [paramter setObject:sick forKey:@"illness"];

@@ -129,9 +129,7 @@
             self.validateBlock(self.phoneTextField.text);
         }
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入正确的手机号" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入正确的手机号"];
     }
 }
 
@@ -162,14 +160,10 @@
                 self.confirmBlock(self.phoneTextField.text, self.validateTextField.text, self.pwdTextField.text);
             }
         } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"两次输入密码不一致，请重新输入" preferredStyle:UIAlertControllerStyleAlert];
-            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-            [[self findController] presentViewController:alert animated:YES completion:nil];
+            [self alertWithMessage:@"两次输入密码不一致，请重新输入"];
         }
     } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"您填写的信息不完整，请填写完整后再试" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"您填写的信息不完整，请填写完整后再试"];
     }
     
 }

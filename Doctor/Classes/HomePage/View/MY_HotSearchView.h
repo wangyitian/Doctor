@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 typedef void (^HotSearchBlock)(NSString *search);
-@interface MY_HotSearchView : UIView
+@interface MY_HotSearchView : MY_View
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, copy) HotSearchBlock hotSearchBlock;
 @end

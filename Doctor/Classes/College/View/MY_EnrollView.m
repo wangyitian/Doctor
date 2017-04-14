@@ -260,16 +260,12 @@
     NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
     [paramter setObject:[MY_Util getUid] forKey:@"uid"];
     if (self.nameTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的姓名" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的姓名"];
         return;
     }
     [paramter setObject:self.nameTextField.text forKey:@"name"];
     if (self.phoneTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的手机号" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的手机号"];
         return;
     }
     [paramter setObject:self.phoneTextField.text forKey:@"phonen"];
@@ -277,44 +273,32 @@
         [paramter setObject:self.emailTextField.text forKey:@"email"];
     }
     if (self.idTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的身份证号" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的身份证号"];
         return;
     }
     [paramter setObject:self.idTextField.text forKey:@"personal"];
     if (self.passportType.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择您的护照类型" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请选择您的护照类型"];
         return;
     }
     [paramter setObject:self.passportType forKey:@"passport_type"];
     if (self.passportIdTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的护照号码" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的护照号码"];
         return;
     }
     [paramter setObject:self.passportIdTextField.text forKey:@"passport"];
     if (self.validityLabel.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请选择您的护照有效期" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请选择您的护照有效期"];
         return;
     }
     [paramter setObject:self.validityLabel.text forKey:@"valid"];
     if (self.roomTypeTextField.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的科室名称" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的科室名称"];
         return;
     }
     [paramter setObject:self.roomTypeTextField.text forKey:@"secter"];
     if (self.positionLabel.text.length == 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"请输入您的职称" preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
-        [[self findController] presentViewController:alert animated:YES completion:nil];
+        [self alertWithMessage:@"请输入您的职称"];
         return;
     }
     [paramter setObject:self.roomTypeTextField.text forKey:@"title"];

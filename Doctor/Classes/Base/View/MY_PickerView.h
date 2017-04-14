@@ -10,7 +10,7 @@
 
 typedef void(^ConfirmBlock)(NSString *value);
 
-@interface MY_PickerView : UIView
+@interface MY_PickerView : MY_View
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, copy) ConfirmBlock confirmBlock;
 - (instancetype)initWithDataSource:(NSArray*)dataSource title:(NSString*)title;
