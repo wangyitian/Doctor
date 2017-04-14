@@ -6,6 +6,7 @@
 //  Copyright © 2017年 王翼天. All rights reserved.
 //
 
+#import <UMSocialCore/UMSocialCore.h>
 #import "MY_LoginController.h"
 #import "MY_RegisterController.h"
 #import "MY_ForgetPWDController.h"
@@ -50,13 +51,40 @@
         MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
         [self.navigationController pushViewController:registerVC animated:YES];
     };
-    loginView.tiyanButtonBlock = ^(){
-        MY_TabController *tabVC = [[MY_TabController alloc] init];
-        [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+    loginView.wechatButtonBlock = ^(){
+        [self getAuthWithUserInfoFromWechat];
+//        MY_TabController *tabVC = [[MY_TabController alloc] init];
+//        [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
     };
     
     [self.scrollView addSubview:loginView];
     self.scrollView.contentSize = CGSizeMake(loginView.width, loginView.height);
 }
+
+- (void)getAuthWithUserInfoFromWechat {
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
+        if (error) {
+            
+        } else {
+            UMSocialUserInfoResponse *resp = result;
+            
+            // 授权信息
+            NSLog(@"Wechat uid: %@", resp.uid);
+            NSLog(@"Wechat openid: %@", resp.openid);
+            NSLog(@"Wechat accessToken: %@", resp.accessToken);
+            NSLog(@"Wechat refreshToken: %@", resp.refreshToken);
+            NSLog(@"Wechat expiration: %@", resp.expiration);
+            
+            // 用户信息
+            NSLog(@"Wechat name: %@", resp.name);
+            NSLog(@"Wechat iconurl: %@", resp.iconurl);
+            NSLog(@"Wechat gender: %@", resp.gender);
+            
+            // 第三方平台SDK源数据
+            NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+        }
+    }];
+}
+
 
 @end

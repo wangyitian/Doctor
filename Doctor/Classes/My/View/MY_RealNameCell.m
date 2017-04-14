@@ -68,6 +68,7 @@
         NSData *decodedImageData = [[NSData alloc] initWithBase64EncodedString:model.image options:NSDataBase64DecodingIgnoreUnknownCharacters];
         UIImage *decodedImage = [UIImage imageWithData:decodedImageData];
         [self.imageButton setImage:decodedImage forState:UIControlStateNormal];
+        
     } else {
         [self.imageButton setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];
     }

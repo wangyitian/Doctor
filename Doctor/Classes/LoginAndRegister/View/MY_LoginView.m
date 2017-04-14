@@ -69,15 +69,28 @@
     loginButton.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     loginButton.layer.masksToBounds = YES;
     loginButton.layer.cornerRadius = 2;
-    [loginButton setTitle:@"登陆" forState:UIControlStateNormal];
+    [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     loginButton.titleLabel.font = MY_Font(15);
     [loginButton addTarget:self action:@selector(loginButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:loginButton];
+    
+    UIButton *wechatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    wechatButton.frame = CGRectMake(accountLineView.left, loginButton.bottom+25, ((MY_ScreenWidth-58*2)-20)/2, 44);
+    [wechatButton setTitle:@"微信登录" forState:UIControlStateNormal];
+    [wechatButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+    wechatButton.titleLabel.font = MY_Font(14);
+    wechatButton.layer.masksToBounds = YES;
+    wechatButton.layer.cornerRadius = 2;
+    wechatButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
+    wechatButton.layer.borderWidth = 1;
+    [wechatButton addTarget:self action:@selector(wechatButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:wechatButton];
+
 
     UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    registerButton.frame = CGRectMake(accountLineView.left, loginButton.bottom+25, ((MY_ScreenWidth-58*2)-20)/2, 44);
-    [registerButton setTitle:@"注册" forState:UIControlStateNormal];
+    registerButton.frame = CGRectMake(wechatButton.right+20, wechatButton.top, wechatButton.width, wechatButton.height);
+    [registerButton setTitle:@"手机注册" forState:UIControlStateNormal];
     [registerButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
     registerButton.titleLabel.font = MY_Font(14);
     registerButton.layer.masksToBounds = YES;
@@ -87,22 +100,11 @@
     [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:registerButton];
     
-    UIButton *tiyanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    tiyanButton.frame = CGRectMake(registerButton.right+20, registerButton.top, registerButton.width, registerButton.height);
-    [tiyanButton setTitle:@"体验" forState:UIControlStateNormal];
-    [tiyanButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
-    tiyanButton.titleLabel.font = MY_Font(14);
-    tiyanButton.layer.masksToBounds = YES;
-    tiyanButton.layer.cornerRadius = 2;
-    tiyanButton.layer.borderColor = [MY_Util setColorWithInt:0x68d6a7].CGColor;
-    tiyanButton.layer.borderWidth = 1;
-    [tiyanButton addTarget:self action:@selector(tiyanButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:tiyanButton];
 }
 
-- (void)tiyanButtonAction {
-    if (self.tiyanButtonBlock) {
-        self.tiyanButtonBlock();
+- (void)wechatButtonAction {
+    if (self.wechatButtonBlock) {
+        self.wechatButtonBlock();
     }
 }
 

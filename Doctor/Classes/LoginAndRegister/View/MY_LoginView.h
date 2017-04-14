@@ -11,11 +11,11 @@
 typedef void(^LoginButtonClick)(NSString*account, NSString*pwd);
 typedef void(^ForgetButtonClick)();
 typedef void(^RegisterButtonClick)();
-typedef void(^TiyanButtonBlock)();
+typedef void(^WechatButtonBlock)();
 
 @interface MY_LoginView : MY_View
 @property (nonatomic, copy) LoginButtonClick loginButtonBlock;
 @property (nonatomic, copy) ForgetButtonClick forgetButtonClick;
 @property (nonatomic, copy) RegisterButtonClick registerButtonClick;
-@property (nonatomic, copy) TiyanButtonBlock tiyanButtonBlock;
+@property (nonatomic, copy) WechatButtonBlock wechatButtonBlock;
 @end
