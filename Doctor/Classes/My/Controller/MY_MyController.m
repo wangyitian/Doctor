@@ -16,6 +16,7 @@
 #import "MY_ServiceScheduleController.h"
 #import "MY_PatientListController.h"
 #import "MY_RealNameController.h"
+#import <UShareUI/UShareUI.h>
 @interface MY_MyController ()
 
 @end
@@ -70,17 +71,17 @@
         MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
         [self.navigationController pushViewController:personalVC animated:YES];
     };
-    tableHeaderView.scheduleBlock = ^() {
-        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
-        [self.navigationController pushViewController:scheduleVC animated:YES];
-    };
+//    tableHeaderView.scheduleBlock = ^() {
+//        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
+//        [self.navigationController pushViewController:scheduleVC animated:YES];
+//    };
     tableHeaderView.object = @"1";
     self.tableView.tableHeaderView = tableHeaderView;
 }
 
 #pragma mark - 数据
 - (void)initData {
-    NSArray *dataArray = [NSArray arrayWithObjects:@"患者推荐",@"意见反馈",@"关于我们",@"设置",@"邀请", nil];
+    NSArray *dataArray = [NSArray arrayWithObjects:@"服务进度",@"患者推荐",@"意见反馈",@"关于我们",@"设置",@"邀请", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
@@ -104,20 +105,59 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
+        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
+        [self.navigationController pushViewController:scheduleVC animated:YES];
+    } else if (indexPath.row == 1) {
         MY_PatientListController *patientListVC = [[MY_PatientListController alloc] init];
         [self.navigationController pushViewController:patientListVC animated:YES];
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == 2) {
         MY_FeedbackController *feedbackVC = [[MY_FeedbackController alloc] init];
         [self.navigationController pushViewController:feedbackVC animated:YES];
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         MY_AboutUSController *aboutVC = [[MY_AboutUSController alloc] init];
         [self.navigationController pushViewController:aboutVC animated:YES];
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         MY_SettingController *settingVC = [[MY_SettingController alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
-    } else if (indexPath.row == 4) {
-        
+    } else if (indexPath.row == 5) {
+        [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+            // 根据获取的platformType确定所选平台进行下一步操作
+            [self shareWebPageToPlatformType:platformType];
+        }];
     }
+}
+
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType {
+    //创建分享消息对象
+    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+    
+    //创建网页内容对象
+    UIImage *thumbURL = [UIImage imageNamed:@"icon"];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
+    //设置网页地址
+    shareObject.webpageUrl = @"http://news.sina.com.cn/s/wh/2017-03-13/doc-ifychhuq4168858.shtml";
+    
+    //分享消息对象设置分享内容对象
+    messageObject.shareObject = shareObject;
+    
+    //调用分享接口
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+        if (error) {
+            UMSocialLogInfo(@"************Share fail with error %@*********",error);
+        }else{
+            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
+                UMSocialShareResponse *resp = data;
+                //分享结果消息
+                UMSocialLogInfo(@"response message is %@",resp.message);
+                //第三方原始返回的数据
+                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
+                
+            }else{
+                UMSocialLogInfo(@"response data is %@",data);
+            }
+        }
+        //        [self alertWithError:error];
+    }];
 }
 
 - (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {

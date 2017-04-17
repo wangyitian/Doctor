@@ -9,5 +9,5 @@
 #import "MY_BaseScrollController.h"
 
 @interface MY_RegisterController : MY_BaseScrollController
-
+@property (nonatomic, assign) BOOL isWechat;
 @end

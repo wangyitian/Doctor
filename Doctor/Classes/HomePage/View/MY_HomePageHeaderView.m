@@ -30,7 +30,7 @@
     self.buttonView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.buttonView];
     
-    NSArray *buttonTitles = [NSArray arrayWithObjects:@"医护技能",@"管理进修",@"科研试验",@"项目定制", nil];
+    NSArray *buttonTitles = [NSArray arrayWithObjects:@"管理培训",@"临床培训",@"专题培训",@"科研培训", nil];
     NSArray *buttonImages = [NSArray arrayWithObjects:@"homePage_button1",@"homePage_button2",@"homePage_button3",@"homePage_button4", nil];
     CGFloat buttonW = 44;
     CGFloat buttonH = 44;

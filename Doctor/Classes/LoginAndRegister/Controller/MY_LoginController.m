@@ -53,8 +53,6 @@
     };
     loginView.wechatButtonBlock = ^(){
         [self getAuthWithUserInfoFromWechat];
-//        MY_TabController *tabVC = [[MY_TabController alloc] init];
-//        [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
     };
     
     [self.scrollView addSubview:loginView];

@@ -27,16 +27,19 @@
     MY_MyCell  *cell = [tableView dequeueReusableCellWithIdentifier:indent];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *icons = [NSArray arrayWithObjects:@"patient_recommend",@"feedback",@"aboutUS",@"setting",@"invite", nil];
+    NSArray *icons = [NSArray arrayWithObjects:@"service_schedule",@"patient_recommend",@"feedback",@"aboutUS",@"setting",@"invite", nil];
+    
     if (indexPath.row == 0) {
-        cell.titleLabel.text = @"患者推荐";
+        cell.titleLabel.text = @"服务进度";
     } else if (indexPath.row == 1) {
-        cell.titleLabel.text = @"意见反馈";
+        cell.titleLabel.text = @"患者推荐";
     } else if (indexPath.row == 2) {
-        cell.titleLabel.text = @"关于我们";
+        cell.titleLabel.text = @"意见反馈";
     } else if (indexPath.row == 3) {
-        cell.titleLabel.text = @"设置";
+        cell.titleLabel.text = @"关于我们";
     } else if (indexPath.row == 4) {
+        cell.titleLabel.text = @"设置";
+    } else if (indexPath.row == 5) {
         cell.titleLabel.text = @"邀请";
     }
     UIImage *icon = [UIImage imageNamed:icons[indexPath.row]];
@@ -60,7 +63,7 @@
     line.backgroundColor = [MY_Util setColorWithInt:0xbbbbbb];
     [self.contentView addSubview:line];
     
-    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7)];
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-6, 0, 6, 12)];
     arrow.centerY = self.centerY;
     arrow.image = [UIImage imageNamed:@"arrow"];
     [self.contentView addSubview:arrow];

@@ -33,7 +33,9 @@
     enrollView.submitBlock = ^(NSDictionary *paramter) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         [model postDataWithURL:MY_API_ENROLL paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            
+            [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } completion:nil];
         }];
     };
     [self.scrollView addSubview:enrollView];

@@ -35,7 +35,7 @@
     [self.contentView addSubview:titleLabel];
     
     UIImageView *arrowImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
-    arrowImageView.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrowImageView.frame = CGRectMake(MY_ScreenWidth-20-6, 0, 6, 12);
     arrowImageView.centerY = self.avatarImageView.centerY;
     [self.contentView addSubview:arrowImageView];
     

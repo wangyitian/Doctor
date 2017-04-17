@@ -14,6 +14,7 @@
 #import "MY_CourseCustomedController.h"
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
+#import "MY_PublishController.h"
 @interface MY_HomePageController () <UISearchBarDelegate>
 
 @end
@@ -60,35 +61,37 @@
 
 #pragma mark - 自定义导航栏
 - (void)initNavBar {
-    self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
-    self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
-    self.navBar.userInteractionEnabled = YES;
-    [self.view addSubview:self.navBar];
     
-    HXSearchBar *searchBar = [[HXSearchBar alloc] initWithFrame:CGRectMake(12, 27, MY_ScreenWidth - 18 - 20 - 17, 30)];
-    searchBar.backgroundColor = [UIColor clearColor];
-    searchBar.delegate = self;
-    //光标颜色
-    searchBar.cursorColor = [MY_Util setColorWithInt:0x68d6a7];
-    //TextField
-    searchBar.searchBarTextField.layer.cornerRadius = 4;
-    searchBar.searchBarTextField.layer.masksToBounds = YES;
-    searchBar.searchBarTextField.layer.borderColor = [MY_Util setColorWithInt:0xababab].CGColor;
-    searchBar.searchBarTextField.layer.borderWidth = 1.0;
+    [self setTitle:@"美域医生" isBackButton:NO rightBttonName:@"患者推荐" rightImageName:nil];
+//    self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
+//    self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
+//    self.navBar.userInteractionEnabled = YES;
+//    [self.view addSubview:self.navBar];
+//    
+//    HXSearchBar *searchBar = [[HXSearchBar alloc] initWithFrame:CGRectMake(12, 27, MY_ScreenWidth - 18 - 20 - 17, 30)];
+//    searchBar.backgroundColor = [UIColor clearColor];
+//    searchBar.delegate = self;
+//    //光标颜色
+//    searchBar.cursorColor = [MY_Util setColorWithInt:0x68d6a7];
+//    //TextField
+//    searchBar.searchBarTextField.layer.cornerRadius = 4;
+//    searchBar.searchBarTextField.layer.masksToBounds = YES;
+//    searchBar.searchBarTextField.layer.borderColor = [MY_Util setColorWithInt:0xababab].CGColor;
+//    searchBar.searchBarTextField.layer.borderWidth = 1.0;
+//    
+//    //清除按钮图标
+//    searchBar.clearButtonImage = [UIImage imageNamed:@"demand_delete"];
+//    
+//    //去掉取消按钮灰色背景
+//    searchBar.hideSearchBarBackgroundImage = YES;
+//    
+//    [self.navBar addSubview:searchBar];
     
-    //清除按钮图标
-    searchBar.clearButtonImage = [UIImage imageNamed:@"demand_delete"];
-    
-    //去掉取消按钮灰色背景
-    searchBar.hideSearchBarBackgroundImage = YES;
-    
-    [self.navBar addSubview:searchBar];
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setImage:[UIImage imageNamed:@"homePage_recommend"] forState:UIControlStateNormal];
-    rightButton.frame = CGRectMake(MY_ScreenWidth - 20 - 17 - 5, 29, 27, 27);
-    [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.navBar addSubview:rightButton];
+//    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [rightButton setImage:[UIImage imageNamed:@"homePage_recommend"] forState:UIControlStateNormal];
+//    rightButton.frame = CGRectMake(MY_ScreenWidth - 20 - 17 - 5, 29, 27, 27);
+//    [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [self.navBar addSubview:rightButton];
 }
 
 #pragma mark - UI
@@ -99,30 +102,33 @@
     
     headerView.buttonBlock = ^(NSInteger index) {
         NSMutableArray *vcArray = [NSMutableArray array];
-        if (index == 4) {
-            MY_CourseCustomedController *vc = [[MY_CourseCustomedController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        } else {
-            NSArray *types = nil;
-            if (index == 1) {
-                types = [NSArray arrayWithObjects:@"全部",@"临床研修",@"医技培训",@"专科特训", nil];
-            } else if (index == 2) {
-                types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾",@"新加坡", nil];
-            } else if (index == 3) {
-                types = [NSArray arrayWithObjects:@"实验室访学", nil];
-            }
-            for (NSString *type in types) {
-                MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
-                rdVC.listType = type;
-                [vcArray addObject:rdVC];
-            }
-            MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
-            vc.typeIndex = index;
-            vc.types = types;
-            [self.navigationController pushViewController:vc animated:YES];
+        NSArray *types = nil;
+        if (index == 1) {
+            types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾",@"新加坡", nil];
+        } else if (index == 2) {
+            types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾", nil];
+        } else if (index == 3) {
+            types = [NSArray arrayWithObjects:@"美国", nil];
+        } else if (index == 4) {
+            types = [NSArray arrayWithObjects:@"美国", nil];
         }
+        for (NSString *type in types) {
+            MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+            rdVC.listType = type;
+            [vcArray addObject:rdVC];
+        }
+        MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
+        vc.typeIndex = index;
+        vc.types = types;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     self.tableView.tableHeaderView = headerView;
+    
+    
+    UIButton *publishButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    publishButton.frame = CGRectMake(MY_ScreenWidth-40, MY_ScreenHeight-49-40, 40, 40);
+    [publishButton addTarget:self action:@selector(publishButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:publishButton];
 }
 
 #pragma mark - 右导航按钮点击事件
@@ -131,10 +137,15 @@
     [self.navigationController pushViewController:recommendVC animated:YES];
 }
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
-    [self.navigationController pushViewController:searchVC animated:YES];
-    return NO;
+- (void)publishButtonAction {
+    MY_PublishController *publishVC = [[MY_PublishController alloc] init];
+    [self.navigationController pushViewController:publishVC animated:YES];
 }
+
+//- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+//    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
+//    [self.navigationController pushViewController:searchVC animated:YES];
+//    return NO;
+//}
 
 @end

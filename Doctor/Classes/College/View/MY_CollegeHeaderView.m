@@ -25,7 +25,7 @@
     titleLabel.font = MY_Font(18);
     [self addSubview:titleLabel];
     
-    NSArray *buttonTitles = [NSArray arrayWithObjects:@"医护技能",@"管理进修",@"科研试验",@"项目定制", nil];
+    NSArray *buttonTitles = [NSArray arrayWithObjects:@"管理培训",@"临床培训",@"专题培训",@"科研培训", nil];
     
     for (int i = 0; i < buttonTitles.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

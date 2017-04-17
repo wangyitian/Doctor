@@ -35,7 +35,7 @@
     self.valueLabel.textAlignment = NSTextAlignmentRight;
     [self.contentView addSubview:self.valueLabel];
     
-    self.arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7)];
+    self.arrowImageView = [[UIImageView alloc] initWithFrame:CGRectMake(MY_ScreenWidth-20-6, 0, 6, 12)];
     self.arrowImageView.centerY = self.centerY;
     self.arrowImageView.image = [UIImage imageNamed:@"arrow"];
     [self addSubview:self.arrowImageView];

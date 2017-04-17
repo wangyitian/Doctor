@@ -14,8 +14,6 @@
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
 #import "MY_CourseCustomedController.h"
-
-#import <UShareUI/UShareUI.h>
 @interface MY_CollegeController ()
 
 @end
@@ -57,28 +55,25 @@
     MY_CollegeHeaderView *tableHeaderView = [[MY_CollegeHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 90)];
     tableHeaderView.headerButtonBlock = ^(NSInteger index) {
        NSMutableArray *vcArray = [NSMutableArray array];
-        if (index == 4) {
-            MY_CourseCustomedController *vc = [[MY_CourseCustomedController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        } else {
-            NSArray *types = nil;
-            if (index == 1) {
-                types = [NSArray arrayWithObjects:@"全部",@"临床研修",@"医技培训",@"专科特训", nil];
-            } else if (index == 2) {
-                types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾",@"新加坡", nil];
-            } else if (index == 3) {
-                types = [NSArray arrayWithObjects:@"实验室访学", nil];
-            }
-            for (NSString *type in types) {
-                MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
-                rdVC.listType = type;
-                [vcArray addObject:rdVC];
-            }
-            MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
-            vc.typeIndex = index;
-            vc.types = types;
-            [self.navigationController pushViewController:vc animated:YES];
+        NSArray *types = nil;
+        if (index == 1) {
+            types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾",@"新加坡", nil];
+        } else if (index == 2) {
+            types = [NSArray arrayWithObjects:@"全部",@"美国",@"台湾", nil];
+        } else if (index == 3) {
+            types = [NSArray arrayWithObjects:@"美国", nil];
+        } else if (index == 4) {
+            types = [NSArray arrayWithObjects:@"美国", nil];
         }
+        for (NSString *type in types) {
+            MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+            rdVC.listType = type;
+            [vcArray addObject:rdVC];
+        }
+        MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
+        vc.typeIndex = index;
+        vc.types = types;
+        [self.navigationController pushViewController:vc animated:YES];
     };
     self.tableView.tableHeaderView = tableHeaderView;
     self.tableView.height -= 50;
@@ -120,45 +115,12 @@
     return [MY_CourseIntroCell class];
 }
 
-- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType {
-    //创建分享消息对象
-    UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-    
-    //创建网页内容对象
-    UIImage *thumbURL = [UIImage imageNamed:@"icon"];
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
-    //设置网页地址
-    shareObject.webpageUrl = @"http://news.sina.com.cn/s/wh/2017-03-13/doc-ifychhuq4168858.shtml";
-    
-    //分享消息对象设置分享内容对象
-    messageObject.shareObject = shareObject;
-    
-    //调用分享接口
-    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
-        if (error) {
-            UMSocialLogInfo(@"************Share fail with error %@*********",error);
-        }else{
-            if ([data isKindOfClass:[UMSocialShareResponse class]]) {
-                UMSocialShareResponse *resp = data;
-                //分享结果消息
-                UMSocialLogInfo(@"response message is %@",resp.message);
-                //第三方原始返回的数据
-                UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-                
-            }else{
-                UMSocialLogInfo(@"response data is %@",data);
-            }
-        }
-//        [self alertWithError:error];
-    }];
-}
-
 #pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        // 根据获取的platformType确定所选平台进行下一步操作
-        [self shareWebPageToPlatformType:platformType];
-    }];
+//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+//        // 根据获取的platformType确定所选平台进行下一步操作
+//        [self shareWebPageToPlatformType:platformType];
+//    }];
 }
 
 #pragma mark - 报名按钮点击事件

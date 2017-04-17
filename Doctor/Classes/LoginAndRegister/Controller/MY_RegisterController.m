@@ -8,6 +8,7 @@
 
 #import "MY_RegisterController.h"
 #import "MY_ChangePWDView.h"
+#import "MY_TabController.h"
 @interface MY_RegisterController ()
 
 @end
@@ -45,7 +46,12 @@
             [self.view makeToast:@"注册成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
                 MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
                 [MY_Util saveAccount:account];
-                [self.navigationController popViewControllerAnimated:YES];
+                if (self.isWechat) {
+                    MY_TabController *tabVC = [[MY_TabController alloc] init];
+                    [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+                } else {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
             }];
         }];
     };

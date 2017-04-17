@@ -140,7 +140,7 @@
     [validityView addSubview:self.validityLabel];
     
     UIImageView *arrow1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
-    arrow1.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrow1.frame = CGRectMake(MY_ScreenWidth-20-6, 0, 6, 12);
     arrow1.centerY = titleLabel.centerY;
     [validityView addSubview:arrow1];
     
@@ -176,7 +176,7 @@
     [positionView addSubview:self.positionLabel];
     
     UIImageView *arrow2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
-    arrow2.frame = CGRectMake(MY_ScreenWidth-20-7, 0, 7, 7);
+    arrow2.frame = CGRectMake(MY_ScreenWidth-20-6, 0, 6, 12);
     arrow2.centerY = pLabel.centerY;
     [positionView addSubview:arrow2];
     

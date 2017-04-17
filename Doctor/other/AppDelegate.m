@@ -68,16 +68,21 @@
     // 获得当前打开软件的版本号
     NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    if ([currentVersion isEqualToString:lastVersion]) {
-        // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
-        [UIApplication sharedApplication].statusBarHidden = NO;
-        if ([MY_Util isLogin]) {
-            window.rootViewController = [[MY_TabController alloc] init];
-        } else {
-            window.rootViewController = [[MY_NavigationController alloc] initWithRootViewController:[[MY_LoginController alloc] init]];
-        }
-    } else { // 当前版本号 != 上次使用的版本：显示版本新特性
-        window.rootViewController = [[MY_GuideController alloc] init];
+//    if ([currentVersion isEqualToString:lastVersion]) {
+//        // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
+//        [UIApplication sharedApplication].statusBarHidden = NO;
+//        if ([MY_Util isLogin]) {
+//            window.rootViewController = [[MY_TabController alloc] init];
+//        } else {
+//            window.rootViewController = [[MY_NavigationController alloc] initWithRootViewController:[[MY_LoginController alloc] init]];
+//        }
+//    } else { // 当前版本号 != 上次使用的版本：显示版本新特性
+//        window.rootViewController = [[MY_GuideController alloc] init];
+//    }
+    if ([MY_Util isLogin]) {
+        window.rootViewController = [[MY_TabController alloc] init];
+    } else {
+        window.rootViewController = [[MY_NavigationController alloc] initWithRootViewController:[[MY_LoginController alloc] init]];
     }
 }
 

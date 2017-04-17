@@ -28,7 +28,7 @@
 
 #pragma mark - 网络请求
 - (void)loadMore:(BOOL)loadMore {
-    
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
 }
 
 #pragma mark - 上拉加载下拉刷新触发方法
