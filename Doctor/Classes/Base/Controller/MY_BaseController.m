@@ -95,7 +95,7 @@
     if (isBackButton) {
         UIButton* backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+//        [backButton setTitle:@"返回" forState:UIControlStateNormal];
         backButton.titleLabel.font = MY_Font(14);
         [backButton setFrame:CGRectMake(0, MY_STATUS_HEIGHT, 70, MY_NAVBAR_HEIGHT)];
         backButton.imageEdgeInsets = UIEdgeInsetsMake(14, 19, 14, 43);

@@ -135,7 +135,7 @@
     UIImage *thumbURL = [UIImage imageNamed:@"icon"];
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
     //设置网页地址
-    shareObject.webpageUrl = @"http://news.sina.com.cn/s/wh/2017-03-13/doc-ifychhuq4168858.shtml";
+    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/sago-mini-故事城/id1192489542?mt=8";
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -151,12 +151,10 @@
                 UMSocialLogInfo(@"response message is %@",resp.message);
                 //第三方原始返回的数据
                 UMSocialLogInfo(@"response originalResponse data is %@",resp.originalResponse);
-                
             }else{
                 UMSocialLogInfo(@"response data is %@",data);
             }
         }
-        //        [self alertWithError:error];
     }];
 }
 

@@ -9,13 +9,18 @@
 #import "MY_HomePageHeaderView.h"
 #import "SDCycleScrollView.h"
 #define TAG_FOR_BUTTON  2000
+#define TAG_FOR_SECTION 3000
 @interface MY_HomePageHeaderView ()
 @property (nonatomic, strong) SDCycleScrollView *imageScrollView;
 @property (nonatomic, strong) UIView *buttonView;
+@property (nonatomic, strong) NSMutableArray *sectionButtons;
+@property (nonatomic, strong) UIView *selectedLineView;
 @end
 @implementation MY_HomePageHeaderView
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.sectionButtons = [NSMutableArray array];
+        self.backgroundColor = [UIColor whiteColor];
         [self setupUI];
     }
     return self;
@@ -54,7 +59,51 @@
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self.buttonView addSubview:titleLabel];
     }
-    self.height = self.buttonView.bottom;
+    
+    UIView *spaceView = [[UIView alloc] initWithFrame:CGRectMake(0, self.buttonView.bottom, MY_ScreenWidth, 5)];
+    spaceView.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
+    [self addSubview:spaceView];
+    
+    NSArray *sections = [NSArray arrayWithObjects:@"最新课程",@"培训实录",@"学习心得", nil];
+    for (int i = 0; i < sections.count; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.frame = CGRectMake(100*i, spaceView.bottom, 100, 43);
+        button.titleLabel.font = MY_Font(15);
+        [button setTitle:sections[i] forState:UIControlStateNormal];
+        [button setTitleColor:[MY_Util setColorWithInt:0x666666] forState:UIControlStateNormal];
+        [button setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateSelected];
+        button.tag = TAG_FOR_SECTION + i;
+        [button addTarget:sections action:@selector(sectionButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:button];
+        [self.sectionButtons addObject:button];
+        
+        if (i == 0) {
+            [self sectionButtonAction:button];
+        }
+    }
+    
+    self.height = spaceView.bottom + 44;
+}
+
+- (void)sectionButtonAction:(UIButton*)button {
+    if (button.selected) {
+        return;
+    }
+    if (!self.selectedLineView) {
+        self.selectedLineView = [[UIView alloc] initWithFrame:CGRectMake(0, button.bottom, 100, 1)];
+        self.selectedLineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
+        [self addSubview:self.selectedLineView];
+    }
+    
+    for (UIButton *btn in self.sectionButtons) {
+        btn.selected = NO;
+    }
+    button.selected = YES;
+    self.selectedLineView.left = button.left;
+    
+    if (self.sectionBlock) {
+        self.sectionBlock(button.tag - TAG_FOR_SECTION);
+    }
 }
 
 - (void)buttonAction:(UIButton*)button {

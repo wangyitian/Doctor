@@ -17,4 +17,5 @@
 @property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong) NSString *department;
 @property (nonatomic, strong) NSString *hospital;
+@property (nonatomic, assign) BOOL isConfirmed;
 @end

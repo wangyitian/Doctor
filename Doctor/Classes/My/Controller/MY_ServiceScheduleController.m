@@ -47,8 +47,6 @@
     [phoneButton addTarget:self action:@selector(phoneButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:phoneButton];
     
-    
-    
     [self falseData];
 }
 

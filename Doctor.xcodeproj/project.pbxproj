@@ -27,7 +27,7 @@
 		9535B4161EA4968A0052A858 /* MY_PublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B4151EA4968A0052A858 /* MY_PublishController.m */; };
 		9535B4191EA4988B0052A858 /* MY_TrainRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B4181EA4988B0052A858 /* MY_TrainRecordCell.m */; };
 		9535B41C1EA498A20052A858 /* MY_ExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B41B1EA498A20052A858 /* MY_ExperienceCell.m */; };
-		9535B41F1EA498B60052A858 /* MY_TrainRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B41E1EA498B60052A858 /* MY_TrainRecord.m */; };
+		9535B41F1EA498B60052A858 /* MY_TrainRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B41E1EA498B60052A858 /* MY_TrainRecordModel.m */; };
 		9535B4221EA498C50052A858 /* MY_ExperienceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B4211EA498C50052A858 /* MY_ExperienceModel.m */; };
 		953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C491E7245B400A755F0 /* MY_PickerView.m */; };
 		953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 953C8C4F1E72741E00A755F0 /* MY_CourseCustomedDemoCell.m */; };
@@ -39,6 +39,8 @@
 		954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39981E5C22E000C05B9F /* UIButton+Base.m */; };
 		954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A399A1E5C22E000C05B9F /* UIImage+Base.m */; };
 		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
+		954FCB0A1EA5BE08004B5F22 /* MY_RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */; };
+		954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */; };
 		9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */; };
 		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
@@ -390,8 +392,8 @@
 		9535B4181EA4988B0052A858 /* MY_TrainRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TrainRecordCell.m; sourceTree = "<group>"; };
 		9535B41A1EA498A20052A858 /* MY_ExperienceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ExperienceCell.h; sourceTree = "<group>"; };
 		9535B41B1EA498A20052A858 /* MY_ExperienceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ExperienceCell.m; sourceTree = "<group>"; };
-		9535B41D1EA498B60052A858 /* MY_TrainRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TrainRecord.h; sourceTree = "<group>"; };
-		9535B41E1EA498B60052A858 /* MY_TrainRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TrainRecord.m; sourceTree = "<group>"; };
+		9535B41D1EA498B60052A858 /* MY_TrainRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TrainRecordModel.h; sourceTree = "<group>"; };
+		9535B41E1EA498B60052A858 /* MY_TrainRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TrainRecordModel.m; sourceTree = "<group>"; };
 		9535B4201EA498C50052A858 /* MY_ExperienceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ExperienceModel.h; sourceTree = "<group>"; };
 		9535B4211EA498C50052A858 /* MY_ExperienceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ExperienceModel.m; sourceTree = "<group>"; };
 		953C8C481E7245B400A755F0 /* MY_PickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PickerView.h; sourceTree = "<group>"; };
@@ -414,6 +416,10 @@
 		954A399A1E5C22E000C05B9F /* UIImage+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Base.m"; sourceTree = "<group>"; };
 		954A399F1E5C34A100C05B9F /* MY_PersonalAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PersonalAvatarCell.h; sourceTree = "<group>"; };
 		954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PersonalAvatarCell.m; sourceTree = "<group>"; };
+		954FCB081EA5BE08004B5F22 /* MY_RecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RecommendCell.h; sourceTree = "<group>"; };
+		954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendCell.m; sourceTree = "<group>"; };
+		954FCB0B1EA5BE27004B5F22 /* MY_RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RecommendModel.h; sourceTree = "<group>"; };
+		954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendModel.m; sourceTree = "<group>"; };
 		9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageModel.h; sourceTree = "<group>"; };
 		9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageModel.m; sourceTree = "<group>"; };
 		9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroModel.h; sourceTree = "<group>"; };
@@ -2122,8 +2128,8 @@
 		95EC73E71E568CE80027EED8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9535B41D1EA498B60052A858 /* MY_TrainRecord.h */,
-				9535B41E1EA498B60052A858 /* MY_TrainRecord.m */,
+				9535B41D1EA498B60052A858 /* MY_TrainRecordModel.h */,
+				9535B41E1EA498B60052A858 /* MY_TrainRecordModel.m */,
 				9535B4201EA498C50052A858 /* MY_ExperienceModel.h */,
 				9535B4211EA498C50052A858 /* MY_ExperienceModel.m */,
 			);
@@ -2260,6 +2266,8 @@
 				95AD58EE1E6D5CA100C08EA7 /* MY_ScheduleModel.m */,
 				95F9F9551EA066670050D8D1 /* MY_RealNameModel.h */,
 				95F9F9561EA066670050D8D1 /* MY_RealNameModel.m */,
+				954FCB0B1EA5BE27004B5F22 /* MY_RecommendModel.h */,
+				954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2289,6 +2297,8 @@
 				95AD58EB1E6D546800C08EA7 /* MY_ScheduleCell.m */,
 				95F9F9521EA061EF0050D8D1 /* MY_RealNameCell.h */,
 				95F9F9531EA061EF0050D8D1 /* MY_RealNameCell.m */,
+				954FCB081EA5BE08004B5F22 /* MY_RecommendCell.h */,
+				954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2514,7 +2524,7 @@
 				95B8BE6E1E71257500197B84 /* GPUImageDarkenBlendFilter.m in Sources */,
 				9526FA9E1E77FAA800C52433 /* MY_DatePickerView.m in Sources */,
 				95B8BE9C1E71257500197B84 /* GPUImageLightenBlendFilter.m in Sources */,
-				9535B41F1EA498B60052A858 /* MY_TrainRecord.m in Sources */,
+				9535B41F1EA498B60052A858 /* MY_TrainRecordModel.m in Sources */,
 				95B8BEA31E71257500197B84 /* GPUImageLuminanceThresholdFilter.m in Sources */,
 				95B8BEA81E71257500197B84 /* GPUImageMissEtikateFilter.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
@@ -2615,6 +2625,7 @@
 				95CB0E161E6FCE2300EEBDED /* MY_CourseCustomedView.m in Sources */,
 				95B8BE5A1E71257500197B84 /* GPUImageBulgeDistortionFilter.m in Sources */,
 				95B8BE521E71257500197B84 /* GPUImageAlphaBlendFilter.m in Sources */,
+				954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */,
 				9535B4221EA498C50052A858 /* MY_ExperienceModel.m in Sources */,
 				95B8BF231E712DD000197B84 /* MY_PullLiveController.m in Sources */,
 				95F9F9541EA061EF0050D8D1 /* MY_RealNameCell.m in Sources */,
@@ -2689,6 +2700,7 @@
 				95B8BE751E71257500197B84 /* GPUImageEmbossFilter.m in Sources */,
 				95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
+				954FCB0A1EA5BE08004B5F22 /* MY_RecommendCell.m in Sources */,
 				95B8BEEA1E71257500197B84 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				95B8BED61E71257500197B84 /* GPUImageSolidColorGenerator.m in Sources */,
 				95B8BE6D1E71257500197B84 /* GPUImageCrosshatchFilter.m in Sources */,

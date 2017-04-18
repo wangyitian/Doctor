@@ -12,6 +12,7 @@
 #import "MY_PersonalAvatarCell.h"
 #import "MY_ChangePhoneController.h"
 #import "MY_SubPickerView.h"
+#import "MY_RealNameController.h"
 @interface MY_PersonalDataController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
@@ -41,7 +42,7 @@
 
 #pragma mark - 数据
 - (void)initData {
-    NSArray *dataArray = [NSArray arrayWithObjects:@"头像",@"昵称",@"真实姓名",@"手机号码",@"科室",@"医院", nil];
+    NSArray *dataArray = [NSArray arrayWithObjects:@"头像",@"昵称",@"真实姓名",@"手机号码",@"科室",@"医院",@"实名认证", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
@@ -117,6 +118,9 @@
     } else if (indexPath.row == 5) {
         MY_ChangePersonalDataController *vc = [[MY_ChangePersonalDataController alloc] init];
         vc.changeType = Change_Hospital;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if (indexPath.row == 6) {
+        MY_RealNameController *vc = [[MY_RealNameController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

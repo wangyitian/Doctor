@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *position;
 @property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *detail;
 @property (nonatomic, strong) NSString *project;
 @property (nonatomic, strong) NSString *zanCount;
 @end

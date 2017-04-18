@@ -16,7 +16,7 @@
 #import "MY_CourseSegmentController.h"
 #import "MY_PublishController.h"
 @interface MY_HomePageController () <UISearchBarDelegate>
-
+@property (nonatomic, weak) MY_HomePageHeaderView *headerView;
 @end
 
 @implementation MY_HomePageController
@@ -42,7 +42,6 @@
         
     }];
     
-    
     MY_RequestModel *model1 = [[MY_RequestModel alloc] initWithDelegate:self];
     NSMutableDictionary *paramter1 = [NSMutableDictionary dictionary];
     [model1 getDataWithURL:@"" paramter:paramter1 success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
@@ -52,7 +51,8 @@
 
 #pragma mark - 上拉加载下拉刷新
 - (void)headerRereshing {
-    [self loadMore:NO];
+//    [self loadMore:NO];
+    
 }
 
 - (void)footerRereshing {
@@ -61,37 +61,7 @@
 
 #pragma mark - 自定义导航栏
 - (void)initNavBar {
-    
     [self setTitle:@"美域医生" isBackButton:NO rightBttonName:@"患者推荐" rightImageName:nil];
-//    self.navBar = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_APP_STATUS_NAVBAR_HEIGHT)];
-//    self.navBar.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
-//    self.navBar.userInteractionEnabled = YES;
-//    [self.view addSubview:self.navBar];
-//    
-//    HXSearchBar *searchBar = [[HXSearchBar alloc] initWithFrame:CGRectMake(12, 27, MY_ScreenWidth - 18 - 20 - 17, 30)];
-//    searchBar.backgroundColor = [UIColor clearColor];
-//    searchBar.delegate = self;
-//    //光标颜色
-//    searchBar.cursorColor = [MY_Util setColorWithInt:0x68d6a7];
-//    //TextField
-//    searchBar.searchBarTextField.layer.cornerRadius = 4;
-//    searchBar.searchBarTextField.layer.masksToBounds = YES;
-//    searchBar.searchBarTextField.layer.borderColor = [MY_Util setColorWithInt:0xababab].CGColor;
-//    searchBar.searchBarTextField.layer.borderWidth = 1.0;
-//    
-//    //清除按钮图标
-//    searchBar.clearButtonImage = [UIImage imageNamed:@"demand_delete"];
-//    
-//    //去掉取消按钮灰色背景
-//    searchBar.hideSearchBarBackgroundImage = YES;
-//    
-//    [self.navBar addSubview:searchBar];
-    
-//    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [rightButton setImage:[UIImage imageNamed:@"homePage_recommend"] forState:UIControlStateNormal];
-//    rightButton.frame = CGRectMake(MY_ScreenWidth - 20 - 17 - 5, 29, 27, 27);
-//    [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
-//    [self.navBar addSubview:rightButton];
 }
 
 #pragma mark - UI
@@ -99,7 +69,6 @@
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     MY_HomePageHeaderView *headerView = [[MY_HomePageHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
-    
     headerView.buttonBlock = ^(NSInteger index) {
         NSMutableArray *vcArray = [NSMutableArray array];
         NSArray *types = nil;
@@ -123,10 +92,11 @@
         [self.navigationController pushViewController:vc animated:YES];
     };
     self.tableView.tableHeaderView = headerView;
+    self.headerView = headerView;
     
-    
-    UIButton *publishButton = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    publishButton.frame = CGRectMake(MY_ScreenWidth-40, MY_ScreenHeight-49-40, 40, 40);
+    UIButton *publishButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [publishButton setImage:[UIImage imageNamed:@"publish"] forState:UIControlStateNormal];
+    publishButton.frame = CGRectMake(MY_ScreenWidth-50-25, MY_ScreenHeight-49-25-50, 50, 50);
     [publishButton addTarget:self action:@selector(publishButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:publishButton];
 }
@@ -141,11 +111,5 @@
     MY_PublishController *publishVC = [[MY_PublishController alloc] init];
     [self.navigationController pushViewController:publishVC animated:YES];
 }
-
-//- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-//    MY_SearchController *searchVC = [[MY_SearchController alloc] init];
-//    [self.navigationController pushViewController:searchVC animated:YES];
-//    return NO;
-//}
 
 @end
