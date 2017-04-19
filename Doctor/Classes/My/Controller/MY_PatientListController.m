@@ -9,6 +9,7 @@
 #import "MY_PatientListController.h"
 #import "MY_RecommendCell.h"
 #import "MY_RecommendModel.h"
+#import "MY_PatientScheduleController.h"
 @interface MY_PatientListController ()
 
 @end
@@ -52,7 +53,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MY_RecommendModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
     
-    
+    MY_PatientScheduleController *vc = [[MY_PatientScheduleController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

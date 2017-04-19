@@ -24,6 +24,10 @@
 		9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9522E1D61E6E7B5A000FA06A /* MY_BaseWebController.m */; };
 		9526FA9B1E778D1B00C52433 /* MY_SelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9526FA9A1E778D1B00C52433 /* MY_SelectView.m */; };
 		9526FA9E1E77FAA800C52433 /* MY_DatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */; };
+		953589471EA6F9A70008703D /* MY_PatientScheduleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953589461EA6F9A70008703D /* MY_PatientScheduleController.m */; };
+		9535894A1EA6FB470008703D /* MY_PatientScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 953589491EA6FB470008703D /* MY_PatientScheduleModel.m */; };
+		9535894D1EA6FB890008703D /* MY_PatientScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535894C1EA6FB890008703D /* MY_PatientScheduleCell.m */; };
+		953589501EA6FCA20008703D /* MY_PublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535894F1EA6FCA20008703D /* MY_PublishView.m */; };
 		9535B4161EA4968A0052A858 /* MY_PublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B4151EA4968A0052A858 /* MY_PublishController.m */; };
 		9535B4191EA4988B0052A858 /* MY_TrainRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B4181EA4988B0052A858 /* MY_TrainRecordCell.m */; };
 		9535B41C1EA498A20052A858 /* MY_ExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9535B41B1EA498A20052A858 /* MY_ExperienceCell.m */; };
@@ -386,6 +390,14 @@
 		9526FA9A1E778D1B00C52433 /* MY_SelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_SelectView.m; sourceTree = "<group>"; };
 		9526FA9C1E77FAA800C52433 /* MY_DatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_DatePickerView.h; sourceTree = "<group>"; };
 		9526FA9D1E77FAA800C52433 /* MY_DatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_DatePickerView.m; sourceTree = "<group>"; };
+		953589451EA6F9A70008703D /* MY_PatientScheduleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PatientScheduleController.h; sourceTree = "<group>"; };
+		953589461EA6F9A70008703D /* MY_PatientScheduleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PatientScheduleController.m; sourceTree = "<group>"; };
+		953589481EA6FB470008703D /* MY_PatientScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PatientScheduleModel.h; sourceTree = "<group>"; };
+		953589491EA6FB470008703D /* MY_PatientScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PatientScheduleModel.m; sourceTree = "<group>"; };
+		9535894B1EA6FB890008703D /* MY_PatientScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PatientScheduleCell.h; sourceTree = "<group>"; };
+		9535894C1EA6FB890008703D /* MY_PatientScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PatientScheduleCell.m; sourceTree = "<group>"; };
+		9535894E1EA6FCA20008703D /* MY_PublishView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PublishView.h; sourceTree = "<group>"; };
+		9535894F1EA6FCA20008703D /* MY_PublishView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PublishView.m; sourceTree = "<group>"; };
 		9535B4141EA4968A0052A858 /* MY_PublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PublishController.h; sourceTree = "<group>"; };
 		9535B4151EA4968A0052A858 /* MY_PublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PublishController.m; sourceTree = "<group>"; };
 		9535B4171EA4988B0052A858 /* MY_TrainRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_TrainRecordCell.h; sourceTree = "<group>"; };
@@ -2149,6 +2161,8 @@
 				9535B4181EA4988B0052A858 /* MY_TrainRecordCell.m */,
 				9535B41A1EA498A20052A858 /* MY_ExperienceCell.h */,
 				9535B41B1EA498A20052A858 /* MY_ExperienceCell.m */,
+				9535894E1EA6FCA20008703D /* MY_PublishView.h */,
+				9535894F1EA6FCA20008703D /* MY_PublishView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2251,10 +2265,12 @@
 				95C452AB1E5AD28A00C9A30D /* MY_ChangePersonalDataController.m */,
 				95C452B01E5ADF6000C9A30D /* MY_ChangePhoneController.h */,
 				95C452B11E5ADF6000C9A30D /* MY_ChangePhoneController.m */,
-				958BB5DC1E9F7C7700A976A7 /* MY_PatientListController.h */,
-				958BB5DD1E9F7C7700A976A7 /* MY_PatientListController.m */,
 				95F9F94F1EA05E860050D8D1 /* MY_RealNameController.h */,
 				95F9F9501EA05E860050D8D1 /* MY_RealNameController.m */,
+				958BB5DC1E9F7C7700A976A7 /* MY_PatientListController.h */,
+				958BB5DD1E9F7C7700A976A7 /* MY_PatientListController.m */,
+				953589451EA6F9A70008703D /* MY_PatientScheduleController.h */,
+				953589461EA6F9A70008703D /* MY_PatientScheduleController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2268,6 +2284,8 @@
 				95F9F9561EA066670050D8D1 /* MY_RealNameModel.m */,
 				954FCB0B1EA5BE27004B5F22 /* MY_RecommendModel.h */,
 				954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */,
+				953589481EA6FB470008703D /* MY_PatientScheduleModel.h */,
+				953589491EA6FB470008703D /* MY_PatientScheduleModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2299,6 +2317,8 @@
 				95F9F9531EA061EF0050D8D1 /* MY_RealNameCell.m */,
 				954FCB081EA5BE08004B5F22 /* MY_RecommendCell.h */,
 				954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */,
+				9535894B1EA6FB890008703D /* MY_PatientScheduleCell.h */,
+				9535894C1EA6FB890008703D /* MY_PatientScheduleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2466,6 +2486,7 @@
 				95B8BECF1E71257500197B84 /* GPUImageSketchFilter.m in Sources */,
 				95B8BED41E71257500197B84 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				95B8BEE61E71257500197B84 /* GPUImageTransformFilter.m in Sources */,
+				9535894A1EA6FB470008703D /* MY_PatientScheduleModel.m in Sources */,
 				95AD58EF1E6D5CA100C08EA7 /* MY_ScheduleModel.m in Sources */,
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
 				95B8BEF61E71257500197B84 /* GPUImagePicture+TextureSubimage.m in Sources */,
@@ -2659,6 +2680,8 @@
 				95DA55F11E7FCC7D00A4C4D6 /* MY_HotSearchView.m in Sources */,
 				95B8BECA1E71257500197B84 /* GPUImageScreenBlendFilter.m in Sources */,
 				95B8BE5C1E71257500197B84 /* GPUImageCGAColorspaceFilter.m in Sources */,
+				953589471EA6F9A70008703D /* MY_PatientScheduleController.m in Sources */,
+				9535894D1EA6FB890008703D /* MY_PatientScheduleCell.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */,
 				95B8BE4C1E71257500197B84 /* NSMutableArray+LFAdd.m in Sources */,
@@ -2691,6 +2714,7 @@
 				95B8BEB71E71257500197B84 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				95B8BEAF1E71257500197B84 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				95B8BE8D1E71257500197B84 /* GPUImageHighPassFilter.m in Sources */,
+				953589501EA6FCA20008703D /* MY_PublishView.m in Sources */,
 				95B8BEE01E71257500197B84 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				95B8BEAD1E71257500197B84 /* GPUImageMovie.m in Sources */,
 				95B8BE5B1E71257500197B84 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
