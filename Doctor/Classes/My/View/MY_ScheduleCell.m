@@ -9,7 +9,8 @@
 #import "MY_ScheduleCell.h"
 @interface MY_ScheduleCell ()
 @property (nonatomic, strong) UIImageView *circleImageView;
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UIView *topLineView;
+@property (nonatomic, strong) UIView *bottomLineView;
 @property (nonatomic, strong) UILabel *scheduleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
@@ -27,9 +28,13 @@
     self.circleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(38, 2, 12, 12)];
     [self.contentView addSubview:self.circleImageView];
     
-    self.lineView = [[UIView alloc] init];
-    self.lineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
-    [self.contentView addSubview:self.lineView];
+    self.topLineView = [[UIView alloc] init];
+    self.topLineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
+    [self.contentView addSubview:self.topLineView];
+    
+    self.bottomLineView = [[UIView alloc] init];
+    self.bottomLineView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
+    [self.contentView addSubview:self.bottomLineView];
     
     self.scheduleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.circleImageView.right+15, 0, 75, 15)];
     self.scheduleLabel.textColor = [MY_Util setColorWithInt:0x666666];
@@ -61,28 +66,41 @@
     self.timeLabel.frame = CGRectMake(self.detailLabel.left, self.detailLabel.bottom+10, MY_ScreenWidth-140-15, 12);
     
     if (model.isFirst && model.isLast) {
-        self.lineView.hidden = YES;
+        self.topLineView.hidden = YES;
+        self.bottomLineView.hidden = YES;
     } else {
         if (model.isFirst) {
-            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            self.topLineView.hidden = YES;
+            self.bottomLineView.hidden = NO;
+            [self.bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.mas_equalTo(self.circleImageView);
-                make.top.mas_equalTo(self.circleImageView);
+                make.top.mas_equalTo(self.circleImageView.mas_bottom);
                 make.width.mas_equalTo(@1);
-                make.bottom.mas_equalTo(self);
+                make.bottom.mas_equalTo(self.contentView);
             }];
         } else if (model.isLast) {
-            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            self.topLineView.hidden = NO;
+            self.bottomLineView.hidden = YES;
+            [self.topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.mas_equalTo(self.circleImageView);
-                make.top.mas_equalTo(self);
+                make.top.mas_equalTo(self.contentView);
                 make.width.mas_equalTo(@1);
-                make.bottom.mas_equalTo(self.circleImageView);
+                make.bottom.mas_equalTo(self.circleImageView.mas_top);
             }];
         } else {
-            [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            self.topLineView.hidden = NO;
+            self.bottomLineView.hidden = NO;
+            [self.topLineView mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.centerX.mas_equalTo(self.circleImageView);
-                make.top.mas_equalTo(self);
+                make.top.mas_equalTo(self.contentView);
                 make.width.mas_equalTo(@1);
-                make.bottom.mas_equalTo(self);
+                make.bottom.mas_equalTo(self.circleImageView.mas_top);
+            }];
+            [self.bottomLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.mas_equalTo(self.circleImageView);
+                make.top.mas_equalTo(self.circleImageView.mas_bottom);
+                make.width.mas_equalTo(@1);
+                make.bottom.mas_equalTo(self.contentView);
             }];
         }
     }
