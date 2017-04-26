@@ -10,6 +10,7 @@
 #define MY_Api_h
 
 #define MY_BASE_API_PATH                @"http://api.meiyujiankang.com/admin.php/Index/"
+//基础接口
 #define MY_API_REGISTER                 @"meiyu_register"               //注册
 #define MY_API_GET_CODE                 @"meiyu_information"            //获取验证码
 #define MY_API_LOGIN                    @"meiyu_Sign_in"                //登录
@@ -20,9 +21,15 @@
 #define MY_API_CHANGE_PHONE             @"meiyu_modify_phone"           //修改手机号
 #define MY_API_FEEDBACK                 @"meiyu_feedback"               //意见反馈
 #define MY_API_CHANGE_PERSONAL_DATA     @"meiyu_Personal_information"   //修改个人信息
-
-
-
+//功能接口
+#define MY_API_HOMEPAGE                 @"meiyu_home_page"              //首页
+#define MY_API_ZAN                      @"meiyu_Give"                   //赞
+#define MY_API_COURSELIST               @""
+#define MY_API_PUBLISH                  @"meiyu_Experience"             //发布心得
+#define MY_API_MESSAGELIST              @""
+//网页
+#define MY_WEB_COURSEDETAIL             @"http://api.meiyujiankang.com/admin.php/Index/curriculum/id/"
+#define MY_WEB_TRAINING                 @"http://api.meiyujiankang.com/admin.php/Index/news/id/"
 
 
 #define UMengKey            @"58b5099a8f4a9d6e1b000e73"

@@ -9,5 +9,7 @@
 #import "MY_TrainRecordModel.h"
 
 @implementation MY_TrainRecordModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"trainId" : @"id"};
+}
 @end

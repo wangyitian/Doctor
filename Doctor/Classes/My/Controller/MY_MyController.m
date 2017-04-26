@@ -51,7 +51,8 @@
 
 #pragma mark - 网络请求
 - (void)loadData {
-    
+    MY_AccountModel *accountModel = [MY_Util getAccountModel];
+    ((MY_MyHeaderView*)self.tableView.tableHeaderView).object = accountModel;
 }
 
 #pragma mark - 刷新
@@ -75,7 +76,8 @@
 //        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
 //        [self.navigationController pushViewController:scheduleVC animated:YES];
 //    };
-    tableHeaderView.object = @"1";
+    MY_AccountModel *accountModel = [MY_Util getAccountModel];
+    tableHeaderView.object = accountModel;
     self.tableView.tableHeaderView = tableHeaderView;
 }
 

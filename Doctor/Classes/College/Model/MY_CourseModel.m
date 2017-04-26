@@ -9,5 +9,8 @@
 #import "MY_CourseModel.h"
 
 @implementation MY_CourseModel
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"courseId" : @"id"};
+}
 
 @end

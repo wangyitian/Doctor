@@ -21,7 +21,12 @@
     paraStyle.headIndent = 0;
     paraStyle.tailIndent = 0;
     
+    if (!str) {
+        str = @"";
+    }
+    
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:font], NSParagraphStyleAttributeName:paraStyle};
+    
     NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
     self.attributedText = attributeStr;
     CGSize size = [str boundingRectWithSize:CGSizeMake(width,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;

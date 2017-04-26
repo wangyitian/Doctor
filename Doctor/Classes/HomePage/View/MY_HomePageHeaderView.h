@@ -12,4 +12,5 @@ typedef void(^SectionBlock)(NSInteger index);
 @interface MY_HomePageHeaderView : MY_View
 @property (nonatomic, copy) SectionBlock sectionBlock;
 @property (nonatomic, copy) ButtonBlock buttonBlock;
+@property (nonatomic, strong) NSArray *imageArray;
 @end

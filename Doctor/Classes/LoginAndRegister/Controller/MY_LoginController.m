@@ -80,6 +80,9 @@
             
             // 第三方平台SDK源数据
             NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
+            
+            MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
+            [self.navigationController pushViewController:registerVC animated:YES];
         }
     }];
 }

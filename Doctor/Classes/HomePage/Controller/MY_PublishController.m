@@ -32,9 +32,17 @@
 
 - (void)rightButtonAction {
     MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
-//    self.publishView.projectLabel.text
-//    self.publishView.contentTextView.text
-//    model postDataWithURL:@"" paramter:<#(NSDictionary *)#> success:<#^(NSURLSessionDataTask *operation, NSDictionary *dic)success#>
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+    [paramter setObject:self.publishView.contentTextView.text forKey:@"experience"];
+    if (![self.publishView.projectLabel.text isEqualToString:@"---请选择---"]) {
+        [paramter setObject:self.publishView.projectLabel.text forKey:@"project"];
+    }
+    [model postDataWithURL:MY_API_PUBLISH paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } completion:nil];
+    }];
 }
 
 @end

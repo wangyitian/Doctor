@@ -126,10 +126,8 @@
 
 #pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
-//    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-//        // 根据获取的platformType确定所选平台进行下一步操作
-//        [self shareWebPageToPlatformType:platformType];
-//    }];
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://18514616528"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 
 #pragma mark - 报名按钮点击事件

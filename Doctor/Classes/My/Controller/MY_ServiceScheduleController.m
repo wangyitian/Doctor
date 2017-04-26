@@ -95,7 +95,8 @@
 
 #pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
-    
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18514616528"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 
 @end

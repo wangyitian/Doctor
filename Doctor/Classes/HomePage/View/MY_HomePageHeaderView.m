@@ -28,7 +28,6 @@
 
 - (void)setupUI {
     self.imageScrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 140*MY_ScreenWidth/375)];
-    self.imageScrollView.backgroundColor = [UIColor redColor];
     [self addSubview:self.imageScrollView];
     
     self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, self.imageScrollView.bottom, MY_ScreenWidth, 100)];
@@ -83,6 +82,17 @@
     }
     
     self.height = spaceView.bottom + 44;
+}
+
+- (void)setImageArray:(NSArray *)imageArray {
+    _imageArray = imageArray;
+    NSMutableArray *images = [NSMutableArray array];
+    if ([imageArray isKindOfClass:[NSArray class]]) {
+        for (NSDictionary *dic in imageArray) {
+            [images addObject:dic[@"adurl"]];
+        }
+    }
+    self.imageScrollView.imageURLStringsGroup = images;
 }
 
 - (void)sectionButtonAction:(UIButton*)button {

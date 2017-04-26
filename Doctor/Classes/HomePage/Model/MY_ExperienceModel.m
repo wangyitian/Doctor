@@ -9,5 +9,7 @@
 #import "MY_ExperienceModel.h"
 
 @implementation MY_ExperienceModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"experienceId" : @"id"};
+}
 @end

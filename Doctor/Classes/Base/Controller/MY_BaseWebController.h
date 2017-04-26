@@ -11,5 +11,8 @@
 @interface MY_BaseWebController : MY_BaseController<UIWebViewDelegate>
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSURL *shareUrl;
+@property (nonatomic, strong) NSString *shareContent;
+@property (nonatomic, strong) NSString *shareImage;
+@property (nonatomic, strong) NSString *shareTitle;
 @property (nonatomic, strong) UIWebView *webView;
 @end

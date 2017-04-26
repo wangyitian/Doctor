@@ -29,4 +29,5 @@
 - (NSString*)floatStr;
 
 - (BOOL)isPhoneNum;
+- (CGFloat)getHeightWithSpaceHeight:(CGFloat)spaceHeight withFont:(CGFloat)font withStr:(NSString *)str withWidth:(CGFloat)width;
 @end

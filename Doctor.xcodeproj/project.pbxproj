@@ -17,6 +17,7 @@
 		950142FA1E4C7F9100987828 /* MY_TabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142F91E4C7F9100987828 /* MY_TabBar.m */; };
 		950143001E4C7FF000987828 /* MY_TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 950142FF1E4C7FF000987828 /* MY_TabBarButton.m */; };
 		950143031E4C800F00987828 /* MY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950143021E4C800F00987828 /* MY_NavigationController.m */; };
+		950BD08C1EAF4CA100E08565 /* MY_CourseWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 950BD08B1EAF4CA100E08565 /* MY_CourseWebController.m */; };
 		9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A46C1E58054A009FCBF3 /* MY_LoginView.m */; };
 		9510A4731E580566009FCBF3 /* MY_ForgetPWDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */; };
 		95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95229A961E6003B000C28FD9 /* MY_CourseModel.m */; };
@@ -375,6 +376,8 @@
 		950142FF1E4C7FF000987828 /* MY_TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_TabBarButton.m; sourceTree = "<group>"; };
 		950143011E4C800F00987828 /* MY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavigationController.h; sourceTree = "<group>"; };
 		950143021E4C800F00987828 /* MY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavigationController.m; sourceTree = "<group>"; };
+		950BD08A1EAF4CA100E08565 /* MY_CourseWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseWebController.h; sourceTree = "<group>"; };
+		950BD08B1EAF4CA100E08565 /* MY_CourseWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseWebController.m; sourceTree = "<group>"; };
 		9510A46B1E58054A009FCBF3 /* MY_LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginView.h; sourceTree = "<group>"; };
 		9510A46C1E58054A009FCBF3 /* MY_LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LoginView.m; sourceTree = "<group>"; };
 		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
@@ -2193,6 +2196,8 @@
 				95C452A51E5ACA4000C9A30D /* MY_CourseCustomedController.m */,
 				95EC740B1E56973E0027EED8 /* MY_EnrollController.h */,
 				95EC740C1E56973E0027EED8 /* MY_EnrollController.m */,
+				950BD08A1EAF4CA100E08565 /* MY_CourseWebController.h */,
+				950BD08B1EAF4CA100E08565 /* MY_CourseWebController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2550,6 +2555,7 @@
 				95B8BEA81E71257500197B84 /* GPUImageMissEtikateFilter.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				95B8BE5E1E71257500197B84 /* GPUImageChromaKeyFilter.m in Sources */,
+				950BD08C1EAF4CA100E08565 /* MY_CourseWebController.m in Sources */,
 				95B8BEC61E71257500197B84 /* GPUImageRGBFilter.m in Sources */,
 				95B8BED01E71257500197B84 /* GPUImageSkinToneFilter.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,

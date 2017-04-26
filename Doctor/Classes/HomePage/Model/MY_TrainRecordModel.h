@@ -9,8 +9,8 @@
 #import "MY_BaseModel.h"
 
 @interface MY_TrainRecordModel : MY_BaseModel
-@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) NSString *trainId;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *detail;
 @property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSString *abst;
 @end

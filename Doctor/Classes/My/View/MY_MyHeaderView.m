@@ -47,7 +47,6 @@
     [self addSubview:self.accountLabel];
     
     self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake((MY_ScreenWidth-87)/2, self.accountLabel.bottom+12, 87, 87)];
-    self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 43.5;
     [self addSubview:self.avatarImageView];
@@ -68,10 +67,13 @@
 }
 
 - (void)setObject:(id)object {
-    self.accountLabel.text = @"用户名";
+    MY_AccountModel *accountModel = (MY_AccountModel*)object;
     
-    self.realNameButton.enabled = NO;
+    self.accountLabel.text = accountModel.nickname;
     
+    self.realNameButton.enabled = accountModel.isConfirmed;
+    
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:accountModel.head] placeholderImage:[UIImage imageNamed:@"icon"]];
 }
 
 - (void)realNameButtonAction {

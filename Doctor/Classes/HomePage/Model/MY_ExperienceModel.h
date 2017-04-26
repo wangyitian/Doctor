@@ -9,11 +9,13 @@
 #import "MY_BaseModel.h"
 
 @interface MY_ExperienceModel : MY_BaseModel
-@property (nonatomic, strong) NSString *avatar;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *position;
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSString *detail;
+@property (nonatomic, strong) NSString *experienceId;
+@property (nonatomic, strong) NSString *dianzan;
+@property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *experience;
 @property (nonatomic, strong) NSString *project;
-@property (nonatomic, strong) NSString *zanCount;
+@property (nonatomic, strong) NSString *head;
+@property (nonatomic, strong) NSString *department;
+@property (nonatomic, assign) BOOL isOpen;
 @end
