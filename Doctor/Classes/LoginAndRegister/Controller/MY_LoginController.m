@@ -60,7 +60,7 @@
 }
 
 - (void)getAuthWithUserInfoFromWechat {
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:nil completion:^(id result, NSError *error) {
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
         if (error) {
             
         } else {
@@ -82,7 +82,11 @@
             NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
             
             MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
-            [self.navigationController pushViewController:registerVC animated:YES];
+            [self.navigationController pushViewController:registerVC animated:NO];
+//            MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
+//            [MY_Util saveAccount:account];
+            MY_TabController *tabVC = [[MY_TabController alloc] init];
+            [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
         }
     }];
 }

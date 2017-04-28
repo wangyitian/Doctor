@@ -83,6 +83,7 @@
         [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
         [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [[SDImageCache sharedImageCache] clearDisk];
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
         }]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self presentViewController:alert animated:YES completion: nil];

@@ -23,6 +23,7 @@
     [aCoder encodeObject:_nickname forKey:@"nickname"];
     [aCoder encodeObject:_department forKey:@"department"];
     [aCoder encodeObject:_hospital forKey:@"hospital"];
+    [aCoder encodeBool:_isConfirmed forKey:@"isConfirmed"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -35,6 +36,7 @@
         _nickname = [aDecoder decodeObjectForKey:@"nickname"];
         _department = [aDecoder decodeObjectForKey:@"department"];
         _hospital = [aDecoder decodeObjectForKey:@"hospital"];
+        _isConfirmed = [aDecoder decodeBoolForKey:@"isConfirmed"];
     }
     
     return self;

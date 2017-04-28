@@ -24,7 +24,8 @@
 //功能接口
 #define MY_API_HOMEPAGE                 @"meiyu_home_page"              //首页
 #define MY_API_ZAN                      @"meiyu_Give"                   //赞
-#define MY_API_COURSELIST               @""
+#define MY_API_COURSEINTRO              @"meiyu_school"                 //学院首页
+#define MY_API_COURSELIST               @"meiyu_school_kecheng"         //课程列表
 #define MY_API_PUBLISH                  @"meiyu_Experience"             //发布心得
 #define MY_API_MESSAGELIST              @""
 //网页

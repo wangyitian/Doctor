@@ -28,7 +28,7 @@
 - (void)setupUI {
     MY_ChangePWDView *changePwdView = [[MY_ChangePWDView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
     
-    __block typeof(changePwdView) weakRegisterView = changePwdView;
+    __weak typeof(changePwdView) weakRegisterView = changePwdView;
     changePwdView.validateBlock = ^(NSString *phone) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;

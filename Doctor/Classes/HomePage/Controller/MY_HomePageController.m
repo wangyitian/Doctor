@@ -27,6 +27,7 @@
 @property (nonatomic, weak) MY_HomePageHeaderView *headerView;
 @property (nonatomic, strong) NSDictionary *response;
 @property (nonatomic, assign) NSInteger sectionIndex;
+@property (nonatomic, weak) UIButton *publishButton;
 @end
 
 @implementation MY_HomePageController
@@ -42,6 +43,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (self.tableView.tableHeaderView) {
+        [((MY_HomePageHeaderView*)self.tableView.tableHeaderView) loadButtonStatus];
+    }
+    
+    MY_AccountModel *model = [MY_Util getAccountModel];
+    self.publishButton.hidden = !model.isConfirmed;
 }
 
 #pragma mark - 网络请求
@@ -50,10 +57,8 @@
     NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
     [paramter setObject:[MY_Util getUid] forKey:@"uid"];
     [model getDataWithURL:MY_API_HOMEPAGE paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-//        [self.dataSource removeAllObjects];
         self.response = dic;
         self.headerView.imageArray = self.response[@"adver"];
-
         self.headerView.sectionBlock(self.sectionIndex);
     }];
 }
@@ -66,7 +71,7 @@
 
 #pragma mark - 自定义导航栏
 - (void)initNavBar {
-    [self setTitle:@"美域医生" isBackButton:NO rightBttonName:@"患者推荐" rightImageName:nil];
+    [self setTitle:@"美域医疗" isBackButton:NO rightBttonName:@"患者推荐" rightImageName:nil];
 }
 
 #pragma mark - UI
@@ -135,6 +140,9 @@
     publishButton.frame = CGRectMake(MY_ScreenWidth-50-25, MY_ScreenHeight-49-25-50, 50, 50);
     [publishButton addTarget:self action:@selector(publishButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:publishButton];
+    self.publishButton = publishButton;
+    
+    self.publishButton.hidden = !((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed;
 }
 
 #pragma mark - 右导航按钮点击事件

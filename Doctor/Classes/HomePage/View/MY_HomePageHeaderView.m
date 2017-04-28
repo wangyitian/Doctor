@@ -8,10 +8,12 @@
 
 #import "MY_HomePageHeaderView.h"
 #import "SDCycleScrollView.h"
+#import "MY_BaseWebController.h"
 #define TAG_FOR_BUTTON  2000
 #define TAG_FOR_SECTION 3000
-@interface MY_HomePageHeaderView ()
+@interface MY_HomePageHeaderView () <SDCycleScrollViewDelegate>
 @property (nonatomic, strong) SDCycleScrollView *imageScrollView;
+@property (nonatomic, strong) NSMutableArray *bannerUrlArray;
 @property (nonatomic, strong) UIView *buttonView;
 @property (nonatomic, strong) NSMutableArray *sectionButtons;
 @property (nonatomic, strong) UIView *selectedLineView;
@@ -21,13 +23,21 @@
     if (self = [super initWithFrame:frame]) {
         self.sectionButtons = [NSMutableArray array];
         self.backgroundColor = [UIColor whiteColor];
+        self.bannerUrlArray = [NSMutableArray array];
         [self setupUI];
     }
     return self;
 }
 
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+    webVC.url = self.bannerUrlArray[index];
+    [[self findController].navigationController pushViewController:webVC animated:YES];
+}
+
 - (void)setupUI {
     self.imageScrollView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 140*MY_ScreenWidth/375)];
+    self.imageScrollView.delegate = self;
     [self addSubview:self.imageScrollView];
     
     self.buttonView = [[UIView alloc] initWithFrame:CGRectMake(0, self.imageScrollView.bottom, MY_ScreenWidth, 100)];
@@ -48,7 +58,6 @@
         button.tag = TAG_FOR_BUTTON + i;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonView addSubview:button];
-        
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, button.bottom+10, 60, 12)];
         titleLabel.centerX = button.centerX;
@@ -79,19 +88,33 @@
         if (i == 0) {
             [self sectionButtonAction:button];
         }
+        if (i == sections.count - 1) {
+            button.hidden = !((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed;
+        }
     }
     
     self.height = spaceView.bottom + 44;
 }
 
+- (void)loadButtonStatus {
+    if (((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed) {
+        for (UIButton *btn in self.sectionButtons) {
+            btn.hidden = NO;
+        }
+    }
+}
+
 - (void)setImageArray:(NSArray *)imageArray {
     _imageArray = imageArray;
     NSMutableArray *images = [NSMutableArray array];
+    NSMutableArray *urls = [NSMutableArray array];
     if ([imageArray isKindOfClass:[NSArray class]]) {
         for (NSDictionary *dic in imageArray) {
             [images addObject:dic[@"adurl"]];
+            [urls addObject:[dic stringWithKey:@"url"]];
         }
     }
+    self.bannerUrlArray = urls;
     self.imageScrollView.imageURLStringsGroup = images;
 }
 

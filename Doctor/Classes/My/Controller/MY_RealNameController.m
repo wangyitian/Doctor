@@ -50,12 +50,12 @@
     noticeLabel.textAlignment = NSTextAlignmentCenter;
     noticeLabel.textColor = [MY_Util setColorWithInt:0x333333];
     noticeLabel.font = MY_Font(14);
-    noticeLabel.text = @"欢迎加入美域医生，完成实名认证可使用完整功能";
+    noticeLabel.text = @"欢迎加入美域医疗，完成实名认证可使用完整功能";
     [headerView addSubview:noticeLabel];
     self.tableView.tableHeaderView = headerView;
     
     UILabel *footerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 41)];
-    footerLabel.text = @"您的认证资料不会被公开，仅用于美域医生认证审核。";
+    footerLabel.text = @"您的认证资料不会被公开，仅用于美域医疗认证审核。";
     footerLabel.textAlignment = NSTextAlignmentCenter;
     footerLabel.textColor = [MY_Util setColorWithInt:0x999999];
     footerLabel.font = MY_Font(11);

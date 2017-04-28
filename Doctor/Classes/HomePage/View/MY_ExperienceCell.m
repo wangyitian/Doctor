@@ -109,7 +109,7 @@
     self.timeLabel.text = model.date;
     self.timeLabel.frame = CGRectMake(MY_ScreenWidth-15-timeWidth, self.nameLabel.top, timeWidth, self.nameLabel.height);
     
-    NSString *experience = @"呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的的呃设计的开发建设的设的的呃设计的开发建设的";
+    NSString *experience = model.experience;
     
     CGFloat height = [self.detailLabel getLabelHeightWithSpaceHeight:10 withFont:14 withStr:experience withTextColor:[MY_Util setColorWithInt:0x666666] withLabelWidth:MY_ScreenWidth-15-65];
     
@@ -127,10 +127,12 @@
         self.detailLabel.frame = CGRectMake(65, 70, MY_ScreenWidth-15-65, height);
         self.seeAllButton.frame = CGRectMake(45, self.detailLabel.bottom+10, 100, 25);
         self.projectLabel.frame = CGRectMake(65, self.seeAllButton.bottom+10, 200, 20);
+        self.projectLabel.width = MY_Iphone4or5?150:200;
     } else {
         self.seeAllButton.hidden = YES;
         self.detailLabel.frame = CGRectMake(65, 70, MY_ScreenWidth-15-65, height);
         self.projectLabel.frame = CGRectMake(65, self.detailLabel.bottom+10, 200, 20);
+        self.projectLabel.width = MY_Iphone4or5?150:200;
     }
     self.projectLabel.text = model.project;
     
@@ -146,7 +148,7 @@
     self.zanButton.imageEdgeInsets = UIEdgeInsetsMake(3, 0, 3, buttonWidth-14);
     self.zanButton.titleEdgeInsets = UIEdgeInsetsMake(0, 14, 0, 0);
     
-    __block typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     self.zanBlock = ^() {
         weakSelf.zanButton.selected = !weakSelf.zanButton.selected;
         NSString *zanCount = weakSelf.zanButton.titleLabel.text;
@@ -180,7 +182,7 @@
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_ExperienceModel *model = (MY_ExperienceModel*)object;
     
-    CGFloat detailHeight = [model.experience getHeightWithSpaceHeight:10 withFont:14 withStr:@"呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的呃设计的开发建设的的呃设计的开发建设的设的的呃设计的开发建设的" withWidth:MY_ScreenWidth-15-65];
+    CGFloat detailHeight = [model.experience getHeightWithSpaceHeight:10 withFont:14 withStr:model.experience withWidth:MY_ScreenWidth-15-65];
     if (detailHeight > 125) {
         
         if (!model.isOpen) {

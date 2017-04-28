@@ -14,6 +14,7 @@
 #import "MY_CourseListController.h"
 #import "MY_CourseSegmentController.h"
 #import "MY_CourseCustomedController.h"
+#import "MY_CourseIntroModel.h"
 @interface MY_CollegeController ()
 
 @end
@@ -24,25 +25,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    [self falseData];
+    
+    [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    MY_AccountModel *model = [MY_Util getAccountModel];
+    model.isConfirmed = YES;
+    [MY_Util saveAccount:model];
 }
 
 #pragma mark - 假数据
-- (void)falseData {
-//    NSArray *array = [NSArray arrayWithObjects:@"", nil];
-//    for (int i = 0; i < 5; i++) {
-//        [self.dataSource addObject:array];
-//    }
-//    [self.tableView reloadData];
-}
-
-#pragma mark - tableview样式
-- (UITableViewStyle)getTableViewStyle {
-    return UITableViewStyleGrouped;
+- (void)loadData {
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    [model getDataWithURL:MY_API_COURSEINTRO paramter:nil success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSDictionary *imageDic in dic[@"college"]) {
+            MY_CourseIntroModel *model = [[MY_CourseIntroModel alloc] initWithDictionary:imageDic];
+            [array addObject:model];
+        }
+        [self.dataSource addObject:array];
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - UI
@@ -50,7 +55,7 @@
     UIView *statusView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_STATUS_HEIGHT)];
     statusView.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     [self.view addSubview:statusView];
-    self.scrollView.contentInset = UIEdgeInsetsMake(MY_STATUS_HEIGHT, 0, 50, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(MY_STATUS_HEIGHT, 0, 50, 0);
     
     MY_CollegeHeaderView *tableHeaderView = [[MY_CollegeHeaderView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 90)];
     tableHeaderView.headerButtonBlock = ^(NSInteger index) {
@@ -75,9 +80,8 @@
         vc.types = types;
         [self.navigationController pushViewController:vc animated:YES];
     };
-    [self.scrollView addSubview:tableHeaderView];
-//    self.tableView.tableHeaderView = tableHeaderView;
-    self.scrollView.height -= 50;
+    self.tableView.tableHeaderView = tableHeaderView;
+    self.tableView.height -= 50;
     
     UIButton *phoneButton = [UIButton buttonWithType:UIButtonTypeCustom];
     phoneButton.backgroundColor = [UIColor whiteColor];
@@ -101,28 +105,13 @@
     line.backgroundColor = [MY_Util setColorWithInt:0xdddddd];
     [self.view addSubview:line];
     
-    UIImage *image = [UIImage imageNamed:@"bg_zbfx"];
-    CGFloat imgHeight = MY_ScreenWidth*image.size.height/image.size.width;
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, tableHeaderView.bottom, MY_ScreenWidth, imgHeight)];
-    view.image = image;
-    [self.scrollView addSubview:view];
-    
-    self.scrollView.contentSize = CGSizeMake(MY_ScreenWidth, view.bottom);
 }
 
-//#pragma mark - tableview delegate
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
-//    header.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
-//    return header;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section { return 0.1; }
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section { return 10; }
-//
-//- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
-//    return [MY_CourseIntroCell class];
-//}
+#pragma mark - tableview delegate
+
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
+    return [MY_CourseIntroCell class];
+}
 
 #pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {

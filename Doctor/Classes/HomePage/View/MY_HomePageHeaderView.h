@@ -13,4 +13,5 @@ typedef void(^SectionBlock)(NSInteger index);
 @property (nonatomic, copy) SectionBlock sectionBlock;
 @property (nonatomic, copy) ButtonBlock buttonBlock;
 @property (nonatomic, strong) NSArray *imageArray;
+- (void)loadButtonStatus;
 @end

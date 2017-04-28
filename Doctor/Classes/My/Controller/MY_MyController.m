@@ -32,6 +32,7 @@
     [self initData];
     
     [self addHeaderRefresh:YES footerRefresh:NO];
+    
     [self loadData];
 }
 
@@ -53,6 +54,8 @@
 - (void)loadData {
     MY_AccountModel *accountModel = [MY_Util getAccountModel];
     ((MY_MyHeaderView*)self.tableView.tableHeaderView).object = accountModel;
+    [self hideLoadingAndMJ];
+    
 }
 
 #pragma mark - 刷新
@@ -91,6 +94,7 @@
 #pragma mark - tableview delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5;
+    
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -137,7 +141,7 @@
     UIImage *thumbURL = [UIImage imageNamed:@"icon"];
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
     //设置网页地址
-    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/sago-mini-故事城/id1192489542?mt=8";
+    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/id1208855490";
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;

@@ -29,6 +29,8 @@
 // 是否为5或5s
 #define MY_Iphone5 ([UIScreen mainScreen].bounds.size.height == 568)
 
+#define MY_Iphone4or5 ([UIScreen mainScreen].bounds.size.width == 320)
+
 // 统一背景色
 #define MY_GlobalBg MY_Color(240, 240, 240)
 

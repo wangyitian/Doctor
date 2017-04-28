@@ -344,6 +344,7 @@
 		95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741B1E569A970027EED8 /* MY_AboutUSController.m */; };
 		95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */; };
 		95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EC74211E56A46D0027EED8 /* MY_HomePageController.m */; };
+		95F2E0F61EB043A4002AFFC2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95F2E0F81EB043A4002AFFC2 /* InfoPlist.strings */; };
 		95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F8000D1E554E0F00C0F23B /* MY_NavBar.m */; };
 		95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800101E556BE400C0F23B /* MY_LoginController.m */; };
 		95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95F800141E55815D00C0F23B /* MY_AccountModel.m */; };
@@ -1026,6 +1027,8 @@
 		95EC741E1E56A3F70027EED8 /* MY_RecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MY_RecommendController.m; path = ../../College/Controller/MY_RecommendController.m; sourceTree = "<group>"; };
 		95EC74201E56A46D0027EED8 /* MY_HomePageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HomePageController.h; sourceTree = "<group>"; };
 		95EC74211E56A46D0027EED8 /* MY_HomePageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HomePageController.m; sourceTree = "<group>"; };
+		95F2E0F71EB043A4002AFFC2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95F2E0F91EB043CF002AFFC2 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		95F8000C1E554E0F00C0F23B /* MY_NavBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_NavBar.h; sourceTree = "<group>"; };
 		95F8000D1E554E0F00C0F23B /* MY_NavBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_NavBar.m; sourceTree = "<group>"; };
 		95F8000F1E556BE400C0F23B /* MY_LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LoginController.h; sourceTree = "<group>"; };
@@ -1128,6 +1131,7 @@
 		950142C31E4C7D1300987828 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				95F2E0F81EB043A4002AFFC2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2419,6 +2423,7 @@
 				950142F31E4C7F3A00987828 /* LaunchScreen.storyboard in Resources */,
 				95C2061D1E7631430023DCC7 /* UShare常见问题.html in Resources */,
 				95C2061F1E7631430023DCC7 /* UShare进阶.html in Resources */,
+				95F2E0F61EB043A4002AFFC2 /* InfoPlist.strings in Resources */,
 				95C2062F1E7631430023DCC7 /* UMSocialSDKResources.bundle in Resources */,
 				950142ED1E4C7F1100987828 /* Info.plist in Resources */,
 				95C206231E7631430023DCC7 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -2808,6 +2813,15 @@
 				950142F01E4C7F3A00987828 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		95F2E0F81EB043A4002AFFC2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F2E0F71EB043A4002AFFC2 /* en */,
+				95F2E0F91EB043CF002AFFC2 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

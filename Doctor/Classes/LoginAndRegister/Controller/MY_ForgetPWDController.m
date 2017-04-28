@@ -23,7 +23,7 @@
     [self setTitle:@"忘记密码" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     MY_ChangePWDView *registerView = [[MY_ChangePWDView alloc] initWithFrame:self.view.bounds];
-    __block typeof(registerView) weakRegisterView = registerView;
+    __weak typeof(registerView) weakRegisterView = registerView;
     registerView.validateBlock = ^(NSString *account){
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;

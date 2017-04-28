@@ -25,7 +25,7 @@
     self.scrollView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     
     MY_ChangePhoneView *changePhoneView = [[MY_ChangePhoneView alloc] initWithFrame:self.view.bounds];
-    __block typeof(changePhoneView) weakPhoneView = changePhoneView;
+    __weak typeof(changePhoneView) weakPhoneView = changePhoneView;
     changePhoneView.validateBlcok = ^(NSString *phone) {
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
         model.delegate = self;

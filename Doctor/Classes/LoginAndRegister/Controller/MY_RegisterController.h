@@ -10,4 +10,10 @@
 
 @interface MY_RegisterController : MY_BaseScrollController
 @property (nonatomic, assign) BOOL isWechat;
+@property (nonatomic, strong) NSString *wechatUid;
+@property (nonatomic, strong) NSString *wechatOpenid;
+@property (nonatomic, strong) NSString *wechatName;
+@property (nonatomic, strong) NSString *wechatIconUrl;
+@property (nonatomic, strong) NSString *wechatAccessToken;
+@property (nonatomic, strong) NSString *wechatRefreshToken;
 @end

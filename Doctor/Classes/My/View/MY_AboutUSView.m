@@ -26,7 +26,7 @@
     
     UILabel *versonLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, logoView.bottom+15, 200, 13)];
     versonLabel.centerX = logoView.centerX;
-    versonLabel.text = @"美域医生v1.0";
+    versonLabel.text = @"美域医疗v1.0";
     versonLabel.textColor = [MY_Util setColorWithInt:0x666666];
     versonLabel.font = MY_Font(13);
     versonLabel.textAlignment = NSTextAlignmentCenter;

@@ -120,8 +120,11 @@
         vc.changeType = Change_Hospital;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 6) {
-        MY_RealNameController *vc = [[MY_RealNameController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        MY_AccountModel *accountModel = [MY_Util getAccountModel];
+        if (!accountModel.isConfirmed) {
+            MY_RealNameController *vc = [[MY_RealNameController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

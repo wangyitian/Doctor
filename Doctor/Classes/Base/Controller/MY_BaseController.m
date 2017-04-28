@@ -46,7 +46,7 @@
 }
 
 - (void)requestFailedWithModel:(MY_RequestModel *)requestModel task:(NSURLSessionDataTask *)task error:(NSError *)error {
-    __block typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     if (!self.alertVC) {
         self.alertVC = [UIAlertController alertControllerWithTitle:nil message:@"请求失败" preferredStyle:UIAlertControllerStyleAlert];
         [self.alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -66,7 +66,7 @@
 }
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
-    __block typeof(self) weakSelf = self;
+    __weak typeof(self) weakSelf = self;
     if (!self.alertVC) {
         self.alertVC = [UIAlertController alertControllerWithTitle:nil message:responseDic[@"message"] preferredStyle:UIAlertControllerStyleAlert];
         [self.alertVC addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
