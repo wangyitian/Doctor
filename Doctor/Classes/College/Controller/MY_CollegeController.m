@@ -15,6 +15,7 @@
 #import "MY_CourseSegmentController.h"
 #import "MY_CourseCustomedController.h"
 #import "MY_CourseIntroModel.h"
+#import "MY_BaseWebController.h"
 @interface MY_CollegeController ()
 
 @end
@@ -27,13 +28,17 @@
     [self setupUI];
     
     [self loadData];
+    
+    [self addHeaderRefresh:YES footerRefresh:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    MY_AccountModel *model = [MY_Util getAccountModel];
-    model.isConfirmed = YES;
-    [MY_Util saveAccount:model];
+   
+}
+
+- (void)headerRereshing {
+    [self loadData];
 }
 
 #pragma mark - 假数据
@@ -45,6 +50,7 @@
             MY_CourseIntroModel *model = [[MY_CourseIntroModel alloc] initWithDictionary:imageDic];
             [array addObject:model];
         }
+        [self.dataSource removeAllObjects];
         [self.dataSource addObject:array];
         [self.tableView reloadData];
     }];
@@ -72,6 +78,7 @@
         }
         for (NSString *type in types) {
             MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+            rdVC.index = index;
             rdVC.listType = type;
             [vcArray addObject:rdVC];
         }
@@ -113,9 +120,20 @@
     return [MY_CourseIntroCell class];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MY_CourseIntroModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
+    
+    if (model.url.length) {
+        MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+        webVC.url = model.url;
+        [self.navigationController pushViewController:webVC animated:YES];
+    }
+    
+}
+
 #pragma mark - 电话按钮点击事件
 - (void)phoneButtonAction {
-    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://18514616528"];
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://4008823548"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 

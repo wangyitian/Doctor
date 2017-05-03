@@ -14,6 +14,7 @@
 #import "SDImageCache.h"
 #import "MY_TabController.h"
 #import "MY_LoginController.h"
+#import "MY_NavigationController.h"
 @interface MY_SettingController ()
 
 @end
@@ -90,7 +91,7 @@
         });
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18514616528"];
+            NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"4008823548"];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
         } else if (indexPath.row == 1) {
             MY_ChangePWDController *vc = [[MY_ChangePWDController alloc] init];
@@ -110,7 +111,7 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [MY_Util removeAccount];
         MY_LoginController *loginVC = [[MY_LoginController alloc] init];
-        [[UIApplication sharedApplication].delegate window].rootViewController = loginVC;
+        [[UIApplication sharedApplication].delegate window].rootViewController = [[UINavigationController alloc] initWithRootViewController:loginVC];
     }]];
     [self presentViewController:alert animated:YES completion:nil];
 }

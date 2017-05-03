@@ -9,5 +9,6 @@
 #import "MY_BaseTableController.h"
 
 @interface MY_CourseListController : MY_BaseTableController
+@property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSString *listType;
 @end

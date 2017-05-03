@@ -12,4 +12,6 @@
 @property (nonatomic, strong) NSString *introId;
 @property (nonatomic, strong) NSString *adurl;
 @property (nonatomic, strong) NSString *url;
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat height;
 @end

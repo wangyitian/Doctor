@@ -19,7 +19,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor purpleColor];
         [self setupUI];
     }
     return self;

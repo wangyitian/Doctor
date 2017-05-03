@@ -45,7 +45,7 @@
 }
 
 - (void)phoneButtonAction {
-    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"18514616528"];
+    NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"4008823548"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];
 }
 

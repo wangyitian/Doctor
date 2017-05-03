@@ -98,15 +98,22 @@
         NSString *encodedImageStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         
         
-//        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
-//        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
-//        [paramter setObject:encodedImageStr forKey:@"head"];
-//        [paramter setObject:[MY_Util getUid] forKey:@"uid"];
-//        [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-//            
-//        }];
-        ((MY_RealNameModel*)[[self.dataSource objectAtIndex:0] objectAtIndex:self.indexPath.row]).image = encodedImageStr;
-        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+        NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+        [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+        if (self.indexPath.row == 0) {
+            [paramter setObject:encodedImageStr forKey:@"card"];
+        } else if (self.indexPath.row == 1) {
+            [paramter setObject:encodedImageStr forKey:@"certificate"];
+        } else if (self.indexPath.row == 2) {
+            [paramter setObject:encodedImageStr forKey:@"title"];
+        }
+        [model postDataWithURL:MY_API_REALNAME paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
+                ((MY_RealNameModel*)[[self.dataSource objectAtIndex:0] objectAtIndex:self.indexPath.row]).image = encodedImageStr;
+                [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            } completion:nil];
+        }];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -131,8 +138,8 @@
         success = [fileManager removeItemAtPath:imageFilePath error:&error];
     }
     //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
-    UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
-    [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
+//    UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
+    [UIImageJPEGRepresentation(image, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
     UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
     //    [userPhotoButton setImage:selfPhoto forState:UIControlStateNormal];
     //    self.img.image = selfPhoto;

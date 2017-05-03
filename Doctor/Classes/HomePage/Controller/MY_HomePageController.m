@@ -93,6 +93,7 @@
         }
         for (NSString *type in types) {
             MY_CourseListController *rdVC = [[MY_CourseListController alloc] init];
+            rdVC.index = index;
             rdVC.listType = type;
             [vcArray addObject:rdVC];
         }

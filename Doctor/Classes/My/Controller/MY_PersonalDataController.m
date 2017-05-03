@@ -143,10 +143,10 @@
         [paramter setObject:encodedImageStr forKey:@"head"];
         [paramter setObject:[MY_Util getUid] forKey:@"uid"];
         [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
-            
+            [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            } completion:nil];
         }];
-        
-//        [self performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

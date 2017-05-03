@@ -42,7 +42,7 @@
     self.titleLabel.textColor = [MY_Util setColorWithInt:0x333333];
     [self.contentView addSubview:self.titleLabel];
     
-    self.roomTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-15-150, self.titleLabel.top, 150, 15)];
+    self.roomTypeLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-15-60, self.titleLabel.top, 60, 15)];
     self.roomTypeLabel.font = MY_Font(14);
     self.roomTypeLabel.textColor = [MY_Util setColorWithInt:0x68d6a7];
     self.roomTypeLabel.textAlignment = NSTextAlignmentRight;
@@ -84,8 +84,17 @@
     [self.courseImageView sd_setImageWithURL:[NSURL URLWithString:model.file] placeholderImage:[UIImage imageNamed:@"default"]];
     
     self.titleLabel.text = model.name;
-    self.titleLabel.frame = CGRectMake(15, self.courseImageView.bottom+18, [model.name sizeWithFont:MY_Font(15)].width, 15);
-    self.roomTypeLabel.text = model.type;
+    self.titleLabel.frame = CGRectMake(15, self.courseImageView.bottom+18, self.roomTypeLabel.left-15-10, 15);
+    
+    if (model.type.integerValue == 1) {
+        self.roomTypeLabel.text = @"管理培训";
+    } else if (model.type.integerValue == 2) {
+        self.roomTypeLabel.text = @"临床培训";
+    } else if (model.type.integerValue == 3) {
+        self.roomTypeLabel.text = @"专题培训";
+    } else if (model.type.integerValue == 4) {
+        self.roomTypeLabel.text = @"科研培训";
+    }
    
     self.introLabel.text = model.x_introduce;
     CGFloat height = [self.introLabel getLabelHeightWithSpaceHeight:10 withFont:13 withStr:model.x_introduce withTextColor:[MY_Util setColorWithInt:0x666666] withLabelWidth:MY_ScreenWidth-30];

@@ -33,10 +33,9 @@
         item.title = self.types[i];
         item.index = i;
         [dataArray addObject:item];
-        item.typeArray = [NSArray arrayWithObjects:@"dsf",@"dsf",@"dsf", nil];
+//        item.typeArray = [NSArray arrayWithObjects:@"dsf",@"dsf",@"dsf", nil];
     }
     self.sgView=[[MY_TitleSegmentView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, 45) dataArray:dataArray delegate:self];
-    self.segmentContentView.scrollView.backgroundColor = [UIColor purpleColor];
     [self.segmentView addSubview:self.sgView];
     
     [_sgView selectWithIndex:_currtentIndex];

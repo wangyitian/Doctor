@@ -7,7 +7,8 @@
 //
 
 #import "MY_CourseListController.h"
-
+#import "MY_CourseCell.h"
+#import "MY_CourseModel.h"
 @interface MY_CourseListController ()
 
 @end
@@ -16,8 +17,7 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
-    [self addHeaderRefresh:YES footerRefresh:YES];
+    [self addHeaderRefresh:YES footerRefresh:NO];
     [self setupUI];
     [self loadMore:NO];
 }
@@ -29,6 +29,30 @@
 #pragma mark - 网络请求
 - (void)loadMore:(BOOL)loadMore {
     MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [paramter setObject:[NSString stringWithFormat:@"%ld",(long)self.index] forKey:@"type"];
+    if ([self.listType isEqualToString:@"美国"]) {
+        [paramter setObject:@"1" forKey:@"region"];
+    } else if ([self.listType isEqualToString:@"台湾"]) {
+        [paramter setObject:@"2" forKey:@"region"];
+    } else if ([self.listType isEqualToString:@"新加坡"]) {
+        [paramter setObject:@"3" forKey:@"region"];
+    }
+    [model getDataWithURL:MY_API_COURSELIST paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        NSMutableArray *courses = [NSMutableArray array];
+        NSArray *responseArray = [dic arrayWithKey:@"kecheng"];
+        for (NSDictionary *courseDic in responseArray) {
+            MY_CourseModel *model = [[MY_CourseModel alloc] initWithDictionary:courseDic];
+            [courses addObject:model];
+        }
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObject:courses];
+        [self.tableView reloadData];
+    }];
+}
+
+- (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
+    return [MY_CourseCell class];
 }
 
 #pragma mark - 上拉加载下拉刷新触发方法
@@ -36,11 +60,8 @@
     [self loadMore:NO];
 }
 
-- (void)footerRereshing {
-    [self loadMore:YES];
-}
-
 #pragma mark - UI
 - (void)setupUI {
+    self.tableView.height -= (MY_APP_STATUS_NAVBAR_HEIGHT+45);
 }
 @end

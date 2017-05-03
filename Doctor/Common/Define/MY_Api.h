@@ -21,6 +21,7 @@
 #define MY_API_CHANGE_PHONE             @"meiyu_modify_phone"           //修改手机号
 #define MY_API_FEEDBACK                 @"meiyu_feedback"               //意见反馈
 #define MY_API_CHANGE_PERSONAL_DATA     @"meiyu_Personal_information"   //修改个人信息
+#define MY_API_REALNAME                 @"meiyu_Authentication"         //实名认证
 //功能接口
 #define MY_API_HOMEPAGE                 @"meiyu_home_page"              //首页
 #define MY_API_ZAN                      @"meiyu_Give"                   //赞

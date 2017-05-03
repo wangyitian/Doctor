@@ -21,6 +21,10 @@
 }
 
 - (void)setupUI {
+    UIView *space = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 10)];
+    space.backgroundColor = [MY_Util setColorWithInt:0xf4f4f4];
+    [self.contentView addSubview:space];
+    
     self.imgView = [[UIImageView alloc] init];
     [self.contentView addSubview:self.imgView];
     
@@ -29,20 +33,12 @@
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     MY_CourseIntroModel *model = (MY_CourseIntroModel*)object;
     
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.adurl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        self.imgView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
-    }];
-    
-    self.imgView.backgroundColor = [UIColor redColor];
+    self.imgView.frame = CGRectMake(0, 10, MY_ScreenWidth, MY_ScreenWidth*model.height/model.width);
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.adurl] placeholderImage:nil];
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_CourseIntroModel *model = (MY_CourseIntroModel*)object;
-    UIImageView *images = [[UIImageView alloc] init];
-    [images sd_setImageWithURL:[NSURL URLWithString:model.adurl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//        return image.size.height + 10;
-        
-    }];
-    return images.image.size.height + 10;
+    return MY_ScreenWidth*model.height/model.width + 10;
 }
 @end
