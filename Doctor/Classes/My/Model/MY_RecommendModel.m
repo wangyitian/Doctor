@@ -9,5 +9,7 @@
 #import "MY_RecommendModel.h"
 
 @implementation MY_RecommendModel
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"patientId" : @"id"};
+}
 @end

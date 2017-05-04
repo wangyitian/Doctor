@@ -67,7 +67,7 @@
     MY_AccountModel *account = [MY_Util getAccountModel];
     self.valueLabel.textColor = [MY_Util setColorWithInt:0x999999];
     self.valueLabel.backgroundColor = [UIColor clearColor];
-    self.valueLabel.textAlignment = NSTextAlignmentCenter;
+    self.valueLabel.textAlignment = NSTextAlignmentRight;
     if (indexpath.row == 1) {
         self.valueLabel.text = account.nickname;
     } else if (indexpath.row == 2) {

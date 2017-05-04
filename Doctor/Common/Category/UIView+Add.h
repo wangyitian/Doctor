@@ -17,13 +17,13 @@
  Create a snapshot image of the complete view hierarchy.
  This method should be called in main thread.
  */
-- (UIImage *)snapshotImage;
+- (UIImage *_Nullable)snapshotImage;
 
 /**
  Create a snapshot PDF of the complete view hierarchy.
  This method should be called in main thread.
  */
-- (NSData *)snapshotPDF;
+- (NSData *_Nullable)snapshotPDF;
 
 /**
  Shortcut to set the view.layer's shadow
@@ -32,13 +32,13 @@
  @param offset Shadow offset
  @param radius Shadow radius
  */
-- (void)setLayerShadow:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
+- (void)setLayerShadow:(UIColor*_Nullable)color offset:(CGSize)offset radius:(CGFloat)radius;
 /**
  *  设置阴影 郭liyuan+
  */
 - (void) makeInsetShadow;
 - (void) makeInsetShadowWithRadius:(float)radius Alpha:(float)alpha;
-- (void) makeInsetShadowWithRadius:(float)radius Color:(UIColor *)color Directions:(NSArray *)directions;
+- (void) makeInsetShadowWithRadius:(float)radius Color:(UIColor *_Nullable)color Directions:(NSArray *_Nullable)directions;
 
 /**
  Remove all subviews.
@@ -50,7 +50,7 @@
 /**
  Returns the view's view controller (may be nil).
  */
-@property (nonatomic, readonly) UIViewController *viewController;
+@property (nonatomic, readonly) UIViewController * _Nullable viewController;
 
 @property (nonatomic) CGFloat left;    ///< Shortcut for frame.origin.x.
 @property (nonatomic) CGFloat top;     ///< Shortcut for frame.origin.y
@@ -78,7 +78,7 @@
  If view is nil, this method instead converts to window base coordinates.
  @return The point converted to the coordinate system of view.
  */
-- (CGPoint)convertPoint:(CGPoint)point toViewOrWindow:(UIView *)view;
+- (CGPoint)convertPoint:(CGPoint)point toViewOrWindow:(UIView *_Nullable)view;
 
 /**
  Converts a point from the coordinate system of a given view or window to that of the receiver.
@@ -88,7 +88,7 @@
  If view is nil, this method instead converts from window base coordinates.
  @return The point converted to the local coordinate system (bounds) of the receiver.
  */
-- (CGPoint)convertPoint:(CGPoint)point fromViewOrWindow:(UIView *)view;
+- (CGPoint)convertPoint:(CGPoint)point fromViewOrWindow:(UIView *_Nullable)view;
 
 /**
  Converts a rectangle from the receiver's coordinate system to that of another view or window.
@@ -97,7 +97,7 @@
  @param view The view or window that is the target of the conversion operation. If view is nil, this method instead converts to window base coordinates.
  @return The converted rectangle.
  */
-- (CGRect)convertRect:(CGRect)rect toViewOrWindow:(UIView *)view;
+- (CGRect)convertRect:(CGRect)rect toViewOrWindow:(UIView *_Nullable)view;
 
 /**
  Converts a rectangle from the coordinate system of another view or window to that of the receiver.
@@ -107,7 +107,7 @@
  If view is nil, this method instead converts from window base coordinates.
  @return The converted rectangle.
  */
-- (CGRect)convertRect:(CGRect)rect fromViewOrWindow:(UIView *)view;
+- (CGRect)convertRect:(CGRect)rect fromViewOrWindow:(UIView *_Nullable)view;
 
 /**
  *  返回响应者链上的任意Objc
@@ -116,8 +116,7 @@
  *
  *  @return viewController Or needCls
  */
-- (nonnull id)viewControllerWithNeedViewOrViewController:(nullable Class)viewControllerCls
-;
+- (nonnull id)viewControllerWithNeedViewOrViewController:(nullable Class)viewControllerCls;
 
 
 /// 移除所有子视图中 tableview、scrollview 的 delegate、datasource
@@ -128,6 +127,6 @@
 - (void)removeAllGesturesWithSubViews;
 
 /// 在 block 内禁用动画
-+ (void)disableAnimationWithBlock:(void (^)(void))block;
++ (void)disableAnimationWithBlock:(void (^_Nullable)(void))block;
 @end
 

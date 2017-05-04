@@ -7,7 +7,6 @@
 //
 
 #import "MY_MessageController.h"
-#import "MY_LoginController.h"
 #import "MY_MessageCell.h"
 #import "MY_MessageModel.h"
 @interface MY_MessageController ()
@@ -20,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    [self addHeaderRefresh:YES footerRefresh:YES];
+    [self addHeaderRefresh:YES footerRefresh:NO];
     [self loadMore:NO];
 }
 - (void)viewWillAppear:(BOOL)animated {
@@ -29,23 +28,23 @@
 
 #pragma mark - 网络请求
 - (void)loadMore:(BOOL)loadMore {
-    MY_MessageModel *model = [[MY_MessageModel alloc] init];
-    model.time = @"2017-01-01";
-    model.message = @"别靠近阿富汗客户的反馈就啊好多款精华反馈就啊是大喊大叫开始恢复叫卡收到后即可shark啊收到后即可哈速度加快";
-    
-    MY_MessageModel *model1 = [[MY_MessageModel alloc] init];
-    model1.time = @"2017-01-01";
-    model1.message = @"别喊大叫开始恢复叫卡收到后即可shark啊收到后即可哈速度加快";
-    
-    MY_MessageModel *model2 = [[MY_MessageModel alloc] init];
-    model2.time = @"2017-01-01";
-    model2.message = @"iiiiiiiiiiiiiiiiiiiiiiiiiii客户的反馈就啊好多款精华反馈就啊是大喊大叫开始恢复叫卡收到后即可shark啊收到后即可iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii";
-    NSMutableArray *array = [NSMutableArray array];
-    [array addObject:model];
-    [array addObject:model1];
-    [array addObject:model2];
-    [self.dataSource addObject:array];
-//    [self.tableView reloadData];
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+    [model getDataWithURL:MY_API_MESSAGELIST paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        NSMutableArray *messages = [NSMutableArray array];
+        for (NSDictionary *messageDic in dic[@"huanzhe"]) {
+            MY_MessageModel *model = [[MY_MessageModel alloc] initWithDictionary:messageDic];
+            [messages addObject:model];
+        }
+        for (NSDictionary *messageDic in dic[@"tuijian"]) {
+            MY_MessageModel *model = [[MY_MessageModel alloc] initWithDictionary:messageDic];
+            [messages addObject:model];
+        }
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObject:messages];
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - 下拉刷新上拉加载更多触发方法
@@ -65,7 +64,7 @@
 #pragma mark - UI
 - (void)setupUI {
     [self setTitle:@"消息" isBackButton:NO rightBttonName:nil rightImageName:nil];
-    self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 49, 0);
     self.tableView.backgroundColor = [UIColor whiteColor];
 }
 @end

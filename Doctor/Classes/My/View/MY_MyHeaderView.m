@@ -71,7 +71,7 @@
     
     self.accountLabel.text = accountModel.nickname;
     
-    self.realNameButton.enabled = accountModel.isConfirmed;
+    self.realNameButton.enabled = !accountModel.isConfirmed;
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:accountModel.head] placeholderImage:[UIImage imageNamed:@"icon"]];
 }

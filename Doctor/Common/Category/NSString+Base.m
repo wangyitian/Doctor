@@ -22,7 +22,7 @@
     paraStyle.tailIndent = 0;
     
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:font], NSParagraphStyleAttributeName:paraStyle};
-    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
+//    NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
     CGSize size = [str boundingRectWithSize:CGSizeMake(width,MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
     return size.height;
 }

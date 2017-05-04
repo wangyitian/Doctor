@@ -9,5 +9,5 @@
 #import "MY_BaseTableController.h"
 
 @interface MY_PatientScheduleController : MY_BaseTableController
-
+@property (nonatomic, strong) NSString *patientId;
 @end

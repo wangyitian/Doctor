@@ -49,10 +49,10 @@
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     MY_MessageModel *model = (MY_MessageModel*)object;
     
-    self.timeLabel.text = model.time;
+    self.timeLabel.text = model.data;
     
-    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
-    self.messageLabel.text = model.message;
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
+    self.messageLabel.text = model.feedback;
     self.messageLabel.frame = CGRectMake(30, self.timeLabel.bottom+25, MY_ScreenWidth-30*2, size.height);
     
     self.lineView.frame = CGRectMake(self.messageLabel.left-10, self.messageLabel.top-10, self.messageLabel.width+20, self.messageLabel.height+20);
@@ -61,7 +61,7 @@
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_MessageModel *model = (MY_MessageModel*)object;
-    CGSize size = [model.message sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth - 30*2, MAXFLOAT)];
     return size.height+10*2+10+15+20+25;
 }
 

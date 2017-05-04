@@ -46,7 +46,7 @@
     } else {
         self.lineView.hidden = NO;
     }
-    self.nameLabel.text = model.name;
+    self.nameLabel.text = model.username;
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

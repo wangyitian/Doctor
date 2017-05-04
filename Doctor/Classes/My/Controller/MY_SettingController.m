@@ -13,7 +13,6 @@
 #import "MY_AboutUSController.h"
 #import "SDImageCache.h"
 #import "MY_TabController.h"
-#import "MY_LoginController.h"
 #import "MY_NavigationController.h"
 @interface MY_SettingController ()
 

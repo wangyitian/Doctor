@@ -101,7 +101,7 @@
     if (height > 93) {
         height = 93;
     }
-    
+    self.introLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     self.introLabel.frame = CGRectMake(15, self.buttonView.bottom + 10, MY_ScreenWidth - 15*2, height);
 }
 

@@ -8,7 +8,6 @@
 
 #import "MY_BaseController.h"
 #import "MY_RequestModel.h"
-#import "MY_LoginController.h"
 @interface MY_BaseController ()
 @property (nonatomic, strong) MBProgressHUD *loadingView;
 @property (nonatomic, strong) UIAlertController *alertVC;

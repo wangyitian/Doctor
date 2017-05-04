@@ -24,6 +24,9 @@
     [aCoder encodeObject:_department forKey:@"department"];
     [aCoder encodeObject:_hospital forKey:@"hospital"];
     [aCoder encodeBool:_isConfirmed forKey:@"isConfirmed"];
+    [aCoder encodeObject:_card forKey:@"card"];
+    [aCoder encodeObject:_certificate forKey:@"certificate"];
+    [aCoder encodeObject:_title forKey:@"title"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -37,6 +40,10 @@
         _department = [aDecoder decodeObjectForKey:@"department"];
         _hospital = [aDecoder decodeObjectForKey:@"hospital"];
         _isConfirmed = [aDecoder decodeBoolForKey:@"isConfirmed"];
+        _card = [aDecoder decodeObjectForKey:@"card"];
+        _certificate = [aDecoder decodeObjectForKey:@"certificate"];
+        _title = [aDecoder decodeObjectForKey:@"title"];
+        
     }
     
     return self;

@@ -10,12 +10,12 @@
 #import "MY_RequestModel.h"
 typedef void(^LoginSuccessedBlock)();
 @interface MY_BaseController : UIViewController <MY_RequestModelDelegate>
-@property (nonatomic, copy) LoginSuccessedBlock loginSuccessedBlock;
-@property (nonatomic, strong) UIImageView *navBar;
-@property (nonatomic, strong) UILabel *navLabel;
-@property (nonatomic, strong) NSMutableArray *requestArray;
-- (void)setTitle:(NSString*)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*)rightBttonName rightImageName:(NSString*)rightImageName;
+@property (nonatomic, copy) LoginSuccessedBlock _Nonnull loginSuccessedBlock;
+@property (nonatomic, strong) UIImageView * _Nullable navBar;
+@property (nonatomic, strong) UILabel * _Nullable navLabel;
+@property (nonatomic, strong) NSMutableArray * _Nullable requestArray;
+- (void)setTitle:(NSString*_Nullable)title isBackButton:(BOOL)isBackButton rightBttonName:(NSString*_Nullable)rightBttonName rightImageName:(NSString*_Nullable)rightImageName;
 - (void)showLoading;
 - (void)hideLoading;
-- (void)presentAlertWithMessage:(NSString*)message ConfirmAction:(void (^ __nullable)(UIAlertAction *action))confirmAction completion:(void(^ __nullable)(void))completion;
+- (void)presentAlertWithMessage:(NSString*_Nullable)message ConfirmAction:(void (^ __nullable)(UIAlertAction * _Nullable action))confirmAction completion:(void(^ __nullable)(void))completion;
 @end

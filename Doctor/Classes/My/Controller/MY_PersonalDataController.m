@@ -143,8 +143,11 @@
         [paramter setObject:encodedImageStr forKey:@"head"];
         [paramter setObject:[MY_Util getUid] forKey:@"uid"];
         [model postDataWithURL:MY_API_CHANGE_PERSONAL_DATA paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+            MY_AccountModel *model = [MY_Util getAccountModel];
+            model.head = dic[@"head"];
+            [MY_Util saveAccount:model];
             [self presentAlertWithMessage:dic[@"message"] ConfirmAction:^(UIAlertAction *action) {
-                [self.navigationController popViewControllerAnimated:YES];
+                [self.tableView reloadData];
             } completion:nil];
         }];
     }

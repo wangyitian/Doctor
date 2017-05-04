@@ -51,13 +51,13 @@
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     MY_PatientScheduleModel *model = (MY_PatientScheduleModel*)object;
-    self.circleImageView.image = model.status?[UIImage imageNamed:@"schedule_circle"]:[UIImage imageNamed:@"schedule_circle_empty"];
+    self.circleImageView.image = [UIImage imageNamed:@"schedule_circle"];
     
-    self.detailLabel.text = model.detail;
-    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
+    self.detailLabel.text = model.feedback;
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
     self.detailLabel.frame = CGRectMake(65, 0, MY_ScreenWidth-65-15, size.height);
     
-    self.timeLabel.text = model.time;
+    self.timeLabel.text = model.data;
     self.timeLabel.frame = CGRectMake(self.detailLabel.left, self.detailLabel.bottom+10, MY_ScreenWidth-65-15, 12);
     
     if (model.isFirst && model.isLast) {
@@ -103,7 +103,7 @@
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_PatientScheduleModel *model = (MY_PatientScheduleModel*)object;
-    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
     return 70 + (size.height - 15);
 }
 

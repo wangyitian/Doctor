@@ -10,12 +10,10 @@
 #import "MY_TabBar.h"
 #import "MY_NavigationController.h"
 #import "MY_BaseController.h"
-#import "MY_LoginController.h"
 #import "MY_HomePageController.h"
 #import "MY_CollegeController.h"
 #import "MY_MessageController.h"
 #import "MY_MyController.h"
-#import "MY_LiveController.h"
 @interface MY_TabController () <MY_TabBarDelegate>
 @property (nonatomic, weak) MY_TabBar *customTabBar;
 @end

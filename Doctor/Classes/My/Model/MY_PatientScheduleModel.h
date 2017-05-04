@@ -9,9 +9,8 @@
 #import "MY_BaseModel.h"
 
 @interface MY_PatientScheduleModel : MY_BaseModel
-@property (nonatomic, strong) NSString *detail;
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSString *feedback;
+@property (nonatomic, strong) NSString *data;
 @property (nonatomic, assign) BOOL  isFirst;
 @property (nonatomic, assign) BOOL  isLast;
 @end

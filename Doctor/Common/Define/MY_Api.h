@@ -28,7 +28,9 @@
 #define MY_API_COURSEINTRO              @"meiyu_school"                 //学院首页
 #define MY_API_COURSELIST               @"meiyu_school_kecheng"         //课程列表
 #define MY_API_PUBLISH                  @"meiyu_Experience"             //发布心得
-#define MY_API_MESSAGELIST              @""
+#define MY_API_MESSAGELIST              @"meiyu_recommend"              //消息列表
+#define MY_API_PATIENTLIST              @"meiyu_Recommended_patient"    //患者推荐列表
+#define MY_API_PATIENTPROGRESS          @"meiyu_Patient_progress"       //患者推荐进度
 //网页
 #define MY_WEB_COURSEDETAIL             @"http://api.meiyujiankang.com/admin.php/Index/curriculum/id/"
 #define MY_WEB_TRAINING                 @"http://api.meiyujiankang.com/admin.php/Index/news/id/"

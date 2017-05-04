@@ -21,29 +21,39 @@
     
     [self setupUI];
     
-    [self falseData];
+    [self loadData];
 }
 
 - (void)setupUI {
     [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
+    [self addHeaderRefresh:YES footerRefresh:NO];
     
 }
 
-- (void)falseData {
-    NSMutableArray *array = [NSMutableArray array];
-    
-    for (int i = 0; i < 5; i++) {
-        MY_RecommendModel *model = [[MY_RecommendModel alloc] init];
-        if (i == 0) {
-            model.isFirst = YES;
+- (void)headerRereshing {
+    [self loadData];
+}
+
+- (void)loadData {
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+    [model getDataWithURL:MY_API_PATIENTLIST paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        NSMutableArray *patients = [NSMutableArray array];
+        NSInteger index = 0;
+        for (NSDictionary *patientDic in dic[@"patient"]) {
+            MY_RecommendModel *model  = [[MY_RecommendModel alloc] initWithDictionary:patientDic];
+            if (index == 0) {
+                model.isFirst = YES;
+            }
+            [patients addObject:model];
+            index++;
         }
-        model.name = [NSString stringWithFormat:@"坑爹%d",i];
-        [array addObject:model];
-    }
-    
-    [self.dataSource addObject:array];
-    [self.tableView reloadData];
+        [self.dataSource removeAllObjects];
+        [self.dataSource addObject:patients];
+        [self.tableView reloadData];
+    }];
 }
 
 - (Class)cellClassForObject:(id)object indexPath:(NSIndexPath *)indexPath {
@@ -54,6 +64,7 @@
     MY_RecommendModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
     
     MY_PatientScheduleController *vc = [[MY_PatientScheduleController alloc] init];
+    vc.patientId = model.patientId;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

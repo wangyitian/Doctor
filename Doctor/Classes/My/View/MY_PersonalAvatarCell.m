@@ -23,7 +23,6 @@
     self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 50, 50)];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 25;
-    self.avatarImageView.image = [UIImage imageNamed:@"icon"];
     [self.contentView addSubview:self.avatarImageView];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-36-200, 0, 200, 15)];
@@ -45,7 +44,8 @@
 }
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
-    
+    MY_AccountModel *account = [MY_Util getAccountModel];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:account.head] placeholderImage:[UIImage imageNamed:@"icon"]];
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

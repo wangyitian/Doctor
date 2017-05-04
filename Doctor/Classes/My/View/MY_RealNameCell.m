@@ -8,6 +8,7 @@
 
 #import "MY_RealNameCell.h"
 #import "MY_RealNameModel.h"
+#import "UIButton+WebCache.h"
 @interface MY_RealNameCell ()
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *requiredLabel;
@@ -70,10 +71,15 @@
         [self.imageButton setImage:decodedImage forState:UIControlStateNormal];
         
     } else {
-        [self.imageButton setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];
+        MY_AccountModel *accountModel = [MY_Util getAccountModel];
+        if (indexpath.row == 0) {
+            [self.imageButton sd_setImageWithURL:[NSURL URLWithString:accountModel.card] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"add_photo"]];
+        } else if (indexpath.row == 1) {
+            [self.imageButton sd_setImageWithURL:[NSURL URLWithString:accountModel.certificate] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"add_photo"]];
+        } else if (indexpath.row == 2) {
+            [self.imageButton sd_setImageWithURL:[NSURL URLWithString:accountModel.title] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"add_photo"]];
+        }
     }
-    
-    
     
     [self.imageButton addTarget:self action:@selector(imageButtonAction) forControlEvents:UIControlEventTouchUpInside];
 }

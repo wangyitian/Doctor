@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MY_TabController.h"
 #import "MY_GuideController.h"
-#import "MY_LoginController.h"
 #import "MY_NavigationController.h"
 #import <UMSocialCore/UMSocialCore.h>
 @interface AppDelegate ()
@@ -62,11 +61,11 @@
 #pragma mark - 选择rootController
 - (void)chooseRootViewController {
     // 如何知道第一次使用这个版本？比较上次的使用情况
-    NSString *versionKey = @"CFBundleShortVersionString";
+//    NSString *versionKey = @"CFBundleShortVersionString";
     // 从沙盒中取出上次存储的软件版本号(取出用户上次的使用记录)
-    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
+//    NSString *lastVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKey];
     // 获得当前打开软件的版本号
-    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
+//    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
 //    if ([currentVersion isEqualToString:lastVersion]) {
 //        // 当前版本号 == 上次使用的版本：显示HMTabBarViewController

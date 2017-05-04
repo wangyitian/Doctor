@@ -9,6 +9,7 @@
 #import "MY_BaseModel.h"
 
 @interface MY_RecommendModel : MY_BaseModel
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *patientId;
+@property (nonatomic, strong) NSString *username;
 @property (nonatomic, assign) BOOL isFirst;
 @end
