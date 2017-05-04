@@ -42,6 +42,12 @@
         [paramters setObject:account forKey:@"phonen"];
         [paramters setObject:pwd forKey:@"password"];
         [paramters setObject:validate forKey:@"code"];
+        if (self.wechatUid.length) {
+            [paramters setObject:self.wechatUid forKey:@"weixin_uid"];
+            [paramters setObject:self.wechatOpenid forKey:@"weixin_openid"];
+            [paramters setObject:self.wechatName forKey:@"nickname"];
+            [paramters setObject:self.wechatIconUrl forKey:@"head"];
+        }
         [model postDataWithURL:MY_API_REGISTER paramter:paramters success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
             [self.view makeToast:@"注册成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
                 MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];

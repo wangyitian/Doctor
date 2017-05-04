@@ -192,11 +192,16 @@
     if ([[[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row] isKindOfClass:[MY_CourseModel class]]) {
         MY_CourseModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
         MY_CourseWebController *webVC = [[MY_CourseWebController alloc] init];
+        webVC.canShare = YES;
+        webVC.shareTitle = model.name;
+        webVC.shareContent = model.x_introduce;
+        webVC.shareUrl = [NSString stringWithFormat:@"%@%@",MY_WEB_COURSEDETAIL,model.courseId];
         webVC.url = [NSString stringWithFormat:@"%@%@",MY_WEB_COURSEDETAIL,model.courseId];
         [self.navigationController pushViewController:webVC animated:YES];
     } else if ([[[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row] isKindOfClass:[MY_TrainRecordModel class]]) {
         MY_TrainRecordModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
         MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+        webVC.canShare = YES;
         webVC.url = [NSString stringWithFormat:@"%@%@",MY_WEB_TRAINING,model.trainId];
         [self.navigationController pushViewController:webVC animated:YES];
     }

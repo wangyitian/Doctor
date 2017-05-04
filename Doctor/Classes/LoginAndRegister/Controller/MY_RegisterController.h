@@ -14,6 +14,4 @@
 @property (nonatomic, strong) NSString *wechatOpenid;
 @property (nonatomic, strong) NSString *wechatName;
 @property (nonatomic, strong) NSString *wechatIconUrl;
-@property (nonatomic, strong) NSString *wechatAccessToken;
-@property (nonatomic, strong) NSString *wechatRefreshToken;
 @end

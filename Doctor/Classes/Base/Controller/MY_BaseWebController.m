@@ -27,7 +27,11 @@
 
 #pragma mark - UI
 - (void)setupUI {
-    [self setTitle:@" " isBackButton:YES rightBttonName:@"分享" rightImageName:nil];
+    if (self.canShare) {
+        [self setTitle:@" " isBackButton:YES rightBttonName:@"分享" rightImageName:nil];
+    } else {
+        [self setTitle:@" " isBackButton:YES rightBttonName:nil rightImageName:nil];
+    }
     
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, MY_APP_STATUS_NAVBAR_HEIGHT, MY_ScreenWidth, MY_ScreenHeight - MY_APP_STATUS_NAVBAR_HEIGHT)];
     self.webView.delegate = self;
@@ -83,9 +87,9 @@
     
     //创建网页内容对象
     UIImage *thumbURL = [UIImage imageNamed:@"icon"];
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.shareTitle descr:self.shareContent thumImage:thumbURL];
     //设置网页地址
-    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/sago-mini-故事城/id1192489542?mt=8";
+    shareObject.webpageUrl = self.url;
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;

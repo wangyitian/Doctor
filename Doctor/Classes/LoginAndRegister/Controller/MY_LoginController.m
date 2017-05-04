@@ -81,14 +81,23 @@
             // 第三方平台SDK源数据
             NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
             
-            MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
-            [self.navigationController pushViewController:registerVC animated:NO];
-//            MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
-//            [MY_Util saveAccount:account];
-            MY_TabController *tabVC = [[MY_TabController alloc] init];
-            [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+            MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+            NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+            [paramter setObject:resp.uid forKey:@"weixin_uid"];
+            [model postDataWithURL:MY_API_LOGIN paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+                MY_AccountModel *model = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
+                [MY_Util saveAccount:model];
+                MY_TabController *tabVC = [[MY_TabController alloc] init];
+                [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+            }];
         }
     }];
+}
+
+- (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
+//    if ([requestModel.url isEqualToString:MY_API_LOGIN]) {
+//        <#statements#>
+//    }
 }
 
 

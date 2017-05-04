@@ -67,6 +67,7 @@
 
 - (void)postDataWithURL:(NSString*)url paramter:(NSDictionary*)paramter success:(Success)success {
     //loading
+    self.url = url;
     [((MY_BaseController*)self.delegate) showLoading];
     NSURLSessionDataTask *task = [self.manager POST:url parameters:paramter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSString *receiveStr = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
