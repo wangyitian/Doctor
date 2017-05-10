@@ -13,7 +13,8 @@
 #import "MY_LoginView.h"
 #import "MY_TabController.h"
 @interface MY_LoginController ()
-
+@property (nonatomic, assign) BOOL wechat;
+@property (nonatomic, weak) UMSocialUserInfoResponse *resp;
 @end
 
 @implementation MY_LoginController
@@ -43,7 +44,15 @@
                 MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
                 [MY_Util saveAccount:account];
                 MY_TabController *tabVC = [[MY_TabController alloc] init];
-                [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+//                [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+                [UIView transitionFromView:self.view.window.rootViewController.view
+                                    toView:tabVC.view
+                                  duration:1.0
+                                   options:UIViewAnimationOptionTransitionCurlUp
+                                completion:^(BOOL finished)
+                 {
+                     [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+                 }];
             }];
         }];
     };
@@ -54,7 +63,6 @@
     loginView.wechatButtonBlock = ^(){
         [self getAuthWithUserInfoFromWechat];
     };
-    
     [self.scrollView addSubview:loginView];
     self.scrollView.contentSize = CGSizeMake(loginView.width, loginView.height);
 }
@@ -81,6 +89,8 @@
             // 第三方平台SDK源数据
             NSLog(@"Wechat originalResponse: %@", resp.originalResponse);
             
+            self.wechat = YES;
+            self.resp = resp;
             MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
             NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
             [paramter setObject:resp.uid forKey:@"weixin_uid"];
@@ -95,10 +105,16 @@
 }
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
-//    if ([requestModel.url isEqualToString:MY_API_LOGIN]) {
-//        <#statements#>
-//    }
+    if ([requestModel.url isEqualToString:MY_API_LOGIN] && self.wechat) {
+        MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
+        registerVC.isWechat = YES;
+        registerVC.wechatUid = self.resp.uid;
+        registerVC.wechatOpenid = self.resp.openid;
+        registerVC.wechatName = self.resp.name;
+        registerVC.wechatIconUrl = self.resp.iconurl;
+        [self.navigationController pushViewController:registerVC animated:YES];
+    } else {
+        [super requestErrorWithModel:requestModel responseDic:responseDic];
+    }
 }
-
-
 @end

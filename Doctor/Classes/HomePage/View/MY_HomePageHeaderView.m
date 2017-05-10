@@ -30,9 +30,12 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
-    webVC.url = self.bannerUrlArray[index];
-    [[self findController].navigationController pushViewController:webVC animated:YES];
+    NSString *url = self.bannerUrlArray[index];
+    if (url.length) {
+        MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+        webVC.url = url;
+        [[self findController].navigationController pushViewController:webVC animated:YES];
+    }
 }
 
 - (void)setupUI {
@@ -89,7 +92,7 @@
             [self sectionButtonAction:button];
         }
         if (i == sections.count - 1) {
-            button.hidden = !((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed;
+            button.hidden = (((MY_AccountModel*)[MY_Util getAccountModel]).type.integerValue != 1);
         }
     }
     
@@ -97,7 +100,7 @@
 }
 
 - (void)loadButtonStatus {
-    if (((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed) {
+    if (((MY_AccountModel*)[MY_Util getAccountModel]).type.integerValue == 1) {
         for (UIButton *btn in self.sectionButtons) {
             btn.hidden = NO;
         }

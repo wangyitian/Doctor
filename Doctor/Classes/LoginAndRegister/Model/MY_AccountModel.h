@@ -17,8 +17,10 @@
 @property (nonatomic, strong) NSString *nickname;
 @property (nonatomic, strong) NSString *department;
 @property (nonatomic, strong) NSString *hospital;
-@property (nonatomic, assign) BOOL isConfirmed;
+@property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *card;
 @property (nonatomic, strong) NSString *certificate;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *weixin_uid;
+@property (nonatomic, strong) NSString *weixin_openid;
 @end

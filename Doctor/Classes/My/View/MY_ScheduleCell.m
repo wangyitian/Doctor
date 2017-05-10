@@ -55,15 +55,14 @@
 
 - (void)setObject:(id)object indexPath:(NSIndexPath *)indexpath {
     MY_ScheduleModel *model = (MY_ScheduleModel*)object;
-    self.circleImageView.image = model.status?[UIImage imageNamed:@"schedule_circle"]:[UIImage imageNamed:@"schedule_circle_empty"];
+    self.circleImageView.image =[UIImage imageNamed:@"schedule_circle"];
     
-    self.scheduleLabel.text = model.name;
-    self.detailLabel.text = model.detail;
-    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-140-15, MAXFLOAT)];
-    self.detailLabel.frame = CGRectMake(140, 0, MY_ScreenWidth-140-15, size.height);
+    self.detailLabel.text = model.feedback;
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
+    self.detailLabel.frame = CGRectMake(65, 0, MY_ScreenWidth-65-15, size.height);
     
-    self.timeLabel.text = model.time;
-    self.timeLabel.frame = CGRectMake(self.detailLabel.left, self.detailLabel.bottom+10, MY_ScreenWidth-140-15, 12);
+    self.timeLabel.text = model.data;
+    self.timeLabel.frame = CGRectMake(self.detailLabel.left, self.detailLabel.bottom+10, MY_ScreenWidth-65-15, 12);
     
     if (model.isFirst && model.isLast) {
         self.topLineView.hidden = YES;
@@ -109,7 +108,7 @@
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {
     MY_ScheduleModel *model = (MY_ScheduleModel*)object;
     
-    CGSize size = [model.detail sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-140-15, MAXFLOAT)];
+    CGSize size = [model.feedback sizeWithFont:MY_Font(14) andSize:CGSizeMake(MY_ScreenWidth-65-15, MAXFLOAT)];
     
     return 70 + (size.height - 15);
 }

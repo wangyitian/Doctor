@@ -38,7 +38,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadData];
+    [self refreshUI];
 }
 
 #pragma mark - tableview样式
@@ -53,10 +53,20 @@
 
 #pragma mark - 网络请求
 - (void)loadData {
-    MY_AccountModel *accountModel = [MY_Util getAccountModel];
-    ((MY_MyHeaderView*)self.tableView.tableHeaderView).object = accountModel;
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    [paramter setObject:[MY_Util getUid] forKey:@"uid"];
+    [model getDataWithURL:MY_API_REFRESH paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic];
+        [MY_Util saveAccount:account];
+        ((MY_MyHeaderView*)self.tableView.tableHeaderView).object = account;
+    }];
+}
+
+- (void)refreshUI {
+    MY_AccountModel *account = [MY_Util getAccountModel];
+    ((MY_MyHeaderView*)self.tableView.tableHeaderView).object = account;
     [self hideLoadingAndMJ];
-    
 }
 
 #pragma mark - 刷新
@@ -76,10 +86,6 @@
         MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
         [self.navigationController pushViewController:personalVC animated:YES];
     };
-//    tableHeaderView.scheduleBlock = ^() {
-//        MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
-//        [self.navigationController pushViewController:scheduleVC animated:YES];
-//    };
     MY_AccountModel *accountModel = [MY_Util getAccountModel];
     tableHeaderView.object = accountModel;
     self.tableView.tableHeaderView = tableHeaderView;
@@ -140,7 +146,7 @@
     
     //创建网页内容对象
     UIImage *thumbURL = [UIImage imageNamed:@"icon"];
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"测试" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"美域医疗" descr:@"～～～～～～～～～～～～～～～" thumImage:thumbURL];
     //设置网页地址
     shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/id1208855490";
     

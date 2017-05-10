@@ -41,6 +41,13 @@
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.height-50, MY_ScreenWidth, 0.5)];
     line.backgroundColor = [MY_Util setColorWithInt:0xdddddd];
     [self.view addSubview:line];
+    
+    
+    NSMutableArray *array1 = [NSMutableArray array];
+    NSMutableArray *array2 = [NSMutableArray array];
+    
+    [array1 addObject:array2];
+    [array2 addObject:array1];
 
 }
 

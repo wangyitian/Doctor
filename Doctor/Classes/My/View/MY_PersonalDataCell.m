@@ -81,7 +81,7 @@
     } else if (indexpath.row == 6) {
         self.valueLabel.textColor = [UIColor whiteColor];
         self.valueLabel.textAlignment = NSTextAlignmentCenter;
-        if (account.isConfirmed) {
+        if (account.type.integerValue == 1) {
             self.valueLabel.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
             self.valueLabel.text = @"认证医生";
         } else {

@@ -125,6 +125,7 @@
         }
         self.introLabel.frame = CGRectMake(15, self.buttonView.bottom + 10, MY_ScreenWidth - 15*2, height);
     }
+    self.introLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 }
 
 + (CGFloat)tableView:(UITableView *)tableView rowHeightForObject:(id)object {

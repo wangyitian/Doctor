@@ -48,7 +48,7 @@
     }
     
     MY_AccountModel *model = [MY_Util getAccountModel];
-    self.publishButton.hidden = !model.isConfirmed;
+    self.publishButton.hidden = (model.type.integerValue != 1);
 }
 
 #pragma mark - 网络请求
@@ -143,7 +143,7 @@
     [self.view addSubview:publishButton];
     self.publishButton = publishButton;
     
-    self.publishButton.hidden = !((MY_AccountModel*)[MY_Util getAccountModel]).isConfirmed;
+    self.publishButton.hidden = (((MY_AccountModel*)[MY_Util getAccountModel]).type.integerValue != 1);
 }
 
 #pragma mark - 右导航按钮点击事件
@@ -202,6 +202,8 @@
         MY_TrainRecordModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
         MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
         webVC.canShare = YES;
+        webVC.shareTitle = model.title;
+        webVC.shareContent = model.abst;
         webVC.url = [NSString stringWithFormat:@"%@%@",MY_WEB_TRAINING,model.trainId];
         [self.navigationController pushViewController:webVC animated:YES];
     }

@@ -22,7 +22,7 @@
     
     [self setupUI];
     
-    [self falseData];
+//    [self falseData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

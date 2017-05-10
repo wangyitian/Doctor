@@ -121,7 +121,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 6) {
         MY_AccountModel *accountModel = [MY_Util getAccountModel];
-        if (!accountModel.isConfirmed) {
+        if (accountModel.type.integerValue != 1) {
             MY_RealNameController *vc = [[MY_RealNameController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }

@@ -13,7 +13,6 @@
 @property (nonatomic, strong) UILabel *accountLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UIButton *personalDataButton;
-//@property (nonatomic, strong) UIView *scheduleView;
 @end
 
 @implementation MY_MyHeaderView
@@ -71,7 +70,7 @@
     
     self.accountLabel.text = accountModel.nickname;
     
-    self.realNameButton.enabled = !accountModel.isConfirmed;
+    self.realNameButton.enabled = (accountModel.type.integerValue != 1);
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:accountModel.head] placeholderImage:[UIImage imageNamed:@"icon"]];
 }
