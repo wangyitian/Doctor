@@ -66,11 +66,19 @@
     [projectView addGestureRecognizer:tap];
 }
 
+- (void)setExperienceArray:(NSArray *)experienceArray {
+    _experienceArray = experienceArray;
+}
+
 - (void)selectProject {
-    MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:@[@""] title:@"选择您所参加的培训项目"];
-    pickerView.confirmBlock = ^(NSString *value) {
-        self.projectLabel.text = value;
-    };
-    [[self findController].view addSubview:pickerView];
+    if (self.experienceArray.count) {
+        MY_PickerView *pickerView = [[MY_PickerView alloc] initWithDataSource:self.experienceArray title:@"选择您所参加的培训项目"];
+        pickerView.confirmBlock = ^(NSString *value) {
+            self.projectLabel.text = value;
+        };
+        [[self findController].view addSubview:pickerView];
+    } else {
+        [((MY_BaseController*)[self findController]) presentAlertWithMessage:@"您还没有参加过培训项目" ConfirmAction:nil completion:nil];
+    }
 }
 @end

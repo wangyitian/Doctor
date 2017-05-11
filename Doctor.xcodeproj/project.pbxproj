@@ -1541,6 +1541,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1623,6 +1624,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Doctor/other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -54,7 +54,6 @@
     self.titleLabel.text = model.title;
     
     NSString *detail = model.abst;
-//    NSString *detail = @"回家看到舒服哈尽快恢复健康后回家看到舒服哈尽快恢复健康后回家看到舒服哈尽快恢复健康后回家看到舒服";
     
     CGFloat height = [self.detailLabel getLabelHeightWithSpaceHeight:10 withFont:13 withStr:detail withTextColor:[MY_Util setColorWithInt:0x666666] withLabelWidth:MY_ScreenWidth-15*2];
     if (height >= 93) {

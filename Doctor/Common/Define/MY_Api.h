@@ -23,6 +23,7 @@
 #define MY_API_CHANGE_PERSONAL_DATA     @"meiyu_Personal_information"   //修改个人信息
 #define MY_API_REALNAME                 @"meiyu_Authentication"         //实名认证
 #define MY_API_REFRESH                  @"meiyu_Return_information"     //刷新用户信息
+#define MY_API_GET_EXPERIENCE           @"meiyu_Experience_type"        //获取项目
 //功能接口
 #define MY_API_HOMEPAGE                 @"meiyu_home_page"              //首页
 #define MY_API_ZAN                      @"meiyu_Give"                   //赞
@@ -32,6 +33,7 @@
 #define MY_API_MESSAGELIST              @"meiyu_recommend"              //消息列表
 #define MY_API_PATIENTLIST              @"meiyu_Recommended_patient"    //患者推荐列表
 #define MY_API_PATIENTPROGRESS          @"meiyu_Patient_progress"       //患者推荐进度
+
 //网页
 #define MY_WEB_COURSEDETAIL             @"http://api.meiyujiankang.com/admin.php/Index/curriculum/id/"
 #define MY_WEB_TRAINING                 @"http://api.meiyujiankang.com/admin.php/Index/news/id/"

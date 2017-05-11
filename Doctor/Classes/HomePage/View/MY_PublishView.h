@@ -11,4 +11,5 @@
 @interface MY_PublishView : MY_View
 @property (nonatomic, strong) UITextView *contentTextView;
 @property (nonatomic, strong) UILabel *projectLabel;
+@property (nonatomic, strong) NSArray *experienceArray;
 @end

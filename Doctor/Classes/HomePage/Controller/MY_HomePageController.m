@@ -71,7 +71,7 @@
 
 #pragma mark - 自定义导航栏
 - (void)initNavBar {
-    [self setTitle:@"美域医疗" isBackButton:NO rightBttonName:@"患者推荐" rightImageName:nil];
+    [self setTitle:@"美域医疗" isBackButton:NO rightBttonName:nil rightImageName:nil];
 }
 
 #pragma mark - UI
@@ -147,10 +147,6 @@
 }
 
 #pragma mark - 右导航按钮点击事件
-- (void)rightButtonAction {
-    MY_RecommendController *recommendVC = [[MY_RecommendController alloc] init];
-    [self.navigationController pushViewController:recommendVC animated:YES];
-}
 
 - (void)publishButtonAction {
     MY_PublishController *publishVC = [[MY_PublishController alloc] init];

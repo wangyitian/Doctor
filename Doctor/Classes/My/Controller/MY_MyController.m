@@ -82,10 +82,6 @@
         MY_RealNameController *realNameVC = [[MY_RealNameController alloc] init];
         [self.navigationController pushViewController:realNameVC animated:YES];
     };
-    tableHeaderView.personalDataBlock = ^(){
-        MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
-        [self.navigationController pushViewController:personalVC animated:YES];
-    };
     MY_AccountModel *accountModel = [MY_Util getAccountModel];
     tableHeaderView.object = accountModel;
     self.tableView.tableHeaderView = tableHeaderView;
@@ -93,7 +89,7 @@
 
 #pragma mark - 数据
 - (void)initData {
-    NSArray *dataArray = [NSArray arrayWithObjects:@"服务进度",@"患者推荐",@"意见反馈",@"关于我们",@"设置",@"邀请", nil];
+    NSArray *dataArray = [NSArray arrayWithObjects:@"服务进度",@"个人资料",@"患者推荐",@"意见反馈",@"关于我们",@"设置",@"邀请", nil];
     [self.dataSource addObject:dataArray];
     [self.tableView reloadData];
 }
@@ -121,18 +117,21 @@
         MY_ServiceScheduleController *scheduleVC = [[MY_ServiceScheduleController alloc] init];
         [self.navigationController pushViewController:scheduleVC animated:YES];
     } else if (indexPath.row == 1) {
+        MY_PersonalDataController *personalVC = [[MY_PersonalDataController alloc] init];
+        [self.navigationController pushViewController:personalVC animated:YES];
+    } else if (indexPath.row == 2) {
         MY_PatientListController *patientListVC = [[MY_PatientListController alloc] init];
         [self.navigationController pushViewController:patientListVC animated:YES];
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == 3) {
         MY_FeedbackController *feedbackVC = [[MY_FeedbackController alloc] init];
         [self.navigationController pushViewController:feedbackVC animated:YES];
-    } else if (indexPath.row == 3) {
+    } else if (indexPath.row == 4) {
         MY_AboutUSController *aboutVC = [[MY_AboutUSController alloc] init];
         [self.navigationController pushViewController:aboutVC animated:YES];
-    } else if (indexPath.row == 4) {
+    } else if (indexPath.row == 5) {
         MY_SettingController *settingVC = [[MY_SettingController alloc] init];
         [self.navigationController pushViewController:settingVC animated:YES];
-    } else if (indexPath.row == 5) {
+    } else if (indexPath.row == 6) {
         [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
             // 根据获取的platformType确定所选平台进行下一步操作
             [self shareWebPageToPlatformType:platformType];

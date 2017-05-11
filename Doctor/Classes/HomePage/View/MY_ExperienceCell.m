@@ -134,7 +134,14 @@
         self.projectLabel.frame = CGRectMake(65, self.detailLabel.bottom+10, 200, 20);
         self.projectLabel.width = MY_Iphone4or5?150:200;
     }
-    self.projectLabel.text = model.project;
+    
+    if (model.project.length) {
+        self.projectLabel.text = model.project;
+        self.projectLabel.hidden = NO;
+    } else {
+        self.projectLabel.hidden = YES;
+    }
+    
     
     CGFloat zanWidth = [model.dianzan sizeWithFont:MY_Font(12)].width + 16;
     CGFloat buttonWidth = zanWidth + 14;

@@ -50,7 +50,13 @@
     noticeLabel.textAlignment = NSTextAlignmentCenter;
     noticeLabel.textColor = [MY_Util setColorWithInt:0x333333];
     noticeLabel.font = MY_Font(14);
-    noticeLabel.text = @"欢迎加入美域医疗，完成实名认证可使用完整功能";
+    
+    MY_AccountModel *accountModel = [MY_Util getAccountModel];
+    if (accountModel.type.integerValue == 3) {
+        noticeLabel.text = @"认证未通过，请重新上传图片进行认证";
+    } else {
+        noticeLabel.text = @"欢迎加入美域医疗，完成实名认证可使用完整功能";
+    }
     [headerView addSubview:noticeLabel];
     self.tableView.tableHeaderView = headerView;
     

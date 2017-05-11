@@ -19,6 +19,18 @@
     
     
     [self setupUI];
+    
+    [self loadData];
+}
+
+- (void)loadData {
+    MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
+    NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
+    MY_AccountModel *account = [MY_Util getAccountModel];
+    [paramter setObject:account.phonen forKey:@"phonen"];
+    [model getDataWithURL:MY_API_GET_EXPERIENCE paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+        self.publishView.experienceArray = dic[@"type"];
+    }];
 }
 
 - (void)setupUI {

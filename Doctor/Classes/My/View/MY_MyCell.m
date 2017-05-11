@@ -27,19 +27,21 @@
     MY_MyCell  *cell = [tableView dequeueReusableCellWithIdentifier:indent];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    NSArray *icons = [NSArray arrayWithObjects:@"service_schedule",@"patient_recommend",@"feedback",@"aboutUS",@"setting",@"invite", nil];
+    NSArray *icons = [NSArray arrayWithObjects:@"service_schedule",@"personal_data",@"patient_recommend",@"feedback",@"aboutUS",@"setting",@"invite", nil];
     
     if (indexPath.row == 0) {
         cell.titleLabel.text = @"服务进度";
     } else if (indexPath.row == 1) {
-        cell.titleLabel.text = @"患者推荐";
+        cell.titleLabel.text = @"个人资料";
     } else if (indexPath.row == 2) {
-        cell.titleLabel.text = @"意见反馈";
+        cell.titleLabel.text = @"患者推荐";
     } else if (indexPath.row == 3) {
-        cell.titleLabel.text = @"关于我们";
+        cell.titleLabel.text = @"意见反馈";
     } else if (indexPath.row == 4) {
-        cell.titleLabel.text = @"设置";
+        cell.titleLabel.text = @"关于我们";
     } else if (indexPath.row == 5) {
+        cell.titleLabel.text = @"设置";
+    } else if (indexPath.row == 6) {
         cell.titleLabel.text = @"邀请";
     }
     UIImage *icon = [UIImage imageNamed:icons[indexPath.row]];

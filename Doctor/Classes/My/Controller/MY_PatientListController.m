@@ -10,6 +10,7 @@
 #import "MY_RecommendCell.h"
 #import "MY_RecommendModel.h"
 #import "MY_PatientScheduleController.h"
+#import "MY_RecommendController.h"
 @interface MY_PatientListController ()
 
 @end
@@ -25,7 +26,7 @@
 }
 
 - (void)setupUI {
-    [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:nil rightImageName:nil];
+    [self setTitle:@"患者推荐" isBackButton:YES rightBttonName:@"推荐患者" rightImageName:nil];
     self.tableView.contentInset = UIEdgeInsetsMake(MY_APP_STATUS_NAVBAR_HEIGHT, 0, 0, 0);
     [self addHeaderRefresh:YES footerRefresh:NO];
     
@@ -66,6 +67,11 @@
     MY_PatientScheduleController *vc = [[MY_PatientScheduleController alloc] init];
     vc.patientId = model.patientId;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)rightButtonAction {
+    MY_RecommendController *recommendVC = [[MY_RecommendController alloc] init];
+    [self.navigationController pushViewController:recommendVC animated:YES];
 }
 
 @end

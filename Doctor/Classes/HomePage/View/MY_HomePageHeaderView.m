@@ -48,7 +48,7 @@
     [self addSubview:self.buttonView];
     
     NSArray *buttonTitles = [NSArray arrayWithObjects:@"管理培训",@"临床培训",@"专题培训",@"科研培训", nil];
-    NSArray *buttonImages = [NSArray arrayWithObjects:@"homePage_button1",@"homePage_button2",@"homePage_button3",@"homePage_button4", nil];
+    NSArray *buttonImages = [NSArray arrayWithObjects:@"homePage_button1",@"homePage_button4",@"homePage_button2",@"homePage_button3", nil];
     CGFloat buttonW = 44;
     CGFloat buttonH = 44;
     CGFloat buttonY = 20;
