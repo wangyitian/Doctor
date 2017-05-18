@@ -14,7 +14,7 @@
 #import "MY_TabController.h"
 @interface MY_LoginController ()
 @property (nonatomic, assign) BOOL wechat;
-@property (nonatomic, weak) UMSocialUserInfoResponse *resp;
+@property (nonatomic, strong) UMSocialUserInfoResponse *resp;
 @end
 
 @implementation MY_LoginController
@@ -68,6 +68,7 @@
 }
 
 - (void)getAuthWithUserInfoFromWechat {
+    [self showLoading];
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
         if (error) {
             
@@ -106,6 +107,7 @@
 
 - (void)requestErrorWithModel:(MY_RequestModel *)requestModel responseDic:(NSDictionary *)responseDic {
     if ([requestModel.url isEqualToString:MY_API_LOGIN] && self.wechat) {
+        [self hideLoading];
         MY_RegisterController *registerVC = [[MY_RegisterController alloc] init];
         registerVC.isWechat = YES;
         registerVC.wechatUid = self.resp.uid;

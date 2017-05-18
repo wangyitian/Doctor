@@ -79,7 +79,7 @@
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
 //        imagePicker.allowsEditing = YES;
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         [self presentViewController:imagePicker animated:YES completion:nil];
     }]];
     [sheet addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -100,7 +100,14 @@
     if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
         UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
         
-        NSData *imageData = UIImageJPEGRepresentation(img,1);
+        
+        CGFloat ratio = 1.0;
+        if (img.size.width > 1000) {
+            ratio = 1000/img.size.width;
+        }
+        
+        
+        NSData *imageData = UIImageJPEGRepresentation(img,ratio);
         NSString *encodedImageStr = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         
         MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];

@@ -43,6 +43,12 @@
 }
 
 - (void)rightButtonAction {
+    
+    if (!self.publishView.contentTextView.text.length) {
+        [self presentAlertWithMessage:@"请发布的心得为空，不能提交" ConfirmAction:nil completion:nil];
+        return;
+    }
+    
     MY_RequestModel *model = [[MY_RequestModel alloc] initWithDelegate:self];
     NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
     [paramter setObject:[MY_Util getUid] forKey:@"uid"];

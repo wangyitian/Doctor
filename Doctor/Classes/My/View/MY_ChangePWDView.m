@@ -77,7 +77,7 @@
     UILabel *freshPwd = [[UILabel alloc] initWithFrame:CGRectMake(validateLabel.left, middleView.bottom+15, validateLabel.width, validateLabel.height)];
     freshPwd.textColor = validateLabel.textColor;
     freshPwd.font = validateLabel.font;
-    freshPwd.text = @"新密码";
+    freshPwd.text = @"设置密码";
     [self addSubview:freshPwd];
     
     self.pwdTextField = [[UITextField alloc] initWithFrame:CGRectMake(self.phoneTextField.left, 0, self.phoneTextField.width, self.phoneTextField.height)];

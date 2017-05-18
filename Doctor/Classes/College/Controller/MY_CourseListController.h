@@ -7,8 +7,9 @@
 //
 
 #import "MY_BaseTableController.h"
-
+@class MY_CourseSegmentController;
 @interface MY_CourseListController : MY_BaseTableController
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) NSString *listType;
+@property (nonatomic, weak) MY_CourseSegmentController *superVC;
 @end

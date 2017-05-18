@@ -9,6 +9,8 @@
 #import "MY_CourseListController.h"
 #import "MY_CourseCell.h"
 #import "MY_CourseModel.h"
+#import "MY_CourseWebController.h"
+#import "MY_CourseSegmentController.h"
 @interface MY_CourseListController ()
 
 @end
@@ -63,6 +65,19 @@
 #pragma mark - UI
 - (void)setupUI {
     self.tableView.height -= (MY_APP_STATUS_NAVBAR_HEIGHT+45);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MY_CourseModel *model = [[self.dataSource objectAtIndex:0] objectAtIndex:indexPath.row];
+    MY_CourseWebController *webVC = [[MY_CourseWebController alloc] init];
+    webVC.canShare = YES;
+    webVC.shareTitle = model.name;
+    webVC.shareContent = model.x_introduce;
+    webVC.shareUrl = [NSString stringWithFormat:@"%@%@",MY_WEB_COURSEDETAIL,model.courseId];
+    webVC.url = [NSString stringWithFormat:@"%@%@",MY_WEB_COURSEDETAIL,model.courseId];
+//    [self.navigationController pushViewController:webVC animated:YES];
+//    [self presentViewController:webVC animated:YES completion:nil];
+    [self.superVC.navigationController pushViewController:webVC animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

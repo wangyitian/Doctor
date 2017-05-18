@@ -100,6 +100,8 @@
     [registerButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:registerButton];
     
+    self.height = registerButton.bottom;
+    
 }
 
 - (void)wechatButtonAction {

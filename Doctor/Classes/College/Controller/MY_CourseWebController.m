@@ -51,6 +51,21 @@
 
 }
 
+- (void)back {
+    if (self.webView.canGoBack) {
+        [self.webView goBack];
+    } else {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
+        
+        
+        if (self.navigationController) {
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }
+}
+
 - (void)phoneButtonAction {
     NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",@"4008823548"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:nil];

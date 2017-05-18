@@ -71,8 +71,14 @@
 }
 
 - (void)confirmButtonAction {
-    if (self.confirmBlock) {
-        self.confirmBlock(self.suggestTextView.text, self.phoneTextField.text);
+    if (!self.suggestTextView.text.length) {
+        [self alertWithMessage:@"请的输入为空，不能提交"];
+    } else if (!self.phoneTextField.text.length) {
+        [self alertWithMessage:@"请输入QQ号／手机号"];
+    } else {
+        if (self.confirmBlock) {
+            self.confirmBlock(self.suggestTextView.text, self.phoneTextField.text);
+        }
     }
 }
 

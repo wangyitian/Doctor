@@ -29,6 +29,7 @@
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 50)];
     headerView.backgroundColor = [UIColor whiteColor];
     self.tableView.tableHeaderView = headerView;
+    self.tableView.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)loadData {

@@ -19,7 +19,7 @@
 @property (nonatomic, strong) MY_TextView *sickTextView;
 @property (nonatomic, strong) NSMutableArray *agreeButtons;
 @property (nonatomic, copy) NSString *isPatient;
-@property (nonatomic, strong) UIButton *isAgreeButton;
+//@property (nonatomic, strong) UIButton *isAgreeButton;
 @end
 @implementation MY_RecommendView
 
@@ -115,20 +115,20 @@
     [self addSubview:space3];
     
     
-    self.isAgreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.isAgreeButton.frame = CGRectMake((MY_ScreenWidth-300-20)/2, space3.bottom+15, 20, 20);
-    [self.isAgreeButton setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
-    [self.isAgreeButton setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
-    [self.isAgreeButton addTarget:self action:@selector(isAgreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.isAgreeButton];
-    
-    UIButton *protocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    protocolButton.frame = CGRectMake(self.isAgreeButton.right, self.isAgreeButton.top, 300, 20);
-    [protocolButton setTitle:@"已阅读并同意《麻省医疗国际患者推荐服务协议》" forState:UIControlStateNormal];
-    [protocolButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
-    protocolButton.titleLabel.font = MY_Font(13);
-    [protocolButton addTarget:self action:@selector(protocolButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:protocolButton];
+//    self.isAgreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    self.isAgreeButton.frame = CGRectMake((MY_ScreenWidth-300-20)/2, space3.bottom+15, 20, 20);
+//    [self.isAgreeButton setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
+//    [self.isAgreeButton setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
+//    [self.isAgreeButton addTarget:self action:@selector(isAgreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:self.isAgreeButton];
+//    
+//    UIButton *protocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    protocolButton.frame = CGRectMake(self.isAgreeButton.right, self.isAgreeButton.top, 300, 20);
+//    [protocolButton setTitle:@"已阅读并同意《麻省医疗国际患者推荐服务协议》" forState:UIControlStateNormal];
+//    [protocolButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+//    protocolButton.titleLabel.font = MY_Font(13);
+//    [protocolButton addTarget:self action:@selector(protocolButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [self addSubview:protocolButton];
     
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];
@@ -137,17 +137,17 @@
     confirmButton.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
     confirmButton.layer.masksToBounds = YES;
     confirmButton.layer.cornerRadius = 2;
-    confirmButton.frame = CGRectMake(20, protocolButton.bottom+30+15, MY_ScreenWidth-20*2, 44);
+    confirmButton.frame = CGRectMake(20, space3.bottom+35+30+15, MY_ScreenWidth-20*2, 44);
     [confirmButton addTarget:self action:@selector(confirmButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:confirmButton];
   
     self.height = confirmButton.bottom + 30;
 }
 
-- (void)isAgreeButtonAction:(UIButton*)button {
-    button.selected = !button.selected;
-    self.isAgreeButton.selected = button.selected;
-}
+//- (void)isAgreeButtonAction:(UIButton*)button {
+//    button.selected = !button.selected;
+//    self.isAgreeButton.selected = button.selected;
+//}
 
 - (void)protocolButtonAction {
     MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
@@ -201,10 +201,10 @@
         return;
     }
     [paramter setObject:self.sickTypeTextField.text forKey:@"disease"];
-    if (!self.isAgreeButton.selected) {
-        [self alertWithMessage:@"请阅读并同意《麻省医疗国际患者推荐服务协议》"];
-        return;
-    }
+//    if (!self.isAgreeButton.selected) {
+//        [self alertWithMessage:@"请阅读并同意《麻省医疗国际患者推荐服务协议》"];
+//        return;
+//    }
     if (self.isPatient.length) {
         [paramter setObject:self.isPatient forKey:@"relation"];
     }

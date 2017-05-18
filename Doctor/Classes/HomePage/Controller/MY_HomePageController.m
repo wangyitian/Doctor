@@ -100,6 +100,9 @@
         MY_CourseSegmentController *vc = [[MY_CourseSegmentController alloc] initWithViewControllers:vcArray segmentViewHeight:45 + MY_APP_STATUS_NAVBAR_HEIGHT];
         vc.typeIndex = index;
         vc.types = types;
+        for (MY_CourseListController *rdVC in vcArray) {
+            rdVC.superVC = vc;
+        }
         [self.navigationController pushViewController:vc animated:YES];
     };
     headerView.sectionBlock = ^(NSInteger index) {

@@ -22,7 +22,13 @@
     
     [self setupUI];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     [self loadData];
+
 }
 
 - (void)setupUI {
