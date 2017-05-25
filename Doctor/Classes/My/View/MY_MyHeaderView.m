@@ -47,7 +47,7 @@
     self.realNameButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.realNameButton.frame = CGRectMake(self.accountLabel.left, self.accountLabel.bottom+10, 70, 17);
     [self.realNameButton setTitle:@"实名认证" forState:UIControlStateNormal];
-    [self.realNameButton setTitle:@"认证医生" forState:UIControlStateDisabled];
+    [self.realNameButton setTitle:@"已认证" forState:UIControlStateDisabled];
     [self.realNameButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.realNameButton.titleLabel.font = MY_Font(13);
     self.realNameButton.layer.masksToBounds = YES;

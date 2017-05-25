@@ -227,6 +227,7 @@
 }
 
 - (void)selectValidity {
+    [self endEditing:YES];
     MY_DatePickerView *datePickerView = [[MY_DatePickerView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, MY_ScreenHeight)];
     datePickerView.selectDateBlock = ^(NSString *date) {
         self.validityLabel.text = date;
@@ -235,6 +236,7 @@
 }
 
 - (void)selectPosition {
+    [self endEditing:YES];
     MY_SubPickerView *pickerView = [[MY_SubPickerView alloc] initWithDataSource:@"DoctorLevel.plist" title:@"请选择职称"];
     pickerView.confirmBlock = ^(NSString *value) {
         self.positionLabel.text = value;

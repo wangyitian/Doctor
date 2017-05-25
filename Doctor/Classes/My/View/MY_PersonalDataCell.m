@@ -83,7 +83,7 @@
         self.valueLabel.textAlignment = NSTextAlignmentCenter;
         if (account.type.integerValue == 1) {
             self.valueLabel.backgroundColor = [MY_Util setColorWithInt:0x68d6a7];
-            self.valueLabel.text = @"认证医生";
+            self.valueLabel.text = @"已认证";
         } else {
             self.valueLabel.backgroundColor = [UIColor redColor];
             self.valueLabel.text = @"实名认证";

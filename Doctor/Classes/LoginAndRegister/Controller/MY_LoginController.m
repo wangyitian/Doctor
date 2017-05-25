@@ -43,17 +43,26 @@
             [self.view makeToast:@"登录成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
                 MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
                 [MY_Util saveAccount:account];
+//                MY_TabController *tabVC = [[MY_TabController alloc] init];
+//                [UIView transitionFromView:self.view.window.rootViewController.view
+//                                    toView:tabVC.view
+//                                  duration:1.0
+//                                   options:UIViewAnimationOptionTransitionCurlUp
+//                                completion:^(BOOL finished)
+//                 {
+//                     [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+//                 }];
+//                
+                
+                
                 MY_TabController *tabVC = [[MY_TabController alloc] init];
-//                [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
-                [UIView transitionFromView:self.view.window.rootViewController.view
-                                    toView:tabVC.view
-                                  duration:1.0
-                                   options:UIViewAnimationOptionTransitionCurlUp
-                                completion:^(BOOL finished)
-                 {
-                     [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
-                 }];
+                [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
+                CATransition *anim = [CATransition animation];
+                anim.type = @"rippleEffect";
+                anim.duration = 1;
+                [[UIApplication sharedApplication].keyWindow.layer addAnimation:anim forKey:nil];
             }];
+            
         }];
     };
     loginView.registerButtonClick = ^(){
