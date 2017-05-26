@@ -37,6 +37,7 @@
 //网页
 #define MY_WEB_COURSEDETAIL             @"http://api.meiyujiankang.com/admin.php/Index/curriculum/id/"
 #define MY_WEB_TRAINING                 @"http://api.meiyujiankang.com/admin.php/Index/news/id/"
+#define MY_WEB_DOWNLOAD                 @"https://itunes.apple.com/us/app/%E7%BE%8E%E5%9F%9F%E5%8C%BB%E7%96%97/id1208855490?l=zh&ls=1&mt=8"
 
 
 #define UMengKey            @"58b5099a8f4a9d6e1b000e73"

@@ -149,11 +149,11 @@
 //    self.isAgreeButton.selected = button.selected;
 //}
 
-- (void)protocolButtonAction {
-    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
-    webVC.url = @"https://baidu.com";
-    [[self findController].navigationController pushViewController:webVC animated:YES];
-}
+//- (void)protocolButtonAction {
+//    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+//    webVC.url = @"https://baidu.com";
+//    [[self findController].navigationController pushViewController:webVC animated:YES];
+//}
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     textView.text = @"                     ";

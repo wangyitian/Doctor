@@ -146,8 +146,8 @@
     //创建网页内容对象
     UIImage *thumbURL = [UIImage imageNamed:@"icon"];
     UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"美域医疗" descr:@"美域医疗" thumImage:thumbURL];
-    //设置网页地址
-    shareObject.webpageUrl = @"https://itunes.apple.com/cn/app/id1208855490";
+    //设置网页地址 https://itunes.apple.com/us/app/%E7%BE%8E%E5%9F%9F%E5%8C%BB%E7%96%97/id1208855490?l=zh&ls=1&mt=8
+    shareObject.webpageUrl = MY_WEB_DOWNLOAD;
     
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
