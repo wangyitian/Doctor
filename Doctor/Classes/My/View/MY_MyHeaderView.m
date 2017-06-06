@@ -36,6 +36,8 @@
     self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, backViewHeight-20-87, 87, 87)];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 43.5;
+    self.avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.avatarImageView.clipsToBounds = YES;
     [self.backView addSubview:self.avatarImageView];
     
     self.accountLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.avatarImageView.right+15, 0, 200, 20)];

@@ -9,7 +9,7 @@
 #import "MY_AboutUSView.h"
 #define DetailText @"美域国际健康管理（北京）有限公司（以下简称“美域健康”）由哈佛医学院资深医生、学者、教授共同创建，致力于为中国客户搭建直通哈佛医学院教学附属医院的国际化、专业化海外医疗服务机构，专注为国内客户提供美国专家会诊、赴美就医、高端体检、精准医疗、医护培训等一站式海外医疗咨询服务。"
 
-#define VersionText @"美域医疗v1.0"
+#define VersionText @"美域医疗v1.0.1"
 @implementation MY_AboutUSView
 
 - (instancetype)initWithFrame:(CGRect)frame {

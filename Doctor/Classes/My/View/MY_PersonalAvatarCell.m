@@ -23,6 +23,8 @@
     self.avatarImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 13, 50, 50)];
     self.avatarImageView.layer.masksToBounds = YES;
     self.avatarImageView.layer.cornerRadius = 25;
+    self.avatarImageView.clipsToBounds = YES;
+    self.avatarImageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.contentView addSubview:self.avatarImageView];
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(MY_ScreenWidth-36-200, 0, 200, 15)];
