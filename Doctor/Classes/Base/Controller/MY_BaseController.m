@@ -8,6 +8,7 @@
 
 #import "MY_BaseController.h"
 #import "MY_RequestModel.h"
+#import "MY_CourseListController.h"
 @interface MY_BaseController ()
 @property (nonatomic, strong) MBProgressHUD *loadingView;
 @property (nonatomic, strong) UIAlertController *alertVC;
@@ -26,6 +27,16 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
+    if (![self isKindOfClass:[MY_CourseListController class]]) {
+        [MobClick beginLogPageView:NSStringFromClass([self class])];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (![self isKindOfClass:[MY_CourseListController class]]) {
+        [MobClick endLogPageView:NSStringFromClass([self class])];
+    }
 }
 
 - (void)dealloc {

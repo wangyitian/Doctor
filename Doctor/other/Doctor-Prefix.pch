@@ -24,6 +24,7 @@
 #import "MBProgressHUD.h"
 #import "MY_TextView.h"
 #import "MY_View.h"
+#import "UMMobClick/MobClick.h"
 
 
 #import "UIImage+Base.h"

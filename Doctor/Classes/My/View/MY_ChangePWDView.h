@@ -13,6 +13,8 @@ typedef void(^ConfirmBlock)(NSString *phone, NSString *validate, NSString *pwd);
 @property (nonatomic, copy) ValidateBlock validateBlock;
 @property (nonatomic, copy) ConfirmBlock confirmBlock;
 @property (nonatomic, strong) UIButton *validateButton;
+@property (nonatomic, assign) BOOL isRegister;
+
 
 - (void)timerFire;
 @end

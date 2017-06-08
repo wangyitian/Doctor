@@ -27,6 +27,9 @@
     //友盟分享相关
     [self configUSharePlatforms];
     
+    //友盟统计
+    [self configUMAnalysis];
+    
     //rootController
     [self chooseRootViewController];
     return YES;
@@ -46,6 +49,19 @@
     [[UMSocialManager defaultManager] removePlatformProviderWithPlatformTypes:@[@(UMSocialPlatformType_Qzone)]];
     /* 设置新浪的appKey和appSecret */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:WeiboAppKey  appSecret:WeiboAppSecret redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+}
+
+#pragma mark - 友盟统计
+- (void)configUMAnalysis {
+    UMConfigInstance.appKey = UMengKey;
+    UMConfigInstance.channelId = @"App Store";
+    UMConfigInstance.eSType = E_UM_GAME; //仅适用于游戏场景，应用统计不用设置
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK
+    
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+    
+//    [MobClick setLogEnabled:YES];
 }
 
 #pragma mark - 分享回调app

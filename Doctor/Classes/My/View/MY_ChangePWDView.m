@@ -7,12 +7,15 @@
 //
 
 #import "MY_ChangePWDView.h"
+#import "MY_BaseWebController.h"
 @interface MY_ChangePWDView ()
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *validateTextField;
 @property (nonatomic, strong) UITextField *pwdTextField;
 @property (nonatomic, strong) UITextField *confirmTextField;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) UIButton *isAgreeButton;
+@property (nonatomic, strong) UIButton *protocolButton;
 @end
 @implementation MY_ChangePWDView
 
@@ -108,8 +111,23 @@
     bottomView.backgroundColor = middleView.backgroundColor;
     [self addSubview:bottomView];
     
+    self.isAgreeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.isAgreeButton.frame = CGRectMake((MY_ScreenWidth-300-20)/2, bottomView.bottom+15, 20, 20);
+    [self.isAgreeButton setImage:[UIImage imageNamed:@"option"] forState:UIControlStateNormal];
+    [self.isAgreeButton setImage:[UIImage imageNamed:@"option_s"] forState:UIControlStateSelected];
+    [self.isAgreeButton addTarget:self action:@selector(isAgreeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.isAgreeButton];
+    
+    self.protocolButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.protocolButton.frame = CGRectMake(self.isAgreeButton.right, self.isAgreeButton.top, 300, 20);
+    [self.protocolButton setTitle:@"已阅读并同意《麻省医疗国际患者推荐服务协议》" forState:UIControlStateNormal];
+    [self.protocolButton setTitleColor:[MY_Util setColorWithInt:0x68d6a7] forState:UIControlStateNormal];
+    self.protocolButton.titleLabel.font = MY_Font(13);
+    [self.protocolButton addTarget:self action:@selector(protocolButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.protocolButton];
+    
     UIButton *confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    confirmButton.frame = CGRectMake(18, bottomView.bottom+20, MY_ScreenWidth-18*2, 44);
+    confirmButton.frame = CGRectMake(18, self.isAgreeButton.bottom+20, MY_ScreenWidth-18*2, 44);
     [confirmButton setTitle:@"确认提交" forState:UIControlStateNormal];
     [confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     confirmButton.titleLabel.font = MY_Font(15);
@@ -120,6 +138,30 @@
     [self addSubview:confirmButton];
 
     self.height = confirmButton.bottom + 30;
+}
+
+- (void)setIsRegister:(BOOL)isRegister {
+    
+    _isRegister = isRegister;
+    
+    if (isRegister) {
+        self.isAgreeButton.hidden = NO;
+        self.protocolButton.hidden = NO;
+    } else {
+        self.isAgreeButton.hidden = YES;
+        self.protocolButton.hidden = YES;
+    }
+}
+
+- (void)isAgreeButtonAction:(UIButton*)button {
+    button.selected = !button.selected;
+    self.isAgreeButton.selected = button.selected;
+}
+
+- (void)protocolButtonAction {
+    MY_BaseWebController *webVC = [[MY_BaseWebController alloc] init];
+    webVC.url = @"https://baidu.com";
+    [[self findController].navigationController pushViewController:webVC animated:YES];
 }
 
 - (void)validateButtonAction {
@@ -155,6 +197,12 @@
 
 - (void)confirmButtonAction {
     if (self.phoneTextField.text.length && self.validateTextField.text.length && self.pwdTextField.text.length && self.confirmTextField.text.length) {
+        
+        if (!self.isAgreeButton.selected) {
+            [self alertWithMessage:@"请同意"];
+            return;
+        }
+        
         if ([self.pwdTextField.text isEqualToString:self.confirmTextField.text]) {
             if (self.confirmBlock) {
                 self.confirmBlock(self.phoneTextField.text, self.validateTextField.text, self.pwdTextField.text);

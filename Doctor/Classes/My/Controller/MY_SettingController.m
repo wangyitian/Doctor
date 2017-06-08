@@ -109,6 +109,9 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [MY_Util removeAccount];
+        //退出统计
+        [MobClick profileSignOff];
+        
         MY_LoginController *loginVC = [[MY_LoginController alloc] init];
         [[UIApplication sharedApplication].delegate window].rootViewController = [[UINavigationController alloc] initWithRootViewController:loginVC];
     }]];

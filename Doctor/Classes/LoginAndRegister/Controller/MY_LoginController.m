@@ -41,8 +41,10 @@
         [paramter setObject:pwd forKey:@"password"];
         [model postDataWithURL:MY_API_LOGIN paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
             [self.view makeToast:@"登录成功" duration:1 position:CSToastPositionCenter title:nil image:nil style:nil completion:^(BOOL didTap) {
+                //保存账号和友盟统计
                 MY_AccountModel *account = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
                 [MY_Util saveAccount:account];
+                [MobClick profileSignInWithPUID:account.phonen];
                 
                 MY_TabController *tabVC = [[MY_TabController alloc] init];
                 [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;
@@ -92,8 +94,10 @@
             NSMutableDictionary *paramter = [NSMutableDictionary dictionary];
             [paramter setObject:resp.uid forKey:@"weixin_uid"];
             [model postDataWithURL:MY_API_LOGIN paramter:paramter success:^(NSURLSessionDataTask *operation, NSDictionary *dic) {
+                //保存账号和友盟统计
                 MY_AccountModel *model = [[MY_AccountModel alloc] initWithDictionary:dic[@"data"]];
                 [MY_Util saveAccount:model];
+                [MobClick profileSignInWithPUID:model.phonen provider:@"WeChatLogin"];
                 
                 MY_TabController *tabVC = [[MY_TabController alloc] init];
                 [[UIApplication sharedApplication].delegate window].rootViewController = tabVC;

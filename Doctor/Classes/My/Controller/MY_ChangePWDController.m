@@ -27,6 +27,7 @@
 #pragma mark - UI
 - (void)setupUI {
     MY_ChangePWDView *changePwdView = [[MY_ChangePWDView alloc] initWithFrame:CGRectMake(0, 0, MY_ScreenWidth, 0)];
+    changePwdView.isRegister = NO;
     
     __weak typeof(changePwdView) weakRegisterView = changePwdView;
     changePwdView.validateBlock = ^(NSString *phone) {
