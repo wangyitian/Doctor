@@ -71,7 +71,7 @@
 
 #pragma mark - 自定义导航栏
 - (void)initNavBar {
-    [self setTitle:@"美域医疗" isBackButton:NO rightBttonName:nil rightImageName:nil];
+    [self setTitle:@"麻省健康" isBackButton:NO rightBttonName:nil rightImageName:nil];
 }
 
 #pragma mark - UI
