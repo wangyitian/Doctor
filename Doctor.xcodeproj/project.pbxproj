@@ -46,6 +46,7 @@
 		954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954A39A01E5C34A100C05B9F /* MY_PersonalAvatarCell.m */; };
 		954FCB0A1EA5BE08004B5F22 /* MY_RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */; };
 		954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */; };
+		955A93AA1EF9FEC90008B8E8 /* MY_PlayerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */; };
 		9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */; };
 		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
@@ -230,6 +231,8 @@
 		954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendCell.m; sourceTree = "<group>"; };
 		954FCB0B1EA5BE27004B5F22 /* MY_RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_RecommendModel.h; sourceTree = "<group>"; };
 		954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendModel.m; sourceTree = "<group>"; };
+		955A93A81EF9FEC90008B8E8 /* MY_PlayerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PlayerListController.h; sourceTree = "<group>"; };
+		955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PlayerListController.m; sourceTree = "<group>"; };
 		9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageModel.h; sourceTree = "<group>"; };
 		9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageModel.m; sourceTree = "<group>"; };
 		9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroModel.h; sourceTree = "<group>"; };
@@ -511,6 +514,7 @@
 		950142E21E4C7F0500987828 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				95ECA5591EF90D78000CB027 /* Player(视频) */,
 				95706F421E4D50D700536AE2 /* Base(基类) */,
 				95EC73E31E568CE80027EED8 /* HomePage(首页) */,
 				95EC73EA1E568DAB0027EED8 /* College(学院) */,
@@ -1138,6 +1142,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		95ECA5591EF90D78000CB027 /* Player(视频) */ = {
+			isa = PBXGroup;
+			children = (
+				95ECA55A1EF90D78000CB027 /* Controller */,
+				95ECA5611EF90D78000CB027 /* Model */,
+				95ECA5621EF90D78000CB027 /* View */,
+			);
+			name = "Player(视频)";
+			path = Player;
+			sourceTree = "<group>";
+		};
+		95ECA55A1EF90D78000CB027 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				955A93A81EF9FEC90008B8E8 /* MY_PlayerListController.h */,
+				955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95ECA5611EF90D78000CB027 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95ECA5621EF90D78000CB027 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E3F23EC9C81AE0D1C5E01375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1385,6 +1423,7 @@
 				95D166711E669ACC00731570 /* UILabel+Base.m in Sources */,
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */,
+				955A93AA1EF9FEC90008B8E8 /* MY_PlayerListController.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,
 				957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */,
