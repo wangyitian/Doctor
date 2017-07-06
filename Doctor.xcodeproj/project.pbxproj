@@ -52,11 +52,17 @@
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
+		957A076E1F0C83E600FF5CF2 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A076D1F0C83E600FF5CF2 /* libresolv.tbd */; };
+		957A07ED1F0CC37A00FF5CF2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A07EC1F0CC37A00FF5CF2 /* CoreMedia.framework */; };
+		957A07EF1F0CC3A900FF5CF2 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A07EE1F0CC3A900FF5CF2 /* libiconv.tbd */; };
+		957A07F31F0CC79500FF5CF2 /* TXRTMPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A07F21F0CC79500FF5CF2 /* TXRTMPSDK.framework */; };
+		957A07F61F0CCAB500FF5CF2 /* MY_PushController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A07F51F0CCAB500FF5CF2 /* MY_PushController.m */; };
 		957BE1A11E641FD200AB3D09 /* MY_HomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */; };
 		957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A51E64215D00AB3D09 /* MY_MessageController.m */; };
 		957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1A91E64215D00AB3D09 /* MY_MessageCell.m */; };
 		957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */; };
 		957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */; };
+		958760771F0E190000862595 /* MY_PullController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958760761F0E190000862595 /* MY_PullController.m */; };
 		958BB5D31E9F089C00A976A7 /* RoomType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D21E9F089C00A976A7 /* RoomType.plist */; };
 		958BB5D61E9F0E5D00A976A7 /* MY_SubPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */; };
 		958BB5D81E9F206E00A976A7 /* DoctorLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D71E9F206E00A976A7 /* DoctorLevel.plist */; };
@@ -178,7 +184,6 @@
 		9510A46C1E58054A009FCBF3 /* MY_LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LoginView.m; sourceTree = "<group>"; };
 		9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_ForgetPWDView.h; sourceTree = "<group>"; };
 		9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_ForgetPWDView.m; sourceTree = "<group>"; };
-		9514EE991E6D089400227A65 /* libUMengUShare.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMengUShare.a; path = "../../Library/Developer/Xcode/DerivedData/Doctor-bniildrxdfhbedekkcjgphhswaxd/Build/Products/Debug-iphoneos/UMengUShare/libUMengUShare.a"; sourceTree = "<group>"; };
 		95229A951E6003B000C28FD9 /* MY_CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseModel.h; sourceTree = "<group>"; };
 		95229A961E6003B000C28FD9 /* MY_CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseModel.m; sourceTree = "<group>"; };
 		95229A981E60041F00C28FD9 /* MY_CourseDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseDetailView.h; sourceTree = "<group>"; };
@@ -243,6 +248,12 @@
 		95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseTableController.m; sourceTree = "<group>"; };
 		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
 		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
+		957A076D1F0C83E600FF5CF2 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		957A07EC1F0CC37A00FF5CF2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		957A07EE1F0CC3A900FF5CF2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		957A07F21F0CC79500FF5CF2 /* TXRTMPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TXRTMPSDK.framework; sourceTree = "<group>"; };
+		957A07F41F0CCAB500FF5CF2 /* MY_PushController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PushController.h; sourceTree = "<group>"; };
+		957A07F51F0CCAB500FF5CF2 /* MY_PushController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PushController.m; sourceTree = "<group>"; };
 		957BE19F1E641FD200AB3D09 /* MY_HomePageHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_HomePageHeaderView.h; sourceTree = "<group>"; };
 		957BE1A01E641FD200AB3D09 /* MY_HomePageHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_HomePageHeaderView.m; sourceTree = "<group>"; };
 		957BE1A41E64215D00AB3D09 /* MY_MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageController.h; sourceTree = "<group>"; };
@@ -253,6 +264,8 @@
 		957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CollegeHeaderView.m; sourceTree = "<group>"; };
 		957BE1AF1E64332200AB3D09 /* MY_CourseIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroCell.h; sourceTree = "<group>"; };
 		957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseIntroCell.m; sourceTree = "<group>"; };
+		958760751F0E190000862595 /* MY_PullController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PullController.h; sourceTree = "<group>"; };
+		958760761F0E190000862595 /* MY_PullController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PullController.m; sourceTree = "<group>"; };
 		958BB5D21E9F089C00A976A7 /* RoomType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RoomType.plist; path = Doctor/other/RoomType.plist; sourceTree = SOURCE_ROOT; };
 		958BB5D41E9F0E5D00A976A7 /* MY_SubPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MY_SubPickerView.h; path = ../../My/View/MY_SubPickerView.h; sourceTree = "<group>"; };
 		958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MY_SubPickerView.m; path = ../../My/View/MY_SubPickerView.m; sourceTree = "<group>"; };
@@ -435,6 +448,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				957A07EF1F0CC3A900FF5CF2 /* libiconv.tbd in Frameworks */,
+				957A07ED1F0CC37A00FF5CF2 /* CoreMedia.framework in Frameworks */,
+				957A076E1F0C83E600FF5CF2 /* libresolv.tbd in Frameworks */,
 				95C206211E7631430023DCC7 /* libSocialQQ.a in Frameworks */,
 				95C206221E7631430023DCC7 /* TencentOpenAPI.framework in Frameworks */,
 				95C2062D1E7631430023DCC7 /* UMSocialNetwork.framework in Frameworks */,
@@ -457,6 +473,7 @@
 				95C206301E7631430023DCC7 /* UShareUI.framework in Frameworks */,
 				95C2062B1E7631430023DCC7 /* libUMSocialLog.a in Frameworks */,
 				95C452FA1E5AF45600C9A30D /* libsqlite3.tbd in Frameworks */,
+				957A07F31F0CC79500FF5CF2 /* TXRTMPSDK.framework in Frameworks */,
 				0DB851FAC80227C38AF366A9 /* libPods-Doctor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,6 +712,13 @@
 				9510A46C1E58054A009FCBF3 /* MY_LoginView.m */,
 				9510A4711E580566009FCBF3 /* MY_ForgetPWDView.h */,
 				9510A4721E580566009FCBF3 /* MY_ForgetPWDView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		957A077E1F0CBEB400FF5CF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1146,8 +1170,8 @@
 			isa = PBXGroup;
 			children = (
 				95ECA55A1EF90D78000CB027 /* Controller */,
+				957A077E1F0CBEB400FF5CF2 /* View */,
 				95ECA5611EF90D78000CB027 /* Model */,
-				95ECA5621EF90D78000CB027 /* View */,
 			);
 			name = "Player(视频)";
 			path = Player;
@@ -1158,6 +1182,10 @@
 			children = (
 				955A93A81EF9FEC90008B8E8 /* MY_PlayerListController.h */,
 				955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */,
+				957A07F41F0CCAB500FF5CF2 /* MY_PushController.h */,
+				957A07F51F0CCAB500FF5CF2 /* MY_PushController.m */,
+				958760751F0E190000862595 /* MY_PullController.h */,
+				958760761F0E190000862595 /* MY_PullController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1169,22 +1197,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		95ECA5621EF90D78000CB027 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E3F23EC9C81AE0D1C5E01375 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				957A07EE1F0CC3A900FF5CF2 /* libiconv.tbd */,
+				957A07EC1F0CC37A00FF5CF2 /* CoreMedia.framework */,
+				957A076D1F0C83E600FF5CF2 /* libresolv.tbd */,
 				95B8BF071E7125F300197B84 /* libstdc++.tbd */,
 				95B8BF051E7125E500197B84 /* AudioToolbox.framework */,
 				95B8BF031E7125DC00197B84 /* VideoToolbox.framework */,
 				95B8BF011E7125D200197B84 /* Foundation.framework */,
 				95B8BEFF1E7125BF00197B84 /* AVFoundation.framework */,
-				9514EE991E6D089400227A65 /* libUMengUShare.a */,
 				95C453051E5AF4B200C9A30D /* ImageIO.framework */,
 				95C453031E5AF49D00C9A30D /* libz.tbd */,
 				95C453011E5AF49400C9A30D /* libc++.tbd */,
@@ -1194,6 +1217,7 @@
 				95C452F91E5AF45600C9A30D /* libsqlite3.tbd */,
 				95C452F71E5AF44600C9A30D /* libsqlite3.0.tbd */,
 				6E291C3B8E58DA7299F1D0BE /* libPods-Doctor.a */,
+				957A07F21F0CC79500FF5CF2 /* TXRTMPSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1385,6 +1409,7 @@
 				9535B4191EA4988B0052A858 /* MY_TrainRecordCell.m in Sources */,
 				95F9F9511EA05E860050D8D1 /* MY_RealNameController.m in Sources */,
 				95B8BF1E1E7128D500197B84 /* UIView+Add.m in Sources */,
+				957A07F61F0CCAB500FF5CF2 /* MY_PushController.m in Sources */,
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
 				95CB0E161E6FCE2300EEBDED /* MY_CourseCustomedView.m in Sources */,
 				954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */,
@@ -1424,6 +1449,7 @@
 				950142EC1E4C7F1100987828 /* AppDelegate.m in Sources */,
 				9522E1D71E6E7B5A000FA06A /* MY_BaseWebController.m in Sources */,
 				955A93AA1EF9FEC90008B8E8 /* MY_PlayerListController.m in Sources */,
+				958760771F0E190000862595 /* MY_PullController.m in Sources */,
 				9510A46D1E58054A009FCBF3 /* MY_LoginView.m in Sources */,
 				954A399E1E5C22E000C05B9F /* UIImage+Base.m in Sources */,
 				957BE1AA1E64215D00AB3D09 /* MY_MessageController.m in Sources */,
@@ -1576,6 +1602,7 @@
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
@@ -1588,6 +1615,8 @@
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/Doctor/Common/Third/LivePlayer_iOS_SDK_v1.2.6/libs",
+					"$(PROJECT_DIR)/Doctor/Common/Third/LiveStreaming_iOS_SDK_V2.0.2/libs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1645,6 +1674,7 @@
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/QQ",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/wangyitian/Desktop/DoctorGIT/Doctor/Other/Doctor-Prefix.pch";
@@ -1673,6 +1703,8 @@
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/Doctor/Common/Third/umeng_ios_social_sdk_6.3.0_arm64_custom/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/Doctor/Common/Third/LivePlayer_iOS_SDK_v1.2.6/libs",
+					"$(PROJECT_DIR)/Doctor/Common/Third/LiveStreaming_iOS_SDK_V2.0.2/libs",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

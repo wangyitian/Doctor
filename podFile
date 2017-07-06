@@ -12,6 +12,7 @@ target 'Doctor' do
   pod 'SDCycleScrollView'
   pod 'YYCache'
   pod 'UMengAnalytics-NO-IDFA'
+  pod 'RealReachability', '~> 1.1.8'
 #  pod 'LFLiveKit'
 #  pod 'UMengUShare/UI'
 #  # 集成新浪微博

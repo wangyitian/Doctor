@@ -7,7 +7,7 @@
 //
 
 #import "MY_PlayerListController.h"
-
+#import "MY_PushController.h"
 @interface MY_PlayerListController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *liveTableView;
@@ -91,6 +91,21 @@
 //    self.videoTableView.dataSource = self;
     [self.scrollView addSubview:self.videoTableView];
     self.scrollView.contentSize = CGSizeMake(2*MY_ScreenWidth, self.scrollView.height);
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.frame = CGRectMake(MY_ScreenWidth-100, MY_ScreenHeight-100-64, 30, 30);
+    btn.backgroundColor = [UIColor purpleColor];
+    [btn addTarget:self action:@selector(btnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:btn];
+    
+}
+
+- (void)btnAction {
+    
+    MY_PushController *vc = [[MY_PushController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
