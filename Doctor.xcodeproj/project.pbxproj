@@ -63,6 +63,7 @@
 		957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1AD1E6428D800AB3D09 /* MY_CollegeHeaderView.m */; };
 		957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */; };
 		958760771F0E190000862595 /* MY_PullController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958760761F0E190000862595 /* MY_PullController.m */; };
+		958760791F0E263D00862595 /* TXRTMPSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958760781F0E263D00862595 /* TXRTMPSDK.framework */; };
 		958BB5D31E9F089C00A976A7 /* RoomType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D21E9F089C00A976A7 /* RoomType.plist */; };
 		958BB5D61E9F0E5D00A976A7 /* MY_SubPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */; };
 		958BB5D81E9F206E00A976A7 /* DoctorLevel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 958BB5D71E9F206E00A976A7 /* DoctorLevel.plist */; };
@@ -266,6 +267,7 @@
 		957BE1B01E64332200AB3D09 /* MY_CourseIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_CourseIntroCell.m; sourceTree = "<group>"; };
 		958760751F0E190000862595 /* MY_PullController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PullController.h; sourceTree = "<group>"; };
 		958760761F0E190000862595 /* MY_PullController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PullController.m; sourceTree = "<group>"; };
+		958760781F0E263D00862595 /* TXRTMPSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TXRTMPSDK.framework; sourceTree = "<group>"; };
 		958BB5D21E9F089C00A976A7 /* RoomType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RoomType.plist; path = Doctor/other/RoomType.plist; sourceTree = SOURCE_ROOT; };
 		958BB5D41E9F0E5D00A976A7 /* MY_SubPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MY_SubPickerView.h; path = ../../My/View/MY_SubPickerView.h; sourceTree = "<group>"; };
 		958BB5D51E9F0E5D00A976A7 /* MY_SubPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MY_SubPickerView.m; path = ../../My/View/MY_SubPickerView.m; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				95C2062D1E7631430023DCC7 /* UMSocialNetwork.framework in Frameworks */,
 				95B8BF081E7125F300197B84 /* libstdc++.tbd in Frameworks */,
 				95B8BF061E7125E500197B84 /* AudioToolbox.framework in Frameworks */,
+				958760791F0E263D00862595 /* TXRTMPSDK.framework in Frameworks */,
 				95B8BF041E7125DC00197B84 /* VideoToolbox.framework in Frameworks */,
 				95B8BF021E7125D200197B84 /* Foundation.framework in Frameworks */,
 				95C2062C1E7631430023DCC7 /* UMSocialCore.framework in Frameworks */,
@@ -1217,6 +1220,7 @@
 				95C452F91E5AF45600C9A30D /* libsqlite3.tbd */,
 				95C452F71E5AF44600C9A30D /* libsqlite3.0.tbd */,
 				6E291C3B8E58DA7299F1D0BE /* libPods-Doctor.a */,
+				958760781F0E263D00862595 /* TXRTMPSDK.framework */,
 				957A07F21F0CC79500FF5CF2 /* TXRTMPSDK.framework */,
 			);
 			name = Frameworks;
