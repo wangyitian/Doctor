@@ -52,6 +52,8 @@
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
+		95762B121F130C030031E4A3 /* MY_LiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95762B111F130C030031E4A3 /* MY_LiveCell.m */; };
+		95762B151F13112B0031E4A3 /* MY_LiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95762B141F13112B0031E4A3 /* MY_LiveModel.m */; };
 		957A076E1F0C83E600FF5CF2 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A076D1F0C83E600FF5CF2 /* libresolv.tbd */; };
 		957A07ED1F0CC37A00FF5CF2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A07EC1F0CC37A00FF5CF2 /* CoreMedia.framework */; };
 		957A07EF1F0CC3A900FF5CF2 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 957A07EE1F0CC3A900FF5CF2 /* libiconv.tbd */; };
@@ -248,6 +250,10 @@
 		95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseTableController.m; sourceTree = "<group>"; };
 		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
 		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
+		95762B101F130C030031E4A3 /* MY_LiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LiveCell.h; sourceTree = "<group>"; };
+		95762B111F130C030031E4A3 /* MY_LiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LiveCell.m; sourceTree = "<group>"; };
+		95762B131F13112B0031E4A3 /* MY_LiveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LiveModel.h; sourceTree = "<group>"; };
+		95762B141F13112B0031E4A3 /* MY_LiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_LiveModel.m; sourceTree = "<group>"; };
 		957A076D1F0C83E600FF5CF2 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		957A07EC1F0CC37A00FF5CF2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		957A07EE1F0CC3A900FF5CF2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
@@ -719,6 +725,8 @@
 		957A077E1F0CBEB400FF5CF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				95762B101F130C030031E4A3 /* MY_LiveCell.h */,
+				95762B111F130C030031E4A3 /* MY_LiveCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1193,6 +1201,8 @@
 		95ECA5611EF90D78000CB027 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95762B131F13112B0031E4A3 /* MY_LiveModel.h */,
+				95762B141F13112B0031E4A3 /* MY_LiveModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1365,6 +1375,7 @@
 				95AD58EF1E6D5CA100C08EA7 /* MY_ScheduleModel.m in Sources */,
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
 				95F9F9571EA066670050D8D1 /* MY_RealNameModel.m in Sources */,
+				95762B121F130C030031E4A3 /* MY_LiveCell.m in Sources */,
 				95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */,
 				95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */,
 				95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */,
@@ -1431,6 +1442,7 @@
 				95DA55F11E7FCC7D00A4C4D6 /* MY_HotSearchView.m in Sources */,
 				953589471EA6F9A70008703D /* MY_PatientScheduleController.m in Sources */,
 				9535894D1EA6FB890008703D /* MY_PatientScheduleCell.m in Sources */,
+				95762B151F13112B0031E4A3 /* MY_LiveModel.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
@@ -1593,7 +1605,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1662,7 +1674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9R84D6G2YR;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
