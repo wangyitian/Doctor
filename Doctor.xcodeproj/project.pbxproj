@@ -51,6 +51,7 @@
 		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
 		95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */; };
+		9571BDED1F14AE3300A36714 /* MY_BeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9571BDEC1F14AE3300A36714 /* MY_BeautyView.m */; };
 		9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */; };
 		95762B121F130C030031E4A3 /* MY_LiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95762B111F130C030031E4A3 /* MY_LiveCell.m */; };
 		95762B151F13112B0031E4A3 /* MY_LiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95762B141F13112B0031E4A3 /* MY_LiveModel.m */; };
@@ -248,6 +249,8 @@
 		95706F5B1E4D516300536AE2 /* MY_BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseController.m; sourceTree = "<group>"; };
 		95706F5D1E4D518600536AE2 /* MY_BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseTableController.h; sourceTree = "<group>"; };
 		95706F5E1E4D518600536AE2 /* MY_BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseTableController.m; sourceTree = "<group>"; };
+		9571BDEB1F14AE3300A36714 /* MY_BeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BeautyView.h; sourceTree = "<group>"; };
+		9571BDEC1F14AE3300A36714 /* MY_BeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BeautyView.m; sourceTree = "<group>"; };
 		9572FB291E53E58D0076E80B /* MY_BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_BaseCell.h; sourceTree = "<group>"; };
 		9572FB2A1E53E58D0076E80B /* MY_BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_BaseCell.m; sourceTree = "<group>"; };
 		95762B101F130C030031E4A3 /* MY_LiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_LiveCell.h; sourceTree = "<group>"; };
@@ -727,6 +730,8 @@
 			children = (
 				95762B101F130C030031E4A3 /* MY_LiveCell.h */,
 				95762B111F130C030031E4A3 /* MY_LiveCell.m */,
+				9571BDEB1F14AE3300A36714 /* MY_BeautyView.h */,
+				9571BDEC1F14AE3300A36714 /* MY_BeautyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1445,6 +1450,7 @@
 				95762B151F13112B0031E4A3 /* MY_LiveModel.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */,
+				9571BDED1F14AE3300A36714 /* MY_BeautyView.m in Sources */,
 				95F8000E1E554E0F00C0F23B /* MY_NavBar.m in Sources */,
 				95EC73FB1E568E7D0027EED8 /* MY_ForgetPWDController.m in Sources */,
 				958BB5DB1E9F617100A976A7 /* MY_View.m in Sources */,
