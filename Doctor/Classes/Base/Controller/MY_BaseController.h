@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MY_RequestModel.h"
+#import "MBProgressHUD.h"
 typedef void(^LoginSuccessedBlock)();
 @interface MY_BaseController : UIViewController <MY_RequestModelDelegate>
+@property (nonatomic, strong) MBProgressHUD * _Nullable loadingView;
 @property (nonatomic, copy) LoginSuccessedBlock _Nonnull loginSuccessedBlock;
 @property (nonatomic, strong) UIImageView * _Nullable navBar;
 @property (nonatomic, strong) UILabel * _Nullable navLabel;

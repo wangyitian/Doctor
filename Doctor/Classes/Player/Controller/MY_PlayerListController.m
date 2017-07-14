@@ -76,11 +76,13 @@
     }
     MY_LiveModel *model = [[MY_LiveModel alloc] init];
     if (tableView == self.liveTableView) {
+        model.isLive = YES;
         model.photo = @"liveDemo";
-        model.title = @"直播test直播test直播test直播test直播test";
+        model.title = @"麻省医疗国际直播";
         model.url = @"rtmp://vc7bd03eb.live.126.net/live/1c1c6329e9ab4ab6837348c23342e775";
     } else {
-        model.title = @"点播test点播test点播test点播test点播test";
+        model.isLive = NO;
+        model.title = @"麻省医疗国际点播";
         model.url = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
         model.photo = @"playDemo";
     }
@@ -92,19 +94,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MY_LiveModel *model = [[MY_LiveModel alloc] init];
     if (tableView == self.liveTableView) {
+        model.isLive = YES;
         model.photo = @"liveDemo";
-        model.title = @"直播test直播test直播test直播test直播test";
+        model.title = @"麻省医疗国际直播";
         model.url = @"rtmp://vc7bd03eb.live.126.net/live/1c1c6329e9ab4ab6837348c23342e775";
         MY_PullController *pull = [[MY_PullController alloc] init];
-        pull.isLive = YES;
+        pull.isLive = model.isLive;
         pull.model = model;
         [self.navigationController pushViewController:pull animated:YES];
     } else {
+        model.isLive = NO;
         model.photo = @"playDemo";
-        model.title = @"点播test点播test点播test点播test点播test";
+        model.title = @"麻省医疗国际点播";
         model.url = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
         MY_PullController *pull = [[MY_PullController alloc] init];
-        pull.isLive = NO;
+        pull.isLive = model.isLive;
         pull.model = model;
         [self.navigationController pushViewController:pull animated:YES];
     }

@@ -10,7 +10,7 @@
 #import "MY_RequestModel.h"
 #import "MY_CourseListController.h"
 @interface MY_BaseController ()
-@property (nonatomic, strong) MBProgressHUD *loadingView;
+
 @property (nonatomic, strong) UIAlertController *alertVC;
 @end
 
@@ -146,6 +146,7 @@
 - (void)showLoading {
     if (!self.loadingView) {
         self.loadingView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.loadingView.label.text = @"正在加载，请稍后";
     }
 }
 
