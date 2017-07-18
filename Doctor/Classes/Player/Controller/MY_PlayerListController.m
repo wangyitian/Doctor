@@ -79,7 +79,7 @@
         model.isLive = YES;
         model.photo = @"liveDemo";
         model.title = @"麻省医疗国际直播";
-        model.url = @"rtmp://vc7bd03eb.live.126.net/live/1c1c6329e9ab4ab6837348c23342e775";
+        model.url = @"rtmp://v1.one-tv.com:1935/live/mpegts.stream";
     } else {
         model.isLive = NO;
         model.title = @"麻省医疗国际点播";
@@ -97,7 +97,7 @@
         model.isLive = YES;
         model.photo = @"liveDemo";
         model.title = @"麻省医疗国际直播";
-        model.url = @"rtmp://vc7bd03eb.live.126.net/live/1c1c6329e9ab4ab6837348c23342e775";
+        model.url = @"rtmp://v1.one-tv.com:1935/live/mpegts.stream";
         MY_PullController *pull = [[MY_PullController alloc] init];
         pull.isLive = model.isLive;
         pull.model = model;

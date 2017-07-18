@@ -42,7 +42,7 @@
 }
 
 - (void)startPush {
-    [self startPushWithUrl:@"rtmp://pc7bd03eb.live.126.net/live/1c1c6329e9ab4ab6837348c23342e775?wsSecret=57815468b33f5347be64785f696534aa&wsTime=1499239594"];
+    [self startPushWithUrl:@"rtmp://v1.one-tv.com:1935/live/mpegts.stream"];
 }
 
 - (void)startPushWithUrl:(NSString*)url {
