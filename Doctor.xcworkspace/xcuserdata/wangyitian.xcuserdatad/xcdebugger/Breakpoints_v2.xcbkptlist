@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Doctor/Classes/Player/Controller/MY_PullController.m"
-            timestampString = "522041724.713811"
+            timestampString = "522055592.08612"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "-didReceivePraiseWithCMDMessage:"
             landmarkType = "7">
          </BreakpointContent>

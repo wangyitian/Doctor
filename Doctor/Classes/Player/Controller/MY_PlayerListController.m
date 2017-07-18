@@ -11,6 +11,7 @@
 #import "MY_PullController.h"
 #import "MY_LiveCell.h"
 #import "MY_LiveModel.h"
+#import "EaseLiveRoom.h"
 @interface MY_PlayerListController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *liveTableView;
@@ -98,6 +99,7 @@
         model.photo = @"liveDemo";
         model.title = @"麻省医疗国际直播";
         model.url = @"rtmp://v1.one-tv.com:1935/live/mpegts.stream";
+        
         MY_PullController *pull = [[MY_PullController alloc] init];
         pull.isLive = model.isLive;
         pull.model = model;

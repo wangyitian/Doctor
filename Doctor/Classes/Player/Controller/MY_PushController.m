@@ -29,6 +29,20 @@
     [super viewDidLoad];
     
     [self setupUI];
+    
+    
+
+    
+    //示例代码
+    EaseLiveRoom *liveRoom = [[EaseLiveRoom alloc] init];
+    liveRoom.title = @"直播聊天室title";
+    liveRoom.desc = @"直播聊天室描述";
+    liveRoom.session.anchor = [EMClient sharedClient].currentUsername;
+    liveRoom.coverPictureUrl = @"封面图片Url";
+    
+    [[EaseHttpManager sharedInstance] createLiveRoomWithRoom:liveRoom
+                                                  completion:^(EaseLiveRoom *room, BOOL success) {
+                                                  }];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

@@ -92,6 +92,7 @@
                                                                                          [weakSelf.view layoutSubviews];
                                                                                      }];
                                     } else {
+                                        [self startPlay];
                                         [weakSelf showHint:@"加入聊天室失败"];
                                         [weakSelf.view bringSubviewToFront:weakSelf.liveView];
                                         [weakSelf.view layoutSubviews];

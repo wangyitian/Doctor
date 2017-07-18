@@ -102,8 +102,18 @@
     
     
     EMOptions *options = [EMOptions optionsWithAppkey:@"1142170714115549#massmedhealth"];
-//    options.apnsCertName = @"istore_dev";
+    options.apnsCertName = @"massmed";
+    options.isAutoAcceptGroupInvitation = NO;
+    options.enableConsoleLog = YES;
+
     [[EMClient sharedClient] initializeSDKWithOptions:options];
+    [[EMClient sharedClient] addDelegate:self delegateQueue:nil];
+    
+    EMError *error = [[EMClient sharedClient] loginWithUsername:@"qqaazzppllmm" password:@"qqqqqqqq"];
+    if (!error)
+    {
+        [[EMClient sharedClient].options setIsAutoLogin:YES];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
