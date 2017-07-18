@@ -8,7 +8,9 @@
 
 #import "MY_BaseController.h"
 #import "MY_LiveModel.h"
+@class EaseLiveRoom;
 @interface MY_PullController : MY_BaseController
 @property (nonatomic, strong) MY_LiveModel *model;
 @property (nonatomic, assign) BOOL isLive;
+@property (nonatomic, strong) EaseLiveRoom *room;
 @end

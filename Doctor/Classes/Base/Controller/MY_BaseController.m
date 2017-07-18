@@ -146,7 +146,7 @@
 - (void)showLoading {
     if (!self.loadingView) {
         self.loadingView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        self.loadingView.label.text = @"正在加载，请稍后";
+        self.loadingView.labelText = @"正在加载，请稍后";
     }
 }
 

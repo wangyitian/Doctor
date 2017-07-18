@@ -47,6 +47,28 @@
 		954FCB0A1EA5BE08004B5F22 /* MY_RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB091EA5BE08004B5F22 /* MY_RecommendCell.m */; };
 		954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */; };
 		955A93AA1EF9FEC90008B8E8 /* MY_PlayerListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */; };
+		955F26671F1DA97A00FCDC4A /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26661F1DA97A00FCDC4A /* MBProgressHUD+Add.m */; };
+		955F266A1F1DA9D700FCDC4A /* EaseHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26691F1DA9D700FCDC4A /* EaseHttpManager.m */; };
+		955F266F1F1DAA3600FCDC4A /* EaseLiveRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F266C1F1DAA3600FCDC4A /* EaseLiveRoom.m */; };
+		955F26701F1DAA3600FCDC4A /* EaseLiveSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F266E1F1DAA3600FCDC4A /* EaseLiveSession.m */; };
+		955F26771F1DAA6B00FCDC4A /* NSDictionary+SafeValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26721F1DAA6B00FCDC4A /* NSDictionary+SafeValue.m */; };
+		955F26781F1DAA6B00FCDC4A /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26741F1DAA6B00FCDC4A /* UIImage+Color.m */; };
+		955F26791F1DAA6B00FCDC4A /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26761F1DAA6B00FCDC4A /* UIView+Position.m */; };
+		955F268A1F1DAD4200FCDC4A /* EaseAdminView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F267B1F1DAD4200FCDC4A /* EaseAdminView.m */; };
+		955F268B1F1DAD4200FCDC4A /* EaseBaseSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F267D1F1DAD4200FCDC4A /* EaseBaseSubView.m */; };
+		955F268C1F1DAD4200FCDC4A /* EaseChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F267F1F1DAD4200FCDC4A /* EaseChatView.m */; };
+		955F268D1F1DAD4200FCDC4A /* EaseEndLiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26811F1DAD4200FCDC4A /* EaseEndLiveView.m */; };
+		955F268E1F1DAD4200FCDC4A /* EaseInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26831F1DAD4200FCDC4A /* EaseInputTextView.m */; };
+		955F268F1F1DAD4300FCDC4A /* EaseLiveCastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26851F1DAD4200FCDC4A /* EaseLiveCastView.m */; };
+		955F26901F1DAD4300FCDC4A /* EaseLiveGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26871F1DAD4200FCDC4A /* EaseLiveGiftView.m */; };
+		955F26911F1DAD4300FCDC4A /* EaseLiveHeaderListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26891F1DAD4200FCDC4A /* EaseLiveHeaderListView.m */; };
+		955F269A1F1DAD6E00FCDC4A /* EaseBarrageFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26941F1DAD6E00FCDC4A /* EaseBarrageFlyView.m */; };
+		955F269B1F1DAD6E00FCDC4A /* EaseGiftFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26961F1DAD6E00FCDC4A /* EaseGiftFlyView.m */; };
+		955F269C1F1DAD6E00FCDC4A /* EaseHeartFlyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26981F1DAD6E00FCDC4A /* EaseHeartFlyView.m */; };
+		955F26A31F1DAD9100FCDC4A /* EaseChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F269E1F1DAD9100FCDC4A /* EaseChatCell.m */; };
+		955F26A41F1DAD9100FCDC4A /* EaseGiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26A01F1DAD9100FCDC4A /* EaseGiftCell.m */; };
+		955F26A51F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26A21F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.m */; };
+		955F26A81F1DAEB200FCDC4A /* EaseProfileLiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 955F26A71F1DAEB200FCDC4A /* EaseProfileLiveView.m */; };
 		9565A8AD1E6560CA00F23227 /* MY_MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */; };
 		9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9565A8AF1E65696600F23227 /* MY_CourseIntroModel.m */; };
 		95706F5C1E4D516300536AE2 /* MY_BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95706F5B1E4D516300536AE2 /* MY_BaseController.m */; };
@@ -241,6 +263,50 @@
 		954FCB0C1EA5BE27004B5F22 /* MY_RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_RecommendModel.m; sourceTree = "<group>"; };
 		955A93A81EF9FEC90008B8E8 /* MY_PlayerListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_PlayerListController.h; sourceTree = "<group>"; };
 		955A93A91EF9FEC90008B8E8 /* MY_PlayerListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_PlayerListController.m; sourceTree = "<group>"; };
+		955F26651F1DA97A00FCDC4A /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		955F26661F1DA97A00FCDC4A /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		955F26681F1DA9D700FCDC4A /* EaseHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseHttpManager.h; sourceTree = "<group>"; };
+		955F26691F1DA9D700FCDC4A /* EaseHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseHttpManager.m; sourceTree = "<group>"; };
+		955F266B1F1DAA3600FCDC4A /* EaseLiveRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveRoom.h; sourceTree = "<group>"; };
+		955F266C1F1DAA3600FCDC4A /* EaseLiveRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveRoom.m; sourceTree = "<group>"; };
+		955F266D1F1DAA3600FCDC4A /* EaseLiveSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveSession.h; sourceTree = "<group>"; };
+		955F266E1F1DAA3600FCDC4A /* EaseLiveSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveSession.m; sourceTree = "<group>"; };
+		955F26711F1DAA6B00FCDC4A /* NSDictionary+SafeValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeValue.h"; sourceTree = "<group>"; };
+		955F26721F1DAA6B00FCDC4A /* NSDictionary+SafeValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SafeValue.m"; sourceTree = "<group>"; };
+		955F26731F1DAA6B00FCDC4A /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		955F26741F1DAA6B00FCDC4A /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		955F26751F1DAA6B00FCDC4A /* UIView+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
+		955F26761F1DAA6B00FCDC4A /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
+		955F267A1F1DAD4200FCDC4A /* EaseAdminView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseAdminView.h; sourceTree = "<group>"; };
+		955F267B1F1DAD4200FCDC4A /* EaseAdminView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseAdminView.m; sourceTree = "<group>"; };
+		955F267C1F1DAD4200FCDC4A /* EaseBaseSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseBaseSubView.h; sourceTree = "<group>"; };
+		955F267D1F1DAD4200FCDC4A /* EaseBaseSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseBaseSubView.m; sourceTree = "<group>"; };
+		955F267E1F1DAD4200FCDC4A /* EaseChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseChatView.h; sourceTree = "<group>"; };
+		955F267F1F1DAD4200FCDC4A /* EaseChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseChatView.m; sourceTree = "<group>"; };
+		955F26801F1DAD4200FCDC4A /* EaseEndLiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseEndLiveView.h; sourceTree = "<group>"; };
+		955F26811F1DAD4200FCDC4A /* EaseEndLiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseEndLiveView.m; sourceTree = "<group>"; };
+		955F26821F1DAD4200FCDC4A /* EaseInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseInputTextView.h; sourceTree = "<group>"; };
+		955F26831F1DAD4200FCDC4A /* EaseInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseInputTextView.m; sourceTree = "<group>"; };
+		955F26841F1DAD4200FCDC4A /* EaseLiveCastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveCastView.h; sourceTree = "<group>"; };
+		955F26851F1DAD4200FCDC4A /* EaseLiveCastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveCastView.m; sourceTree = "<group>"; };
+		955F26861F1DAD4200FCDC4A /* EaseLiveGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveGiftView.h; sourceTree = "<group>"; };
+		955F26871F1DAD4200FCDC4A /* EaseLiveGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveGiftView.m; sourceTree = "<group>"; };
+		955F26881F1DAD4200FCDC4A /* EaseLiveHeaderListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveHeaderListView.h; sourceTree = "<group>"; };
+		955F26891F1DAD4200FCDC4A /* EaseLiveHeaderListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveHeaderListView.m; sourceTree = "<group>"; };
+		955F26931F1DAD6E00FCDC4A /* EaseBarrageFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseBarrageFlyView.h; sourceTree = "<group>"; };
+		955F26941F1DAD6E00FCDC4A /* EaseBarrageFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseBarrageFlyView.m; sourceTree = "<group>"; };
+		955F26951F1DAD6E00FCDC4A /* EaseGiftFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseGiftFlyView.h; sourceTree = "<group>"; };
+		955F26961F1DAD6E00FCDC4A /* EaseGiftFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseGiftFlyView.m; sourceTree = "<group>"; };
+		955F26971F1DAD6E00FCDC4A /* EaseHeartFlyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseHeartFlyView.h; sourceTree = "<group>"; };
+		955F26981F1DAD6E00FCDC4A /* EaseHeartFlyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseHeartFlyView.m; sourceTree = "<group>"; };
+		955F269D1F1DAD9100FCDC4A /* EaseChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseChatCell.h; sourceTree = "<group>"; };
+		955F269E1F1DAD9100FCDC4A /* EaseChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseChatCell.m; sourceTree = "<group>"; };
+		955F269F1F1DAD9100FCDC4A /* EaseGiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseGiftCell.h; sourceTree = "<group>"; };
+		955F26A01F1DAD9100FCDC4A /* EaseGiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseGiftCell.m; sourceTree = "<group>"; };
+		955F26A11F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseLiveCollectionViewCell.h; sourceTree = "<group>"; };
+		955F26A21F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EaseLiveCollectionViewCell.m; sourceTree = "<group>"; };
+		955F26A61F1DAEB200FCDC4A /* EaseProfileLiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EaseProfileLiveView.h; path = ../EaseProfileLiveView.h; sourceTree = "<group>"; };
+		955F26A71F1DAEB200FCDC4A /* EaseProfileLiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EaseProfileLiveView.m; path = ../EaseProfileLiveView.m; sourceTree = "<group>"; };
 		9565A8AB1E6560CA00F23227 /* MY_MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_MessageModel.h; sourceTree = "<group>"; };
 		9565A8AC1E6560CA00F23227 /* MY_MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MY_MessageModel.m; sourceTree = "<group>"; };
 		9565A8AE1E65696600F23227 /* MY_CourseIntroModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MY_CourseIntroModel.h; sourceTree = "<group>"; };
@@ -617,6 +683,121 @@
 				954A398A1E5C160000C05B9F /* HXSearchBar.m */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		955F265E1F1DA74900FCDC4A /* huanxin */ = {
+			isa = PBXGroup;
+			children = (
+				955F26621F1DA95300FCDC4A /* Category */,
+				955F26631F1DA95300FCDC4A /* Define */,
+				955F26641F1DA95300FCDC4A /* Http */,
+				955F265F1F1DA74900FCDC4A /* Controller */,
+				955F26601F1DA74900FCDC4A /* Model */,
+				955F26611F1DA74900FCDC4A /* View */,
+			);
+			path = huanxin;
+			sourceTree = "<group>";
+		};
+		955F265F1F1DA74900FCDC4A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		955F26601F1DA74900FCDC4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				955F266B1F1DAA3600FCDC4A /* EaseLiveRoom.h */,
+				955F266C1F1DAA3600FCDC4A /* EaseLiveRoom.m */,
+				955F266D1F1DAA3600FCDC4A /* EaseLiveSession.h */,
+				955F266E1F1DAA3600FCDC4A /* EaseLiveSession.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		955F26611F1DA74900FCDC4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				955F26921F1DAD6E00FCDC4A /* animation */,
+				955F26991F1DAD6E00FCDC4A /* Cell */,
+				955F267A1F1DAD4200FCDC4A /* EaseAdminView.h */,
+				955F267B1F1DAD4200FCDC4A /* EaseAdminView.m */,
+				955F267C1F1DAD4200FCDC4A /* EaseBaseSubView.h */,
+				955F267D1F1DAD4200FCDC4A /* EaseBaseSubView.m */,
+				955F267E1F1DAD4200FCDC4A /* EaseChatView.h */,
+				955F267F1F1DAD4200FCDC4A /* EaseChatView.m */,
+				955F26801F1DAD4200FCDC4A /* EaseEndLiveView.h */,
+				955F26811F1DAD4200FCDC4A /* EaseEndLiveView.m */,
+				955F26821F1DAD4200FCDC4A /* EaseInputTextView.h */,
+				955F26831F1DAD4200FCDC4A /* EaseInputTextView.m */,
+				955F26841F1DAD4200FCDC4A /* EaseLiveCastView.h */,
+				955F26851F1DAD4200FCDC4A /* EaseLiveCastView.m */,
+				955F26861F1DAD4200FCDC4A /* EaseLiveGiftView.h */,
+				955F26871F1DAD4200FCDC4A /* EaseLiveGiftView.m */,
+				955F26881F1DAD4200FCDC4A /* EaseLiveHeaderListView.h */,
+				955F26891F1DAD4200FCDC4A /* EaseLiveHeaderListView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		955F26621F1DA95300FCDC4A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				955F26711F1DAA6B00FCDC4A /* NSDictionary+SafeValue.h */,
+				955F26721F1DAA6B00FCDC4A /* NSDictionary+SafeValue.m */,
+				955F26731F1DAA6B00FCDC4A /* UIImage+Color.h */,
+				955F26741F1DAA6B00FCDC4A /* UIImage+Color.m */,
+				955F26751F1DAA6B00FCDC4A /* UIView+Position.h */,
+				955F26761F1DAA6B00FCDC4A /* UIView+Position.m */,
+				955F26651F1DA97A00FCDC4A /* MBProgressHUD+Add.h */,
+				955F26661F1DA97A00FCDC4A /* MBProgressHUD+Add.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		955F26631F1DA95300FCDC4A /* Define */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		955F26641F1DA95300FCDC4A /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				955F26681F1DA9D700FCDC4A /* EaseHttpManager.h */,
+				955F26691F1DA9D700FCDC4A /* EaseHttpManager.m */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		955F26921F1DAD6E00FCDC4A /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				955F26931F1DAD6E00FCDC4A /* EaseBarrageFlyView.h */,
+				955F26941F1DAD6E00FCDC4A /* EaseBarrageFlyView.m */,
+				955F26951F1DAD6E00FCDC4A /* EaseGiftFlyView.h */,
+				955F26961F1DAD6E00FCDC4A /* EaseGiftFlyView.m */,
+				955F26971F1DAD6E00FCDC4A /* EaseHeartFlyView.h */,
+				955F26981F1DAD6E00FCDC4A /* EaseHeartFlyView.m */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
+		955F26991F1DAD6E00FCDC4A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				955F26A61F1DAEB200FCDC4A /* EaseProfileLiveView.h */,
+				955F26A71F1DAEB200FCDC4A /* EaseProfileLiveView.m */,
+				955F269D1F1DAD9100FCDC4A /* EaseChatCell.h */,
+				955F269E1F1DAD9100FCDC4A /* EaseChatCell.m */,
+				955F269F1F1DAD9100FCDC4A /* EaseGiftCell.h */,
+				955F26A01F1DAD9100FCDC4A /* EaseGiftCell.m */,
+				955F26A11F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.h */,
+				955F26A21F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		95706F421E4D50D700536AE2 /* Base(基类) */ = {
@@ -1182,6 +1363,7 @@
 		95ECA5591EF90D78000CB027 /* Player(视频) */ = {
 			isa = PBXGroup;
 			children = (
+				955F265E1F1DA74900FCDC4A /* huanxin */,
 				95ECA55A1EF90D78000CB027 /* Controller */,
 				957A077E1F0CBEB400FF5CF2 /* View */,
 				95ECA5611EF90D78000CB027 /* Model */,
@@ -1381,6 +1563,7 @@
 				9572FB2B1E53E58D0076E80B /* MY_BaseCell.m in Sources */,
 				95F9F9571EA066670050D8D1 /* MY_RealNameModel.m in Sources */,
 				95762B121F130C030031E4A3 /* MY_LiveCell.m in Sources */,
+				955F26A81F1DAEB200FCDC4A /* EaseProfileLiveView.m in Sources */,
 				95D1666B1E6666A100731570 /* MY_TitleSegmentView.m in Sources */,
 				95C452A01E5AC78200C9A30D /* MY_CourseListController.m in Sources */,
 				95C4529A1E5ABD6700C9A30D /* MY_PersonalDataCell.m in Sources */,
@@ -1388,19 +1571,25 @@
 				95EC74161E569A4C0027EED8 /* MY_ChangePWDController.m in Sources */,
 				95C452A61E5ACA4000C9A30D /* MY_CourseCustomedController.m in Sources */,
 				95C452B51E5AE2ED00C9A30D /* MY_EnrollView.m in Sources */,
+				955F268B1F1DAD4200FCDC4A /* EaseBaseSubView.m in Sources */,
 				95229A971E6003B000C28FD9 /* MY_CourseModel.m in Sources */,
 				9565A8B01E65696600F23227 /* MY_CourseIntroModel.m in Sources */,
 				95EC74011E5690090027EED8 /* MY_MyController.m in Sources */,
 				9526FA9E1E77FAA800C52433 /* MY_DatePickerView.m in Sources */,
 				9535B41F1EA498B60052A858 /* MY_TrainRecordModel.m in Sources */,
+				955F26671F1DA97A00FCDC4A /* MBProgressHUD+Add.m in Sources */,
+				955F269C1F1DAD6E00FCDC4A /* EaseHeartFlyView.m in Sources */,
 				954A39A11E5C34A100C05B9F /* MY_PersonalAvatarCell.m in Sources */,
 				950BD08C1EAF4CA100E08565 /* MY_CourseWebController.m in Sources */,
+				955F26A51F1DAD9100FCDC4A /* EaseLiveCollectionViewCell.m in Sources */,
+				955F266F1F1DAA3600FCDC4A /* EaseLiveRoom.m in Sources */,
 				95F800111E556BE400C0F23B /* MY_LoginController.m in Sources */,
 				9549B2231E5D337000ED2D6A /* MY_AboutUSView.m in Sources */,
 				95AD58EC1E6D546800C08EA7 /* MY_ScheduleCell.m in Sources */,
 				95D1666A1E6666A100731570 /* MY_SegmentContentView.m in Sources */,
 				95706F5F1E4D518600536AE2 /* MY_BaseTableController.m in Sources */,
 				957BE1AB1E64215D00AB3D09 /* MY_MessageCell.m in Sources */,
+				955F26781F1DAA6B00FCDC4A /* UIImage+Color.m in Sources */,
 				958C35EC1E542461006FCCF3 /* MY_BaseModel.m in Sources */,
 				95EC73F81E568E370027EED8 /* MY_RegisterController.m in Sources */,
 				95EC74221E56A46D0027EED8 /* MY_HomePageController.m in Sources */,
@@ -1409,7 +1598,11 @@
 				95C452B21E5ADF6000C9A30D /* MY_ChangePhoneController.m in Sources */,
 				954A399C1E5C22E000C05B9F /* NSString+Base.m in Sources */,
 				95F800151E55815D00C0F23B /* MY_AccountModel.m in Sources */,
+				955F26A41F1DAD9100FCDC4A /* EaseGiftCell.m in Sources */,
+				955F268A1F1DAD4200FCDC4A /* EaseAdminView.m in Sources */,
+				955F26A31F1DAD9100FCDC4A /* EaseChatCell.m in Sources */,
 				950142EE1E4C7F1100987828 /* main.m in Sources */,
+				955F26901F1DAD4300FCDC4A /* EaseLiveGiftView.m in Sources */,
 				95F8001B1E55925A00C0F23B /* UIView+Base.m in Sources */,
 				950142F71E4C7F7E00987828 /* MY_TabController.m in Sources */,
 				9535B41C1EA498A20052A858 /* MY_ExperienceCell.m in Sources */,
@@ -1418,9 +1611,12 @@
 				95D1666E1E666D6300731570 /* MY_CourseSegmentController.m in Sources */,
 				95229A9A1E60041F00C28FD9 /* MY_CourseDetailView.m in Sources */,
 				95B8BF1D1E7128D500197B84 /* UIControl+Add.m in Sources */,
+				955F26701F1DAA3600FCDC4A /* EaseLiveSession.m in Sources */,
+				955F26911F1DAD4300FCDC4A /* EaseLiveHeaderListView.m in Sources */,
 				95EC74101E5697AD0027EED8 /* MY_PersonalDataController.m in Sources */,
 				954A398B1E5C160000C05B9F /* HXSearchBar.m in Sources */,
 				95D166651E6665C700731570 /* MY_SegmentController.m in Sources */,
+				955F266A1F1DA9D700FCDC4A /* EaseHttpManager.m in Sources */,
 				95EC74191E569A750027EED8 /* MY_FeedbackController.m in Sources */,
 				9535B4191EA4988B0052A858 /* MY_TrainRecordCell.m in Sources */,
 				95F9F9511EA05E860050D8D1 /* MY_RealNameController.m in Sources */,
@@ -1429,8 +1625,10 @@
 				957BE1AE1E6428D800AB3D09 /* MY_CollegeHeaderView.m in Sources */,
 				95CB0E161E6FCE2300EEBDED /* MY_CourseCustomedView.m in Sources */,
 				954FCB0D1EA5BE27004B5F22 /* MY_RecommendModel.m in Sources */,
+				955F26771F1DAA6B00FCDC4A /* NSDictionary+SafeValue.m in Sources */,
 				9535B4221EA498C50052A858 /* MY_ExperienceModel.m in Sources */,
 				95F9F9541EA061EF0050D8D1 /* MY_RealNameCell.m in Sources */,
+				955F26791F1DAA6B00FCDC4A /* UIView+Position.m in Sources */,
 				954A399D1E5C22E000C05B9F /* UIButton+Base.m in Sources */,
 				958C35E91E541BFB006FCCF3 /* MY_RequestModel.m in Sources */,
 				958C35E21E53F8F6006FCCF3 /* UITableView+MJRefresh.m in Sources */,
@@ -1443,10 +1641,12 @@
 				9526FA9B1E778D1B00C52433 /* MY_SelectView.m in Sources */,
 				95EC741F1E56A3F70027EED8 /* MY_RecommendController.m in Sources */,
 				95B0227D1E52E1C800B672D3 /* MY_BadgeButton.m in Sources */,
+				955F268E1F1DAD4200FCDC4A /* EaseInputTextView.m in Sources */,
 				957BE1B11E64332200AB3D09 /* MY_CourseIntroCell.m in Sources */,
 				95DA55F11E7FCC7D00A4C4D6 /* MY_HotSearchView.m in Sources */,
 				953589471EA6F9A70008703D /* MY_PatientScheduleController.m in Sources */,
 				9535894D1EA6FB890008703D /* MY_PatientScheduleCell.m in Sources */,
+				955F268F1F1DAD4300FCDC4A /* EaseLiveCastView.m in Sources */,
 				95762B151F13112B0031E4A3 /* MY_LiveModel.m in Sources */,
 				95944F751E5D1B95004B43EE /* MY_ChangePWDView.m in Sources */,
 				95F854351E66AFAD003C7013 /* MY_ServiceScheduleController.m in Sources */,
@@ -1457,6 +1657,7 @@
 				95EC740A1E5693000027EED8 /* MY_BaseScrollController.m in Sources */,
 				95EC74041E5691D90027EED8 /* MY_CollegeController.m in Sources */,
 				953C8C4A1E7245B400A755F0 /* MY_PickerView.m in Sources */,
+				955F269B1F1DAD6E00FCDC4A /* EaseGiftFlyView.m in Sources */,
 				953589501EA6FCA20008703D /* MY_PublishView.m in Sources */,
 				95C452971E5AB81500C9A30D /* MY_SettingCell.m in Sources */,
 				95EC740D1E56973E0027EED8 /* MY_EnrollController.m in Sources */,
@@ -1474,6 +1675,7 @@
 				95EC741C1E569A970027EED8 /* MY_AboutUSController.m in Sources */,
 				957BE1A11E641FD200AB3D09 /* MY_HomePageHeaderView.m in Sources */,
 				95C452A91E5ACAC000C9A30D /* MY_RecommendView.m in Sources */,
+				955F269A1F1DAD6E00FCDC4A /* EaseBarrageFlyView.m in Sources */,
 				95CB0E191E6FCFB400EEBDED /* MY_CustomedCourseModel.m in Sources */,
 				958BB5D61E9F0E5D00A976A7 /* MY_SubPickerView.m in Sources */,
 				95C452941E5AB07000C9A30D /* MY_MyHeaderView.m in Sources */,
@@ -1482,6 +1684,8 @@
 				953C8C501E72741E00A755F0 /* MY_CourseCustomedDemoCell.m in Sources */,
 				95E78E181E69436400934A75 /* MY_GuideController.m in Sources */,
 				95F8543B1E67F662003C7013 /* MY_MyCell.m in Sources */,
+				955F268C1F1DAD4200FCDC4A /* EaseChatView.m in Sources */,
+				955F268D1F1DAD4200FCDC4A /* EaseEndLiveView.m in Sources */,
 				95EC74071E5692860027EED8 /* MY_CourseDetailController.m in Sources */,
 				9535B4161EA4968A0052A858 /* MY_PublishController.m in Sources */,
 				95F8543E1E6808CA003C7013 /* MY_ChangePhoneView.m in Sources */,

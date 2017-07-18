@@ -8,11 +8,13 @@ target 'Doctor' do
   pod 'Toast', '~> 3.0'
   pod 'SSZipArchive', ‘~> 1.6.1’
   pod 'TPKeyboardAvoiding', '~> 1.2.11'
-  pod 'MBProgressHUD'
+  pod 'MBProgressHUD','~> 0.9'
   pod 'SDCycleScrollView'
   pod 'YYCache'
   pod 'UMengAnalytics-NO-IDFA'
   pod 'RealReachability', '~> 1.1.8'
+  pod 'HyphenateLite'
+  pod 'EaseUILite', :git => 'https://github.com/easemob/easeui-ios-hyphenate-cocoapods.git'
 #  pod 'LFLiveKit'
 #  pod 'UMengUShare/UI'
 #  # 集成新浪微博
