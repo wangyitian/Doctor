@@ -7,8 +7,11 @@
 //
 
 #import "MY_PlayerListController.h"
-#import "MY_PushController.h"
-#import "MY_PullController.h"
+//#import "MY_PushController.h"
+//#import "MY_PullController.h"
+
+#import "EaseCreateLiveViewController.h"
+#import "EaseLiveViewController.h"
 #import "MY_LiveCell.h"
 #import "MY_LiveModel.h"
 @interface MY_PlayerListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -98,18 +101,20 @@
         model.photo = @"liveDemo";
         model.title = @"麻省医疗国际直播";
         model.url = @"rtmp://v1.one-tv.com:1935/live/mpegts.stream";
-        MY_PullController *pull = [[MY_PullController alloc] init];
-        pull.isLive = model.isLive;
-        pull.model = model;
+//        MY_PullController *pull = [[MY_PullController alloc] init];
+//        pull.isLive = model.isLive;
+//        pull.model = model;
+        EaseLiveViewController *pull = [[EaseLiveViewController alloc] init];
         [self.navigationController pushViewController:pull animated:YES];
     } else {
         model.isLive = NO;
         model.photo = @"playDemo";
         model.title = @"麻省医疗国际点播";
         model.url = @"http://flv2.bn.netease.com/videolib3/1604/28/fVobI0704/SD/fVobI0704-mobile.mp4";
-        MY_PullController *pull = [[MY_PullController alloc] init];
-        pull.isLive = model.isLive;
-        pull.model = model;
+//        MY_PullController *pull = [[MY_PullController alloc] init];
+//        pull.isLive = model.isLive;
+//        pull.model = model;
+        EaseLiveViewController *pull = [[EaseLiveViewController alloc] init];
         [self.navigationController pushViewController:pull animated:YES];
     }
 }
@@ -166,7 +171,8 @@
 }
 
 - (void)btnAction {
-    MY_PushController *vc = [[MY_PushController alloc] init];
+//    MY_PushController *vc = [[MY_PushController alloc] init];
+    EaseCreateLiveViewController *vc = [[EaseCreateLiveViewController alloc] initWithRelevance:NO];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
