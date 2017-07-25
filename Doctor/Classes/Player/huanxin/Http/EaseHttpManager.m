@@ -169,6 +169,10 @@ static EaseHttpManager *sharedInstance = nil;
     }
     
     [self _doPostRequestWithPath:kPostRequestCreateLiveroomsUrl parameters:parameters completion:^(id responseObject, NSError *error) {
+        
+        NSData *data = error.userInfo[@"com.alamofire.serialization.response.error.data"];
+        NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
         if (aCompletion) {
             EaseLiveRoom *room = nil;
             BOOL ret = NO;

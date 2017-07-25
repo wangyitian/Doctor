@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface EaseCreateLiveViewController : UIViewController
+#import "MY_BaseController.h"
+@interface EaseCreateLiveViewController : MY_BaseController
 
 - (instancetype)initWithRelevance:(BOOL)isRelevance;
 

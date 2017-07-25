@@ -58,6 +58,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setTitle:@"创建直播" isBackButton:YES rightBttonName:nil rightImageName:nil];
     // Do any additional setup after loading the view.
     self.title = NSLocalizedString(@"publish.title", @"Create Live");
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
@@ -123,7 +125,7 @@
 - (UIScrollView*)mainView
 {
     if (_mainView == nil) {
-        _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+        _mainView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, KScreenWidth, KScreenHeight-64)];
         _mainView.backgroundColor = RGBACOLOR(251, 251, 251, 1);
     }
     return _mainView;
@@ -689,35 +691,35 @@
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
-    NSDictionary *userInfo = notification.userInfo;
-    NSValue *beginValue = [userInfo objectForKey:@"UIKeyboardFrameBeginUserInfoKey"];
-    NSValue *endValue = [userInfo objectForKey:@"UIKeyboardFrameEndUserInfoKey"];
-    CGRect beginRect;
-    [beginValue getValue:&beginRect];
-    CGRect endRect;
-    [endValue getValue:&endRect];
-    
-    CGRect actionViewFrame = _mainView.frame;
-    CGPoint point = CGPointMake(0, 0);
-    //键盘隐藏
-    if (endRect.origin.y == KScreenHeight) {
-        actionViewFrame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
-    }
-    //键盘显示
-    else if(beginRect.origin.y == KScreenHeight){
-        actionViewFrame.origin.y = -150.f;
-        point.y = _mainView.contentSize.height - _mainView.height;
-    }
-    //键盘告诉变化
-    else{
-        actionViewFrame.origin.y = -150.f;
-        point.y = _mainView.contentSize.height - _mainView.height;
-    }
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        _mainView.frame = actionViewFrame;
-        _mainView.contentOffset = point;
-    }];
+//    NSDictionary *userInfo = notification.userInfo;
+//    NSValue *beginValue = [userInfo objectForKey:@"UIKeyboardFrameBeginUserInfoKey"];
+//    NSValue *endValue = [userInfo objectForKey:@"UIKeyboardFrameEndUserInfoKey"];
+//    CGRect beginRect;
+//    [beginValue getValue:&beginRect];
+//    CGRect endRect;
+//    [endValue getValue:&endRect];
+//    
+//    CGRect actionViewFrame = _mainView.frame;
+//    CGPoint point = CGPointMake(0, 0);
+//    //键盘隐藏
+//    if (endRect.origin.y == KScreenHeight) {
+//        actionViewFrame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+//    }
+//    //键盘显示
+//    else if(beginRect.origin.y == KScreenHeight){
+//        actionViewFrame.origin.y = -150.f;
+//        point.y = _mainView.contentSize.height - _mainView.height;
+//    }
+//    //键盘告诉变化
+//    else{
+//        actionViewFrame.origin.y = -150.f;
+//        point.y = _mainView.contentSize.height - _mainView.height;
+//    }
+//    
+//    [UIView animateWithDuration:0.3 animations:^{
+//        _mainView.frame = actionViewFrame;
+//        _mainView.contentOffset = point;
+//    }];
 }
 
 @end

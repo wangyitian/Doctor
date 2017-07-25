@@ -32,6 +32,8 @@
     
     //rootController
     [self chooseRootViewController];
+    
+    [self initHuanxin];
     return YES;
 }
 
@@ -99,11 +101,18 @@
     } else {
         window.rootViewController = [[MY_NavigationController alloc] initWithRootViewController:[[MY_LoginController alloc] init]];
     }
-    
-    
+}
+
+- (void)initHuanxin {
     EMOptions *options = [EMOptions optionsWithAppkey:@"1142170714115549#massmedhealth"];
-//    options.apnsCertName = @"istore_dev";
+    options.apnsCertName = @"massmed";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
+    EMError *error = [[EMClient sharedClient] loginWithUsername:@"qqaazzppllmm" password:@"qqqqqqqq"];
+    if (!error) {
+        [[EMClient sharedClient].options setIsAutoLogin:YES];
+        NSLog(@"登录成功");
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
